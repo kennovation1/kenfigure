@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "urn:kbconfig:plate_schemas.schema.json",
+  "title": "Plate schemas",
+  "description": "Plate schemas.",
+  "type": "object"
+}

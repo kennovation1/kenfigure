@@ -1,0 +1,35 @@
+ignore:
+  - .git
+  - venv
+  - .venv
+  - env
+  - .env
+  - .serverless
+  - node_modules
+
+rule_settings:
+  enable:
+    - default
+    - google-python-style-guide
+  disable: []
+  rule_types:
+    - refactoring
+    - suggestion
+    - comment
+  python_version: '3.9'
+
+metrics:
+  quality_threshold: 25.0
+
+clone_detection:
+  min_lines: 3
+  min_duplicates: 2
+  identical_clones_only: false
+
+proxy:
+  no_ssl_verify: false
+
+rules:
+- id: flag_print_one
+  description: print statement in production code
+  pattern: print(...)

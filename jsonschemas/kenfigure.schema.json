@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:kbconfig:kbconfig.schema.json",
+  "title": "Benchling configuration",
+  "description": "Specification of a Benchling tenant configuration",
+  "type": "object",
+  "properties": {
+    "Metadata": {
+      "description": "Metadata that describes the model instance",
+      "$ref": "urn:kbconfig:metadata.schema.json"
+    },
+    "Diagram": {
+      "description": "Persistance of diagram properties",
+      "$ref": "urn:kbconfig:fulldiagram.schema.json"
+    },
+    "Dropdowns": {
+      "description": "Dropdowns and their values",
+      "$ref": "urn:kbconfig:dropdowns.schema.json"
+    },
+    "Entity_schemas": {
+      "description": "Entity schemas",
+      "$ref": "urn:kbconfig:entity_schemas.schema.json"
+    },
+    "Fieldset_schemas": {
+      "description": "Fieldset schemas",
+      "$ref": "urn:kbconfig:fieldset_schemas.schema.json"
+    },
+    "Study_schemas": {
+      "description": "Study schemas",
+      "$ref": "urn:kbconfig:study_schemas.schema.json"
+    },
+    "Container_schemas": {
+      "description": "Container schemas",
+      "$ref": "urn:kbconfig:container_schemas.schema.json"
+    },
+    "Box_schemas": {
+      "description": "Box schemas",
+      "$ref": "urn:kbconfig:box_schemas.schema.json"
+    },
+    "Plate_schemas": {
+      "description": "Plate schemas",
+      "$ref": "urn:kbconfig:plate_schemas.schema.json"
+    },
+    "Location_schemas": {
+      "description": "Location schemas",
+      "$ref": "urn:kbconfig:location_schemas.schema.json"
+    },
+    "Result_schemas": {
+      "description": "Result schemas",
+      "$ref": "urn:kbconfig:result_schemas.schema.json"
+    },
+    "Feature_flags": {
+      "description": "Feature flags",
+      "$ref": "urn:kbconfig:feature_flags.schema.json"
+    }
+  }
+}

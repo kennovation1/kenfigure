@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:kbconfig:feature_flags.schema.json",
+  "title": "Feature flags",
+  "description": "Back-end feature flag settings. Must be fetched and changed by Benchling. Use feature_flags.py to convert to/from csv",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": {
+      "type": "object",
+      "required": ["Current", "Default", "Description"],
+      "properties": {
+        "Current": {
+          "type": ["string", "boolean"]
+        },
+        "Default": {
+          "type": ["string", "boolean"]
+        },
+        "Description": {
+          "type": ["string", "boolean"]
+        },
+        "Planned": {
+          "type": ["string", "boolean"],
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

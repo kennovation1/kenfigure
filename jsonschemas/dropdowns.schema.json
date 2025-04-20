@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "urn:kbconfig:dropdowns.schema.json",
+  "title": "Dropdowns and their options",
+  "description": "Dropdowns and their options.",
+  "type": "array",
+  "minItems": 0,
+  "uniqueItems": true,
+  "items": {
+    "title": "Dropdown and its options",
+    "description": "Dropdown and its options.",
+    "required": ["Name"],
+    "type": "object",
+    "properties": {
+      "Name": {
+        "description": "Dropdown name.",
+        "type": "string"
+      },
+      "Description": {
+        "description": "Documentation description for the dropdown (not saved to Benchling).",
+        "type": "string"
+      },
+      "Alphabetize": {
+        "description": "Alphabetize upon deployment if true.",
+        "type": "boolean"
+      },
+      "Diagram": {
+        "description": "Properties solely used for diagram rendering.",
+        "$ref": "urn:kbconfig:diagram.schema.json"
+      },
+      "Options": {
+        "description": "Dropdown values list (may be empty).",
+        "type": "array",
+        "minItems": 0,
+        "uniqueItems": true,
+        "items": {
+          "type": "string"
+        }
+      },
+      "API ID": {
+        "description": "API ID for the entity created during an export operation. This is ignored for import operations.",
+        "type": "string"
+      }
+    }
+  }
+}

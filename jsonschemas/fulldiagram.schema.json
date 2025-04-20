@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:kbconfig:fulldiagram.schema.json",
+  "title": "Model instance metadata",
+  "description": "Persistance of diagram properties",
+	"type": "object",
+	"additionalProperties": {
+	  "type": "object",
+	  "required": ["X", "Y"],
+	  "properties": {
+	    "X": {
+	      "description": "X location coordinate.",
+	      "type": "integer"
+	    },
+	    "Y": {
+	      "description": "Y location coordinate.",
+	      "type": "integer"
+	    }
+	  }
+	}
+}

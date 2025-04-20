@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "urn:kbconfig:location_schemas.schema.json",
+  "title": "Location schemas",
+  "description": "Location schemas.",
+  "type": "object"
+}

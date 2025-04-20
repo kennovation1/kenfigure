@@ -1,0 +1,1330 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:kbconfig:kbconfig.schema.json",
+  "title": "Benchling configuration",
+  "description": "Specification of a Benchling tenant configuration",
+  "type": "object",
+  "properties": {
+    "Metadata": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:kbconfig:metadata.schema.json",
+      "title": "Model instance metadata",
+      "description": "Metadata that describes the model instance",
+      "required": [
+        "Organization",
+        "Schema version"
+      ],
+      "type": "object",
+      "properties": {
+        "Organization": {
+          "description": "Organization handle.",
+          "type": "string",
+          "pattern": "^[a-z_][a-z0-9_]{0,32}$"
+        },
+        "Description": {
+          "description": "Description of the environment and model.",
+          "type": "string"
+        },
+        "Model version": {
+          "description": "Semantic version for the model (e.g., 1.2.3).",
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "Created": {
+          "description": "Datetime the model was created.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "Modified": {
+          "description": "Datetime the model was last modified.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "Schema version": {
+          "description": "Semantic version of the KBConfig JSON schema (e.g., 1.0.0).",
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        }
+      }
+    },
+    "Diagram": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:kbconfig:fulldiagram.schema.json",
+      "title": "Model instance metadata",
+      "description": "Persistance of diagram properties",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "X",
+          "Y"
+        ],
+        "properties": {
+          "X": {
+            "description": "X location coordinate.",
+            "type": "integer"
+          },
+          "Y": {
+            "description": "Y location coordinate.",
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "Dropdowns": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:kbconfig:dropdowns.schema.json",
+      "title": "Dropdowns and their options",
+      "description": "Dropdowns and their options.",
+      "type": "array",
+      "minItems": 0,
+      "uniqueItems": true,
+      "items": {
+        "title": "Dropdown and its options",
+        "description": "Dropdown and its options.",
+        "required": [
+          "Name"
+        ],
+        "type": "object",
+        "properties": {
+          "Name": {
+            "description": "Dropdown name.",
+            "type": "string"
+          },
+          "Description": {
+            "description": "Documentation description for the dropdown (not saved to Benchling).",
+            "type": "string"
+          },
+          "Alphabetize": {
+            "description": "Alphabetize upon deployment if true.",
+            "type": "boolean"
+          },
+          "Diagram": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "urn:kbconfig:diagram.schema.json",
+            "title": "Diagram properties",
+            "description": "Properties solely used for diagram rendering.",
+            "type": "object",
+            "properties": {
+              "Group": {
+                "description": "The layout group name.",
+                "type": "string"
+              },
+              "Color": {
+                "description": "Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.",
+                "type": "string"
+              },
+              "X": {
+                "description": "X location coordinate.",
+                "type": "integer"
+              },
+              "Y": {
+                "description": "Y location coordinate.",
+                "type": "integer"
+              }
+            }
+          },
+          "Options": {
+            "description": "Dropdown values list (may be empty).",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "API ID": {
+            "description": "API ID for the entity created during an export operation. This is ignored for import operations.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Entity_schemas": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:kbconfig:entity_schemas.schema.json",
+      "title": "Entity schemas",
+      "description": "All types of entity schemas (e.g., Custom enity, DNA Sequence, etc.).",
+      "type": "array",
+      "minItems": 0,
+      "uniqueItems": true,
+      "items": {
+        "$comment": "See various TODOs. Add type-specific fields for types like DNA Sequence, etc.",
+        "title": "Entity schema definition",
+        "description": "Complete description of the entity schema. Some attributes only apply to certain schema types.",
+        "required": [
+          "Name",
+          "Entity type",
+          "Prefix",
+          "Containable type",
+          "Naming options"
+        ],
+        "type": "object",
+        "properties": {
+          "Name": {
+            "description": "Entity schema name.",
+            "type": "string"
+          },
+          "Warehouse name": {
+            "description": "DEPRECATED - Use 'System name' instead. Internal system name. Default will be an automatic conversion of Name to a Benchlinng/PostgreSQL compatible name.",
+            "type": "string",
+            "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+          },
+          "System name": {
+            "description": "Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+            "type": "string",
+            "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+          },
+          "Description": {
+            "description": "Documentation for the entity schema. This is not saved to Benchling.",
+            "type": "string"
+          },
+          "Notify": {
+            "description": "Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as configuring an embedded dashboard or setting permissions.",
+            "type": "string"
+          },
+          "Entity type": {
+            "description": "Must match one of the Benchling-defined types.",
+            "type": "string",
+            "enum": [
+              "Custom Entity",
+              "DNA Sequence",
+              "DNA Oligo",
+              "RNA Oligo",
+              "RNA Sequence",
+              "AA Sequence",
+              "Molecule",
+              "Entry",
+              "Mixture"
+            ]
+          },
+          "Icon": {
+            "description": "Icon for the schema. Matches benchling names without any translation.",
+            "type": "string",
+            "enum": [
+              "antibody",
+              "bacteria",
+              "basic_folder_item",
+              "box",
+              "cell-line",
+              "compound",
+              "entry",
+              "fridge",
+              "linear",
+              "material",
+              "mixture",
+              "mouse",
+              "oligo",
+              "oligo-v2",
+              "plate",
+              "primer_pair",
+              "protein",
+              "rna_sequence",
+              "sample-slide",
+              "sequence",
+              "small-molecule",
+              "small-molecule-beaker",
+              "vial",
+              "chromatography",
+              "human"
+            ]
+          },
+          "Prefix": {
+            "description": "The registry ID prefix",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$"
+          },
+          "RegID display": {
+            "description": "Use Registry ID as display label when true.",
+            "type": "boolean"
+          },
+          "RegID chips": {
+            "description": "Include Registry ID in chips when true.",
+            "type": "boolean"
+          },
+          "Show bases": {
+            "description": "Show bases in expanded view.",
+            "type": "boolean"
+          },
+          "Containable type": {
+            "description": "Entity can be transferred into containers when set to 'Entity'.",
+            "type": "string",
+            "enum": [
+              "None",
+              "Entity"
+            ]
+          },
+          "Naming options": {
+            "description": "Available registration naming options.",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "description": "Valid enum values include symbolic names and full text versions",
+              "type": "string",
+              "enum": [
+                "NEW_IDS",
+                "Generate new registry IDs",
+                "IDS_FROM_NAMES",
+                "Generate registry IDs based on entity names",
+                "DELETE_NAMES",
+                "Generate new registry IDs and replace name with registry ID",
+                "SET_FROM_NAME_PARTS",
+                "Generate new registry IDs, rename according to name template, and keep old name as alias",
+                "REPLACE_NAMES_FROM_PARTS",
+                "Generate new registry IDs, and replace name according to name template",
+                "KEEP_NAMES",
+                "Keep existing entity names as registry IDs",
+                "REPLACE_ID_AND_NAME_FROM_PARTS",
+                "Generate registry IDs and names according to name template"
+              ]
+            }
+          },
+          "Name template": {
+            "description": "Naming template.",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": false,
+            "items": {
+              "title": "Name template components",
+              "description": "Name template components",
+              "type": "object",
+              "required": [
+                "Type"
+              ],
+              "properties": {
+                "Type": {
+                  "description": "The type of name component.",
+                  "type": "string",
+                  "enum": [
+                    "Registry ID number",
+                    "Creation year",
+                    "Creation date",
+                    "Project",
+                    "Text",
+                    "Separator",
+                    "Field",
+                    "Parent lot number",
+                    "Registry ID of field"
+                  ]
+                },
+                "Definition": {
+                  "description": "Depending on Type will be text, a field name, or may be omitted if N/A.",
+                  "type": "string"
+                }
+              }
+            },
+            "$comment": "TODO: Need to define this better. How handle pre-defiend values like separator, lot, etc."
+          },
+          "Constraint": {
+            "description": "List of fields to define constraint. Maybe empty. May contain special built-in field descriptions.",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "Bases (ignore case)",
+                    "Canonical SMILES",
+                    "Amino acids (exact match)",
+                    "Amino acids (ignore case)"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "Access type": {
+            "description": "The registered objects of this schema will have permissions that are either Registry-based (default) or Project-based.",
+            "type": "string",
+            "enum": [
+              "Registry-based",
+              "Project-based"
+            ]
+          },
+          "Diagram": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "urn:kbconfig:diagram.schema.json",
+            "title": "Diagram properties",
+            "description": "Properties solely used for diagram rendering.",
+            "type": "object",
+            "properties": {
+              "Group": {
+                "description": "The layout group name.",
+                "type": "string"
+              },
+              "Color": {
+                "description": "Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.",
+                "type": "string"
+              },
+              "X": {
+                "description": "X location coordinate.",
+                "type": "integer"
+              },
+              "Y": {
+                "description": "Y location coordinate.",
+                "type": "integer"
+              }
+            }
+          },
+          "Fieldsets": {
+            "description": "Fieldsets that the entity implements.",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+              "description": "A list of zero or more Fieldset names",
+              "type": "string"
+            }
+          },
+          "Fields": {
+            "description": "Metadata fields",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+              "title": "List of metadata fields",
+              "description": "Metadata field definitions",
+              "type": "object",
+              "required": [
+                "Name",
+                "Type"
+              ],
+              "properties": {
+                "Name": {
+                  "description": "Field name.",
+                  "type": "string"
+                },
+                "Description": {
+                  "description": "Documentation for the field. This is not saved to Benchling.",
+                  "type": "string"
+                },
+                "Tool tip": {
+                  "description": "Field tool tip appears on hover on column headings.",
+                  "type": "string"
+                },
+                "Warehouse name": {
+                  "description": "DEPRECATED - Use 'System name' instead. Internal system name. Default will be an automatic conversion of Name to a Benchlinng/PostgreSQL compatible name.",
+                  "type": "string",
+                  "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+                },
+                "System name": {
+                  "description": "Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+                  "type": "string",
+                  "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+                },
+                "Required": {
+                  "description": "Field is required when true",
+                  "type": "boolean"
+                },
+                "Parent link": {
+                  "description": "Entity reference is a parent link when true.",
+                  "type": "boolean"
+                },
+                "Multi-select": {
+                  "description": "Field is a multi-select field when true.",
+                  "type": "boolean"
+                },
+                "Type": {
+                  "description": "Data type for the field.",
+                  "type": "string",
+                  "enum": [
+                    "Date",
+                    "Datetime",
+                    "Decimal",
+                    "Integer",
+                    "Long text",
+                    "Dropdown",
+                    "Text",
+                    "Attachment",
+                    "Entry",
+                    "Entity",
+                    "Category",
+                    "Part",
+                    "Inventory",
+                    "ft_translation_link",
+                    "ft_assay_result_link",
+                    "ft_assay_run_link",
+                    "Batch",
+                    "Transcription"
+                  ]
+                },
+                "Definition": {
+                  "description": "Name of target object if Type is a one of the link types.",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "Any Entity",
+                        "Custom Entity",
+                        "AA Sequence",
+                        "DNA Sequence",
+                        "Molecule",
+                        "Mixture"
+                      ]
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "Computed": {
+                  "description": "Describes the computed field. Only present for computed fields.",
+                  "type": "object",
+                  "required": [
+                    "Formula"
+                  ],
+                  "properties": {
+                    "Formula name": {
+                      "description": "Name of formula using native Benchling tokens for now.",
+                      "type": "string",
+                      "enum": [
+                        "UNSUPPORTED_FORMULA",
+                        "sum_floats",
+                        "string_length",
+                        "dna_sequence_gc_percent",
+                        "set_union_file_link",
+                        "set_union_selector",
+                        "join_string",
+                        "multiply_with_exponents",
+                        "molecule_molecular_weight",
+                        "chemical_formula_with_salts",
+                        "standard_molecular_weight_with_salts",
+                        "subtract_dates",
+                        "mod_aware_molecular_weight",
+                        "render_molecule_from_smiles",
+                        "identity_fn",
+                        "aggregate_bioentity_link_unsorted_with_duplicates",
+                        "aggregate_dropdown_unsorted_with_duplicates",
+                        "aggregate_text_unsorted_with_duplicates"
+                      ]
+                    },
+                    "Path": {
+                      "description": "List of entities to get to the final entity or field. TODO-Can this just be a list. Will type ever not be Field?",
+                      "type": "array",
+                      "minItems": 0,
+                      "items": {
+                        "title": "List of path objects.",
+                        "type": "object",
+                        "required": [
+                          "Type"
+                        ],
+                        "properties": {
+                          "Type": {
+                            "description": "Type of path component. Only Field is valid for now.",
+                            "type": "string",
+                            "enum": [
+                              "Field"
+                            ]
+                          },
+                          "Definition": {
+                            "description": "Name for the given type. Usually a field name.",
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "Property": {
+                      "description": "The final value to return/compute at the end of the Path.",
+                      "type": "object",
+                      "required": [
+                        "Type"
+                      ],
+                      "properties": {
+                        "Type": {
+                          "description": "The type of property. Normally Field, but use BASES to access the built-in Bases field.",
+                          "type": "string",
+                          "enum": [
+                            "Field",
+                            "BASES"
+                          ]
+                        },
+                        "Definition": {
+                          "description": "The name of the field if type is Field.",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "API ID": {
+            "description": "API ID for the entity schema created during an export operation. This is ignored for import operations.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Fieldset_schemas": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:kbconfig:fieldset_schemas.schema.json",
+      "title": "Fieldset schemas",
+      "description": "All types of fieldset schemas (e.g., Custom enity, DNA Sequence, etc.). Does not currently support tool tips or parent links for fields.",
+      "type": "array",
+      "minItems": 0,
+      "uniqueItems": true,
+      "items": {
+        "$comment": "See various TODOs. Add type-specific fields for types like DNA Sequence, etc.",
+        "title": "Fieldset schema definition",
+        "description": "Complete description of the fieldset schema. Some attributes only apply to certain schema types.",
+        "required": [
+          "Name"
+        ],
+        "type": "object",
+        "properties": {
+          "Name": {
+            "description": "Fieldset schema name.",
+            "type": "string"
+          },
+          "System name": {
+            "description": "Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+            "type": "string",
+            "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+          },
+          "Description": {
+            "description": "Documentation for the fieldset schema. This is not saved to Benchling.",
+            "type": "string"
+          },
+          "Notify": {
+            "description": "Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as setting permissions.",
+            "type": "string"
+          },
+          "Entity type": {
+            "description": "Must match one of the Benchling-defined types. May be 'None' to enable attaching to any type of entity schema.",
+            "type": "string",
+            "enum": [
+              "None",
+              "Custom Entity",
+              "DNA Sequence",
+              "DNA Oligo",
+              "RNA Oligo",
+              "RNA Sequence",
+              "AA Sequence",
+              "Molecule",
+              "Mixture"
+            ]
+          },
+          "Category": {
+            "description": "If true (default), this fieldset will appear as a navigation category for end users, and an option for field definitions.",
+            "type": "boolean"
+          },
+          "Prefix": {
+            "description": "The registry ID prefix. If specified, will override the prefix for all attached entity schemas.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$"
+          },
+          "Naming options": {
+            "description": "Available registration naming options. If specified, will override the naming options for all attached entity schemas.",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+              "description": "Valid enum values include symbolic names and full text versions",
+              "type": "string",
+              "enum": [
+                "NEW_IDS",
+                "Generate new registry IDs",
+                "IDS_FROM_NAMES",
+                "Generate registry IDs based on entity names",
+                "DELETE_NAMES",
+                "Generate new registry IDs and replace name with registry ID",
+                "SET_FROM_NAME_PARTS",
+                "Generate new registry IDs, rename according to name template, and keep old name as alias",
+                "REPLACE_NAMES_FROM_PARTS",
+                "Generate new registry IDs, and replace name according to name template",
+                "KEEP_NAMES",
+                "Keep existing entity names as registry IDs",
+                "REPLACE_ID_AND_NAME_FROM_PARTS",
+                "Generate registry IDs and names according to name template"
+              ]
+            }
+          },
+          "Name template": {
+            "description": "Naming template.",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": false,
+            "items": {
+              "title": "Name template components",
+              "description": "Name template components",
+              "type": "object",
+              "required": [
+                "Type"
+              ],
+              "properties": {
+                "Type": {
+                  "description": "The type of name component.",
+                  "type": "string",
+                  "enum": [
+                    "Registry ID number",
+                    "Creation year",
+                    "Creation date",
+                    "Project",
+                    "Text",
+                    "Separator",
+                    "Field",
+                    "Parent lot number",
+                    "Registry ID of field"
+                  ]
+                },
+                "Definition": {
+                  "description": "Depending on Type will be text, a field name, or may be omitted if N/A.",
+                  "type": "string"
+                }
+              }
+            },
+            "$comment": "TODO: Need to define this better. How handle pre-defiend values like separator, lot, etc."
+          },
+          "Constraint": {
+            "description": "List of fields to define constraint. Maybe empty. May contain special built-in field descriptions. If specified, will override the constraint for all attached entity schemas.",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "Bases (ignore case)",
+                    "Canonical SMILES",
+                    "Amino acids (exact match)",
+                    "Amino acids (ignore case)"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "Diagram": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "urn:kbconfig:diagram.schema.json",
+            "title": "Diagram properties",
+            "description": "Properties solely used for diagram rendering.",
+            "type": "object",
+            "properties": {
+              "Group": {
+                "description": "The layout group name.",
+                "type": "string"
+              },
+              "Color": {
+                "description": "Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.",
+                "type": "string"
+              },
+              "X": {
+                "description": "X location coordinate.",
+                "type": "integer"
+              },
+              "Y": {
+                "description": "Y location coordinate.",
+                "type": "integer"
+              }
+            }
+          },
+          "Fields": {
+            "description": "Metadata fields",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+              "title": "List of metadata fields",
+              "description": "Metadata field definitions",
+              "type": "object",
+              "required": [
+                "Name",
+                "Type"
+              ],
+              "properties": {
+                "Name": {
+                  "description": "Field name.",
+                  "type": "string"
+                },
+                "Description": {
+                  "description": "Documentation for the field. This is not saved to Benchling.",
+                  "type": "string"
+                },
+                "System name": {
+                  "description": "Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+                  "type": "string",
+                  "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+                },
+                "Required": {
+                  "description": "Field is required when true",
+                  "type": "boolean"
+                },
+                "Multi-select": {
+                  "description": "Field is a multi-select field when true.",
+                  "type": "boolean"
+                },
+                "Type": {
+                  "description": "Data type for the field.",
+                  "type": "string",
+                  "enum": [
+                    "Date",
+                    "Datetime",
+                    "Decimal",
+                    "Integer",
+                    "Long text",
+                    "Dropdown",
+                    "Text",
+                    "Attachment",
+                    "Entry",
+                    "Entity",
+                    "Part",
+                    "Inventory",
+                    "ft_translation_link",
+                    "ft_assay_result_link",
+                    "ft_assay_run_link"
+                  ]
+                },
+                "Definition": {
+                  "description": "Name of target object if Type is a one of the link types.",
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "Any Entity",
+                        "Custom Entity",
+                        "AA Sequence",
+                        "DNA Sequence",
+                        "Molecule",
+                        "Mixture"
+                      ]
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "Computed": {
+                  "description": "Describes the computed field. Only present for computed fields.",
+                  "type": "object",
+                  "required": [
+                    "Formula"
+                  ],
+                  "properties": {
+                    "Formula name": {
+                      "description": "Name of formula using native Benchling tokens for now.",
+                      "type": "string",
+                      "enum": [
+                        "UNSUPPORTED_FORMULA",
+                        "sum_floats",
+                        "string_length",
+                        "dna_sequence_gc_percent",
+                        "set_union_file_link",
+                        "set_union_selector",
+                        "join_string",
+                        "multiply_with_exponents",
+                        "mod_aware_molecular_weight",
+                        "render_molecule_from_smiles",
+                        "identity_fn",
+                        "aggregate_bioentity_link_unsorted_with_duplicates",
+                        "aggregate_dropdown_unsorted_with_duplicates",
+                        "aggregate_text_unsorted_with_duplicates"
+                      ]
+                    },
+                    "Path": {
+                      "description": "List of entities to get to the final entity or field. TODO-Can this just be a list. Will type ever not be Field?",
+                      "type": "array",
+                      "minItems": 0,
+                      "items": {
+                        "title": "List of path objects.",
+                        "type": "object",
+                        "required": [
+                          "Type"
+                        ],
+                        "properties": {
+                          "Type": {
+                            "description": "Type of path component. Only Field is valid for now.",
+                            "type": "string",
+                            "enum": [
+                              "Field"
+                            ]
+                          },
+                          "Definition": {
+                            "description": "Name for the given type. Usually a field name.",
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "Property": {
+                      "description": "The final value to return/compute at the end of the Path.",
+                      "type": "object",
+                      "required": [
+                        "Type"
+                      ],
+                      "properties": {
+                        "Type": {
+                          "description": "The type of property. Normally Field, but use BASES to access the built-in Bases field.",
+                          "type": "string",
+                          "enum": [
+                            "Field",
+                            "BASES"
+                          ]
+                        },
+                        "Definition": {
+                          "description": "The name of the field if type is Field.",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "API ID": {
+            "description": "API ID for the entity schema created during an export operation. This is ignored for import operations.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Study_schemas": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:kbconfig:study_schemas.schema.json",
+      "title": "Study schemas",
+      "description": "All Study schemas.",
+      "type": "array",
+      "minItems": 0,
+      "uniqueItems": true,
+      "items": {
+        "$comment": "TODO: Study schemas are new and might change more often than other objects.",
+        "title": "Study schema definition",
+        "description": "Complete description of the study schema.",
+        "required": [
+          "Name",
+          "Prefix"
+        ],
+        "type": "object",
+        "properties": {
+          "Name": {
+            "description": "Study schema name.",
+            "type": "string"
+          },
+          "System name": {
+            "description": "Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+            "type": "string",
+            "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+          },
+          "Description": {
+            "description": "Documentation for the study schema. This is not saved to Benchling.",
+            "type": "string"
+          },
+          "Prefix": {
+            "description": "The ID prefix for a study schema.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$"
+          },
+          "Name template": {
+            "description": "Naming template.",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": false,
+            "items": {
+              "title": "Name template components",
+              "description": "Name template components",
+              "type": "object",
+              "required": [
+                "Type"
+              ],
+              "properties": {
+                "Type": {
+                  "description": "The type of name component.",
+                  "$comment": "TODO: I'm not sure that this is the right enum list for study name templates",
+                  "type": "string",
+                  "enum": [
+                    "Registry ID number",
+                    "Creation year",
+                    "Creation date",
+                    "Project",
+                    "Text",
+                    "Separator",
+                    "Field",
+                    "Registry ID of field"
+                  ]
+                },
+                "Definition": {
+                  "description": "Depending on Type will be text, a field name, or may be omitted if N/A.",
+                  "type": "string"
+                }
+              }
+            },
+            "$comment": "TODO: Need to define this better. How handle pre-defiend values like separator, lot, etc."
+          },
+          "Entry templates": {
+            "description": "List entry templates that are applicable to the study schema. Maybe empty.",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "Approval required": {
+            "description": "Require approval of Design before proceeding to Execution.",
+            "type": "boolean"
+          },
+          "Study type": {
+            "description": "Must match one of the Benchling-defined types.",
+            "type": "string",
+            "enum": [
+              "CUSTOM"
+            ]
+          },
+          "Diagram": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "urn:kbconfig:diagram.schema.json",
+            "title": "Diagram properties",
+            "description": "Properties solely used for diagram rendering.",
+            "type": "object",
+            "properties": {
+              "Group": {
+                "description": "The layout group name.",
+                "type": "string"
+              },
+              "Color": {
+                "description": "Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.",
+                "type": "string"
+              },
+              "X": {
+                "description": "X location coordinate.",
+                "type": "integer"
+              },
+              "Y": {
+                "description": "Y location coordinate.",
+                "type": "integer"
+              }
+            }
+          },
+          "Fields": {
+            "description": "Metadata fields",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+              "title": "List of metadata fields",
+              "description": "Metadata field definitions",
+              "type": "object",
+              "required": [
+                "Name",
+                "Type"
+              ],
+              "properties": {
+                "Name": {
+                  "description": "Field name.",
+                  "type": "string"
+                },
+                "Description": {
+                  "description": "Documentation for the field. This is not saved to Benchling.",
+                  "type": "string"
+                },
+                "Tool tip": {
+                  "description": "Field tool tip appears on hover on column headings. Not currently supported by Benchling.",
+                  "type": "string"
+                },
+                "System name": {
+                  "description": "Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+                  "type": "string",
+                  "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+                },
+                "Required": {
+                  "description": "Field is required when true",
+                  "type": "boolean"
+                },
+                "Multi-select": {
+                  "description": "Field is a multi-select field when true.",
+                  "type": "boolean"
+                },
+                "Type": {
+                  "description": "Data type for the field.",
+                  "type": "string",
+                  "enum": [
+                    "Date",
+                    "Datetime",
+                    "Decimal",
+                    "Integer",
+                    "Long text",
+                    "Dropdown",
+                    "Text",
+                    "Attachment",
+                    "Entity",
+                    "JSON",
+                    "Boolean"
+                  ]
+                },
+                "Definition": {
+                  "description": "Name of target object if Type is a one of the link types.",
+                  "type": "string"
+                },
+                "Computed field": {
+                  "description": "Describes the computed field. Only present for computed fields.",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "API ID": {
+            "description": "API ID for the study schema created during an export operation. This is ignored for import operations.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Container_schemas": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:kbconfig:container_schemas.schema.json",
+      "title": "Container schemas",
+      "description": "Container schemas.",
+      "type": "object"
+    },
+    "Box_schemas": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:kbconfig:box_schemas.schema.json",
+      "title": "Box schemas",
+      "description": "Box schemas.",
+      "type": "object"
+    },
+    "Plate_schemas": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:kbconfig:plate_schemas.schema.json",
+      "title": "Plate schemas",
+      "description": "Plate schemas.",
+      "type": "object"
+    },
+    "Location_schemas": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:kbconfig:location_schemas.schema.json",
+      "title": "Location schemas",
+      "description": "Location schemas.",
+      "type": "object"
+    },
+    "Result_schemas": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:kbconfig:result_schemas.schema.json",
+      "title": "Result schemas",
+      "description": "Result schemas.",
+      "type": "array",
+      "minItems": 0,
+      "uniqueItems": true,
+      "items": {
+        "$comment": "See various TODOs. Think about snapshot fields.",
+        "title": "Result schema definition",
+        "description": "Complete description of the result schema.",
+        "required": [
+          "Name"
+        ],
+        "type": "object",
+        "properties": {
+          "Name": {
+            "description": "Result schema name.",
+            "type": "string"
+          },
+          "Warehouse name": {
+            "description": "DEPRECATED - Use 'System name' instead. Internal system name. Default will be an automatic conversion of Name to a Benchlinng/PostgreSQL compatible name.",
+            "type": "string",
+            "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+          },
+          "System name": {
+            "description": "Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+            "type": "string",
+            "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+          },
+          "Description": {
+            "description": "Documentation for the entity. This is not saved to Benchling.",
+            "type": "string"
+          },
+          "Diagram": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$id": "urn:kbconfig:diagram.schema.json",
+            "title": "Diagram properties",
+            "description": "Properties solely used for diagram rendering.",
+            "type": "object",
+            "properties": {
+              "Group": {
+                "description": "The layout group name.",
+                "type": "string"
+              },
+              "Color": {
+                "description": "Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.",
+                "type": "string"
+              },
+              "X": {
+                "description": "X location coordinate.",
+                "type": "integer"
+              },
+              "Y": {
+                "description": "Y location coordinate.",
+                "type": "integer"
+              }
+            }
+          },
+          "Fields": {
+            "description": "Metadata fields",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": true,
+            "items": {
+              "title": "List of metadata fields",
+              "description": "Metadata field definitions",
+              "type": "object",
+              "required": [
+                "Name",
+                "Type"
+              ],
+              "properties": {
+                "Name": {
+                  "description": "Field name.",
+                  "type": "string"
+                },
+                "Description": {
+                  "description": "Documentation for the field. This is not saved to Benchling.",
+                  "type": "string"
+                },
+                "Tool tip": {
+                  "description": "Field tool tip appears on hover on column headings.",
+                  "type": "string"
+                },
+                "Warehouse name": {
+                  "description": "DEPRECATED - Use 'System name' instead. Internal system name. Default will be an automatic conversion of Name to a Benchlinng/PostgreSQL compatible name.",
+                  "type": "string",
+                  "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+                },
+                "System name": {
+                  "description": "Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+                  "type": "string",
+                  "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+                },
+                "Required": {
+                  "description": "Field is required when true",
+                  "type": "boolean"
+                },
+                "Multi-select": {
+                  "description": "Field is a multi-select field when true.",
+                  "type": "boolean"
+                },
+                "Type": {
+                  "description": "Data type for the field.",
+                  "type": "string",
+                  "enum": [
+                    "Date",
+                    "Datetime",
+                    "Decimal",
+                    "Integer",
+                    "Long text",
+                    "Dropdown",
+                    "Text",
+                    "Attachment",
+                    "Entry",
+                    "Entity",
+                    "Category",
+                    "Part",
+                    "Inventory",
+                    "JSON",
+                    "Boolean",
+                    "ft_assay_result_link",
+                    "Run"
+                  ]
+                },
+                "Definition": {
+                  "description": "Name of target object if Type is a one of the link types. May optionally point to a dropdown if type is Integer or Decimal.",
+                  "type": "string"
+                },
+                "Snapshot": {
+                  "description": "Describes the snapshot computation if this is a snapshot computed field.",
+                  "type": "object",
+                  "required": [
+                    "Formula",
+                    "Arguments"
+                  ],
+                  "properties": {
+                    "Formula": {
+                      "description": "Name of formula using native Benchling tokens for now. TODO-For now, leave the items for arguments unspecified until this matures more. Add filters and other features.",
+                      "enum": [
+                        "UNSUPPORTED_FORMULA",
+                        "identity_fn"
+                      ]
+                    },
+                    "Arguments": {
+                      "description": "Formula arguments. These are dependent on the particular formula.",
+                      "type": "object",
+                      "properties": {
+                        "Steps": {
+                          "description": "Lookup steps. Currently supports a list of 2 field values. First must be an entity field in the current schema. Second must be a field on the schema pointed to by step 1.",
+                          "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "API ID": {
+            "description": "API ID for the entity created during an export operation. This is ignored for import operations.",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Feature_flags": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "$id": "urn:kbconfig:feature_flags.schema.json",
+      "title": "Feature flags",
+      "description": "Back-end feature flag settings. Must be fetched and changed by Benchling. Use feature_flags.py to convert to/from csv",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "required": [
+            "Current",
+            "Default",
+            "Description"
+          ],
+          "properties": {
+            "Current": {
+              "type": [
+                "string",
+                "boolean"
+              ]
+            },
+            "Default": {
+              "type": [
+                "string",
+                "boolean"
+              ]
+            },
+            "Description": {
+              "type": [
+                "string",
+                "boolean"
+              ]
+            },
+            "Planned": {
+              "type": [
+                "string",
+                "boolean"
+              ],
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+}

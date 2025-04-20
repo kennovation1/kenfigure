@@ -1,0 +1,155 @@
+# This is a sanitized fragment of my YAML config for documenting Benchling configurations.
+# Copyright (c) 2025 by Ken Robbins, Go2 Sotware LLC. All rights reserved.
+#
+# This is controlled by a JSON Schema specification which provides validation in the editor
+# and in any code that reads/writes these files. The JSON Schema also provides context-sensitive
+# help and completion in the editor (I use VS Code).
+#
+# The value of this is amplified tremedously when managed in a version control system (git)
+# since that provides a clear way to see changes, provides a history of changes, and has the
+# ability to branch and merge (including approvals if desired).
+#
+# This short excerpt can't tell the whole story, but it hopeully provides the flavor.
+# See the the full documentation and other examples to get a fuller picture.
+
+# Normally I maintain each object (entity schema, dropdown, result schemd, fieldset, study, etc.)
+# in its own file and those files are organized in a directory tree that groups together related
+# objects. For example, all In Vivo entities might be in one directory and all In Vitro entities in another.
+# For this demo, I've keep all in a single file.
+
+# Note that comments like this are handy for annotation. The "Description" fields at the top level
+# and at the field level provide other ways to annotate for maintainability and helps with consuming
+# tool (for example my ER diagram tool includes the description text, but not comments).
+# Description fields are not stored in Benchling. Diagram fields help to guide automatic
+# ER digram generation and this information is also not stored in Benchling.
+# Everthing else maps to a Benchling attribute.
+
+Entity_schemas:
+- Name: Chemical
+  Description: A generic small molecule. Used for the source of truth for our
+    monomer library and also stores chemical conjugates and other utility small
+    molecules. Thereapeutic small molecules are stored elsewhere.
+  Entity type: Molecule
+  Prefix: CHEM
+  System name: chemical
+  Containable type: None
+  Name template: []
+  Constraint:
+  - Canonical SMILES
+  - CAS RN
+  Naming options:
+  - NEW_IDS
+  # - Generate new registry IDs  # Long form is accepted, but I prefer the short form
+  RegID chips: false
+  RegID display: false
+  Icon: small-molecule
+  Access type: Registry-based
+  Diagram:
+    Group: Chemicals  # All entities with the same name are rendered in a group of that name
+  Fields:
+  - Name: CAS RN
+    Description: Create a pseudo CAS RN if no official number exists
+    Tool tip: Create a pseudo CAS RN if no official number exists
+    System name: cas_rn
+    Type: Text
+  - Name: Original SMILES
+    Description: Templates or other doc should tell users to specify their SMILES
+      here and in the build-in SMILES field. This way we have a copy of the original
+      SMILES before canonicalization. Benchling does have an internal original SMILES
+      field wich I suppose I could hoist via a computed field.
+    Tool tip: Copy of original input SMILES before canonicalization
+    System name: original_smiles
+    Type: Long text
+  - Name: Is conjugate
+    Description: This is useful for filtering
+    Tool tip: Yes, if commonly used as a conjugate
+    System name: is_conjugate
+    Type: Dropdown
+    Definition: Yes/No
+  - Name: Is RNA monomer
+    Description: This is used to filter to create an export to create/update the
+      Benchling monomer library.
+    Tool tip: Yes, if used in the RNA monomer library
+    System name: is_rna_monomer
+    Type: Dropdown
+    Definition: Yes/No
+  - Name: Monomer symbol
+    Description: See the monomer library SOP for guidance on defining symbols.
+    Tool tip: Symbol used in monomer library and HELM sequences
+    System name: monomer_symbol
+    Type: Text
+  - Name: Monomer type
+    Description: Type of monomer in a HELM context (sugar, base, phosphate)
+    Tool tip: Type of monomer when used in a HELM representation
+    System name: monomer_type
+    Type: Dropdown
+    Definition: Monomer Types
+  - Name: Monomer natural analog
+    Description: Used for grouping and filtering
+    Tool tip: Natural analog symbol
+    System name: monomer_natural_analog
+    Type: Dropdown
+    Definition: Monomer Analogs
+  - Name: Monomer caps
+    Description: Monomer end caps listed in order of R1, R2, R3 for sugar, R1, R2 for
+      phosphate, R1 for base. Monomers are defined with end caps included in SMILES
+      and therefore in physiochemical property calculations.
+    Tool tip: Monomer end caps listed in order of R1, R2, R3 for sugar, R1, R2 for
+      phosphate, R1 for base. Monomers are defined with end caps included in SMILES
+      and therefore in physiochemical property calculations.
+    System name: monomer_caps
+    Type: Dropdown
+    Definition: Monomer Caps
+
+  # Normally the following fields are only on the Batch entity, but for demo purpose, I stuffed it here
+  # Note that Benchling always strips salts!
+  - Name: Salts
+    Description: Automatically populated during import to include a list of salts stripped from the input SMILES.
+    Tool tip: Automatically populated during import to include a list of salts stripped from the input SMILES.
+    System name: salts
+    Type: Text
+  - Name: MW with salts
+    Description: Molecular weight of the batch including any salts
+    Tool tip: Molecular weight of the batch including any salts
+    System name: mw_with_salts
+    Type: Decimal
+    Computed:
+      Formula: standard_molecular_weight_with_salts 
+      Parameters:
+        - Name: salts
+          Type: Field
+          Definition: Salts
+  - Name: Formula with salts
+    Description: Molecular formula of the batch including any salts
+    Tool tip: Molecular formula of the batch including any salts
+    System name: formula_with_salts
+    Type: Text
+    Computed:
+      Formula: chemical_formula_with_salts 
+      Parameters:
+        - Name: salts
+          Type: Field
+          Definition: Salts
+
+# Normally each of these would be in a dedicated file
+Dropdowns:
+- Name: Monomer Types
+  Description: Primary types of monomers
+  Alphabetize: false
+  Diagram:
+    Group: Chemicals
+  Options:
+  - Sugar
+  - Base
+  - Phosphate
+
+- Name: Monomer Caps
+  Description: Combinations of monomer end caps in R1, R2, R3 order.
+  Alphabetize: false
+  Diagram:
+    Group: Chemicals
+  Options:
+  - H         # Base
+  - H, H      # Abasic sugar
+  - OH, OH    # Phosphate
+  - H, H, OH  # Sugar
