@@ -23,6 +23,8 @@ Please contact [info@go2software.com](mailto:info@go2software.com) for commercia
 **Kenfigure™** is an trademark of Go2 Software LLC.  
 Use of the name "Kenfigure" in derivative projects or commercial products is not permitted without permission.
 
+Benchling is a trademark of Benchling, Inc.
+
 # Overview
 *Kenfigure* is a YAML file format specification to define and document Benchling configurations.
 
