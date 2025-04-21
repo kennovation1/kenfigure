@@ -1,13 +1,3 @@
-- [Kenfigure](#kenfigure)
-- [Overview](#overview)
-  - [Benefits](#benefits)
-- [Mindset](#mindset)
-- [Limitations](#limitations)
-- [JSON schema technical notes](#json-schema-technical-notes)
-  - [VS Code specific notes](#vs-code-specific-notes)
-  - [Other IDEs](#other-ides)
-  - [License and Trademark](#license-and-trademark)
-
 # Kenfigure
 ![License: ODC-BY 1.0](https://img.shields.io/badge/License-ODC--BY%201.0-blue)
 ![Version](https://img.shields.io/badge/version-v0.1.0-orange)
@@ -57,32 +47,32 @@ Entity_schemas:
 
 See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annotated example.
 
-***TODO*** Create a documentation page. Add more examples.
-***TODO*** Create an entire directory tree from a test environment export to YAML.
+- ***TODO*** Flesh out documentation page. Add more examples.
+- ***TODO*** Create an entire directory tree from a test environment export to YAML.
 
-## Benefits 
+# Benefits 
 Here are some benefits of documenting your Benchling configuration in *kenfigure* files in git. In no particular order:
 (Note that I'm included some benefits are required additional tooling that is not open source.
 I've left these bullet points here since it helps to show the future possibilities when it's with Go2 Software
 proprietary tools or others.)
-- allows comments, notes, annotations on schemas and schema fields
-- version control including branching and pull requests
-- version difference inspection
-- reusable/shareable components and patterns
-- templatized components and patterns
-- faster configuration (no UI clicking) [using additional tooling]
-- fewer errors
-- consistency between environments
-- configuration rollback [using additional tooling]
-- can integrate with visualization tools [e.g., I have a tool to create ER diagrams from the *kenfigure* specification]
+- Allows comments, notes, annotations on schemas and schema fields
+- Version control including branching and pull requests
+- Version difference inspection
+- Reusable/shareable components and patterns
+- Templatized components and patterns
+- Faster configuration (no UI clicking) [using additional tooling]
+- Fewer errors
+- Consistency between environments
+- Configuration rollback [using additional tooling]
+- Can integrate with visualization tools [e.g., I have a tool to create ER diagrams from the *kenfigure* specification]
   - Support hints for automated diagram layout generation
-- enables the ability to write model checkers and style checkers [e.g., I have a tool, "SchemaLint", that checks for many issues and anti-patters that I seen over the years]
+- Enables the ability to write model checkers and style checkers [e.g., I have a tool, "SchemaLint", that checks for many issues and anti-patters that I seen over the years]
   - No more fields with hidden leading or trialing spaces!
-- allows for more complete, verifiable, and easier configurations review (particular useful for validated environments)
-- documentation for validated environments
-- enables global spell checking
-- enables global search to find configuration information, verify settings, check for consistency, check for conflicts, etc.
-- easy global search and replace
+- Allows for more complete, verifiable, and easier configurations review (particular useful for validated environments)
+- Documentation for validated environments
+- Enables global spell checking
+- Enables global search to find configuration information, verify settings, check for consistency, check for conflicts, etc.
+- Easy global search and replace
 - Basic tools like grep (and grep -R) can make it very easy to see things like "all prefixes" or "all names" or all
   schemas that refer to a given entity.
 - IDE support for hover hints and typing completion
@@ -147,7 +137,7 @@ proprietary tools or others.)
 ## Other IDEs
 If you use a different IDE, please create a pull request so we can document and applicable notes.
 
-## License and Trademark
+# License and Trademark
 
 **Kenfigure™** is provided under the [Open Data Commons Attribution License (ODC-BY 1.0)](https://opendatacommons.org/licenses/by/1-0/).
 
