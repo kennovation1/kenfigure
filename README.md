@@ -10,6 +10,7 @@
 
 # Kenfigure
 ![License: ODC-BY 1.0](https://img.shields.io/badge/License-ODC--BY%201.0-blue)
+![Version](https://img.shields.io/badge/version-v0.1.0-orange)
 
 # Overview
 *Kenfigure* is a YAML file format specification to define and document Benchling configurations.
