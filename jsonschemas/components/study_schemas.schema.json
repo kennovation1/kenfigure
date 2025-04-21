@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
 	"$id": "urn:kbconfig:study_schemas.schema.json",
   "title": "Study schemas",
-  "description": "All Study schemas.",
+  "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
   "type": "array",
   "minItems": 0,
   "uniqueItems": true,

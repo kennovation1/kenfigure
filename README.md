@@ -1,5 +1,4 @@
 - [Kenfigure](#kenfigure)
-  - [License and Trademark](#license-and-trademark)
 - [Overview](#overview)
   - [Benefits](#benefits)
 - [Mindset](#mindset)
@@ -7,23 +6,10 @@
 - [JSON schema technical notes](#json-schema-technical-notes)
   - [VS Code specific notes](#vs-code-specific-notes)
   - [Other IDEs](#other-ides)
+  - [License and Trademark](#license-and-trademark)
 
 # Kenfigure
 ![License: ODC-BY 1.0](https://img.shields.io/badge/License-ODC--BY%201.0-blue)
-
-## License and Trademark
-
-**Kenfigure™** is provided under the [Open Data Commons Attribution License (ODC-BY 1.0)](https://opendatacommons.org/licenses/by/1-0/).
-
-You are free to use, adapt, and share this schema with proper attribution.
-
-Commercial use of software tools that rely on this schema may require a separate license.  
-Please contact [info@go2software.com](mailto:info@go2software.com) for commercial licensing inquiries.
-
-**Kenfigure™** is an trademark of Go2 Software LLC.  
-Use of the name "Kenfigure" in derivative projects or commercial products is not permitted without permission.
-
-Benchling is a trademark of Benchling, Inc.
 
 # Overview
 *Kenfigure* is a YAML file format specification to define and document Benchling configurations.
@@ -159,3 +145,17 @@ proprietary tools or others.)
 
 ## Other IDEs
 If you use a different IDE, please create a pull request so we can document and applicable notes.
+
+## License and Trademark
+
+**Kenfigure™** is provided under the [Open Data Commons Attribution License (ODC-BY 1.0)](https://opendatacommons.org/licenses/by/1-0/).
+
+You are free to use, adapt, and share this schema with proper attribution.
+
+Commercial use of software tools that rely on this schema may require a separate license.  
+Please contact [info@go2software.com](mailto:info@go2software.com) for commercial licensing inquiries.
+
+**Kenfigure™** is an trademark of Go2 Software LLC.  
+Use of the name "Kenfigure" in derivative projects or commercial products is not permitted without permission.
+
+Benchling is a trademark of Benchling, Inc.

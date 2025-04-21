@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:kbconfig:kbconfig.schema.json",
-  "title": "Benchling configuration",
-  "description": "Specification of a Benchling tenant configuration",
+  "$id": "https://kenfigure.com/jsonschemas/latest/kenfigure.schema.json",
+  "title": "Kenfigure Schema",
+  "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
   "type": "object",
   "properties": {
     "Metadata": {
