@@ -101,8 +101,7 @@ proprietary tools or others.)
   The only exception is that if a field is not required, I omit the "Required" key.
 
 # Limitations
-- Does not handle Benchling Workflows, In Vivo, Lab Automation/Connect, Insights, Bioprocess
-- Must use Benchling Support to set back-end feature switches which are not user settable
+- Does not yet handle Benchling Workflows, In Vivo, Lab Automation/Connect, Insights, Bioprocess
 
 # JSON schema technical notes
 - The JSON schemas files are in the `jsonschemas` directory.
