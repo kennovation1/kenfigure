@@ -7,8 +7,8 @@ See the [README.md](https://github.com/kennovation1/kenfigure/blob/main/README.m
 This is where I should put the main doc.
 
 ## Schema
-- [Kenfigure JSON schema](./jsonschemas/kenfigure.schema.json)
-- Flattened version that doesn't use $refs: [Kenfigure JSON schema flat](./jsonschemas/kenfigure.schema_flat.json)
+- [Kenfigure JSON schema](./jsonschemas/latest/kenfigure.schema.json)
+- Flattened version that doesn't use $refs: [Kenfigure JSON schema flat](./jsonschemas/latest/kenfigure.schema_flat.json)
 
 
 ## Top-level objects
