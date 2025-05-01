@@ -7,7 +7,9 @@ See the [README.md](https://github.com/kennovation1/kenfigure/blob/main/README.m
 This is where I should put the main doc.
 
 ## Schema
-- [Kenfigure JSON schema](./schema/kenfigure.schema.json)
+- [Kenfigure JSON schema](./jsonschemas/kenfigure.schema.json)
+- Flattened version that doesn't use $refs: [Kenfigure JSON schema flat](./jsonschemas/kenfigure.schema_flat.json)
+
 
 ## Top-level objects
 Explain top-level objects and the idea of splitting a single object per file.

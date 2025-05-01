@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "urn:kbconfig:study_schemas.schema.json",
+	"$id": "https://kenfigure.com/jsonschemas/latest/study_schemas.schema.json",
   "title": "Study schemas",
   "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
   "type": "array",
@@ -85,7 +85,7 @@
       },
       "Diagram": {
         "description": "Properties solely used for diagram rendering.",
-        "$ref": "urn:kbconfig:diagram.schema.json"
+        "$ref": "https://kenfigure.com/jsonschemas/latest/diagram.schema.json"
       },
       "Fields": {
         "description": "Metadata fields",

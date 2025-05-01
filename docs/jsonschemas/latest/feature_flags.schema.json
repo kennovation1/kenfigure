@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kenfigure.com/jsonschemas/latest/feature_flags.schema.json",
+  "title": "Feature flags",
+  "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
+  "comment": "Back-end feature flag settings. Must be fetched and changed by Benchling. Use feature_flags.py to convert to/from csv",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": {
+      "type": "object",
+      "required": ["Current", "Default", "Description"],
+      "properties": {
+        "Current": {
+          "type": ["string", "boolean"]
+        },
+        "Default": {
+          "type": ["string", "boolean"]
+        },
+        "Description": {
+          "type": ["string", "boolean"]
+        },
+        "Planned": {
+          "type": ["string", "boolean"],
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

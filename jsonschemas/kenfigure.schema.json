@@ -7,51 +7,51 @@
   "properties": {
     "Metadata": {
       "description": "Metadata that describes the model instance",
-      "$ref": "urn:kbconfig:metadata.schema.json"
+      "$ref": "https://kenfigure.com/jsonschemas/latest/metadata.schema.json"
     },
     "Diagram": {
       "description": "Persistance of diagram properties",
-      "$ref": "urn:kbconfig:fulldiagram.schema.json"
+      "$ref": "https://kenfigure.com/jsonschemas/latest/fulldiagram.schema.json"
     },
     "Dropdowns": {
       "description": "Dropdowns and their values",
-      "$ref": "urn:kbconfig:dropdowns.schema.json"
+      "$ref": "https://kenfigure.com/jsonschemas/latest/dropdowns.schema.json"
     },
     "Entity_schemas": {
       "description": "Entity schemas",
-      "$ref": "urn:kbconfig:entity_schemas.schema.json"
+      "$ref": "https://kenfigure.com/jsonschemas/latest/entity_schemas.schema.json"
     },
     "Fieldset_schemas": {
       "description": "Fieldset schemas",
-      "$ref": "urn:kbconfig:fieldset_schemas.schema.json"
+      "$ref": "https://kenfigure.com/jsonschemas/latest/fieldset_schemas.schema.json"
     },
     "Study_schemas": {
       "description": "Study schemas",
-      "$ref": "urn:kbconfig:study_schemas.schema.json"
+      "$ref": "https://kenfigure.com/jsonschemas/latest/study_schemas.schema.json"
     },
     "Container_schemas": {
       "description": "Container schemas",
-      "$ref": "urn:kbconfig:container_schemas.schema.json"
+      "$ref": "https://kenfigure.com/jsonschemas/latest/container_schemas.schema.json"
     },
     "Box_schemas": {
       "description": "Box schemas",
-      "$ref": "urn:kbconfig:box_schemas.schema.json"
+      "$ref": "https://kenfigure.com/jsonschemas/latest/box_schemas.schema.json"
     },
     "Plate_schemas": {
       "description": "Plate schemas",
-      "$ref": "urn:kbconfig:plate_schemas.schema.json"
+      "$ref": "https://kenfigure.com/jsonschemas/latest/plate_schemas.schema.json"
     },
     "Location_schemas": {
       "description": "Location schemas",
-      "$ref": "urn:kbconfig:location_schemas.schema.json"
+      "$ref": "https://kenfigure.com/jsonschemas/latest/location_schemas.schema.json"
     },
     "Result_schemas": {
       "description": "Result schemas",
-      "$ref": "urn:kbconfig:result_schemas.schema.json"
+      "$ref": "https://kenfigure.com/jsonschemas/latest/result_schemas.schema.json"
     },
     "Feature_flags": {
       "description": "Feature flags",
-      "$ref": "urn:kbconfig:feature_flags.schema.json"
+      "$ref": "https://kenfigure.com/jsonschemas/latest/feature_flags.schema.json"
     }
   }
 }

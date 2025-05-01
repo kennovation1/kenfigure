@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://kenfigure.com/jsonschemas/latest/container_schemas.schema.json",
+  "title": "Container schemas",
+  "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
+  "type": "object"
+}

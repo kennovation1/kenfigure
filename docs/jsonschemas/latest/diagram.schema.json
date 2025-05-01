@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kenfigure.com/jsonschemas/latest/diagram.schema.json",
+  "title": "Diagram properties",
+  "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
+  "comment": "Properties solely used for diagram rendering.",
+  "type": "object",
+  "properties": {
+    "Group": {
+      "description": "The layout group name.",
+      "type": "string"
+    },
+    "Color": {
+      "description": "Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.",
+      "type": "string"
+    },
+    "X": {
+      "description": "X location coordinate.",
+      "type": "integer"
+    },
+    "Y": {
+      "description": "Y location coordinate.",
+      "type": "integer"
+    }
+  }
+}
