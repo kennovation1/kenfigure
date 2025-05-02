@@ -118,13 +118,16 @@ proprietary tools or others.)
 - For VSCode, install the YAML plugin from Red Hat and add the following in
   `.vscode/settings.json` to associate the schema file with YAML files in the listed locations.
 ```json
-"yaml.schemas": {
-  "/path_to_flat_json_schema_file/kenfigure_flat.schema.json": [
-    "/path_to_dir_with_kenfigure_format_configuration_files/*.yaml",
-    "/path_to_another_dir_with_kenfigure_format_configuration_files/*.yaml"
-  ]
+{
+	"yaml.schemas": {
+		"https://kenfigure.com/jsonschemas/latest/kenfigure.schema.json": [
+			"*.yaml",
+			"**/*.yaml"
+		]
+	}
 }
 ```
+  You may want to narrow the matching files (`"*.yaml"` and `"**/*.yaml"`) by adding a more specific path prefix for your environment.
 - Once the above is configured, use `CTRL` + `space` for typing completion. You can also hover to get various hints.
 - GitHub Copilot can also provide excellent typing completions
   - Works especially well if you have your entire environment documented since Copilot learns from your entire context
@@ -135,6 +138,8 @@ proprietary tools or others.)
 
 ## Other IDEs
 If you use a different IDE, please create a pull request so we can document and applicable notes.
+
+Here's some doc for how to configure [PyCharm for YAML editing with a custom schema](https://www.jetbrains.com/help/pycharm/yaml.html#json_schema).
 
 # License and Trademark
 

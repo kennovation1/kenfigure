@@ -9,6 +9,8 @@ This is where I should put the main doc.
 ## Schema
 - [Kenfigure JSON schema](./jsonschemas/latest/kenfigure.schema.json)
 - Flattened version that doesn't use $refs: [Kenfigure JSON schema flat](./jsonschemas/latest/kenfigure.schema_flat.json)
+  - I haven't decided if I need to bother producing flat versions. Please let me know if you can't use the
+    normal version with $refs and need a flat version for some reason (and what that reason is)
 
 
 ## Top-level objects
