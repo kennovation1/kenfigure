@@ -20,6 +20,11 @@ Explain top-level objects and the idea of splitting a single object per file.
 
 ## Style
 
+## Full reference
+See the following link for an experiment using [automatically generated documentation.](./autodoc.md)
+
+This version shows a different style. [This manually generated version](./manualdoc.md) is not complete or correct yet.
+
 ## Dropdowns
 
 ## Entities
