@@ -3,7 +3,7 @@
 ![Version](https://img.shields.io/badge/version-v0.1.0-orange)
 
 # Overview
-*Kenfigure* is a YAML file format specification to define and document Benchling configurations.
+*Kenfigure* is a YAML specification to define and document Benchling configurations.
 
 This approach provides a structured, accurate, reproducible, reviewable, and maintainable definition
 of your Benchling tenant configurations.
