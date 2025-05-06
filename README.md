@@ -13,7 +13,8 @@ and can therefore form the foundation of a top-notch change management process.
 
 *Kenfigure* is highly useful solely as a standalone documentation tool, but I also use it for internal tools I've developed
 to programmatically deploy configurations, extract and document configurations, check against a set of schema quality rules
-and create dynamic ER diagrams.
+and create dynamic ER diagrams. I created the spec for my internal tool use, but am making it publicly available since it
+is highly valuable as a way to document the source-of-truth for Benchling configurations even without leveraging any tools.
 
 Here's a very stripped down example:
 ```yaml
