@@ -1,0 +1,10 @@
+Dropdowns:
+- Name: Conjugate Type
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_EhP94D0N
+  Options:
+  - siRNA - Ab
+  - siRNA - small molecule
+  - ASO - small molecule
+  - ASO - peptide

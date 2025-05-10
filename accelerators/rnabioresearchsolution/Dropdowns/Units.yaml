@@ -1,0 +1,11 @@
+Dropdowns:
+- Name: Units
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_7oXUuD5K
+  Options:
+  - uL
+  - mL
+  - L
+  - um
+  - mm

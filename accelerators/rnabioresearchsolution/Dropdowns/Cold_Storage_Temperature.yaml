@@ -1,0 +1,9 @@
+Dropdowns:
+- Name: Cold Storage Temperature
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_dOdg1C2q
+  Options:
+  - 4C
+  - -20C
+  - -80C

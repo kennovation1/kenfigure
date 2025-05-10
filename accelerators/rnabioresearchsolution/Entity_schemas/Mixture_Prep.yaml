@@ -1,0 +1,59 @@
+Entity_schemas:
+- Name: Mixture Prep
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: MP
+  System name: mixture_prep
+  API ID: ts_SUmFbEqT
+  Containable type: Entity
+  Name template:
+  - Type: Field
+    Definition: Mixture Recipe
+  - Type: Text
+    Definition: '-'
+  - Type: Parent lot number
+    Definition: Mixture Recipe
+  Constraint: []
+  Naming options:
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: mixture
+  Fields:
+  - Name: Mixture Recipe
+    Description: Exported from Benchling
+    Required: true
+    Parent link: true
+    System name: mixture_recipe
+    Type: Entity
+    Definition: Mixture Recipe
+  - Name: Concentration
+    Description: Exported from Benchling
+    System name: concentration
+    Type: Decimal
+  - Name: Concentration Units
+    Description: Exported from Benchling
+    System name: concentration_units
+    Type: Dropdown
+    Definition: Concentration Units
+  - Name: Measured pH
+    Description: Exported from Benchling
+    System name: measured_ph
+    Type: Decimal
+  - Name: Measured Osmolality (mOsm)
+    Description: Exported from Benchling
+    System name: measured_osmolality_mosm
+    Type: Decimal
+  - Name: Measured Conductivity (mS/cm)
+    Description: Exported from Benchling
+    System name: measured_conductivity_mscm
+    Type: Decimal
+  - Name: Date Prepared
+    Description: Exported from Benchling
+    System name: date_prepared
+    Type: Date
+  - Name: Expiration Date
+    Description: Exported from Benchling
+    System name: expiration_date
+    Type: Date

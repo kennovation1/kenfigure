@@ -1,0 +1,34 @@
+Result_schemas:
+- Name: Sequence Validation
+  Description: Exported from Benchling
+  System name: sequence_validation
+  API ID: assaysch_H48WIVF9
+  Fields:
+  - Name: Container
+    Description: Exported from Benchling
+    System name: container
+    Type: Inventory
+  - Name: Sample
+    Description: Exported from Benchling
+    System name: entity
+    Type: Entity
+    Definition: Any Entity
+  - Name: Validation Method
+    Description: Exported from Benchling
+    System name: validation_method
+    Type: Text
+  - Name: Sequence Mismatch Number
+    Description: Exported from Benchling
+    System name: sequence_mismatch_number
+    Type: Integer
+  - Name: Pass/Fail
+    Description: Exported from Benchling
+    Required: true
+    System name: passfail
+    Type: Dropdown
+    Definition: Pass or Fail
+  - Name: Attachment(s)
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: attachments
+    Type: Attachment

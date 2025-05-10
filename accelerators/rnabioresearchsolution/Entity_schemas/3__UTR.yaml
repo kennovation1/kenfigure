@@ -1,0 +1,18 @@
+Entity_schemas:
+- Name: 3' UTR
+  Description: Exported from Benchling
+  Entity type: DNA Sequence
+  Prefix: 3UTR
+  System name: three_prime_utr
+  API ID: ts_SIDbpwin
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - IDS_FROM_NAMES
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item

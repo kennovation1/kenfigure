@@ -1,0 +1,43 @@
+Result_schemas:
+- Name: In Vitro Toxicity Results
+  Description: Exported from Benchling
+  System name: in_vitro_toxicity_results
+  API ID: assaysch_z4XJAeZj
+  Fields:
+  - Name: Container
+    Description: Exported from Benchling
+    System name: container
+    Type: Inventory
+  - Name: Cell Line or Bank
+    Description: Exported from Benchling
+    System name: cell_line_or_bank
+    Type: Entity
+    Definition: Custom Entity
+  - Name: Treatment
+    Description: Exported from Benchling
+    Required: true
+    System name: treatment
+    Type: Entity
+    Definition: Custom Entity
+  - Name: Well Position
+    Description: Exported from Benchling
+    System name: well_position
+    Type: Text
+  - Name: Concentration (ug/mL)
+    Description: Exported from Benchling
+    System name: concentration_ugml
+    Type: Decimal
+  - Name: Dosage Time (hr)
+    Description: Exported from Benchling
+    System name: dosage_time_hr
+    Type: Decimal
+  - Name: Cell Viability (%)
+    Description: Exported from Benchling
+    Required: true
+    System name: cell_viability
+    Type: Decimal
+  - Name: Attachment(s)
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: attachments
+    Type: Attachment

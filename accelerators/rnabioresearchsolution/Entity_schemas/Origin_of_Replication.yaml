@@ -1,0 +1,16 @@
+Entity_schemas:
+- Name: Origin of Replication
+  Description: Exported from Benchling
+  Entity type: DNA Sequence
+  Prefix: ORI
+  System name: origin_of_replication
+  API ID: ts_6guXEnjs
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: sequence

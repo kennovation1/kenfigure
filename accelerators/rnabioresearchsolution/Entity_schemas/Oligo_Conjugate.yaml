@@ -1,0 +1,71 @@
+Entity_schemas:
+- Name: Oligo Conjugate
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: OC
+  System name: oligo_conjugate
+  API ID: ts_uH0Fs4YP
+  Containable type: None
+  Name template:
+  - Type: Field
+    Definition: Oligo Duplex
+  - Type: Separator
+    Definition: '-'
+  - Type: Field
+    Definition: Protein or Antibody
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - NEW_IDS
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Conjugate Type
+    Description: Exported from Benchling
+    System name: conjugate_type
+    Type: Dropdown
+    Definition: Conjugate Type
+  - Name: Oligo Duplex
+    Description: Exported from Benchling
+    System name: oligo_duplex
+    Type: Entity
+    Definition: Oligo Duplex
+  - Name: Oligo
+    Description: Exported from Benchling
+    System name: oligo
+    Type: Entity
+    Definition: Oligo
+  - Name: Protein or Antibody
+    Description: Exported from Benchling
+    System name: protein_or_antibody
+    Type: Entity
+    Definition: Protein or Antibody
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text
+  - Name: Target(s)
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: targets
+    Type: Entity
+    Definition: Any Entity
+    Computed field:
+      Formula name: set_union_file_link
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_3MtyvLjr
+          displayName: Oligo Duplex
+          externalType: field
+          apiIdentifier: tsf_uqlxUDtJ
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_T7SduusS
+            displayName: Target(s)
+            externalType: field
+            apiIdentifier: tsf_JwU3KQSO

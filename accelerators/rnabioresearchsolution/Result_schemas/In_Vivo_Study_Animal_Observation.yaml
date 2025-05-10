@@ -1,0 +1,37 @@
+Result_schemas:
+- Name: In Vivo Study Animal Observation
+  Description: Exported from Benchling
+  System name: in_vivo_study_animal_observation
+  API ID: assaysch_jsywY2nN
+  Fields:
+  - Name: Animal
+    Description: Exported from Benchling
+    Required: true
+    System name: animal
+    Type: Entity
+    Definition: Animal
+  - Name: Variable
+    Description: Exported from Benchling
+    System name: variable
+    Type: Text
+  - Name: Scale
+    Description: Exported from Benchling
+    System name: scale
+    Type: Text
+  - Name: Severity Rating
+    Description: Exported from Benchling
+    System name: severity_rating
+    Type: Text
+  - Name: Comments
+    Description: Exported from Benchling
+    System name: comments
+    Type: Long text
+  - Name: Date Observed
+    Description: Exported from Benchling
+    System name: date_observed
+    Type: Datetime
+  - Name: Benchling In Vivo API ID
+    Description: Exported from Benchling
+    Required: true
+    System name: benchling_in_vivo_api_id
+    Type: Text

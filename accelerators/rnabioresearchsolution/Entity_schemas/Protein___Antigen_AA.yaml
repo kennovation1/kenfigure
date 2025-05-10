@@ -1,0 +1,25 @@
+Entity_schemas:
+- Name: Protein / Antigen AA
+  Description: Exported from Benchling
+  Entity type: AA Sequence
+  Prefix: PRO
+  System name: protein_antigen_aa
+  API ID: ts_y5r1NFoX
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: protein
+  Fields:
+  - Name: Parent Protein / Antigen
+    Description: Exported from Benchling
+    Tool tip: If registering a Protein/Antigen that is a variation of another, the
+      parent Protein / Antigen can be linked here
+    Parent link: true
+    System name: parent_protein_antigen
+    Type: Entity
+    Definition: Protein / Antigen AA

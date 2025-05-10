@@ -1,0 +1,40 @@
+Result_schemas:
+- Name: LNP Characterization
+  Description: Exported from Benchling
+  System name: lnp_characterization
+  API ID: assaysch_EGDLwLmU
+  Fields:
+  - Name: Sample
+    Description: Exported from Benchling
+    Required: true
+    System name: sample
+    Type: Entity
+    Definition: Any Entity
+  - Name: EE (%)
+    Description: Exported from Benchling
+    System name: ee
+    Type: Decimal
+  - Name: Concentration (mg/mL)
+    Description: Exported from Benchling
+    System name: concentration_mgml
+    Type: Decimal
+  - Name: Endotoxin (EU/mL)
+    Description: Exported from Benchling
+    System name: endotoxin_euml
+    Type: Decimal
+  - Name: Z-avg (nm)
+    Description: Exported from Benchling
+    System name: z_avg_nm
+    Type: Decimal
+  - Name: PDI
+    Description: Exported from Benchling
+    System name: pdi
+    Type: Decimal
+  - Name: Zeta Potential (mV)
+    Description: Exported from Benchling
+    System name: zeta_potential_mv
+    Type: Decimal
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text

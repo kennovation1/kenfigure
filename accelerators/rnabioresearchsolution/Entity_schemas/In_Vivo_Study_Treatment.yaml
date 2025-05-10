@@ -1,0 +1,84 @@
+Entity_schemas:
+- Name: In Vivo Study Treatment
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: IVTX
+  System name: in_vivo_study_treatment
+  API ID: ts_iB7FZ14c
+  Containable type: None
+  Name template:
+  - Type: Field
+    Definition: Treatment Name
+  - Type: Text
+    Definition: ' '
+  - Type: Text
+    Definition: ' ('
+  - Type: Field
+    Definition: Dose
+  - Type: Field
+    Definition: Dose Units
+  - Type: Text
+    Definition: )
+  - Type: Text
+    Definition: (
+  - Type: Field
+    Definition: Volume
+  - Type: Field
+    Definition: Volume Units
+  - Type: Text
+    Definition: )
+  - Type: Text
+    Definition: _
+  - Type: Text
+    Definition: IVTX
+  - Type: Registry ID number
+  Constraint:
+  - Benchling In Vivo API ID (DO NOT EDIT)
+  Naming options:
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Treatment Entity
+    Description: Exported from Benchling
+    System name: treatment_entity
+    Type: Entity
+    Definition: Any Entity
+  - Name: Treatment Name
+    Description: Exported from Benchling
+    System name: treatment_name
+    Type: Text
+  - Name: Dosing Method
+    Description: Exported from Benchling
+    System name: dosing_method
+    Type: Text
+  - Name: Dose
+    Description: Exported from Benchling
+    System name: dose
+    Type: Decimal
+  - Name: Dose Units
+    Description: Exported from Benchling
+    System name: dose_units
+    Type: Text
+  - Name: Stock
+    Description: Exported from Benchling
+    System name: stock
+    Type: Decimal
+  - Name: Stock Units
+    Description: Exported from Benchling
+    System name: stock_units
+    Type: Text
+  - Name: Volume
+    Description: Exported from Benchling
+    System name: volume
+    Type: Decimal
+  - Name: Volume Units
+    Description: Exported from Benchling
+    System name: volume_units
+    Type: Text
+  - Name: Benchling In Vivo API ID (DO NOT EDIT)
+    Description: Exported from Benchling
+    System name: benchling_in_vivo_api_id_do_not_edit
+    Type: Text

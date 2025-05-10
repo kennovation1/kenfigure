@@ -1,0 +1,108 @@
+Entity_schemas:
+- Name: LNP Lot
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: LNP
+  System name: lnp_lot
+  API ID: ts_5RVWVdqq
+  Containable type: Entity
+  Name template:
+  - Type: Field
+    Definition: Lipid Mixture Recipe
+  - Type: Separator
+    Definition: '-'
+  - Type: Registry ID number
+  Constraint: []
+  Naming options:
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Lipid Mixture Recipe
+    Description: Exported from Benchling
+    Parent link: true
+    System name: lipid_mixture_recipe
+    Type: Entity
+    Definition: Lipid Mixture Recipe
+  - Name: RNA Lot
+    Description: Exported from Benchling
+    Parent link: true
+    System name: rna_lot
+    Type: Entity
+    Definition: RNA Lot
+  - Name: gRNA Lot
+    Description: Exported from Benchling
+    Tool tip: Optional; for LNP that encapsulates gRNA
+    System name: grna_lot
+    Type: Entity
+    Definition: gRNA Lot
+  - Name: Small Molecule Lot
+    Description: Exported from Benchling
+    Tool tip: Entity Link to Small Molecule Lot can represent a small molecule, peptide,
+      fluorophore or other compound  if any, that is also encapsulated in the LNP.
+    System name: small_molecule_lot
+    Type: Entity
+    Definition: Small Molecule Lot
+  - Name: Mixing Method
+    Description: Exported from Benchling
+    System name: mixing_method
+    Type: Dropdown
+    Definition: LNP Mixing Method
+  - Name: Date
+    Description: Exported from Benchling
+    System name: date
+    Type: Date
+  - Name: Ionizable Lipid Lot
+    Description: Exported from Benchling
+    System name: ionizable_lipid_lot
+    Type: Entity
+    Definition: Lipid Lot
+  - Name: Ionizable Lipid Volume (mL)
+    Description: Exported from Benchling
+    System name: ionizable_lipid_volume_ml
+    Type: Decimal
+  - Name: Helper Lipid Lot
+    Description: Exported from Benchling
+    System name: helper_lipid_lot
+    Type: Entity
+    Definition: Lipid Lot
+  - Name: Helper Lipid Volume (mL)
+    Description: Exported from Benchling
+    System name: helper_lipid_volume_ml
+    Type: Decimal
+  - Name: Stability Lipid Lot
+    Description: Exported from Benchling
+    System name: stability_lipid_lot
+    Type: Entity
+    Definition: Lipid Lot
+  - Name: Stability Lipid Volume (mL)
+    Description: Exported from Benchling
+    System name: stability_lipid_volume_ml
+    Type: Decimal
+  - Name: PEG Lipid Lot
+    Description: Exported from Benchling
+    System name: peg_lipid_lot
+    Type: Entity
+    Definition: Lipid Lot
+  - Name: PEG Lipid Volume (mL)
+    Description: Exported from Benchling
+    System name: peg_lipid_volume_ml
+    Type: Decimal
+  - Name: Concentration (mg/mL)
+    Description: Exported from Benchling
+    System name: concentration_mgml
+    Type: Decimal
+  - Name: Volume (mL)
+    Description: Exported from Benchling
+    System name: volume_ml
+    Type: Decimal
+  - Name: Quantity (mg)
+    Description: Exported from Benchling
+    System name: quantity_mg
+    Type: Decimal
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text

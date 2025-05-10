@@ -1,0 +1,39 @@
+Result_schemas:
+- Name: qPCR
+  Description: Exported from Benchling
+  System name: qpcr
+  API ID: assaysch_lB3bSrDH
+  Fields:
+  - Name: Container
+    Description: Exported from Benchling
+    System name: container
+    Type: Inventory
+  - Name: Sample
+    Description: Exported from Benchling
+    System name: sample
+    Type: Entity
+    Definition: Any Entity
+  - Name: Average dCT
+    Description: Exported from Benchling
+    System name: average_dct
+    Type: Decimal
+  - Name: Housekeeping Gene
+    Description: Exported from Benchling
+    System name: housekeeping_gene
+    Type: Text
+  - Name: Target Gene
+    Description: Exported from Benchling
+    System name: target_gene
+    Type: Text
+  - Name: Date
+    Description: Exported from Benchling
+    System name: date
+    Type: Date
+  - Name: '% mRNA Expression'
+    Description: Exported from Benchling
+    System name: mrna_expression
+    Type: Decimal
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text

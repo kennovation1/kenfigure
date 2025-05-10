@@ -1,0 +1,32 @@
+Result_schemas:
+- Name: EC50
+  Description: Exported from Benchling
+  System name: ec_50
+  API ID: assaysch_qQeObX5O
+  Fields:
+  - Name: Container
+    Description: Exported from Benchling
+    System name: container
+    Type: Inventory
+  - Name: Sample
+    Description: Exported from Benchling
+    System name: sample
+    Type: Entity
+    Definition: Any Entity
+  - Name: Cell Lot
+    Description: Exported from Benchling
+    System name: cell_lot
+    Type: Entity
+    Definition: Primary Cell
+  - Name: EC50
+    Description: Exported from Benchling
+    System name: ec50
+    Type: Decimal
+  - Name: Dose Response Curve
+    Description: Exported from Benchling
+    System name: dose_response_curve
+    Type: Attachment
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text

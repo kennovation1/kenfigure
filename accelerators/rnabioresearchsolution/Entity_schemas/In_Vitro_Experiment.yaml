@@ -1,0 +1,47 @@
+Entity_schemas:
+- Name: In Vitro Experiment
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: IVXP
+  System name: in_vitro_experiment
+  API ID: ts_AoIKHhdc
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Study Objective
+    Description: Exported from Benchling
+    System name: study_objective
+    Type: Text
+  - Name: Primary Cell
+    Description: Exported from Benchling
+    System name: primary_cell
+    Type: Entity
+    Definition: Primary Cell
+  - Name: RNA Lot
+    Description: Exported from Benchling
+    System name: rna_lot
+    Type: Entity
+    Definition: RNA Lot
+  - Name: Dose (mg/mL)
+    Description: Exported from Benchling
+    System name: dose_mgml
+    Type: Decimal
+  - Name: Start Date
+    Description: Exported from Benchling
+    System name: start_date
+    Type: Date
+  - Name: End Date
+    Description: Exported from Benchling
+    System name: end_date
+    Type: Date
+  - Name: Operator
+    Description: Exported from Benchling
+    System name: operator
+    Type: Text

@@ -1,0 +1,118 @@
+Entity_schemas:
+- Name: Reagent Lot
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: RGL
+  System name: reagent_lot
+  API ID: ts_kM29e84o
+  Containable type: Entity
+  Name template:
+  - Type: Field
+    Definition: Reagent
+  - Type: Separator
+    Definition: '-'
+  - Type: Parent lot number
+    Definition: Reagent
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Reagent
+    Description: Exported from Benchling
+    Required: true
+    Parent link: true
+    System name: reagent
+    Type: Entity
+    Definition: Reagent
+  - Name: Lot Number
+    Description: Exported from Benchling
+    System name: lot_number
+    Type: Text
+  - Name: Expiry Date
+    Description: Exported from Benchling
+    System name: expiry_date
+    Type: Date
+  - Name: Comments
+    Description: Exported from Benchling
+    System name: comments
+    Type: Text
+  - Name: Concentration
+    Description: Exported from Benchling
+    System name: concentration
+    Type: Decimal
+  - Name: Concentration Units
+    Description: Exported from Benchling
+    System name: concentration_units
+    Type: Dropdown
+    Definition: Concentration Units
+  - Name: CoA
+    Description: Exported from Benchling
+    System name: coa
+    Type: Attachment
+  - Name: Vendor
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: vendor
+    Type: Dropdown
+    Definition: Vendor
+    Computed field:
+      Formula name: set_union_selector
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_A98yBmvU
+          displayName: Reagent
+          externalType: field
+          apiIdentifier: tsf_a0qvPiAa
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_PqNZ1LPp
+            displayName: Vendor
+            externalType: field
+            apiIdentifier: tsf_HXcQTwTR
+  - Name: Catalog Number
+    Description: Exported from Benchling
+    System name: catalog_number
+    Type: Text
+    Computed field:
+      Formula name: join_string
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_A98yBmvU
+          displayName: Reagent
+          externalType: field
+          apiIdentifier: tsf_a0qvPiAa
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_JBjiEcpN
+            displayName: Catalog Number
+            externalType: field
+            apiIdentifier: tsf_eMtxS3eG
+  - Name: Storage Condition
+    Description: Exported from Benchling
+    System name: storage_condition
+    Type: Text
+    Computed field:
+      Formula name: join_string
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_A98yBmvU
+          displayName: Reagent
+          externalType: field
+          apiIdentifier: tsf_a0qvPiAa
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mtatest-us-west-2:rnabioresearchsolution:tsf_v6DftSub
+            displayName: Storage Condition
+            externalType: field
+            apiIdentifier: tsf_v6DftSub

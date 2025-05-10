@@ -1,0 +1,24 @@
+Entity_schemas:
+- Name: gRNA
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: gRNA
+  System name: grna
+  API ID: ts_UyduBJEe
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - IDS_FROM_NAMES
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: oligo-v2
+  Fields:
+  - Name: Target Gene
+    Description: Exported from Benchling
+    System name: target_gene
+    Type: Entity
+    Definition: Gene

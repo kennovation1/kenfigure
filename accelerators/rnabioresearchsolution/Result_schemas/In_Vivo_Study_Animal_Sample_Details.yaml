@@ -1,0 +1,24 @@
+Result_schemas:
+- Name: In Vivo Study Animal Sample Details
+  Description: Exported from Benchling
+  System name: in_vivo_study_animal_sample_details
+  API ID: assaysch_9jZnULBD
+  Fields:
+  - Name: Animal Sample
+    Description: Exported from Benchling
+    Required: true
+    System name: animal_sample
+    Type: Entity
+    Definition: Animal Sample
+  - Name: Metric Type
+    Description: Exported from Benchling
+    System name: metric_type
+    Type: Text
+  - Name: Metric Value
+    Description: Exported from Benchling
+    System name: metric_value
+    Type: Decimal
+  - Name: Units
+    Description: Exported from Benchling
+    System name: units
+    Type: Text

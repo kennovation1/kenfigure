@@ -1,0 +1,9 @@
+Dropdowns:
+- Name: Fresh or Frozen
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_EnzyZo32
+  Options:
+  - Fresh
+  - Frozen
+  - Unknown

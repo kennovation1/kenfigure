@@ -1,0 +1,15 @@
+Dropdowns:
+- Name: Concentration Units
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_ph3nYtv3
+  Options:
+  - mM
+  - uM
+  - nM
+  - U/uL
+  - mg/uL
+  - ng/uL
+  - ug/uL
+  - X
+  - '%'

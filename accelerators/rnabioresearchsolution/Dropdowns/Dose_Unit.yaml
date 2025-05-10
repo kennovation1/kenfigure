@@ -1,0 +1,8 @@
+Dropdowns:
+- Name: Dose Unit
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_t0sUilDm
+  Options:
+  - mg/kg
+  - mg/m^2

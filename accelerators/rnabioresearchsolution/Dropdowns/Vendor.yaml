@@ -1,0 +1,11 @@
+Dropdowns:
+- Name: Vendor
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_NzJh2gfU
+  Options:
+  - Thermo
+  - Sartorius
+  - Vendor X
+  - Corning
+  - In-House

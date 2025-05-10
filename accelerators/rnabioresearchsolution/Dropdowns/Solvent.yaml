@@ -1,0 +1,14 @@
+Dropdowns:
+- Name: Solvent
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_KygauovG
+  Options:
+  - Butanol
+  - Chloroform
+  - DMSO
+  - Ethanol
+  - Other
+  - PBS
+  - THF
+  - Water

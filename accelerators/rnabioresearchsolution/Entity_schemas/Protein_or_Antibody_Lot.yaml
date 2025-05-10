@@ -1,0 +1,64 @@
+Entity_schemas:
+- Name: Protein or Antibody Lot
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: ABL
+  System name: protein_or_antibody_lot
+  API ID: ts_OYUPTH8R
+  Containable type: Entity
+  Name template:
+  - Type: Field
+    Definition: Protein or Antibody
+  - Type: Separator
+    Definition: '-'
+  - Type: Parent lot number
+    Definition: Protein or Antibody
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Protein or Antibody
+    Description: Exported from Benchling
+    Required: true
+    Parent link: true
+    System name: protein_or_antibody
+    Type: Entity
+    Definition: Protein or Antibody
+  - Name: Date
+    Description: Exported from Benchling
+    System name: date
+    Type: Date
+  - Name: Vendor
+    Description: Exported from Benchling
+    System name: vendor
+    Type: Dropdown
+    Definition: Vendor
+  - Name: Vendor Lot
+    Description: Exported from Benchling
+    System name: vendor_lot
+    Type: Text
+  - Name: Target
+    Description: Exported from Benchling
+    System name: target
+    Type: Text
+    Computed field:
+      Formula name: join_string
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_e820lFiz
+          displayName: Protein or Antibody
+          externalType: field
+          apiIdentifier: tsf_fQg8NLug
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_NXMnMcO1
+            displayName: Target
+            externalType: field
+            apiIdentifier: tsf_tdUdtvPj

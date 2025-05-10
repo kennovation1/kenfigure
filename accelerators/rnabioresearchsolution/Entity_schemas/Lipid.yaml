@@ -1,0 +1,29 @@
+Entity_schemas:
+- Name: Lipid
+  Description: Exported from Benchling
+  Entity type: Molecule
+  Prefix: LIP
+  System name: lipid
+  API ID: ts_FV2aFXvW
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: small-molecule
+  Fields:
+  - Name: MW (g/mol)
+    Description: Exported from Benchling
+    System name: mw_gmol
+    Type: Decimal
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text
+  - Name: CoA
+    Description: Exported from Benchling
+    System name: coa
+    Type: Attachment

@@ -1,0 +1,86 @@
+Entity_schemas:
+- Name: Oligo Conjugate Lot
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: OCL
+  System name: oligo_conjugate_lot
+  API ID: ts_caPOG64B
+  Containable type: Entity
+  Name template:
+  - Type: Field
+    Definition: Parent Oligo Conjugate
+  - Type: Separator
+    Definition: '-'
+  - Type: Text
+    Definition: lot
+  - Type: Parent lot number
+    Definition: Parent Oligo Conjugate
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Parent Oligo Conjugate
+    Description: Exported from Benchling
+    Required: true
+    Parent link: true
+    System name: oligo_conjugate
+    Type: Entity
+    Definition: Oligo Conjugate
+  - Name: Oligo Duplex Lot
+    Description: Exported from Benchling
+    System name: oligo_duplex_lot
+    Type: Entity
+    Definition: Oligo Duplex Lot
+  - Name: Oligo Lot
+    Description: Exported from Benchling
+    System name: oligo_lot
+    Type: Entity
+    Definition: Oligo Lot
+  - Name: Protein or Antibody Lot
+    Description: Exported from Benchling
+    System name: protein_or_antibody_lot
+    Type: Entity
+    Definition: Protein or Antibody Lot
+  - Name: Date
+    Description: Exported from Benchling
+    System name: date
+    Type: Date
+  - Name: Concentration (mg/mL)
+    Description: Exported from Benchling
+    System name: concentration_mgml
+    Type: Decimal
+  - Name: Volume (mL)
+    Description: Exported from Benchling
+    System name: volume_ml
+    Type: Decimal
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text
+  - Name: Target(s)
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: targets
+    Type: Entity
+    Definition: Any Entity
+    Computed field:
+      Formula name: set_union_file_link
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_rvKTPw3p
+          displayName: Parent Oligo Conjugate
+          externalType: field
+          apiIdentifier: tsf_07gnI7p8
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_QBQ5uLxD
+            displayName: Target(s)
+            externalType: field
+            apiIdentifier: tsf_NntEeGrf

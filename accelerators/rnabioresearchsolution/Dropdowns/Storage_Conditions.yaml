@@ -1,0 +1,10 @@
+Dropdowns:
+- Name: Storage Conditions
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_p6LmrIPd
+  Options:
+  - RT
+  - 4C
+  - -20C
+  - -80C

@@ -1,0 +1,10 @@
+Dropdowns:
+- Name: Route of Administration
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_QNpsbBwT
+  Options:
+  - IV
+  - IM
+  - Oral
+  - Other

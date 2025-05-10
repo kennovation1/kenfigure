@@ -1,0 +1,16 @@
+Entity_schemas:
+- Name: mRNA 3' UTR
+  Description: Exported from Benchling
+  Entity type: RNA Sequence
+  Prefix: RNA3UTR
+  System name: mrna_3_utr
+  API ID: ts_uRp1d5hY
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: rna_sequence

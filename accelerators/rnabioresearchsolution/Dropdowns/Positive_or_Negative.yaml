@@ -1,0 +1,9 @@
+Dropdowns:
+- Name: Positive or Negative
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_9mvFpDGf
+  Options:
+  - Positive
+  - Negative
+  - Unknown

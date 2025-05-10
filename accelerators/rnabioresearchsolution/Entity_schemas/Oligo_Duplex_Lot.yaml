@@ -1,0 +1,165 @@
+Entity_schemas:
+- Name: Oligo Duplex Lot
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: ODL
+  System name: oligo_duplex_lot
+  API ID: ts_Nef5WYtE
+  Containable type: Entity
+  Name template:
+  - Type: Field
+    Definition: Oligo Duplex
+  - Type: Separator
+    Definition: '-'
+  - Type: Text
+    Definition: lot
+  - Type: Parent lot number
+    Definition: Oligo Duplex
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Oligo Duplex
+    Description: Exported from Benchling
+    Required: true
+    Parent link: true
+    System name: oligo_duplex
+    Type: Entity
+    Definition: Oligo Duplex
+  - Name: Sense Strand Lot
+    Description: Exported from Benchling
+    System name: sense_strand_lot
+    Type: Entity
+    Definition: Oligo Lot
+  - Name: Sense Strand 5' Terminal End Lot
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: sense_strand_5_terminal_end_lot
+    Type: Entity
+    Definition: Small Molecule Lot
+    Computed field:
+      Formula name: set_union_file_link
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_6wnPZkVf
+          displayName: Sense Strand Lot
+          externalType: field
+          apiIdentifier: tsf_IjjtDOlm
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_VdHf27NS
+            displayName: 5' Terminal End Lot
+            externalType: field
+            apiIdentifier: tsf_jutHFA2m
+  - Name: Sense Strand 3' Terminal End Lot
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: sense_strand_3_terminal_end_lot
+    Type: Entity
+    Definition: Small Molecule Lot
+    Computed field:
+      Formula name: set_union_file_link
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_6wnPZkVf
+          displayName: Sense Strand Lot
+          externalType: field
+          apiIdentifier: tsf_IjjtDOlm
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_eUibrZK4
+            displayName: 3' Terminal End Lot
+            externalType: field
+            apiIdentifier: tsf_fQJBIMQK
+  - Name: Antisense Strand Lot
+    Description: Exported from Benchling
+    System name: antisense_strand_lot
+    Type: Entity
+    Definition: Oligo Lot
+  - Name: Antisense Strand 5' Terminal End Lot
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: antisense_strand_5_terminal_end_lot
+    Type: Entity
+    Definition: Small Molecule Lot
+    Computed field:
+      Formula name: set_union_file_link
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_yLbJp2Y7
+          displayName: Antisense Strand Lot
+          externalType: field
+          apiIdentifier: tsf_eNWuHSCm
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_VdHf27NS
+            displayName: 5' Terminal End Lot
+            externalType: field
+            apiIdentifier: tsf_jutHFA2m
+  - Name: Antisense Strand 3' Terminal End Lot
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: antisense_strand_3_terminal_end_lot
+    Type: Entity
+    Definition: Small Molecule Lot
+    Computed field:
+      Formula name: set_union_file_link
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_yLbJp2Y7
+          displayName: Antisense Strand Lot
+          externalType: field
+          apiIdentifier: tsf_eNWuHSCm
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_eUibrZK4
+            displayName: 3' Terminal End Lot
+            externalType: field
+            apiIdentifier: tsf_fQJBIMQK
+  - Name: Concentration (mg/mL)
+    Description: Exported from Benchling
+    System name: concentration_mgml
+    Type: Decimal
+  - Name: Volume (mL)
+    Description: Exported from Benchling
+    System name: volume_ml
+    Type: Decimal
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text
+  - Name: Target
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: target
+    Type: Entity
+    Definition: Any Entity
+    Computed field:
+      Formula name: set_union_file_link
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_OtDeJ4VF
+          displayName: Oligo Duplex
+          externalType: field
+          apiIdentifier: tsf_I55Rzk5H
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_T7SduusS
+            displayName: Target(s)
+            externalType: field
+            apiIdentifier: tsf_JwU3KQSO

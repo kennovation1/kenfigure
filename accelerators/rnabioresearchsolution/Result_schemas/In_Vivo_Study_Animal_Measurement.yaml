@@ -1,0 +1,46 @@
+Result_schemas:
+- Name: In Vivo Study Animal Measurement
+  Description: Exported from Benchling
+  System name: in_vivo_study_animal_measurement
+  API ID: assaysch_V5GVPgTw
+  Fields:
+  - Name: Animal
+    Description: Exported from Benchling
+    Required: true
+    System name: animal
+    Type: Entity
+    Definition: Animal
+  - Name: Variable
+    Description: Exported from Benchling
+    System name: variable
+    Type: Text
+  - Name: Raw Value
+    Description: Exported from Benchling
+    System name: raw_value
+    Type: Decimal
+  - Name: Rounded Value
+    Description: Exported from Benchling
+    System name: rounded_value
+    Type: Decimal
+  - Name: Unit
+    Description: Exported from Benchling
+    System name: unit
+    Type: Text
+  - Name: Date Measured
+    Description: Exported from Benchling
+    System name: date_measured
+    Type: Date
+  - Name: Exclusion Status
+    Description: Exported from Benchling
+    System name: exclusion_status
+    Type: Text
+  - Name: Benchling In Vivo API ID
+    Description: Exported from Benchling
+    Required: true
+    System name: benchling_in_vivo_api_id
+    Type: Text
+  - Name: Measurement ID
+    Description: Exported from Benchling
+    Required: true
+    System name: measurement_id
+    Type: Text

@@ -1,0 +1,43 @@
+Entity_schemas:
+- Name: RNA Lot
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: RL
+  System name: rna_lot
+  API ID: ts_wNXwNM5s
+  Containable type: Entity
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Plasmid Prep
+    Description: Exported from Benchling
+    Parent link: true
+    System name: plasmid_prep
+    Type: Entity
+    Definition: Plasmid Prep
+  - Name: Date
+    Description: Exported from Benchling
+    System name: date
+    Type: Date
+  - Name: Concentration (mg/mL)
+    Description: Exported from Benchling
+    System name: concentration_mgml
+    Type: Decimal
+  - Name: Volume (mL)
+    Description: Exported from Benchling
+    System name: volume_ml
+    Type: Decimal
+  - Name: Quantity (mg)
+    Description: Exported from Benchling
+    System name: quantity_mg
+    Type: Decimal
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text

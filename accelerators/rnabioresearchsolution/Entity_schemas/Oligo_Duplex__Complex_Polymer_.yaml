@@ -1,0 +1,103 @@
+Entity_schemas:
+- Name: Oligo Duplex (Complex Polymer)
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: OCD-CP
+  System name: oligo_duplex_complex_polymer
+  API ID: ts_w59aKczU
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - IDS_FROM_NAMES
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Oligo (Forward)
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: oligo_forward
+    Type: Entity
+    Definition: Oligo
+    Computed field:
+      Formula name: complex_polymer_component_link
+      Arguments:
+      - name: complex_polymer_input
+        property:
+          type: COMPLEX_POLYMER_WITH_ENTITY_ASSOCIATIONS
+      - name: complex_polymer_type
+        property:
+          type: LITERAL
+        literalValue: OLIGO_DUPLEX
+      - name: component_schema_or_interface_id
+        property:
+          type: LITERAL
+        literalValue: ts_TV3IF28E
+      - name: config_key
+        property:
+          type: LITERAL
+        literalValue: oligo_duplex_forward_strand
+      - name: strand
+        property:
+          type: LITERAL
+        literalValue: FORWARD
+  - Name: Oligo (Reverse)
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: oligo_reverse
+    Type: Entity
+    Definition: Oligo
+    Computed field:
+      Formula name: complex_polymer_component_link
+      Arguments:
+      - name: complex_polymer_input
+        property:
+          type: COMPLEX_POLYMER_WITH_ENTITY_ASSOCIATIONS
+      - name: complex_polymer_type
+        property:
+          type: LITERAL
+        literalValue: OLIGO_DUPLEX
+      - name: component_schema_or_interface_id
+        property:
+          type: LITERAL
+        literalValue: ts_TV3IF28E
+      - name: config_key
+        property:
+          type: LITERAL
+        literalValue: oligo_duplex_reverse_strand
+      - name: strand
+        property:
+          type: LITERAL
+        literalValue: REVERSE
+  - Name: Small Molecule
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: small_molecule
+    Type: Entity
+    Definition: Small Molecule
+    Computed field:
+      Formula name: complex_polymer_component_link
+      Arguments:
+      - name: complex_polymer_input
+        property:
+          type: COMPLEX_POLYMER_WITH_ENTITY_ASSOCIATIONS
+      - name: complex_polymer_type
+        property:
+          type: LITERAL
+        literalValue: OLIGO_DUPLEX
+      - name: component_schema_or_interface_id
+        property:
+          type: LITERAL
+        literalValue: ts_z6k3lLT0
+      - name: config_key
+        property:
+          type: LITERAL
+        literalValue: nucleotide_sequence_conjugate_conjugates
+      - name: strand
+        property:
+          type: LITERAL
+        literalValue: ''

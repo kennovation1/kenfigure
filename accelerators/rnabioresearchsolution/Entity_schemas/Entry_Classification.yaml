@@ -1,0 +1,43 @@
+Entity_schemas:
+- Name: Entry Classification
+  Description: Exported from Benchling
+  Entity type: Entry
+  Prefix: ENTRY
+  System name: entry_classification
+  API ID: ts_YuLSf1xL
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - IDS_FROM_NAMES
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: entry
+  Fields:
+  - Name: Template ID
+    Description: Exported from Benchling
+    System name: template_id
+    Type: Text
+  - Name: Template Version
+    Description: Exported from Benchling
+    System name: template_version
+    Type: Text
+  - Name: Template Group
+    Description: Exported from Benchling
+    System name: template_group
+    Type: Text
+  - Name: Template Author
+    Description: Exported from Benchling
+    System name: template_author
+    Type: Text
+  - Name: Approval
+    Description: Exported from Benchling
+    System name: approval
+    Type: Text
+  - Name: Revision Date
+    Description: Exported from Benchling
+    System name: revision_date
+    Type: Date

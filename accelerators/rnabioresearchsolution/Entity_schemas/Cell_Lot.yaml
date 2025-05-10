@@ -1,0 +1,83 @@
+Entity_schemas:
+- Name: Cell Lot
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: CLL
+  System name: cell_lot
+  API ID: ts_dhP45qZp
+  Containable type: Entity
+  Name template:
+  - Type: Field
+    Definition: Cell Line
+  - Type: Separator
+    Definition: '-'
+  - Type: Parent lot number
+    Definition: Cell Line
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Cell Line
+    Description: Exported from Benchling
+    Parent link: true
+    System name: cell_line
+    Type: Entity
+    Definition: Cell Line
+  - Name: Previous Cell Lot
+    Description: Exported from Benchling
+    Parent link: true
+    System name: previous_cell_lot
+    Type: Entity
+    Definition: Cell Lot
+  - Name: Lot Number
+    Description: Exported from Benchling
+    System name: lot_number
+    Type: Text
+  - Name: Date Frozen
+    Description: Exported from Benchling
+    System name: date_frozen
+    Type: Date
+  - Name: Passage Number
+    Description: Exported from Benchling
+    System name: passage_number
+    Type: Text
+  - Name: Mycoplasma QC
+    Description: Exported from Benchling
+    System name: mycoplasma_qc
+    Type: Dropdown
+    Definition: Positive or Negative
+  - Name: CoA
+    Description: Exported from Benchling
+    System name: coa
+    Type: Attachment
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text
+  - Name: Vendor
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: vendor
+    Type: Dropdown
+    Definition: Vendor
+    Computed field:
+      Formula name: set_union_selector
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_JJillX2i
+          displayName: Cell Line
+          externalType: field
+          apiIdentifier: tsf_923PVxdc
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_h860iDqk
+            displayName: Vendor
+            externalType: field
+            apiIdentifier: tsf_5cLqKImz

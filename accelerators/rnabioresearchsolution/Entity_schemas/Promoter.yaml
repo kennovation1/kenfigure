@@ -1,0 +1,16 @@
+Entity_schemas:
+- Name: Promoter
+  Description: Exported from Benchling
+  Entity type: DNA Sequence
+  Prefix: PRM
+  System name: promoter
+  API ID: ts_bQpgQ7SF
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: sequence

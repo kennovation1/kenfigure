@@ -1,0 +1,88 @@
+Entity_schemas:
+- Name: Lipid Lot
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: LL
+  System name: lipid_lot
+  API ID: ts_kKnVkF1w
+  Containable type: Entity
+  Name template:
+  - Type: Field
+    Definition: Lipid
+  - Type: Separator
+    Definition: '-'
+  - Type: Text
+    Definition: lot
+  - Type: Parent lot number
+    Definition: Lipid
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Lipid
+    Description: Exported from Benchling
+    Required: true
+    Parent link: true
+    System name: lipid
+    Type: Entity
+    Definition: Lipid
+  - Name: Date Solubilized
+    Description: Exported from Benchling
+    System name: date_solubilized
+    Type: Date
+  - Name: Vendor
+    Description: Exported from Benchling
+    System name: vendor
+    Type: Dropdown
+    Definition: Vendor
+  - Name: Lot Number
+    Description: Exported from Benchling
+    System name: lot
+    Type: Text
+  - Name: Storage Conditions
+    Description: Exported from Benchling
+    System name: storage_conditions
+    Type: Dropdown
+    Definition: Storage Conditions
+  - Name: Solvent
+    Description: Exported from Benchling
+    System name: solvent
+    Type: Dropdown
+    Definition: Solvent
+  - Name: Concentration (mM)
+    Description: Exported from Benchling
+    System name: concentration_mm
+    Type: Decimal
+  - Name: Mass (mg)
+    Description: Exported from Benchling
+    System name: mass_mg
+    Type: Decimal
+  - Name: Volume (mL)
+    Description: Exported from Benchling
+    System name: volume_ml
+    Type: Decimal
+  - Name: MW (g/mol)
+    Description: Exported from Benchling
+    System name: mw_gmol
+    Type: Decimal
+    Computed field:
+      Formula name: sum_floats
+      Arguments:
+      - name: numbers
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_4PFwsprq
+          displayName: Lipid
+          externalType: field
+          apiIdentifier: tsf_zA3n3biA
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_ymjk1O5T
+            displayName: MW (g/mol)
+            externalType: field
+            apiIdentifier: tsf_JLQiCNEw

@@ -1,0 +1,37 @@
+Entity_schemas:
+- Name: Gene
+  Description: Exported from Benchling
+  Entity type: DNA Sequence
+  Prefix: GENE
+  System name: gene
+  API ID: ts_SBxVcHeO
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: sequence
+  Fields:
+  - Name: AA Sequence
+    Description: Exported from Benchling
+    System name: aa_sequence
+    Type: ft_translation_link
+  - Name: gRNA
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: grna
+    Type: Entity
+    Definition: gRNA
+    Computed field:
+      Formula name: primers_of_schema
+      Arguments:
+      - name: primer_oligos
+        property:
+          type: PRIMER_OLIGOS
+      - name: schema_id
+        property:
+          type: LITERAL
+        literalValue: ts_T4pRfjRx

@@ -1,0 +1,9 @@
+Dropdowns:
+- Name: Strain
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_G3u6olzP
+  Options:
+  - BALB/c
+  - B6
+  - Other

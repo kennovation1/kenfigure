@@ -1,0 +1,66 @@
+Entity_schemas:
+- Name: Lipid Mixture Recipe
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: LMXR
+  System name: lipid_mixture_recipe
+  API ID: ts_JbPMTkez
+  Containable type: None
+  Name template: []
+  Constraint:
+  - Helper Lipid
+  - Helper Lipid Mol %
+  - Ionizable Lipid
+  - Ionizable Lipid Mol %
+  - N:P Ratio
+  - PEG Lipid
+  - PEG Lipid Mol%
+  - Stability Lipid
+  - Stability Lipid Mol%
+  Naming options:
+  - DELETE_NAMES
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Ionizable Lipid
+    Description: Exported from Benchling
+    System name: ionizable_lipid
+    Type: Entity
+    Definition: Lipid
+  - Name: Ionizable Lipid Mol %
+    Description: Exported from Benchling
+    System name: ionizable_lipid_mol
+    Type: Decimal
+  - Name: Helper Lipid
+    Description: Exported from Benchling
+    System name: helper_lipid
+    Type: Entity
+    Definition: Lipid
+  - Name: Helper Lipid Mol %
+    Description: Exported from Benchling
+    System name: helper_lipid_mol
+    Type: Decimal
+  - Name: Stability Lipid
+    Description: Exported from Benchling
+    System name: stability_lipid
+    Type: Entity
+    Definition: Lipid
+  - Name: Stability Lipid Mol%
+    Description: Exported from Benchling
+    System name: stability_lipid_mol
+    Type: Decimal
+  - Name: PEG Lipid
+    Description: Exported from Benchling
+    System name: peg
+    Type: Entity
+    Definition: Lipid
+  - Name: PEG Lipid Mol%
+    Description: Exported from Benchling
+    System name: peg_mol
+    Type: Decimal
+  - Name: N:P Ratio
+    Description: Exported from Benchling
+    System name: ilp_ratio
+    Type: Decimal

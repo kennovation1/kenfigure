@@ -1,0 +1,50 @@
+Entity_schemas:
+- Name: Cell Line
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: CL
+  System name: cell_line
+  API ID: ts_7bS0wAw9
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Parent Cell Lot
+    Description: Exported from Benchling
+    Parent link: true
+    System name: parent_cell_lot
+    Type: Entity
+    Definition: Cell Lot
+  - Name: Cell Type
+    Description: Exported from Benchling
+    System name: cell_type
+    Type: Dropdown
+    Definition: Cell Type
+  - Name: Species
+    Description: Exported from Benchling
+    System name: species
+    Type: Dropdown
+    Definition: Species
+  - Name: Target
+    Description: Exported from Benchling
+    System name: target
+    Type: Text
+  - Name: Vendor
+    Description: Exported from Benchling
+    System name: vendor
+    Type: Dropdown
+    Definition: Vendor
+  - Name: Catalog Number
+    Description: Exported from Benchling
+    System name: catalog_number
+    Type: Text
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text

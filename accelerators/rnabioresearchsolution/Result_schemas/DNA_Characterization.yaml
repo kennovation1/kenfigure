@@ -1,0 +1,57 @@
+Result_schemas:
+- Name: DNA Characterization
+  Description: Exported from Benchling
+  System name: dna_characterization
+  API ID: assaysch_Tza2C7l6
+  Fields:
+  - Name: Plasmid Prep
+    Description: Exported from Benchling
+    Required: true
+    System name: plasmid_prep
+    Type: Entity
+    Definition: Any Entity
+  - Name: Endotoxin (EU/mL)
+    Description: Exported from Benchling
+    System name: endotoxin_euml
+    Type: Decimal
+  - Name: Appearance
+    Description: Exported from Benchling
+    System name: appearance
+    Type: Text
+  - Name: RNAse Activity
+    Description: Exported from Benchling
+    System name: rnase_activity
+    Type: Dropdown
+    Definition: Pass or Fail
+  - Name: '% Supercoiled'
+    Description: Exported from Benchling
+    System name: supercoiled
+    Type: Decimal
+  - Name: '% Linear'
+    Description: Exported from Benchling
+    System name: linear
+    Type: Decimal
+  - Name: Residual Host DNA
+    Description: Exported from Benchling
+    System name: residual_host_dna
+    Type: Text
+  - Name: Residual Host Cell Protein
+    Description: Exported from Benchling
+    System name: residual_host_cell_protein
+    Type: Text
+  - Name: pH
+    Description: Exported from Benchling
+    System name: ph
+    Type: Decimal
+  - Name: Bioburden
+    Description: Exported from Benchling
+    System name: bioburden
+    Type: Text
+  - Name: Sequence Mismatch Number
+    Description: Exported from Benchling
+    System name: sequence_mismatch_number
+    Type: Decimal
+  - Name: Sequence Verification
+    Description: Exported from Benchling
+    System name: sequence_verification
+    Type: Attachment

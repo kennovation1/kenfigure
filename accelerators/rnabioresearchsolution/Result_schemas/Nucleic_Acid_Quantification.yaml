@@ -1,0 +1,37 @@
+Result_schemas:
+- Name: Nucleic Acid Quantification
+  Description: Exported from Benchling
+  System name: nucleic_acid_quantification
+  API ID: assaysch_mTiTPKWW
+  Fields:
+  - Name: Container
+    Description: Exported from Benchling
+    System name: container
+    Type: Inventory
+  - Name: Sample
+    Description: Exported from Benchling
+    System name: sample
+    Type: Entity
+    Definition: Any Entity
+  - Name: Concentration (ng/uL)
+    Description: Exported from Benchling
+    Required: true
+    System name: concentration_ngul
+    Type: Decimal
+  - Name: 260/280 Ratio
+    Description: Exported from Benchling
+    System name: _260280_ratio
+    Type: Decimal
+  - Name: 260/230 Ratio
+    Description: Exported from Benchling
+    System name: _260230_ratio
+    Type: Decimal
+  - Name: Attachment(s)
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: attachments
+    Type: Attachment
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text

@@ -1,0 +1,23 @@
+Result_schemas:
+- Name: Ribogreen
+  Description: Exported from Benchling
+  System name: ribogreen
+  API ID: assaysch_22DapjBs
+  Fields:
+  - Name: Container
+    Description: Exported from Benchling
+    System name: container
+    Type: Inventory
+  - Name: Sample
+    Description: Exported from Benchling
+    System name: sample
+    Type: Entity
+    Definition: Any Entity
+  - Name: EE (%)
+    Description: Exported from Benchling
+    System name: ee
+    Type: Decimal
+  - Name: Concentration (ug/mL)
+    Description: Exported from Benchling
+    System name: concentration_ugml
+    Type: Decimal

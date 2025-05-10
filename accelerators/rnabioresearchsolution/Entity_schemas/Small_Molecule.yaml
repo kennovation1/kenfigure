@@ -1,0 +1,62 @@
+Entity_schemas:
+- Name: Small Molecule
+  Description: Exported from Benchling
+  Entity type: Molecule
+  Prefix: SM
+  System name: small_molecule
+  API ID: ts_z6k3lLT0
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: small-molecule
+  Fields:
+  - Name: Parent Molecule
+    Description: Exported from Benchling
+    Parent link: true
+    System name: parent_molecule
+    Type: Entity
+    Definition: Small Molecule
+  - Name: Functional Group Type
+    Description: Exported from Benchling
+    System name: functional_group_type
+    Type: Dropdown
+    Definition: Functional Group Type
+  - Name: Target
+    Description: Exported from Benchling
+    System name: target
+    Type: Entity
+    Definition: Any Entity
+  - Name: Extinction Coefficient
+    Description: Exported from Benchling
+    System name: extinction_coefficient
+    Type: Decimal
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text
+  - Name: Canonical SMILES
+    Description: Exported from Benchling
+    System name: canonical_smiles
+    Type: Text
+    Computed field:
+      Formula name: canonical_smiles
+      Arguments:
+      - name: chemical_structure
+        property:
+          type: CHEMICAL_STRUCTURE
+  - Name: Molecular Weight
+    Description: Exported from Benchling
+    System name: molecular_weight
+    Type: Decimal
+    Computed field:
+      Formula name: molecule_molecular_weight
+      Arguments:
+      - name: chemical_structure
+        property:
+          type: CHEMICAL_STRUCTURE

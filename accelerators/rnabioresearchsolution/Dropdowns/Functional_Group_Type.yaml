@@ -1,0 +1,11 @@
+Dropdowns:
+- Name: Functional Group Type
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_LLSoniYp
+  Options:
+  - Phosphoramidite
+  - Maleimide
+  - Azide
+  - Resin
+  - Other

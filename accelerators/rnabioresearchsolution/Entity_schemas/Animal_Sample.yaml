@@ -1,0 +1,73 @@
+Entity_schemas:
+- Name: Animal Sample
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: ANS
+  System name: animal_sample
+  API ID: ts_X1UIqxkx
+  Containable type: Entity
+  Name template:
+  - Type: Field
+    Definition: Benchling In Vivo Animal Sample ID
+  Constraint:
+  - Benchling In Vivo API ID (DO NOT EDIT)
+  Naming options:
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Animal
+    Description: Exported from Benchling
+    Required: true
+    Parent link: true
+    System name: animal
+    Type: Entity
+    Definition: Animal
+  - Name: Tissue Type
+    Description: Exported from Benchling
+    System name: tissue_type
+    Type: Text
+  - Name: Comment
+    Description: Exported from Benchling
+    System name: comment
+    Type: Text
+  - Name: Date Collected
+    Description: Exported from Benchling
+    System name: date_collected
+    Type: Date
+  - Name: Benchling In Vivo Animal Sample ID
+    Description: Exported from Benchling
+    System name: benchling_in_vivo_animal_sample_id
+    Type: Text
+  - Name: In Vivo Study
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: in_vivo_study
+    Type: Entity
+    Definition: In Vivo Study
+    Computed field:
+      Formula name: set_union_file_link
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_seyqbH9Y
+          displayName: Animal
+          externalType: field
+          apiIdentifier: tsf_2QwaBAGn
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_2rzNBulp
+            displayName: In Vivo Study
+            externalType: field
+            apiIdentifier: tsf_FPFfeC6a
+  - Name: Benchling In Vivo Hyperlink
+    Description: Exported from Benchling
+    System name: benchling_in_vivo_hyperlink
+    Type: Text
+  - Name: Benchling In Vivo API ID (DO NOT EDIT)
+    Description: Exported from Benchling
+    System name: benchling_in_vivo_api_id_do_not_edit
+    Type: Text

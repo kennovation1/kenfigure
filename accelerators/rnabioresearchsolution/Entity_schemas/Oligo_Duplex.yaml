@@ -1,0 +1,156 @@
+Entity_schemas:
+- Name: Oligo Duplex
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: OD
+  System name: oligo_duplex
+  API ID: ts_QVZFMnHW
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - IDS_FROM_NAMES
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Sense Strand
+    Description: Exported from Benchling
+    System name: sense_strand
+    Type: Entity
+    Definition: Oligo
+  - Name: Antisense Strand
+    Description: Exported from Benchling
+    System name: antisense_strand
+    Type: Entity
+    Definition: Oligo
+  - Name: Sense Strand 5' Terminal End
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: sense_strand_5_terminal_end
+    Type: Entity
+    Definition: Small Molecule
+    Computed field:
+      Formula name: set_union_file_link
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_tZTpPjH7
+          displayName: Sense Strand
+          externalType: field
+          apiIdentifier: tsf_ekHbeXjj
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_xV7XWrvM
+          displayName: Parent Oligo
+          externalType: field
+          apiIdentifier: tsf_F7rRksnF
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_crYhCajr
+            displayName: 5' Terminal End
+            externalType: field
+            apiIdentifier: tsf_oDiwKcKq
+  - Name: Sense Strand 3' Terminal End
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: sense_strand_3_terminal_end
+    Type: Entity
+    Definition: Small Molecule
+    Computed field:
+      Formula name: set_union_file_link
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_tZTpPjH7
+          displayName: Sense Strand
+          externalType: field
+          apiIdentifier: tsf_ekHbeXjj
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_D7SED2tm
+            displayName: 3' Terminal End
+            externalType: field
+            apiIdentifier: tsf_90j82UCA
+  - Name: Antisense Strand 5' Terminal End
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: antisense_strand_5_terminal_end
+    Type: Entity
+    Definition: Small Molecule
+    Computed field:
+      Formula name: set_union_file_link
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_G4Z6yMWe
+          displayName: Antisense Strand
+          externalType: field
+          apiIdentifier: tsf_CZ01vKev
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_crYhCajr
+            displayName: 5' Terminal End
+            externalType: field
+            apiIdentifier: tsf_oDiwKcKq
+  - Name: Antisense Strand 3' Terminal End
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: antisense_strand_3_terminal_end
+    Type: Entity
+    Definition: Small Molecule
+    Computed field:
+      Formula name: set_union_file_link
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_G4Z6yMWe
+          displayName: Antisense Strand
+          externalType: field
+          apiIdentifier: tsf_CZ01vKev
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_D7SED2tm
+            displayName: 3' Terminal End
+            externalType: field
+            apiIdentifier: tsf_90j82UCA
+  - Name: Target(s)
+    Description: Exported from Benchling
+    Multi-select: true
+    System name: targets
+    Type: Entity
+    Definition: Any Entity
+    Computed field:
+      Formula name: set_union_file_link
+      Arguments:
+      - name: val1
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_tZTpPjH7
+          displayName: Sense Strand
+          externalType: field
+          apiIdentifier: tsf_ekHbeXjj
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_zabEeS0t
+            displayName: Target
+            externalType: field
+            apiIdentifier: tsf_S20wh2fs
+      - name: val2
+        fieldReferencePath:
+        - provenanceUri: mta-us-west-2:rnasolution:tsf_G4Z6yMWe
+          displayName: Antisense Strand
+          externalType: field
+          apiIdentifier: tsf_CZ01vKev
+        property:
+          type: FIELD
+          fieldReference:
+            provenanceUri: mta-us-west-2:rnasolution:tsf_zabEeS0t
+            displayName: Target
+            externalType: field
+            apiIdentifier: tsf_S20wh2fs

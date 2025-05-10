@@ -1,0 +1,62 @@
+Entity_schemas:
+- Name: Plasmid
+  Description: Exported from Benchling
+  Entity type: DNA Sequence
+  Prefix: P
+  System name: plasmid
+  API ID: ts_WDCQuQqi
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: sequence
+  Fields:
+  - Name: mRNA Sequence Design
+    Description: Exported from Benchling
+    System name: mrna_sequence_design
+    Type: Transcription
+  - Name: Parent Plasmid
+    Description: Exported from Benchling
+    Parent link: true
+    System name: parent_plasmid
+    Type: Entity
+    Definition: Plasmid
+  - Name: Gene
+    Description: Exported from Benchling
+    System name: gene
+    Type: Part
+    Definition: Gene
+  - Name: 5' UTR
+    Description: Exported from Benchling
+    System name: _5_utr
+    Type: Part
+    Definition: 5' UTR
+  - Name: 3' UTR
+    Description: Exported from Benchling
+    System name: _3_utr
+    Type: Part
+    Definition: 3' UTR
+  - Name: Promoter
+    Description: Exported from Benchling
+    System name: promoter
+    Type: Part
+    Definition: Promoter
+  - Name: Terminator
+    Description: Exported from Benchling
+    System name: terminator
+    Type: Part
+    Definition: Terminator
+  - Name: Antibiotic Resistance
+    Description: Exported from Benchling
+    System name: antibiotic_resistance
+    Type: Part
+    Definition: Antibiotic Resistance
+  - Name: Origin of Replication
+    Description: Exported from Benchling
+    System name: origin_of_replication
+    Type: Part
+    Definition: Origin of Replication

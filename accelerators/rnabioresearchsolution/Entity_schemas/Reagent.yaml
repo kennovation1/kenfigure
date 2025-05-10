@@ -1,0 +1,32 @@
+Entity_schemas:
+- Name: Reagent
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: RG
+  System name: reagent
+  API ID: ts_46iRZlSr
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - IDS_FROM_NAMES
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Vendor
+    Description: Exported from Benchling
+    System name: vendor
+    Type: Dropdown
+    Definition: Vendor
+  - Name: Catalog Number
+    Description: Exported from Benchling
+    System name: catalog_number
+    Type: Text
+  - Name: Storage Condition
+    Description: Exported from Benchling
+    System name: storage_condition
+    Type: Text

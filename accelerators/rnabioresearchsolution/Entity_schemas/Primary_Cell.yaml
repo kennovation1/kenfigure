@@ -1,0 +1,73 @@
+Entity_schemas:
+- Name: Primary Cell
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: PC
+  System name: primary_cell
+  API ID: ts_UGWhPiqA
+  Containable type: Entity
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Vendor
+    Description: Exported from Benchling
+    System name: vendor
+    Type: Dropdown
+    Definition: Vendor
+  - Name: Catalog Number
+    Description: Exported from Benchling
+    System name: catalog_number
+    Type: Text
+  - Name: Lot Number
+    Description: Exported from Benchling
+    System name: lot_number
+    Type: Text
+  - Name: Donor ID
+    Description: Exported from Benchling
+    System name: donor_id
+    Type: Text
+  - Name: Donor Age
+    Description: Exported from Benchling
+    System name: donor_age
+    Type: Integer
+  - Name: Donor Sex
+    Description: Exported from Benchling
+    System name: donor_sex
+    Type: Dropdown
+    Definition: Sex
+  - Name: Passage Number
+    Description: Exported from Benchling
+    System name: passage_number
+    Type: Integer
+  - Name: Source State
+    Description: Exported from Benchling
+    System name: source_state
+    Type: Dropdown
+    Definition: Fresh or Frozen
+  - Name: Date Received
+    Description: Exported from Benchling
+    System name: date_received
+    Type: Date
+  - Name: Date Frozen
+    Description: Exported from Benchling
+    System name: date_frozen
+    Type: Date
+  - Name: Pathogen Status
+    Description: Exported from Benchling
+    System name: pathogen_status
+    Type: Dropdown
+    Definition: Positive or Negative
+  - Name: CoA
+    Description: Exported from Benchling
+    System name: coa
+    Type: Attachment
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text

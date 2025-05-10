@@ -1,0 +1,65 @@
+Entity_schemas:
+- Name: Small Molecule Lot
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: SML
+  System name: small_molecule_lot
+  API ID: ts_ATvTbUmO
+  Containable type: Entity
+  Name template:
+  - Type: Field
+    Definition: Small Molecule
+  - Type: Separator
+    Definition: '-'
+  - Type: Parent lot number
+    Definition: Small Molecule
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Small Molecule
+    Description: Exported from Benchling
+    Required: true
+    Parent link: true
+    System name: small_molecule
+    Type: Entity
+    Definition: Small Molecule
+  - Name: Vendor
+    Description: Exported from Benchling
+    System name: vendor
+    Type: Dropdown
+    Definition: Vendor
+  - Name: Part Number
+    Description: Exported from Benchling
+    System name: part_number
+    Type: Text
+  - Name: Lot Number
+    Description: Exported from Benchling
+    System name: lot_number
+    Type: Text
+  - Name: Date Solubilized
+    Description: Exported from Benchling
+    System name: date_solubilized
+    Type: Date
+  - Name: Solvent
+    Description: Exported from Benchling
+    System name: solvent
+    Type: Dropdown
+    Definition: Solvent
+  - Name: Concentration (mM)
+    Description: Exported from Benchling
+    System name: concentration_mm
+    Type: Decimal
+  - Name: Mass (mg)
+    Description: Exported from Benchling
+    System name: mass_mg
+    Type: Decimal
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text

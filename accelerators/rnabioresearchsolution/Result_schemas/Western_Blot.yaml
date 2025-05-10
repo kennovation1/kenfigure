@@ -1,0 +1,43 @@
+Result_schemas:
+- Name: Western Blot
+  Description: Exported from Benchling
+  System name: western_blot
+  API ID: assaysch_5jn8PoYF
+  Fields:
+  - Name: Container
+    Description: Exported from Benchling
+    System name: container
+    Type: Inventory
+  - Name: Sample
+    Description: Exported from Benchling
+    System name: sample
+    Type: Entity
+    Definition: Any Entity
+  - Name: Date
+    Description: Exported from Benchling
+    System name: date
+    Type: Date
+  - Name: Relative Protein Intensity (Protein / Control)
+    Description: Exported from Benchling
+    System name: relative_protein_intensity_protein_control
+    Type: Decimal
+  - Name: Primary Antibody
+    Description: Exported from Benchling
+    System name: primary_antibody
+    Type: Text
+  - Name: Primary Antibody Concentration
+    Description: Exported from Benchling
+    System name: primary_antibody_concentration
+    Type: Text
+  - Name: Secondary Antibody
+    Description: Exported from Benchling
+    System name: secondary_antibody
+    Type: Text
+  - Name: Secondary Antibody Concentration
+    Description: Exported from Benchling
+    System name: secondary_antibody_concentration
+    Type: Text
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text

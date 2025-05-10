@@ -1,0 +1,42 @@
+Entity_schemas:
+- Name: mRNA Sequence
+  Description: Exported from Benchling
+  Entity type: RNA Sequence
+  Prefix: mRNA
+  System name: mrna_sequence
+  API ID: ts_JP4Vrjod
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: rna_sequence
+  Fields:
+  - Name: mRNA CDS
+    Description: Exported from Benchling
+    System name: mrna_cds
+    Type: Part
+    Definition: mRNA CDS
+  - Name: mRNA 5' UTR
+    Description: Exported from Benchling
+    System name: mrna_5_utr
+    Type: Part
+    Definition: mRNA 5' UTR
+  - Name: mRNA 3' UTR
+    Description: Exported from Benchling
+    System name: mrna_3_utr
+    Type: Part
+    Definition: mRNA 3' UTR
+  - Name: Theoretical Sequence Length
+    Description: Exported from Benchling
+    System name: theoretical_sequence_length
+    Type: Integer
+    Computed field:
+      Formula name: string_length
+      Arguments:
+      - name: val
+        property:
+          type: BASES

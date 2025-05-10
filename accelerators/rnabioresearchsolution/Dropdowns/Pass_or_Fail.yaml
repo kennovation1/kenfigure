@@ -1,0 +1,8 @@
+Dropdowns:
+- Name: Pass or Fail
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_jLoIh950
+  Options:
+  - Pass
+  - Fail

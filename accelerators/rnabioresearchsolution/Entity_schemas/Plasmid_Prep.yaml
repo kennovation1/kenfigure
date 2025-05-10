@@ -1,0 +1,69 @@
+Entity_schemas:
+- Name: Plasmid Prep
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: PP
+  System name: plasmid_prep
+  API ID: ts_JkWSEW6h
+  Containable type: Entity
+  Name template:
+  - Type: Field
+    Definition: Plasmid
+  - Type: Separator
+    Definition: '-'
+  - Type: Parent lot number
+    Definition: Plasmid
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Plasmid
+    Description: Exported from Benchling
+    Required: true
+    Parent link: true
+    System name: plasmid
+    Type: Entity
+    Definition: Plasmid
+  - Name: Supercoiled Plasmid Prep
+    Description: Exported from Benchling
+    Tool tip: This optional field is relevant for linearized plasmids
+    Parent link: true
+    System name: supercoiled_plasmid_prep
+    Type: Entity
+    Definition: Plasmid Prep
+  - Name: Linearized?
+    Description: Exported from Benchling
+    Required: true
+    System name: linearized
+    Type: Dropdown
+    Definition: Yes or No
+  - Name: Quantity (mg)
+    Description: Exported from Benchling
+    System name: quantity_mg
+    Type: Decimal
+  - Name: Concentration (mg/mL)
+    Description: Exported from Benchling
+    System name: concentration_mgml
+    Type: Decimal
+  - Name: Volume (mL)
+    Description: Exported from Benchling
+    System name: volume_ml
+    Type: Decimal
+  - Name: Date Made
+    Description: Exported from Benchling
+    System name: date_made
+    Type: Date
+  - Name: Vendor
+    Description: Exported from Benchling
+    System name: vendor
+    Type: Dropdown
+    Definition: Vendor
+  - Name: Vendor Lot
+    Description: Exported from Benchling
+    System name: vendor_lot
+    Type: Text

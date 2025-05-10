@@ -1,0 +1,99 @@
+Entity_schemas:
+- Name: Oligo
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: OL
+  System name: oligo
+  API ID: ts_TV3IF28E
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: oligo-v2
+  Fields:
+  - Name: Parent Oligo
+    Description: Exported from Benchling
+    Required: true
+    Parent link: true
+    System name: parent_oligo
+    Type: Entity
+    Definition: Oligo
+  - Name: Target
+    Description: Exported from Benchling
+    System name: target
+    Type: Entity
+    Definition: Gene
+  - Name: Strand Type
+    Description: Exported from Benchling
+    System name: strand_type
+    Type: Dropdown
+    Definition: Oligo Strand Type
+  - Name: 5' Terminal End
+    Description: Exported from Benchling
+    System name: _5_terminal_end
+    Type: Entity
+    Definition: Small Molecule
+  - Name: 3' Terminal End
+    Description: Exported from Benchling
+    System name: _3_terminal_end
+    Type: Entity
+    Definition: Small Molecule
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text
+  - Name: Modification-Aware Molecular Weight
+    Description: Exported from Benchling
+    System name: modification_aware_molecular_weight
+    Type: Decimal
+    Computed field:
+      Formula name: mod_aware_molecular_weight
+      Arguments:
+      - name: bioentity
+        property:
+          type: BASES_WITH_MODS_AND_MONOMER_MW
+  - Name: HELM String
+    Description: Exported from Benchling
+    System name: helm_string
+    Type: Text
+    Computed field:
+      Formula name: simple_polymer_helm
+      Arguments:
+      - name: bioentity
+        property:
+          type: BASES_WITH_MODS
+  - Name: GC %
+    Description: Exported from Benchling
+    System name: gc
+    Type: Decimal
+    Computed field:
+      Formula name: dna_sequence_gc_percent
+      Arguments:
+      - name: dna_sequence
+        property:
+          type: BASES
+  - Name: Length
+    Description: Exported from Benchling
+    System name: length
+    Type: Integer
+    Computed field:
+      Formula name: string_length
+      Arguments:
+      - name: val
+        property:
+          type: BASES
+  - Name: Melting Temperature (Celsius)
+    Description: Exported from Benchling
+    System name: melting_temperature_celsius
+    Type: Decimal
+    Computed field:
+      Formula name: rna_sequence_melting_temperature
+      Arguments:
+      - name: rna_sequence
+        property:
+          type: BASES

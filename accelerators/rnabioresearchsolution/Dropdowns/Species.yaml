@@ -1,0 +1,10 @@
+Dropdowns:
+- Name: Species
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_pQitWWTI
+  Options:
+  - Mouse
+  - Rabbit
+  - Human
+  - Other

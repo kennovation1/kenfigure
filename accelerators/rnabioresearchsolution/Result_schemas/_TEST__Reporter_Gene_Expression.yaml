@@ -1,0 +1,32 @@
+Result_schemas:
+- Name: '[TEST} Reporter Gene Expression'
+  Description: Exported from Benchling
+  System name: test_reporter_gene_expression
+  API ID: assaysch_gC4cYJgW
+  Fields:
+  - Name: Sample
+    Description: Exported from Benchling
+    System name: sample
+    Type: Entity
+    Definition: RNA Lot
+  - Name: Cell Lot
+    Description: Exported from Benchling
+    System name: cell_lot
+    Type: Entity
+    Definition: Primary Cell
+  - Name: Reporter Gene Expression (RLU)
+    Description: Exported from Benchling
+    System name: reporter_gene_expression_rlu
+    Type: Decimal
+  - Name: Day
+    Description: Exported from Benchling
+    System name: day
+    Type: Integer
+  - Name: Date
+    Description: Exported from Benchling
+    System name: date
+    Type: Date
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text

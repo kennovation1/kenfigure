@@ -1,0 +1,10 @@
+Dropdowns:
+- Name: Oligo Format
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_9aZtDsLA
+  Options:
+  - ASO
+  - siRNA
+  - PMO
+  - Other

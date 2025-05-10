@@ -1,0 +1,23 @@
+Result_schemas:
+- Name: DLS
+  Description: Exported from Benchling
+  System name: dls
+  API ID: assaysch_THKxWNqC
+  Fields:
+  - Name: Container
+    Description: Exported from Benchling
+    System name: container
+    Type: Inventory
+  - Name: Sample
+    Description: Exported from Benchling
+    System name: sample
+    Type: Entity
+    Definition: Any Entity
+  - Name: Z-avg (nm)
+    Description: Exported from Benchling
+    System name: z_avg_nm
+    Type: Decimal
+  - Name: PDI
+    Description: Exported from Benchling
+    System name: pdi
+    Type: Decimal

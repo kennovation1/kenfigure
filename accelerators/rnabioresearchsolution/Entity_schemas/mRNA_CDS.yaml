@@ -1,0 +1,21 @@
+Entity_schemas:
+- Name: mRNA CDS
+  Description: Exported from Benchling
+  Entity type: RNA Sequence
+  Prefix: CDS
+  System name: mrna_cds
+  API ID: ts_e8yRYokB
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: rna_sequence
+  Fields:
+  - Name: Protein or Antigen AA
+    Description: Exported from Benchling
+    System name: protein_or_antigen_aa
+    Type: ft_translation_link

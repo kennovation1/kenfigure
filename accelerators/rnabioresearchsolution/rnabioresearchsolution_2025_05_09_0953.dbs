@@ -1,0 +1,4629 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="rnabioresearchsolution" database="LogicalDesign" id="LogicalDesign-c89" >
+	<schema name="virtual" >
+		<udt name="Decimal" udt_java_type="3" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Integer" udt_java_type="4" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Run" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Transcription" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Boolean" udt_java_type="16" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="JSON" udt_java_type="2005" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="ft_assay_run_link" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="ft_assay_result_link" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="ft_translation_link" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Inventory" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Part" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Result" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Batch" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Category" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Entity" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Entry" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Attachment" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Text" udt_java_type="12" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Dropdown" udt_java_type="2006" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Long text" udt_java_type="12" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Datetime" udt_java_type="93" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<udt name="Date" udt_java_type="91" udt_precision="NONE" virtual="y" >
+			<comment><![CDATA[Custom type to match kbconfig-defined types.]]></comment>
+		</udt>
+		<table name="3&#039; UTR" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: 3' UTR
+Description: Exported from Benchling
+Entity type: DNA Sequence
+Prefix: 3UTR
+System name: three_prime_utr
+API ID: ts_SIDbpwin
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES, IDS_FROM_NAMES, NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+		</table>
+		<table name="5&#039; UTR" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: 5' UTR
+Description: Exported from Benchling
+Entity type: DNA Sequence
+Prefix: 5UTR
+System name: five_prime_utr
+API ID: ts_bTuUCgAt
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: sequence]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+		</table>
+		<table name="5&#039; or 3&#039;" >
+			<comment><![CDATA[Object type: Dropdown
+Name: 5' or 3'
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_RIGCoxS1]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+5'
+3']]></comment>
+			</column>
+		</table>
+		<table name="Animal" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Animal
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: AN
+System name: animal
+API ID: ts_f9XCxhl9
+Containable type: None
+Name template: Field(Benchling In Vivo Animal Name), Separator('_'), Field(Animal No.)
+Constraint: [Benchling In Vivo API ID (DO NOT EDIT)]
+Naming options: [REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="In Vivo Study" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: In Vivo Study
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: in_vivo_study
+Type: Entity
+Definition: In Vivo Study]]></comment>
+			</column>
+			<column name="In Vivo Study Group" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: In Vivo Study Group
+Description: Exported from Benchling
+Parent link: true
+System name: in_vivo_study_group
+Type: Entity
+Definition: In Vivo Study Group]]></comment>
+			</column>
+			<column name="Benchling In Vivo Animal Name" type="Text" jt="12" >
+				<comment><![CDATA[Name: Benchling In Vivo Animal Name
+Description: Exported from Benchling
+System name: benchling_in_vivo_animal_name
+Type: Text]]></comment>
+			</column>
+			<column name="Animal No." type="Text" jt="12" >
+				<comment><![CDATA[Name: Animal No.
+Description: Exported from Benchling
+System name: animal_no
+Type: Text]]></comment>
+			</column>
+			<column name="Cage" type="Text" jt="12" >
+				<comment><![CDATA[Name: Cage
+Description: Exported from Benchling
+System name: cage
+Type: Text]]></comment>
+			</column>
+			<column name="DOB" type="Date" jt="91" >
+				<comment><![CDATA[Name: DOB
+Description: Exported from Benchling
+System name: dob
+Type: Date]]></comment>
+			</column>
+			<column name="Sex" type="Text" jt="12" >
+				<comment><![CDATA[Name: Sex
+Description: Exported from Benchling
+System name: sex
+Type: Text]]></comment>
+			</column>
+			<column name="Strain" type="Text" jt="12" >
+				<comment><![CDATA[Name: Strain
+Description: Exported from Benchling
+System name: strain
+Type: Text]]></comment>
+			</column>
+			<column name="Species" type="Text" jt="12" >
+				<comment><![CDATA[Name: Species
+Description: Exported from Benchling
+System name: species
+Type: Text]]></comment>
+			</column>
+			<column name="Termination Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: Termination Date
+Description: Exported from Benchling
+System name: termination_date
+Type: Date]]></comment>
+			</column>
+			<column name="Deceased Reason" type="Text" jt="12" >
+				<comment><![CDATA[Name: Deceased Reason
+Description: Exported from Benchling
+System name: deceased_reason
+Type: Text]]></comment>
+			</column>
+			<column name="Deceased Comment" type="Text" jt="12" >
+				<comment><![CDATA[Name: Deceased Comment
+Description: Exported from Benchling
+System name: deceased_comment
+Type: Text]]></comment>
+			</column>
+			<column name="Tracking Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: Tracking Date
+Description: Exported from Benchling
+System name: tracking_date
+Type: Date]]></comment>
+			</column>
+			<column name="Benchling In Vivo Hyperlink" type="Text" jt="12" >
+				<comment><![CDATA[Name: Benchling In Vivo Hyperlink
+Description: Exported from Benchling
+System name: benchling_in_vivo_hyperlink
+Type: Text]]></comment>
+			</column>
+			<column name="Benchling In Vivo API ID (DO NOT EDIT)" type="Text" jt="12" >
+				<comment><![CDATA[Name: Benchling In Vivo API ID (DO NOT EDIT)
+Description: Exported from Benchling
+System name: benchling_in_vivo_api_id_do_not_edit
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_Animal::In Vivo Study TO Entity::In Vivo Study__parent_link" to_schema="virtual" to_table="In Vivo Study" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="In Vivo Study" pk="_id_" />
+			</fk>
+			<fk name="fk_Animal::In Vivo Study Group TO Entity::In Vivo Study Group__parent_link" to_schema="virtual" to_table="In Vivo Study Group" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="In Vivo Study Group" pk="_id_" />
+			</fk>
+		</table>
+		<table name="Animal Sample" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Animal Sample
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: ANS
+System name: animal_sample
+API ID: ts_X1UIqxkx
+Containable type: Entity
+Name template: Field(Benchling In Vivo Animal Sample ID)
+Constraint: [Benchling In Vivo API ID (DO NOT EDIT)]
+Naming options: [REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Animal" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Animal
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: animal
+Type: Entity
+Definition: Animal]]></comment>
+			</column>
+			<column name="Tissue Type" type="Text" jt="12" >
+				<comment><![CDATA[Name: Tissue Type
+Description: Exported from Benchling
+System name: tissue_type
+Type: Text]]></comment>
+			</column>
+			<column name="Comment" type="Text" jt="12" >
+				<comment><![CDATA[Name: Comment
+Description: Exported from Benchling
+System name: comment
+Type: Text]]></comment>
+			</column>
+			<column name="Date Collected" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date Collected
+Description: Exported from Benchling
+System name: date_collected
+Type: Date]]></comment>
+			</column>
+			<column name="Benchling In Vivo Animal Sample ID" type="Text" jt="12" >
+				<comment><![CDATA[Name: Benchling In Vivo Animal Sample ID
+Description: Exported from Benchling
+System name: benchling_in_vivo_animal_sample_id
+Type: Text]]></comment>
+			</column>
+			<column name="In Vivo Study" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: In Vivo Study
+Description: Exported from Benchling
+Multi-select: true
+System name: in_vivo_study
+Type: Entity
+Definition: In Vivo Study
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_seyqbH9Y, displayName:Animal, externalType:field, apiIdentifier:tsf_2QwaBAGn]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_2rzNBulp, displayName:In Vivo Study, externalType:field, apiIdentifier:tsf_FPFfeC6a]]]]]]]></comment>
+			</column>
+			<column name="Benchling In Vivo Hyperlink" type="Text" jt="12" >
+				<comment><![CDATA[Name: Benchling In Vivo Hyperlink
+Description: Exported from Benchling
+System name: benchling_in_vivo_hyperlink
+Type: Text]]></comment>
+			</column>
+			<column name="Benchling In Vivo API ID (DO NOT EDIT)" type="Text" jt="12" >
+				<comment><![CDATA[Name: Benchling In Vivo API ID (DO NOT EDIT)
+Description: Exported from Benchling
+System name: benchling_in_vivo_api_id_do_not_edit
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_Animal Sample::Animal TO Entity::Animal__parent_link" to_schema="virtual" to_table="Animal" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Animal" pk="_id_" />
+			</fk>
+			<fk name="fk_Animal Sample::In Vivo Study TO Entity::In Vivo Study__multiselect" to_schema="virtual" to_table="In Vivo Study" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="In Vivo Study" pk="_id_" />
+			</fk>
+		</table>
+		<table name="Antibiotic Resistance" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Antibiotic Resistance
+Description: Exported from Benchling
+Entity type: DNA Sequence
+Prefix: AR
+System name: antibiotic_resistance
+API ID: ts_eaQRfGOZ
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: sequence]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+		</table>
+		<table name="Aqueous Buffer" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Aqueous Buffer
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_yFVai02P]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+Na Acetate
+Citrate
+Other]]></comment>
+			</column>
+		</table>
+		<table name="Assay Type" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Assay Type
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_EbJge798]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+DLS
+Endotoxin
+In Vitro Toxicity
+Nucleic Acid Concentration
+qPCR
+Ribogreen
+Sequence Validation
+Western Blot]]></comment>
+			</column>
+		</table>
+		<table name="Cell Line" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Cell Line
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: CL
+System name: cell_line
+API ID: ts_7bS0wAw9
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Parent Cell Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Parent Cell Lot
+Description: Exported from Benchling
+Parent link: true
+System name: parent_cell_lot
+Type: Entity
+Definition: Cell Lot]]></comment>
+			</column>
+			<column name="Cell Type" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Cell Type
+Description: Exported from Benchling
+System name: cell_type
+Type: Dropdown
+Definition: Cell Type]]></comment>
+			</column>
+			<column name="Species" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Species
+Description: Exported from Benchling
+System name: species
+Type: Dropdown
+Definition: Species]]></comment>
+			</column>
+			<column name="Target" type="Text" jt="12" >
+				<comment><![CDATA[Name: Target
+Description: Exported from Benchling
+System name: target
+Type: Text]]></comment>
+			</column>
+			<column name="Vendor" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Vendor
+Description: Exported from Benchling
+System name: vendor
+Type: Dropdown
+Definition: Vendor]]></comment>
+			</column>
+			<column name="Catalog Number" type="Text" jt="12" >
+				<comment><![CDATA[Name: Catalog Number
+Description: Exported from Benchling
+System name: catalog_number
+Type: Text]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_Cell Line::Parent Cell Lot TO Entity::Cell Lot__parent_link" to_schema="virtual" to_table="Cell Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Parent Cell Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_Cell Line::Cell Type TO Dropdown::Cell Type" to_schema="virtual" to_table="Cell Type" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Cell Type" pk="Options" />
+			</fk>
+			<fk name="fk_Cell Line::Species TO Dropdown::Species" to_schema="virtual" to_table="Species" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Species" pk="Options" />
+			</fk>
+			<fk name="fk_Cell Line::Vendor TO Dropdown::Vendor" to_schema="virtual" to_table="Vendor" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Vendor" pk="Options" />
+			</fk>
+		</table>
+		<table name="Cell Lot" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Cell Lot
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: CLL
+System name: cell_lot
+API ID: ts_dhP45qZp
+Containable type: Entity
+Name template: Field(Cell Line), Separator('-'), Parent lot number(Cell Line)
+Constraint: []
+Naming options: [DELETE_NAMES, REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Cell Line" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Cell Line
+Description: Exported from Benchling
+Parent link: true
+System name: cell_line
+Type: Entity
+Definition: Cell Line]]></comment>
+			</column>
+			<column name="Previous Cell Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Previous Cell Lot
+Description: Exported from Benchling
+Parent link: true
+System name: previous_cell_lot
+Type: Entity
+Definition: Cell Lot]]></comment>
+			</column>
+			<column name="Lot Number" type="Text" jt="12" >
+				<comment><![CDATA[Name: Lot Number
+Description: Exported from Benchling
+System name: lot_number
+Type: Text]]></comment>
+			</column>
+			<column name="Date Frozen" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date Frozen
+Description: Exported from Benchling
+System name: date_frozen
+Type: Date]]></comment>
+			</column>
+			<column name="Passage Number" type="Text" jt="12" >
+				<comment><![CDATA[Name: Passage Number
+Description: Exported from Benchling
+System name: passage_number
+Type: Text]]></comment>
+			</column>
+			<column name="Mycoplasma QC" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Mycoplasma QC
+Description: Exported from Benchling
+System name: mycoplasma_qc
+Type: Dropdown
+Definition: Positive or Negative]]></comment>
+			</column>
+			<column name="CoA" type="Attachment" jt="2006" >
+				<comment><![CDATA[Name: CoA
+Description: Exported from Benchling
+System name: coa
+Type: Attachment]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<column name="Vendor" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Vendor
+Description: Exported from Benchling
+Multi-select: true
+System name: vendor
+Type: Dropdown
+Definition: Vendor
+Computed field: [Formula name:set_union_selector, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_JJillX2i, displayName:Cell Line, externalType:field, apiIdentifier:tsf_923PVxdc]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_h860iDqk, displayName:Vendor, externalType:field, apiIdentifier:tsf_5cLqKImz]]]]]]]></comment>
+			</column>
+			<fk name="fk_Cell Lot::Cell Line TO Entity::Cell Line__parent_link" to_schema="virtual" to_table="Cell Line" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Cell Line" pk="_id_" />
+			</fk>
+			<fk name="fk_Cell Lot::Previous Cell Lot TO Entity::Cell Lot__parent_link" to_schema="virtual" to_table="Cell Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Previous Cell Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_Cell Lot::Mycoplasma QC TO Dropdown::Positive or Negative" to_schema="virtual" to_table="Positive or Negative" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Mycoplasma QC" pk="Options" />
+			</fk>
+			<fk name="fk_Cell Lot::Vendor TO Dropdown::Vendor__multiselect" to_schema="virtual" to_table="Vendor" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Vendor" pk="Options" />
+			</fk>
+		</table>
+		<table name="Cell Type" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Cell Type
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_2CKEagOi]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+Cell Type A
+Cell Type B
+Cell Type C]]></comment>
+			</column>
+		</table>
+		<table name="Cell Viability" >
+			<comment><![CDATA[Object type: Result_schema
+Name: Cell Viability
+Description: Exported from Benchling
+System name: cell_viability
+API ID: assaysch_pdd2Iszs]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Container" type="Inventory" jt="2006" >
+				<comment><![CDATA[Name: Container
+Description: Exported from Benchling
+System name: container
+Type: Inventory]]></comment>
+			</column>
+			<column name="Sample" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sample
+Description: Exported from Benchling
+System name: sample
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="Assay Method" type="Text" jt="12" >
+				<comment><![CDATA[Name: Assay Method
+Description: Exported from Benchling
+System name: assay_method
+Type: Text]]></comment>
+			</column>
+			<column name="IC50 (nM)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: IC50 (nM)
+Description: Exported from Benchling
+System name: ic50_nm
+Type: Decimal]]></comment>
+			</column>
+			<column name="Attachment" type="Attachment" jt="2006" >
+				<comment><![CDATA[Name: Attachment
+Description: Exported from Benchling
+System name: attachment
+Type: Attachment]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+		</table>
+		<table name="Cold Storage Temperature" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Cold Storage Temperature
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_dOdg1C2q]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+4C
+-20C
+-80C]]></comment>
+			</column>
+		</table>
+		<table name="Concentration Units" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Concentration Units
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_ph3nYtv3]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+mM
+uM
+nM
+U/uL
+mg/uL
+ng/uL
+ug/uL
+X
+%]]></comment>
+			</column>
+		</table>
+		<table name="Conjugate Type" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Conjugate Type
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_EhP94D0N]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+siRNA - Ab
+siRNA - small molecule
+ASO - small molecule
+ASO - peptide]]></comment>
+			</column>
+		</table>
+		<table name="DLS" >
+			<comment><![CDATA[Object type: Result_schema
+Name: DLS
+Description: Exported from Benchling
+System name: dls
+API ID: assaysch_THKxWNqC]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Container" type="Inventory" jt="2006" >
+				<comment><![CDATA[Name: Container
+Description: Exported from Benchling
+System name: container
+Type: Inventory]]></comment>
+			</column>
+			<column name="Sample" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sample
+Description: Exported from Benchling
+System name: sample
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="Z-avg (nm)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Z-avg (nm)
+Description: Exported from Benchling
+System name: z_avg_nm
+Type: Decimal]]></comment>
+			</column>
+			<column name="PDI" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: PDI
+Description: Exported from Benchling
+System name: pdi
+Type: Decimal]]></comment>
+			</column>
+		</table>
+		<table name="DNA Characterization" >
+			<comment><![CDATA[Object type: Result_schema
+Name: DNA Characterization
+Description: Exported from Benchling
+System name: dna_characterization
+API ID: assaysch_Tza2C7l6]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Plasmid Prep" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Plasmid Prep
+Description: Exported from Benchling
+Required: true
+System name: plasmid_prep
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="Endotoxin (EU/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Endotoxin (EU/mL)
+Description: Exported from Benchling
+System name: endotoxin_euml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Appearance" type="Text" jt="12" >
+				<comment><![CDATA[Name: Appearance
+Description: Exported from Benchling
+System name: appearance
+Type: Text]]></comment>
+			</column>
+			<column name="RNAse Activity" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: RNAse Activity
+Description: Exported from Benchling
+System name: rnase_activity
+Type: Dropdown
+Definition: Pass or Fail]]></comment>
+			</column>
+			<column name="% Supercoiled" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: % Supercoiled
+Description: Exported from Benchling
+System name: supercoiled
+Type: Decimal]]></comment>
+			</column>
+			<column name="% Linear" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: % Linear
+Description: Exported from Benchling
+System name: linear
+Type: Decimal]]></comment>
+			</column>
+			<column name="Residual Host DNA" type="Text" jt="12" >
+				<comment><![CDATA[Name: Residual Host DNA
+Description: Exported from Benchling
+System name: residual_host_dna
+Type: Text]]></comment>
+			</column>
+			<column name="Residual Host Cell Protein" type="Text" jt="12" >
+				<comment><![CDATA[Name: Residual Host Cell Protein
+Description: Exported from Benchling
+System name: residual_host_cell_protein
+Type: Text]]></comment>
+			</column>
+			<column name="pH" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: pH
+Description: Exported from Benchling
+System name: ph
+Type: Decimal]]></comment>
+			</column>
+			<column name="Bioburden" type="Text" jt="12" >
+				<comment><![CDATA[Name: Bioburden
+Description: Exported from Benchling
+System name: bioburden
+Type: Text]]></comment>
+			</column>
+			<column name="Sequence Mismatch Number" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Sequence Mismatch Number
+Description: Exported from Benchling
+System name: sequence_mismatch_number
+Type: Decimal]]></comment>
+			</column>
+			<column name="Sequence Verification" type="Attachment" jt="2006" >
+				<comment><![CDATA[Name: Sequence Verification
+Description: Exported from Benchling
+System name: sequence_verification
+Type: Attachment]]></comment>
+			</column>
+			<fk name="fk_DNA Characterization::RNAse Activity TO Dropdown::Pass or Fail" to_schema="virtual" to_table="Pass or Fail" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="RNAse Activity" pk="Options" />
+			</fk>
+		</table>
+		<table name="Dose Unit" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Dose Unit
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_t0sUilDm]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+mg/kg
+mg/m^2]]></comment>
+			</column>
+		</table>
+		<table name="EC50" >
+			<comment><![CDATA[Object type: Result_schema
+Name: EC50
+Description: Exported from Benchling
+System name: ec_50
+API ID: assaysch_qQeObX5O]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Container" type="Inventory" jt="2006" >
+				<comment><![CDATA[Name: Container
+Description: Exported from Benchling
+System name: container
+Type: Inventory]]></comment>
+			</column>
+			<column name="Sample" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sample
+Description: Exported from Benchling
+System name: sample
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="Cell Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Cell Lot
+Description: Exported from Benchling
+System name: cell_lot
+Type: Entity
+Definition: Primary Cell]]></comment>
+			</column>
+			<column name="EC50" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: EC50
+Description: Exported from Benchling
+System name: ec50
+Type: Decimal]]></comment>
+			</column>
+			<column name="Dose Response Curve" type="Attachment" jt="2006" >
+				<comment><![CDATA[Name: Dose Response Curve
+Description: Exported from Benchling
+System name: dose_response_curve
+Type: Attachment]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_EC50::Cell Lot TO Entity::Primary Cell" to_schema="virtual" to_table="Primary Cell" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Cell Lot" pk="_id_" />
+			</fk>
+		</table>
+		<table name="Endotoxin Assay" >
+			<comment><![CDATA[Object type: Result_schema
+Name: Endotoxin Assay
+Description: Exported from Benchling
+System name: endotoxin_assay
+API ID: assaysch_jQ9B5mbC]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Container" type="Inventory" jt="2006" >
+				<comment><![CDATA[Name: Container
+Description: Exported from Benchling
+System name: container
+Type: Inventory]]></comment>
+			</column>
+			<column name="Sample" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sample
+Description: Exported from Benchling
+System name: sample
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="Endotoxin (EU/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Endotoxin (EU/mL)
+Description: Exported from Benchling
+System name: endotoxin_euml
+Type: Decimal]]></comment>
+			</column>
+		</table>
+		<table name="Entry Classification" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Entry Classification
+Description: Exported from Benchling
+Entity type: Entry
+Prefix: ENTRY
+System name: entry_classification
+API ID: ts_YuLSf1xL
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES, IDS_FROM_NAMES, NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: entry]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Template ID" type="Text" jt="12" >
+				<comment><![CDATA[Name: Template ID
+Description: Exported from Benchling
+System name: template_id
+Type: Text]]></comment>
+			</column>
+			<column name="Template Version" type="Text" jt="12" >
+				<comment><![CDATA[Name: Template Version
+Description: Exported from Benchling
+System name: template_version
+Type: Text]]></comment>
+			</column>
+			<column name="Template Group" type="Text" jt="12" >
+				<comment><![CDATA[Name: Template Group
+Description: Exported from Benchling
+System name: template_group
+Type: Text]]></comment>
+			</column>
+			<column name="Template Author" type="Text" jt="12" >
+				<comment><![CDATA[Name: Template Author
+Description: Exported from Benchling
+System name: template_author
+Type: Text]]></comment>
+			</column>
+			<column name="Approval" type="Text" jt="12" >
+				<comment><![CDATA[Name: Approval
+Description: Exported from Benchling
+System name: approval
+Type: Text]]></comment>
+			</column>
+			<column name="Revision Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: Revision Date
+Description: Exported from Benchling
+System name: revision_date
+Type: Date]]></comment>
+			</column>
+		</table>
+		<table name="Fresh or Frozen" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Fresh or Frozen
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_EnzyZo32]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+Fresh
+Frozen
+Unknown]]></comment>
+			</column>
+		</table>
+		<table name="Functional Group Type" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Functional Group Type
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_LLSoniYp]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+Phosphoramidite
+Maleimide
+Azide
+Resin
+Other]]></comment>
+			</column>
+		</table>
+		<table name="Gene" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Gene
+Description: Exported from Benchling
+Entity type: DNA Sequence
+Prefix: GENE
+System name: gene
+API ID: ts_SBxVcHeO
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: sequence]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="AA Sequence" type="ft_translation_link" jt="2006" >
+				<comment><![CDATA[Name: AA Sequence
+Description: Exported from Benchling
+System name: aa_sequence
+Type: ft_translation_link]]></comment>
+			</column>
+			<column name="gRNA" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: gRNA
+Description: Exported from Benchling
+Multi-select: true
+System name: grna
+Type: Entity
+Definition: gRNA
+Computed field: [Formula name:primers_of_schema, Arguments:[[name:primer_oligos, property:[type:PRIMER_OLIGOS]], [name:schema_id, property:[type:LITERAL], literalValue:ts_T4pRfjRx]]]]]></comment>
+			</column>
+			<fk name="fk_Gene::gRNA TO Entity::gRNA__multiselect" to_schema="virtual" to_table="gRNA" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="gRNA" pk="_id_" />
+			</fk>
+		</table>
+		<table name="In Vitro Experiment" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: In Vitro Experiment
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: IVXP
+System name: in_vitro_experiment
+API ID: ts_AoIKHhdc
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Study Objective" type="Text" jt="12" >
+				<comment><![CDATA[Name: Study Objective
+Description: Exported from Benchling
+System name: study_objective
+Type: Text]]></comment>
+			</column>
+			<column name="Primary Cell" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Primary Cell
+Description: Exported from Benchling
+System name: primary_cell
+Type: Entity
+Definition: Primary Cell]]></comment>
+			</column>
+			<column name="RNA Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: RNA Lot
+Description: Exported from Benchling
+System name: rna_lot
+Type: Entity
+Definition: RNA Lot]]></comment>
+			</column>
+			<column name="Dose (mg/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Dose (mg/mL)
+Description: Exported from Benchling
+System name: dose_mgml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Start Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: Start Date
+Description: Exported from Benchling
+System name: start_date
+Type: Date]]></comment>
+			</column>
+			<column name="End Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: End Date
+Description: Exported from Benchling
+System name: end_date
+Type: Date]]></comment>
+			</column>
+			<column name="Operator" type="Text" jt="12" >
+				<comment><![CDATA[Name: Operator
+Description: Exported from Benchling
+System name: operator
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_In Vitro Experiment::Primary Cell TO Entity::Primary Cell" to_schema="virtual" to_table="Primary Cell" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Primary Cell" pk="_id_" />
+			</fk>
+			<fk name="fk_In Vitro Experiment::RNA Lot TO Entity::RNA Lot" to_schema="virtual" to_table="RNA Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="RNA Lot" pk="_id_" />
+			</fk>
+		</table>
+		<table name="In Vitro Toxicity Results" >
+			<comment><![CDATA[Object type: Result_schema
+Name: In Vitro Toxicity Results
+Description: Exported from Benchling
+System name: in_vitro_toxicity_results
+API ID: assaysch_z4XJAeZj]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Container" type="Inventory" jt="2006" >
+				<comment><![CDATA[Name: Container
+Description: Exported from Benchling
+System name: container
+Type: Inventory]]></comment>
+			</column>
+			<column name="Cell Line or Bank" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Cell Line or Bank
+Description: Exported from Benchling
+System name: cell_line_or_bank
+Type: Entity
+Definition: Custom Entity]]></comment>
+			</column>
+			<column name="Treatment" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Treatment
+Description: Exported from Benchling
+Required: true
+System name: treatment
+Type: Entity
+Definition: Custom Entity]]></comment>
+			</column>
+			<column name="Well Position" type="Text" jt="12" >
+				<comment><![CDATA[Name: Well Position
+Description: Exported from Benchling
+System name: well_position
+Type: Text]]></comment>
+			</column>
+			<column name="Concentration (ug/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Concentration (ug/mL)
+Description: Exported from Benchling
+System name: concentration_ugml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Dosage Time (hr)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Dosage Time (hr)
+Description: Exported from Benchling
+System name: dosage_time_hr
+Type: Decimal]]></comment>
+			</column>
+			<column name="Cell Viability (%)" type="Decimal" jt="3" mandatory="y" >
+				<comment><![CDATA[Name: Cell Viability (%)
+Description: Exported from Benchling
+Required: true
+System name: cell_viability
+Type: Decimal]]></comment>
+			</column>
+			<column name="Attachment(s)" type="Attachment" jt="2006" >
+				<comment><![CDATA[Name: Attachment(s)
+Description: Exported from Benchling
+Multi-select: true
+System name: attachments
+Type: Attachment]]></comment>
+			</column>
+		</table>
+		<table name="In Vivo Study" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: In Vivo Study
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: IVST
+System name: in_vivo_study
+API ID: ts_wOzftMSX
+Containable type: None
+Name template: Field(Study Code)
+Constraint: [Benchling In Vivo API ID (DO NOT EDIT)]
+Naming options: [DELETE_NAMES, REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Description" type="Text" jt="12" >
+				<comment><![CDATA[Name: Description
+Description: Exported from Benchling
+System name: description
+Type: Text]]></comment>
+			</column>
+			<column name="Benchling In Vivo Study Name" type="Text" jt="12" >
+				<comment><![CDATA[Name: Benchling In Vivo Study Name
+Description: Exported from Benchling
+System name: benchling_in_vivo_study_name
+Type: Text]]></comment>
+			</column>
+			<column name="Study Phase" type="Text" jt="12" >
+				<comment><![CDATA[Name: Study Phase
+Description: Exported from Benchling
+System name: study_phase
+Type: Text]]></comment>
+			</column>
+			<column name="Study Code" type="Text" jt="12" >
+				<comment><![CDATA[Name: Study Code
+Description: Exported from Benchling
+System name: study_code
+Type: Text]]></comment>
+			</column>
+			<column name="Benchling In Vivo Hyperlink" type="Text" jt="12" >
+				<comment><![CDATA[Name: Benchling In Vivo Hyperlink
+Description: Exported from Benchling
+System name: benchling_in_vivo_hyperlink
+Type: Text]]></comment>
+			</column>
+			<column name="Benchling In Vivo API ID (DO NOT EDIT)" type="Text" jt="12" >
+				<comment><![CDATA[Name: Benchling In Vivo API ID (DO NOT EDIT)
+Description: Exported from Benchling
+System name: benchling_in_vivo_api_id_do_not_edit
+Type: Text]]></comment>
+			</column>
+		</table>
+		<table name="In Vivo Study Animal Measurement" >
+			<comment><![CDATA[Object type: Result_schema
+Name: In Vivo Study Animal Measurement
+Description: Exported from Benchling
+System name: in_vivo_study_animal_measurement
+API ID: assaysch_V5GVPgTw]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Animal" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Animal
+Description: Exported from Benchling
+Required: true
+System name: animal
+Type: Entity
+Definition: Animal]]></comment>
+			</column>
+			<column name="Variable" type="Text" jt="12" >
+				<comment><![CDATA[Name: Variable
+Description: Exported from Benchling
+System name: variable
+Type: Text]]></comment>
+			</column>
+			<column name="Raw Value" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Raw Value
+Description: Exported from Benchling
+System name: raw_value
+Type: Decimal]]></comment>
+			</column>
+			<column name="Rounded Value" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Rounded Value
+Description: Exported from Benchling
+System name: rounded_value
+Type: Decimal]]></comment>
+			</column>
+			<column name="Unit" type="Text" jt="12" >
+				<comment><![CDATA[Name: Unit
+Description: Exported from Benchling
+System name: unit
+Type: Text]]></comment>
+			</column>
+			<column name="Date Measured" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date Measured
+Description: Exported from Benchling
+System name: date_measured
+Type: Date]]></comment>
+			</column>
+			<column name="Exclusion Status" type="Text" jt="12" >
+				<comment><![CDATA[Name: Exclusion Status
+Description: Exported from Benchling
+System name: exclusion_status
+Type: Text]]></comment>
+			</column>
+			<column name="Benchling In Vivo API ID" type="Text" jt="12" mandatory="y" >
+				<comment><![CDATA[Name: Benchling In Vivo API ID
+Description: Exported from Benchling
+Required: true
+System name: benchling_in_vivo_api_id
+Type: Text]]></comment>
+			</column>
+			<column name="Measurement ID" type="Text" jt="12" mandatory="y" >
+				<comment><![CDATA[Name: Measurement ID
+Description: Exported from Benchling
+Required: true
+System name: measurement_id
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_In Vivo Study Animal Measurement::Animal TO Entity::Animal" to_schema="virtual" to_table="Animal" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Animal" pk="_id_" />
+			</fk>
+		</table>
+		<table name="In Vivo Study Animal Observation" >
+			<comment><![CDATA[Object type: Result_schema
+Name: In Vivo Study Animal Observation
+Description: Exported from Benchling
+System name: in_vivo_study_animal_observation
+API ID: assaysch_jsywY2nN]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Animal" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Animal
+Description: Exported from Benchling
+Required: true
+System name: animal
+Type: Entity
+Definition: Animal]]></comment>
+			</column>
+			<column name="Variable" type="Text" jt="12" >
+				<comment><![CDATA[Name: Variable
+Description: Exported from Benchling
+System name: variable
+Type: Text]]></comment>
+			</column>
+			<column name="Scale" type="Text" jt="12" >
+				<comment><![CDATA[Name: Scale
+Description: Exported from Benchling
+System name: scale
+Type: Text]]></comment>
+			</column>
+			<column name="Severity Rating" type="Text" jt="12" >
+				<comment><![CDATA[Name: Severity Rating
+Description: Exported from Benchling
+System name: severity_rating
+Type: Text]]></comment>
+			</column>
+			<column name="Comments" type="Long text" jt="12" >
+				<comment><![CDATA[Name: Comments
+Description: Exported from Benchling
+System name: comments
+Type: Long text]]></comment>
+			</column>
+			<column name="Date Observed" type="Datetime" jt="93" >
+				<comment><![CDATA[Name: Date Observed
+Description: Exported from Benchling
+System name: date_observed
+Type: Datetime]]></comment>
+			</column>
+			<column name="Benchling In Vivo API ID" type="Text" jt="12" mandatory="y" >
+				<comment><![CDATA[Name: Benchling In Vivo API ID
+Description: Exported from Benchling
+Required: true
+System name: benchling_in_vivo_api_id
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_In Vivo Study Animal Observation::Animal TO Entity::Animal" to_schema="virtual" to_table="Animal" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Animal" pk="_id_" />
+			</fk>
+		</table>
+		<table name="In Vivo Study Animal Sample Details" >
+			<comment><![CDATA[Object type: Result_schema
+Name: In Vivo Study Animal Sample Details
+Description: Exported from Benchling
+System name: in_vivo_study_animal_sample_details
+API ID: assaysch_9jZnULBD]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Animal Sample" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Animal Sample
+Description: Exported from Benchling
+Required: true
+System name: animal_sample
+Type: Entity
+Definition: Animal Sample]]></comment>
+			</column>
+			<column name="Metric Type" type="Text" jt="12" >
+				<comment><![CDATA[Name: Metric Type
+Description: Exported from Benchling
+System name: metric_type
+Type: Text]]></comment>
+			</column>
+			<column name="Metric Value" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Metric Value
+Description: Exported from Benchling
+System name: metric_value
+Type: Decimal]]></comment>
+			</column>
+			<column name="Units" type="Text" jt="12" >
+				<comment><![CDATA[Name: Units
+Description: Exported from Benchling
+System name: units
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_In Vivo Study Animal Sample Details::Animal Sample TO Entity::Animal Sample" to_schema="virtual" to_table="Animal Sample" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Animal Sample" pk="_id_" />
+			</fk>
+		</table>
+		<table name="In Vivo Study Group" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: In Vivo Study Group
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: IVGP
+System name: in_vivo_study_group
+API ID: ts_hviNHYag
+Containable type: None
+Name template: Field(In Vivo Study), Separator('_'), Field(Benchling In Vivo Group Name), Separator('_'), Text('IVGP'), Registry ID number
+Constraint: [Benchling In Vivo API ID (DO NOT EDIT)]
+Naming options: [DELETE_NAMES, REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="In Vivo Study" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: In Vivo Study
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: in_vivo_study
+Type: Entity
+Definition: In Vivo Study]]></comment>
+			</column>
+			<column name="Treatment" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Treatment
+Description: Exported from Benchling
+Multi-select: true
+System name: treatment
+Type: Entity
+Definition: In Vivo Study Treatment]]></comment>
+			</column>
+			<column name="Display Color" type="Text" jt="12" >
+				<comment><![CDATA[Name: Display Color
+Description: Exported from Benchling
+System name: display_color
+Type: Text]]></comment>
+			</column>
+			<column name="Benchling In Vivo Group Name" type="Text" jt="12" >
+				<comment><![CDATA[Name: Benchling In Vivo Group Name
+Description: Exported from Benchling
+System name: benchling_in_vivo_group_name
+Type: Text]]></comment>
+			</column>
+			<column name="Benchling In Vivo Hyperlink" type="Text" jt="12" >
+				<comment><![CDATA[Name: Benchling In Vivo Hyperlink
+Description: Exported from Benchling
+System name: benchling_in_vivo_hyperlink
+Type: Text]]></comment>
+			</column>
+			<column name="Benchling In Vivo API ID (DO NOT EDIT)" type="Text" jt="12" >
+				<comment><![CDATA[Name: Benchling In Vivo API ID (DO NOT EDIT)
+Description: Exported from Benchling
+System name: benchling_in_vivo_api_id_do_not_edit
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_In Vivo Study Group::In Vivo Study TO Entity::In Vivo Study__parent_link" to_schema="virtual" to_table="In Vivo Study" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="In Vivo Study" pk="_id_" />
+			</fk>
+			<fk name="fk_In Vivo Study Group::Treatment TO Entity::In Vivo Study Treatment__multiselect" to_schema="virtual" to_table="In Vivo Study Treatment" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Treatment" pk="_id_" />
+			</fk>
+		</table>
+		<table name="In Vivo Study Treatment" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: In Vivo Study Treatment
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: IVTX
+System name: in_vivo_study_treatment
+API ID: ts_iB7FZ14c
+Containable type: None
+Name template: Field(Treatment Name), Text(' '), Text(' ('), Field(Dose), Field(Dose Units), Text(')'), Text('('), Field(Volume), Field(Volume Units), Text(')'), Text('_'), Text('IVTX'), Registry ID number
+Constraint: [Benchling In Vivo API ID (DO NOT EDIT)]
+Naming options: [REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Treatment Entity" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Treatment Entity
+Description: Exported from Benchling
+System name: treatment_entity
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="Treatment Name" type="Text" jt="12" >
+				<comment><![CDATA[Name: Treatment Name
+Description: Exported from Benchling
+System name: treatment_name
+Type: Text]]></comment>
+			</column>
+			<column name="Dosing Method" type="Text" jt="12" >
+				<comment><![CDATA[Name: Dosing Method
+Description: Exported from Benchling
+System name: dosing_method
+Type: Text]]></comment>
+			</column>
+			<column name="Dose" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Dose
+Description: Exported from Benchling
+System name: dose
+Type: Decimal]]></comment>
+			</column>
+			<column name="Dose Units" type="Text" jt="12" >
+				<comment><![CDATA[Name: Dose Units
+Description: Exported from Benchling
+System name: dose_units
+Type: Text]]></comment>
+			</column>
+			<column name="Stock" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Stock
+Description: Exported from Benchling
+System name: stock
+Type: Decimal]]></comment>
+			</column>
+			<column name="Stock Units" type="Text" jt="12" >
+				<comment><![CDATA[Name: Stock Units
+Description: Exported from Benchling
+System name: stock_units
+Type: Text]]></comment>
+			</column>
+			<column name="Volume" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Volume
+Description: Exported from Benchling
+System name: volume
+Type: Decimal]]></comment>
+			</column>
+			<column name="Volume Units" type="Text" jt="12" >
+				<comment><![CDATA[Name: Volume Units
+Description: Exported from Benchling
+System name: volume_units
+Type: Text]]></comment>
+			</column>
+			<column name="Benchling In Vivo API ID (DO NOT EDIT)" type="Text" jt="12" >
+				<comment><![CDATA[Name: Benchling In Vivo API ID (DO NOT EDIT)
+Description: Exported from Benchling
+System name: benchling_in_vivo_api_id_do_not_edit
+Type: Text]]></comment>
+			</column>
+		</table>
+		<table name="LNP Characterization" >
+			<comment><![CDATA[Object type: Result_schema
+Name: LNP Characterization
+Description: Exported from Benchling
+System name: lnp_characterization
+API ID: assaysch_EGDLwLmU]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Sample" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Sample
+Description: Exported from Benchling
+Required: true
+System name: sample
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="EE (%)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: EE (%)
+Description: Exported from Benchling
+System name: ee
+Type: Decimal]]></comment>
+			</column>
+			<column name="Concentration (mg/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Concentration (mg/mL)
+Description: Exported from Benchling
+System name: concentration_mgml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Endotoxin (EU/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Endotoxin (EU/mL)
+Description: Exported from Benchling
+System name: endotoxin_euml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Z-avg (nm)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Z-avg (nm)
+Description: Exported from Benchling
+System name: z_avg_nm
+Type: Decimal]]></comment>
+			</column>
+			<column name="PDI" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: PDI
+Description: Exported from Benchling
+System name: pdi
+Type: Decimal]]></comment>
+			</column>
+			<column name="Zeta Potential (mV)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Zeta Potential (mV)
+Description: Exported from Benchling
+System name: zeta_potential_mv
+Type: Decimal]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+		</table>
+		<table name="LNP Lot" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: LNP Lot
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: LNP
+System name: lnp_lot
+API ID: ts_5RVWVdqq
+Containable type: Entity
+Name template: Field(Lipid Mixture Recipe), Separator('-'), Registry ID number
+Constraint: []
+Naming options: [REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Lipid Mixture Recipe" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Lipid Mixture Recipe
+Description: Exported from Benchling
+Parent link: true
+System name: lipid_mixture_recipe
+Type: Entity
+Definition: Lipid Mixture Recipe]]></comment>
+			</column>
+			<column name="RNA Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: RNA Lot
+Description: Exported from Benchling
+Parent link: true
+System name: rna_lot
+Type: Entity
+Definition: RNA Lot]]></comment>
+			</column>
+			<column name="gRNA Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: gRNA Lot
+Description: Exported from Benchling
+Tool tip: Optional; for LNP that encapsulates gRNA
+System name: grna_lot
+Type: Entity
+Definition: gRNA Lot]]></comment>
+			</column>
+			<column name="Small Molecule Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Small Molecule Lot
+Description: Exported from Benchling
+Tool tip: Entity Link to Small Molecule Lot can represent a small molecule, peptide, fluorophore or other compound  if any, that is also encapsulated in the LNP.
+System name: small_molecule_lot
+Type: Entity
+Definition: Small Molecule Lot]]></comment>
+			</column>
+			<column name="Mixing Method" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Mixing Method
+Description: Exported from Benchling
+System name: mixing_method
+Type: Dropdown
+Definition: LNP Mixing Method]]></comment>
+			</column>
+			<column name="Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date
+Description: Exported from Benchling
+System name: date
+Type: Date]]></comment>
+			</column>
+			<column name="Ionizable Lipid Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Ionizable Lipid Lot
+Description: Exported from Benchling
+System name: ionizable_lipid_lot
+Type: Entity
+Definition: Lipid Lot]]></comment>
+			</column>
+			<column name="Ionizable Lipid Volume (mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Ionizable Lipid Volume (mL)
+Description: Exported from Benchling
+System name: ionizable_lipid_volume_ml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Helper Lipid Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Helper Lipid Lot
+Description: Exported from Benchling
+System name: helper_lipid_lot
+Type: Entity
+Definition: Lipid Lot]]></comment>
+			</column>
+			<column name="Helper Lipid Volume (mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Helper Lipid Volume (mL)
+Description: Exported from Benchling
+System name: helper_lipid_volume_ml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Stability Lipid Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Stability Lipid Lot
+Description: Exported from Benchling
+System name: stability_lipid_lot
+Type: Entity
+Definition: Lipid Lot]]></comment>
+			</column>
+			<column name="Stability Lipid Volume (mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Stability Lipid Volume (mL)
+Description: Exported from Benchling
+System name: stability_lipid_volume_ml
+Type: Decimal]]></comment>
+			</column>
+			<column name="PEG Lipid Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: PEG Lipid Lot
+Description: Exported from Benchling
+System name: peg_lipid_lot
+Type: Entity
+Definition: Lipid Lot]]></comment>
+			</column>
+			<column name="PEG Lipid Volume (mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: PEG Lipid Volume (mL)
+Description: Exported from Benchling
+System name: peg_lipid_volume_ml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Concentration (mg/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Concentration (mg/mL)
+Description: Exported from Benchling
+System name: concentration_mgml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Volume (mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Volume (mL)
+Description: Exported from Benchling
+System name: volume_ml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Quantity (mg)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Quantity (mg)
+Description: Exported from Benchling
+System name: quantity_mg
+Type: Decimal]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_LNP Lot::Lipid Mixture Recipe TO Entity::Lipid Mixture Recipe__parent_link" to_schema="virtual" to_table="Lipid Mixture Recipe" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Lipid Mixture Recipe" pk="_id_" />
+			</fk>
+			<fk name="fk_LNP Lot::RNA Lot TO Entity::RNA Lot__parent_link" to_schema="virtual" to_table="RNA Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="RNA Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_LNP Lot::gRNA Lot TO Entity::gRNA Lot" to_schema="virtual" to_table="gRNA Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="gRNA Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_LNP Lot::Small Molecule Lot TO Entity::Small Molecule Lot" to_schema="virtual" to_table="Small Molecule Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Small Molecule Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_LNP Lot::Mixing Method TO Dropdown::LNP Mixing Method" to_schema="virtual" to_table="LNP Mixing Method" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Mixing Method" pk="Options" />
+			</fk>
+			<fk name="fk_LNP Lot::Ionizable Lipid Lot TO Entity::Lipid Lot" to_schema="virtual" to_table="Lipid Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Ionizable Lipid Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_LNP Lot::Helper Lipid Lot TO Entity::Lipid Lot" to_schema="virtual" to_table="Lipid Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Helper Lipid Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_LNP Lot::Stability Lipid Lot TO Entity::Lipid Lot" to_schema="virtual" to_table="Lipid Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Stability Lipid Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_LNP Lot::PEG Lipid Lot TO Entity::Lipid Lot" to_schema="virtual" to_table="Lipid Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="PEG Lipid Lot" pk="_id_" />
+			</fk>
+		</table>
+		<table name="LNP Mixing Method" >
+			<comment><![CDATA[Object type: Dropdown
+Name: LNP Mixing Method
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_XcCYyLCq]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+T-Mixer
+Other]]></comment>
+			</column>
+		</table>
+		<table name="Lipid" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Lipid
+Description: Exported from Benchling
+Entity type: Molecule
+Prefix: LIP
+System name: lipid
+API ID: ts_FV2aFXvW
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: small-molecule]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="MW (g/mol)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: MW (g/mol)
+Description: Exported from Benchling
+System name: mw_gmol
+Type: Decimal]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<column name="CoA" type="Attachment" jt="2006" >
+				<comment><![CDATA[Name: CoA
+Description: Exported from Benchling
+System name: coa
+Type: Attachment]]></comment>
+			</column>
+		</table>
+		<table name="Lipid Lot" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Lipid Lot
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: LL
+System name: lipid_lot
+API ID: ts_kKnVkF1w
+Containable type: Entity
+Name template: Field(Lipid), Separator('-'), Text('lot'), Parent lot number(Lipid)
+Constraint: []
+Naming options: [DELETE_NAMES, REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Lipid" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Lipid
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: lipid
+Type: Entity
+Definition: Lipid]]></comment>
+			</column>
+			<column name="Date Solubilized" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date Solubilized
+Description: Exported from Benchling
+System name: date_solubilized
+Type: Date]]></comment>
+			</column>
+			<column name="Vendor" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Vendor
+Description: Exported from Benchling
+System name: vendor
+Type: Dropdown
+Definition: Vendor]]></comment>
+			</column>
+			<column name="Lot Number" type="Text" jt="12" >
+				<comment><![CDATA[Name: Lot Number
+Description: Exported from Benchling
+System name: lot
+Type: Text]]></comment>
+			</column>
+			<column name="Storage Conditions" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Storage Conditions
+Description: Exported from Benchling
+System name: storage_conditions
+Type: Dropdown
+Definition: Storage Conditions]]></comment>
+			</column>
+			<column name="Solvent" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Solvent
+Description: Exported from Benchling
+System name: solvent
+Type: Dropdown
+Definition: Solvent]]></comment>
+			</column>
+			<column name="Concentration (mM)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Concentration (mM)
+Description: Exported from Benchling
+System name: concentration_mm
+Type: Decimal]]></comment>
+			</column>
+			<column name="Mass (mg)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Mass (mg)
+Description: Exported from Benchling
+System name: mass_mg
+Type: Decimal]]></comment>
+			</column>
+			<column name="Volume (mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Volume (mL)
+Description: Exported from Benchling
+System name: volume_ml
+Type: Decimal]]></comment>
+			</column>
+			<column name="MW (g/mol)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: MW (g/mol)
+Description: Exported from Benchling
+System name: mw_gmol
+Type: Decimal
+Computed field: [Formula name:sum_floats, Arguments:[[name:numbers, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_4PFwsprq, displayName:Lipid, externalType:field, apiIdentifier:tsf_zA3n3biA]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_ymjk1O5T, displayName:MW (g/mol), externalType:field, apiIdentifier:tsf_JLQiCNEw]]]]]]]></comment>
+			</column>
+			<fk name="fk_Lipid Lot::Lipid TO Entity::Lipid__parent_link" to_schema="virtual" to_table="Lipid" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Lipid" pk="_id_" />
+			</fk>
+			<fk name="fk_Lipid Lot::Vendor TO Dropdown::Vendor" to_schema="virtual" to_table="Vendor" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Vendor" pk="Options" />
+			</fk>
+			<fk name="fk_Lipid Lot::Storage Conditions TO Dropdown::Storage Conditions" to_schema="virtual" to_table="Storage Conditions" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Storage Conditions" pk="Options" />
+			</fk>
+			<fk name="fk_Lipid Lot::Solvent TO Dropdown::Solvent" to_schema="virtual" to_table="Solvent" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Solvent" pk="Options" />
+			</fk>
+		</table>
+		<table name="Lipid Mixture Recipe" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Lipid Mixture Recipe
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: LMXR
+System name: lipid_mixture_recipe
+API ID: ts_JbPMTkez
+Containable type: None
+Name template: 
+Constraint: [Helper Lipid, Helper Lipid Mol %, Ionizable Lipid, Ionizable Lipid Mol %, N:P Ratio, PEG Lipid, PEG Lipid Mol%, Stability Lipid, Stability Lipid Mol%]
+Naming options: [DELETE_NAMES]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Ionizable Lipid" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Ionizable Lipid
+Description: Exported from Benchling
+System name: ionizable_lipid
+Type: Entity
+Definition: Lipid]]></comment>
+			</column>
+			<column name="Ionizable Lipid Mol %" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Ionizable Lipid Mol %
+Description: Exported from Benchling
+System name: ionizable_lipid_mol
+Type: Decimal]]></comment>
+			</column>
+			<column name="Helper Lipid" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Helper Lipid
+Description: Exported from Benchling
+System name: helper_lipid
+Type: Entity
+Definition: Lipid]]></comment>
+			</column>
+			<column name="Helper Lipid Mol %" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Helper Lipid Mol %
+Description: Exported from Benchling
+System name: helper_lipid_mol
+Type: Decimal]]></comment>
+			</column>
+			<column name="Stability Lipid" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Stability Lipid
+Description: Exported from Benchling
+System name: stability_lipid
+Type: Entity
+Definition: Lipid]]></comment>
+			</column>
+			<column name="Stability Lipid Mol%" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Stability Lipid Mol%
+Description: Exported from Benchling
+System name: stability_lipid_mol
+Type: Decimal]]></comment>
+			</column>
+			<column name="PEG Lipid" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: PEG Lipid
+Description: Exported from Benchling
+System name: peg
+Type: Entity
+Definition: Lipid]]></comment>
+			</column>
+			<column name="PEG Lipid Mol%" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: PEG Lipid Mol%
+Description: Exported from Benchling
+System name: peg_mol
+Type: Decimal]]></comment>
+			</column>
+			<column name="N:P Ratio" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: N:P Ratio
+Description: Exported from Benchling
+System name: ilp_ratio
+Type: Decimal]]></comment>
+			</column>
+			<fk name="fk_Lipid Mixture Recipe::Ionizable Lipid TO Entity::Lipid" to_schema="virtual" to_table="Lipid" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Ionizable Lipid" pk="_id_" />
+			</fk>
+			<fk name="fk_Lipid Mixture Recipe::Helper Lipid TO Entity::Lipid" to_schema="virtual" to_table="Lipid" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Helper Lipid" pk="_id_" />
+			</fk>
+			<fk name="fk_Lipid Mixture Recipe::Stability Lipid TO Entity::Lipid" to_schema="virtual" to_table="Lipid" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Stability Lipid" pk="_id_" />
+			</fk>
+			<fk name="fk_Lipid Mixture Recipe::PEG Lipid TO Entity::Lipid" to_schema="virtual" to_table="Lipid" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="PEG Lipid" pk="_id_" />
+			</fk>
+		</table>
+		<table name="Mixture Prep" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Mixture Prep
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: MP
+System name: mixture_prep
+API ID: ts_SUmFbEqT
+Containable type: Entity
+Name template: Field(Mixture Recipe), Text('-'), Parent lot number(Mixture Recipe)
+Constraint: []
+Naming options: [REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: mixture]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Mixture Recipe" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Mixture Recipe
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: mixture_recipe
+Type: Entity
+Definition: Mixture Recipe]]></comment>
+			</column>
+			<column name="Concentration" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Concentration
+Description: Exported from Benchling
+System name: concentration
+Type: Decimal]]></comment>
+			</column>
+			<column name="Concentration Units" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Concentration Units
+Description: Exported from Benchling
+System name: concentration_units
+Type: Dropdown
+Definition: Concentration Units]]></comment>
+			</column>
+			<column name="Measured pH" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Measured pH
+Description: Exported from Benchling
+System name: measured_ph
+Type: Decimal]]></comment>
+			</column>
+			<column name="Measured Osmolality (mOsm)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Measured Osmolality (mOsm)
+Description: Exported from Benchling
+System name: measured_osmolality_mosm
+Type: Decimal]]></comment>
+			</column>
+			<column name="Measured Conductivity (mS/cm)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Measured Conductivity (mS/cm)
+Description: Exported from Benchling
+System name: measured_conductivity_mscm
+Type: Decimal]]></comment>
+			</column>
+			<column name="Date Prepared" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date Prepared
+Description: Exported from Benchling
+System name: date_prepared
+Type: Date]]></comment>
+			</column>
+			<column name="Expiration Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: Expiration Date
+Description: Exported from Benchling
+System name: expiration_date
+Type: Date]]></comment>
+			</column>
+			<fk name="fk_Mixture Prep::Mixture Recipe TO Entity::Mixture Recipe__parent_link" to_schema="virtual" to_table="Mixture Recipe" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Mixture Recipe" pk="_id_" />
+			</fk>
+			<fk name="fk_Mixture Prep::Concentration Units TO Dropdown::Concentration Units" to_schema="virtual" to_table="Concentration Units" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Concentration Units" pk="Options" />
+			</fk>
+		</table>
+		<table name="Mixture Recipe" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Mixture Recipe
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: MR
+System name: mixture_recipe
+API ID: ts_ihPuA1kG
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: mixture]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Target pH Range" type="Text" jt="12" >
+				<comment><![CDATA[Name: Target pH Range
+Description: Exported from Benchling
+System name: target_ph_range
+Type: Text]]></comment>
+			</column>
+			<column name="Target Osmolality (mOsm)" type="Text" jt="12" >
+				<comment><![CDATA[Name: Target Osmolality (mOsm)
+Description: Exported from Benchling
+System name: target_osmolality_mosm
+Type: Text]]></comment>
+			</column>
+			<column name="Target Conductivity Range (mS/cm)" type="Text" jt="12" >
+				<comment><![CDATA[Name: Target Conductivity Range (mS/cm)
+Description: Exported from Benchling
+System name: target_conductivity_range_mscm
+Type: Text]]></comment>
+			</column>
+		</table>
+		<table name="Modification" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Modification
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_UkZjHerk]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+Natural
+5′-vinylphosphonate (5′-VP)
+Modification A
+Modification B]]></comment>
+			</column>
+		</table>
+		<table name="Nucleic Acid Quantification" >
+			<comment><![CDATA[Object type: Result_schema
+Name: Nucleic Acid Quantification
+Description: Exported from Benchling
+System name: nucleic_acid_quantification
+API ID: assaysch_mTiTPKWW]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Container" type="Inventory" jt="2006" >
+				<comment><![CDATA[Name: Container
+Description: Exported from Benchling
+System name: container
+Type: Inventory]]></comment>
+			</column>
+			<column name="Sample" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sample
+Description: Exported from Benchling
+System name: sample
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="Concentration (ng/uL)" type="Decimal" jt="3" mandatory="y" >
+				<comment><![CDATA[Name: Concentration (ng/uL)
+Description: Exported from Benchling
+Required: true
+System name: concentration_ngul
+Type: Decimal]]></comment>
+			</column>
+			<column name="260/280 Ratio" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: 260/280 Ratio
+Description: Exported from Benchling
+System name: _260280_ratio
+Type: Decimal]]></comment>
+			</column>
+			<column name="260/230 Ratio" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: 260/230 Ratio
+Description: Exported from Benchling
+System name: _260230_ratio
+Type: Decimal]]></comment>
+			</column>
+			<column name="Attachment(s)" type="Attachment" jt="2006" >
+				<comment><![CDATA[Name: Attachment(s)
+Description: Exported from Benchling
+Multi-select: true
+System name: attachments
+Type: Attachment]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+		</table>
+		<table name="Oligo" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Oligo
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: OL
+System name: oligo
+API ID: ts_TV3IF28E
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES, NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: oligo-v2]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Parent Oligo" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Parent Oligo
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: parent_oligo
+Type: Entity
+Definition: Oligo]]></comment>
+			</column>
+			<column name="Target" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Target
+Description: Exported from Benchling
+System name: target
+Type: Entity
+Definition: Gene]]></comment>
+			</column>
+			<column name="Strand Type" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Strand Type
+Description: Exported from Benchling
+System name: strand_type
+Type: Dropdown
+Definition: Oligo Strand Type]]></comment>
+			</column>
+			<column name="5&#039; Terminal End" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: 5' Terminal End
+Description: Exported from Benchling
+System name: _5_terminal_end
+Type: Entity
+Definition: Small Molecule]]></comment>
+			</column>
+			<column name="3&#039; Terminal End" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: 3' Terminal End
+Description: Exported from Benchling
+System name: _3_terminal_end
+Type: Entity
+Definition: Small Molecule]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<column name="Modification-Aware Molecular Weight" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Modification-Aware Molecular Weight
+Description: Exported from Benchling
+System name: modification_aware_molecular_weight
+Type: Decimal
+Computed field: [Formula name:mod_aware_molecular_weight, Arguments:[[name:bioentity, property:[type:BASES_WITH_MODS_AND_MONOMER_MW]]]]]]></comment>
+			</column>
+			<column name="HELM String" type="Text" jt="12" >
+				<comment><![CDATA[Name: HELM String
+Description: Exported from Benchling
+System name: helm_string
+Type: Text
+Computed field: [Formula name:simple_polymer_helm, Arguments:[[name:bioentity, property:[type:BASES_WITH_MODS]]]]]]></comment>
+			</column>
+			<column name="GC %" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: GC %
+Description: Exported from Benchling
+System name: gc
+Type: Decimal
+Computed field: [Formula name:dna_sequence_gc_percent, Arguments:[[name:dna_sequence, property:[type:BASES]]]]]]></comment>
+			</column>
+			<column name="Length" type="Integer" jt="4" >
+				<comment><![CDATA[Name: Length
+Description: Exported from Benchling
+System name: length
+Type: Integer
+Computed field: [Formula name:string_length, Arguments:[[name:val, property:[type:BASES]]]]]]></comment>
+			</column>
+			<column name="Melting Temperature (Celsius)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Melting Temperature (Celsius)
+Description: Exported from Benchling
+System name: melting_temperature_celsius
+Type: Decimal
+Computed field: [Formula name:rna_sequence_melting_temperature, Arguments:[[name:rna_sequence, property:[type:BASES]]]]]]></comment>
+			</column>
+			<fk name="fk_Oligo::Parent Oligo TO Entity::Oligo__parent_link" to_schema="virtual" to_table="Oligo" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Parent Oligo" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo::Target TO Entity::Gene" to_schema="virtual" to_table="Gene" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Target" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo::Strand Type TO Dropdown::Oligo Strand Type" to_schema="virtual" to_table="Oligo Strand Type" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Strand Type" pk="Options" />
+			</fk>
+			<fk name="fk_Oligo::5_ Terminal End TO Entity::Small Molecule" to_schema="virtual" to_table="Small Molecule" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="5&#039; Terminal End" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo::3_ Terminal End TO Entity::Small Molecule" to_schema="virtual" to_table="Small Molecule" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="3&#039; Terminal End" pk="_id_" />
+			</fk>
+		</table>
+		<table name="Oligo Conjugate" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Oligo Conjugate
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: OC
+System name: oligo_conjugate
+API ID: ts_uH0Fs4YP
+Containable type: None
+Name template: Field(Oligo Duplex), Separator('-'), Field(Protein or Antibody)
+Constraint: []
+Naming options: [DELETE_NAMES, NEW_IDS, REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Conjugate Type" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Conjugate Type
+Description: Exported from Benchling
+System name: conjugate_type
+Type: Dropdown
+Definition: Conjugate Type]]></comment>
+			</column>
+			<column name="Oligo Duplex" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Oligo Duplex
+Description: Exported from Benchling
+System name: oligo_duplex
+Type: Entity
+Definition: Oligo Duplex]]></comment>
+			</column>
+			<column name="Oligo" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Oligo
+Description: Exported from Benchling
+System name: oligo
+Type: Entity
+Definition: Oligo]]></comment>
+			</column>
+			<column name="Protein or Antibody" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Protein or Antibody
+Description: Exported from Benchling
+System name: protein_or_antibody
+Type: Entity
+Definition: Protein or Antibody]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<column name="Target(s)" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Target(s)
+Description: Exported from Benchling
+Multi-select: true
+System name: targets
+Type: Entity
+Definition: Any Entity
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_3MtyvLjr, displayName:Oligo Duplex, externalType:field, apiIdentifier:tsf_uqlxUDtJ]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_T7SduusS, displayName:Target(s), externalType:field, apiIdentifier:tsf_JwU3KQSO]]]]]]]></comment>
+			</column>
+			<fk name="fk_Oligo Conjugate::Conjugate Type TO Dropdown::Conjugate Type" to_schema="virtual" to_table="Conjugate Type" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Conjugate Type" pk="Options" />
+			</fk>
+			<fk name="fk_Oligo Conjugate::Oligo Duplex TO Entity::Oligo Duplex" to_schema="virtual" to_table="Oligo Duplex" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Oligo Duplex" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Conjugate::Oligo TO Entity::Oligo" to_schema="virtual" to_table="Oligo" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Oligo" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Conjugate::Protein or Antibody TO Entity::Protein or Antibody" to_schema="virtual" to_table="Protein or Antibody" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Protein or Antibody" pk="_id_" />
+			</fk>
+		</table>
+		<table name="Oligo Conjugate Lot" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Oligo Conjugate Lot
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: OCL
+System name: oligo_conjugate_lot
+API ID: ts_caPOG64B
+Containable type: Entity
+Name template: Field(Parent Oligo Conjugate), Separator('-'), Text('lot'), Parent lot number(Parent Oligo Conjugate)
+Constraint: []
+Naming options: [DELETE_NAMES, REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Parent Oligo Conjugate" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Parent Oligo Conjugate
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: oligo_conjugate
+Type: Entity
+Definition: Oligo Conjugate]]></comment>
+			</column>
+			<column name="Oligo Duplex Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Oligo Duplex Lot
+Description: Exported from Benchling
+System name: oligo_duplex_lot
+Type: Entity
+Definition: Oligo Duplex Lot]]></comment>
+			</column>
+			<column name="Oligo Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Oligo Lot
+Description: Exported from Benchling
+System name: oligo_lot
+Type: Entity
+Definition: Oligo Lot]]></comment>
+			</column>
+			<column name="Protein or Antibody Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Protein or Antibody Lot
+Description: Exported from Benchling
+System name: protein_or_antibody_lot
+Type: Entity
+Definition: Protein or Antibody Lot]]></comment>
+			</column>
+			<column name="Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date
+Description: Exported from Benchling
+System name: date
+Type: Date]]></comment>
+			</column>
+			<column name="Concentration (mg/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Concentration (mg/mL)
+Description: Exported from Benchling
+System name: concentration_mgml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Volume (mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Volume (mL)
+Description: Exported from Benchling
+System name: volume_ml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<column name="Target(s)" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Target(s)
+Description: Exported from Benchling
+Multi-select: true
+System name: targets
+Type: Entity
+Definition: Any Entity
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_rvKTPw3p, displayName:Parent Oligo Conjugate, externalType:field, apiIdentifier:tsf_07gnI7p8]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_QBQ5uLxD, displayName:Target(s), externalType:field, apiIdentifier:tsf_NntEeGrf]]]]]]]></comment>
+			</column>
+			<fk name="fk_Oligo Conjugate Lot::Parent Oligo Conjugate TO Entity::Oligo Conjugate__parent_link" to_schema="virtual" to_table="Oligo Conjugate" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Parent Oligo Conjugate" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Conjugate Lot::Oligo Duplex Lot TO Entity::Oligo Duplex Lot" to_schema="virtual" to_table="Oligo Duplex Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Oligo Duplex Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Conjugate Lot::Oligo Lot TO Entity::Oligo Lot" to_schema="virtual" to_table="Oligo Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Oligo Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Conjugate Lot::Protein or Antibody Lot TO Entity::Protein or Antibody Lot" to_schema="virtual" to_table="Protein or Antibody Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Protein or Antibody Lot" pk="_id_" />
+			</fk>
+		</table>
+		<table name="Oligo Duplex" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Oligo Duplex
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: OD
+System name: oligo_duplex
+API ID: ts_QVZFMnHW
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES, IDS_FROM_NAMES, NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Sense Strand" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sense Strand
+Description: Exported from Benchling
+System name: sense_strand
+Type: Entity
+Definition: Oligo]]></comment>
+			</column>
+			<column name="Antisense Strand" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Antisense Strand
+Description: Exported from Benchling
+System name: antisense_strand
+Type: Entity
+Definition: Oligo]]></comment>
+			</column>
+			<column name="Sense Strand 5&#039; Terminal End" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sense Strand 5' Terminal End
+Description: Exported from Benchling
+Multi-select: true
+System name: sense_strand_5_terminal_end
+Type: Entity
+Definition: Small Molecule
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_tZTpPjH7, displayName:Sense Strand, externalType:field, apiIdentifier:tsf_ekHbeXjj], [provenanceUri:mta-us-west-2:rnasolution:tsf_xV7XWrvM, displayName:Parent Oligo, externalType:field, apiIdentifier:tsf_F7rRksnF]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_crYhCajr, displayName:5' Terminal End, externalType:field, apiIdentifier:tsf_oDiwKcKq]]]]]]]></comment>
+			</column>
+			<column name="Sense Strand 3&#039; Terminal End" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sense Strand 3' Terminal End
+Description: Exported from Benchling
+Multi-select: true
+System name: sense_strand_3_terminal_end
+Type: Entity
+Definition: Small Molecule
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_tZTpPjH7, displayName:Sense Strand, externalType:field, apiIdentifier:tsf_ekHbeXjj]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_D7SED2tm, displayName:3' Terminal End, externalType:field, apiIdentifier:tsf_90j82UCA]]]]]]]></comment>
+			</column>
+			<column name="Antisense Strand 5&#039; Terminal End" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Antisense Strand 5' Terminal End
+Description: Exported from Benchling
+Multi-select: true
+System name: antisense_strand_5_terminal_end
+Type: Entity
+Definition: Small Molecule
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_G4Z6yMWe, displayName:Antisense Strand, externalType:field, apiIdentifier:tsf_CZ01vKev]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_crYhCajr, displayName:5' Terminal End, externalType:field, apiIdentifier:tsf_oDiwKcKq]]]]]]]></comment>
+			</column>
+			<column name="Antisense Strand 3&#039; Terminal End" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Antisense Strand 3' Terminal End
+Description: Exported from Benchling
+Multi-select: true
+System name: antisense_strand_3_terminal_end
+Type: Entity
+Definition: Small Molecule
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_G4Z6yMWe, displayName:Antisense Strand, externalType:field, apiIdentifier:tsf_CZ01vKev]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_D7SED2tm, displayName:3' Terminal End, externalType:field, apiIdentifier:tsf_90j82UCA]]]]]]]></comment>
+			</column>
+			<column name="Target(s)" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Target(s)
+Description: Exported from Benchling
+Multi-select: true
+System name: targets
+Type: Entity
+Definition: Any Entity
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_tZTpPjH7, displayName:Sense Strand, externalType:field, apiIdentifier:tsf_ekHbeXjj]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_zabEeS0t, displayName:Target, externalType:field, apiIdentifier:tsf_S20wh2fs]]], [name:val2, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_G4Z6yMWe, displayName:Antisense Strand, externalType:field, apiIdentifier:tsf_CZ01vKev]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_zabEeS0t, displayName:Target, externalType:field, apiIdentifier:tsf_S20wh2fs]]]]]]]></comment>
+			</column>
+			<fk name="fk_Oligo Duplex::Sense Strand TO Entity::Oligo" to_schema="virtual" to_table="Oligo" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Sense Strand" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Duplex::Antisense Strand TO Entity::Oligo" to_schema="virtual" to_table="Oligo" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Antisense Strand" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Duplex::Sense Strand 5_ Terminal End TO Entity::Small Molecule__multiselect" to_schema="virtual" to_table="Small Molecule" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Sense Strand 5&#039; Terminal End" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Duplex::Sense Strand 3_ Terminal End TO Entity::Small Molecule__multiselect" to_schema="virtual" to_table="Small Molecule" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Sense Strand 3&#039; Terminal End" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Duplex::Antisense Strand 5_ Terminal End TO Entity::Small Molecule__multiselect" to_schema="virtual" to_table="Small Molecule" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Antisense Strand 5&#039; Terminal End" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Duplex::Antisense Strand 3_ Terminal End TO Entity::Small Molecule__multiselect" to_schema="virtual" to_table="Small Molecule" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Antisense Strand 3&#039; Terminal End" pk="_id_" />
+			</fk>
+		</table>
+		<table name="Oligo Duplex (Complex Polymer)" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Oligo Duplex (Complex Polymer)
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: OCD-CP
+System name: oligo_duplex_complex_polymer
+API ID: ts_w59aKczU
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES, IDS_FROM_NAMES, NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Oligo (Forward)" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Oligo (Forward)
+Description: Exported from Benchling
+Multi-select: true
+System name: oligo_forward
+Type: Entity
+Definition: Oligo
+Computed field: [Formula name:complex_polymer_component_link, Arguments:[[name:complex_polymer_input, property:[type:COMPLEX_POLYMER_WITH_ENTITY_ASSOCIATIONS]], [name:complex_polymer_type, property:[type:LITERAL], literalValue:OLIGO_DUPLEX], [name:component_schema_or_interface_id, property:[type:LITERAL], literalValue:ts_TV3IF28E], [name:config_key, property:[type:LITERAL], literalValue:oligo_duplex_forward_strand], [name:strand, property:[type:LITERAL], literalValue:FORWARD]]]]]></comment>
+			</column>
+			<column name="Oligo (Reverse)" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Oligo (Reverse)
+Description: Exported from Benchling
+Multi-select: true
+System name: oligo_reverse
+Type: Entity
+Definition: Oligo
+Computed field: [Formula name:complex_polymer_component_link, Arguments:[[name:complex_polymer_input, property:[type:COMPLEX_POLYMER_WITH_ENTITY_ASSOCIATIONS]], [name:complex_polymer_type, property:[type:LITERAL], literalValue:OLIGO_DUPLEX], [name:component_schema_or_interface_id, property:[type:LITERAL], literalValue:ts_TV3IF28E], [name:config_key, property:[type:LITERAL], literalValue:oligo_duplex_reverse_strand], [name:strand, property:[type:LITERAL], literalValue:REVERSE]]]]]></comment>
+			</column>
+			<column name="Small Molecule" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Small Molecule
+Description: Exported from Benchling
+Multi-select: true
+System name: small_molecule
+Type: Entity
+Definition: Small Molecule
+Computed field: [Formula name:complex_polymer_component_link, Arguments:[[name:complex_polymer_input, property:[type:COMPLEX_POLYMER_WITH_ENTITY_ASSOCIATIONS]], [name:complex_polymer_type, property:[type:LITERAL], literalValue:OLIGO_DUPLEX], [name:component_schema_or_interface_id, property:[type:LITERAL], literalValue:ts_z6k3lLT0], [name:config_key, property:[type:LITERAL], literalValue:nucleotide_sequence_conjugate_conjugates], [name:strand, property:[type:LITERAL], literalValue:]]]]]></comment>
+			</column>
+			<fk name="fk_Oligo Duplex _Complex Polymer_::Oligo _Forward_ TO Entity::Oligo__multiselect" to_schema="virtual" to_table="Oligo" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Oligo (Forward)" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Duplex _Complex Polymer_::Oligo _Reverse_ TO Entity::Oligo__multiselect" to_schema="virtual" to_table="Oligo" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Oligo (Reverse)" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Duplex _Complex Polymer_::Small Molecule TO Entity::Small Molecule__multiselect" to_schema="virtual" to_table="Small Molecule" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Small Molecule" pk="_id_" />
+			</fk>
+		</table>
+		<table name="Oligo Duplex Lot" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Oligo Duplex Lot
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: ODL
+System name: oligo_duplex_lot
+API ID: ts_Nef5WYtE
+Containable type: Entity
+Name template: Field(Oligo Duplex), Separator('-'), Text('lot'), Parent lot number(Oligo Duplex)
+Constraint: []
+Naming options: [DELETE_NAMES, REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Oligo Duplex" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Oligo Duplex
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: oligo_duplex
+Type: Entity
+Definition: Oligo Duplex]]></comment>
+			</column>
+			<column name="Sense Strand Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sense Strand Lot
+Description: Exported from Benchling
+System name: sense_strand_lot
+Type: Entity
+Definition: Oligo Lot]]></comment>
+			</column>
+			<column name="Sense Strand 5&#039; Terminal End Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sense Strand 5' Terminal End Lot
+Description: Exported from Benchling
+Multi-select: true
+System name: sense_strand_5_terminal_end_lot
+Type: Entity
+Definition: Small Molecule Lot
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_6wnPZkVf, displayName:Sense Strand Lot, externalType:field, apiIdentifier:tsf_IjjtDOlm]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_VdHf27NS, displayName:5' Terminal End Lot, externalType:field, apiIdentifier:tsf_jutHFA2m]]]]]]]></comment>
+			</column>
+			<column name="Sense Strand 3&#039; Terminal End Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sense Strand 3' Terminal End Lot
+Description: Exported from Benchling
+Multi-select: true
+System name: sense_strand_3_terminal_end_lot
+Type: Entity
+Definition: Small Molecule Lot
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_6wnPZkVf, displayName:Sense Strand Lot, externalType:field, apiIdentifier:tsf_IjjtDOlm]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_eUibrZK4, displayName:3' Terminal End Lot, externalType:field, apiIdentifier:tsf_fQJBIMQK]]]]]]]></comment>
+			</column>
+			<column name="Antisense Strand Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Antisense Strand Lot
+Description: Exported from Benchling
+System name: antisense_strand_lot
+Type: Entity
+Definition: Oligo Lot]]></comment>
+			</column>
+			<column name="Antisense Strand 5&#039; Terminal End Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Antisense Strand 5' Terminal End Lot
+Description: Exported from Benchling
+Multi-select: true
+System name: antisense_strand_5_terminal_end_lot
+Type: Entity
+Definition: Small Molecule Lot
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_yLbJp2Y7, displayName:Antisense Strand Lot, externalType:field, apiIdentifier:tsf_eNWuHSCm]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_VdHf27NS, displayName:5' Terminal End Lot, externalType:field, apiIdentifier:tsf_jutHFA2m]]]]]]]></comment>
+			</column>
+			<column name="Antisense Strand 3&#039; Terminal End Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Antisense Strand 3' Terminal End Lot
+Description: Exported from Benchling
+Multi-select: true
+System name: antisense_strand_3_terminal_end_lot
+Type: Entity
+Definition: Small Molecule Lot
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_yLbJp2Y7, displayName:Antisense Strand Lot, externalType:field, apiIdentifier:tsf_eNWuHSCm]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_eUibrZK4, displayName:3' Terminal End Lot, externalType:field, apiIdentifier:tsf_fQJBIMQK]]]]]]]></comment>
+			</column>
+			<column name="Concentration (mg/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Concentration (mg/mL)
+Description: Exported from Benchling
+System name: concentration_mgml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Volume (mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Volume (mL)
+Description: Exported from Benchling
+System name: volume_ml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<column name="Target" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Target
+Description: Exported from Benchling
+Multi-select: true
+System name: target
+Type: Entity
+Definition: Any Entity
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_OtDeJ4VF, displayName:Oligo Duplex, externalType:field, apiIdentifier:tsf_I55Rzk5H]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_T7SduusS, displayName:Target(s), externalType:field, apiIdentifier:tsf_JwU3KQSO]]]]]]]></comment>
+			</column>
+			<fk name="fk_Oligo Duplex Lot::Oligo Duplex TO Entity::Oligo Duplex__parent_link" to_schema="virtual" to_table="Oligo Duplex" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Oligo Duplex" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Duplex Lot::Sense Strand Lot TO Entity::Oligo Lot" to_schema="virtual" to_table="Oligo Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Sense Strand Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Duplex Lot::Sense Strand 5_ Terminal End Lot TO Entity::Small Molecule Lot__multiselect" to_schema="virtual" to_table="Small Molecule Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Sense Strand 5&#039; Terminal End Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Duplex Lot::Sense Strand 3_ Terminal End Lot TO Entity::Small Molecule Lot__multiselect" to_schema="virtual" to_table="Small Molecule Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Sense Strand 3&#039; Terminal End Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Duplex Lot::Antisense Strand Lot TO Entity::Oligo Lot" to_schema="virtual" to_table="Oligo Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Antisense Strand Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Duplex Lot::Antisense Strand 5_ Terminal End Lot TO Entity::Small Molecule Lot__multiselect" to_schema="virtual" to_table="Small Molecule Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Antisense Strand 5&#039; Terminal End Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Duplex Lot::Antisense Strand 3_ Terminal End Lot TO Entity::Small Molecule Lot__multiselect" to_schema="virtual" to_table="Small Molecule Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Antisense Strand 3&#039; Terminal End Lot" pk="_id_" />
+			</fk>
+		</table>
+		<table name="Oligo Format" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Oligo Format
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_9aZtDsLA]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+ASO
+siRNA
+PMO
+Other]]></comment>
+			</column>
+		</table>
+		<table name="Oligo Lot" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Oligo Lot
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: OLL
+System name: oligo_lot
+API ID: ts_j1FZf4wE
+Containable type: Entity
+Name template: Field(Oligo), Separator('-'), Text('lot'), Parent lot number(Oligo)
+Constraint: []
+Naming options: [DELETE_NAMES, REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Oligo" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Oligo
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: oligo
+Type: Entity
+Definition: Oligo]]></comment>
+			</column>
+			<column name="Date Produced" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date Produced
+Description: Exported from Benchling
+System name: date_produced
+Type: Date]]></comment>
+			</column>
+			<column name="5&#039; Terminal End Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: 5' Terminal End Lot
+Description: Exported from Benchling
+System name: _5_terminal_end_lot
+Type: Entity
+Definition: Small Molecule Lot]]></comment>
+			</column>
+			<column name="3&#039; Terminal End Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: 3' Terminal End Lot
+Description: Exported from Benchling
+System name: _3_terminal_end_lot
+Type: Entity
+Definition: Small Molecule Lot]]></comment>
+			</column>
+			<column name="Vendor" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Vendor
+Description: Exported from Benchling
+System name: vendor
+Type: Dropdown
+Definition: Vendor]]></comment>
+			</column>
+			<column name="Catalog Number" type="Text" jt="12" >
+				<comment><![CDATA[Name: Catalog Number
+Description: Exported from Benchling
+System name: catalog_number
+Type: Text]]></comment>
+			</column>
+			<column name="Lot Number" type="Text" jt="12" >
+				<comment><![CDATA[Name: Lot Number
+Description: Exported from Benchling
+System name: lot_number
+Type: Text]]></comment>
+			</column>
+			<column name="Volume (mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Volume (mL)
+Description: Exported from Benchling
+System name: volume_ml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Concentration (mg/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Concentration (mg/mL)
+Description: Exported from Benchling
+System name: concentration_mgml
+Type: Decimal]]></comment>
+			</column>
+			<column name="CoA" type="Attachment" jt="2006" >
+				<comment><![CDATA[Name: CoA
+Description: Exported from Benchling
+System name: coa
+Type: Attachment]]></comment>
+			</column>
+			<column name="Strand Type" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Strand Type
+Description: Exported from Benchling
+Multi-select: true
+System name: strand_type
+Type: Dropdown
+Definition: Oligo Strand Type
+Computed field: [Formula name:set_union_selector, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_uMy5Esez, displayName:Oligo, externalType:field, apiIdentifier:tsf_2RMkeG4V]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_m8NyAPXr, displayName:Strand Type, externalType:field, apiIdentifier:tsf_9ii0d6BG]]]]]]]></comment>
+			</column>
+			<column name="Target" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Target
+Description: Exported from Benchling
+Multi-select: true
+System name: target
+Type: Entity
+Definition: Any Entity
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_uMy5Esez, displayName:Oligo, externalType:field, apiIdentifier:tsf_2RMkeG4V]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_zabEeS0t, displayName:Target, externalType:field, apiIdentifier:tsf_S20wh2fs]]]]]]]></comment>
+			</column>
+			<fk name="fk_Oligo Lot::Oligo TO Entity::Oligo__parent_link" to_schema="virtual" to_table="Oligo" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Oligo" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Lot::5_ Terminal End Lot TO Entity::Small Molecule Lot" to_schema="virtual" to_table="Small Molecule Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="5&#039; Terminal End Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Lot::3_ Terminal End Lot TO Entity::Small Molecule Lot" to_schema="virtual" to_table="Small Molecule Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="3&#039; Terminal End Lot" pk="_id_" />
+			</fk>
+			<fk name="fk_Oligo Lot::Vendor TO Dropdown::Vendor" to_schema="virtual" to_table="Vendor" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Vendor" pk="Options" />
+			</fk>
+			<fk name="fk_Oligo Lot::Strand Type TO Dropdown::Oligo Strand Type__multiselect" to_schema="virtual" to_table="Oligo Strand Type" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Strand Type" pk="Options" />
+			</fk>
+		</table>
+		<table name="Oligo Strand Type" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Oligo Strand Type
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_uva2Cqr4]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+Sense
+Antisense]]></comment>
+			</column>
+		</table>
+		<table name="Origin of Replication" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Origin of Replication
+Description: Exported from Benchling
+Entity type: DNA Sequence
+Prefix: ORI
+System name: origin_of_replication
+API ID: ts_6guXEnjs
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: sequence]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+		</table>
+		<table name="Pass or Fail" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Pass or Fail
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_jLoIh950]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+Pass
+Fail]]></comment>
+			</column>
+		</table>
+		<table name="Plasmid" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Plasmid
+Description: Exported from Benchling
+Entity type: DNA Sequence
+Prefix: P
+System name: plasmid
+API ID: ts_WDCQuQqi
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: sequence]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="mRNA Sequence Design" type="Transcription" jt="2006" >
+				<comment><![CDATA[Name: mRNA Sequence Design
+Description: Exported from Benchling
+System name: mrna_sequence_design
+Type: Transcription]]></comment>
+			</column>
+			<column name="Parent Plasmid" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Parent Plasmid
+Description: Exported from Benchling
+Parent link: true
+System name: parent_plasmid
+Type: Entity
+Definition: Plasmid]]></comment>
+			</column>
+			<column name="Gene" type="Part" jt="2006" >
+				<comment><![CDATA[Name: Gene
+Description: Exported from Benchling
+System name: gene
+Type: Part
+Definition: Gene]]></comment>
+			</column>
+			<column name="5&#039; UTR" type="Part" jt="2006" >
+				<comment><![CDATA[Name: 5' UTR
+Description: Exported from Benchling
+System name: _5_utr
+Type: Part
+Definition: 5' UTR]]></comment>
+			</column>
+			<column name="3&#039; UTR" type="Part" jt="2006" >
+				<comment><![CDATA[Name: 3' UTR
+Description: Exported from Benchling
+System name: _3_utr
+Type: Part
+Definition: 3' UTR]]></comment>
+			</column>
+			<column name="Promoter" type="Part" jt="2006" >
+				<comment><![CDATA[Name: Promoter
+Description: Exported from Benchling
+System name: promoter
+Type: Part
+Definition: Promoter]]></comment>
+			</column>
+			<column name="Terminator" type="Part" jt="2006" >
+				<comment><![CDATA[Name: Terminator
+Description: Exported from Benchling
+System name: terminator
+Type: Part
+Definition: Terminator]]></comment>
+			</column>
+			<column name="Antibiotic Resistance" type="Part" jt="2006" >
+				<comment><![CDATA[Name: Antibiotic Resistance
+Description: Exported from Benchling
+System name: antibiotic_resistance
+Type: Part
+Definition: Antibiotic Resistance]]></comment>
+			</column>
+			<column name="Origin of Replication" type="Part" jt="2006" >
+				<comment><![CDATA[Name: Origin of Replication
+Description: Exported from Benchling
+System name: origin_of_replication
+Type: Part
+Definition: Origin of Replication]]></comment>
+			</column>
+			<fk name="fk_Plasmid::Parent Plasmid TO Entity::Plasmid__parent_link" to_schema="virtual" to_table="Plasmid" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Parent Plasmid" pk="_id_" />
+			</fk>
+			<fk name="fk_Plasmid::Gene TO Entity::Gene__partlink" to_schema="virtual" to_table="Gene" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Gene" pk="_id_" />
+			</fk>
+			<fk name="fk_Plasmid::5_ UTR TO Entity::5_ UTR__partlink" to_schema="virtual" to_table="5&#039; UTR" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="5&#039; UTR" pk="_id_" />
+			</fk>
+			<fk name="fk_Plasmid::3_ UTR TO Entity::3_ UTR__partlink" to_schema="virtual" to_table="3&#039; UTR" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="3&#039; UTR" pk="_id_" />
+			</fk>
+			<fk name="fk_Plasmid::Promoter TO Entity::Promoter__partlink" to_schema="virtual" to_table="Promoter" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Promoter" pk="_id_" />
+			</fk>
+			<fk name="fk_Plasmid::Terminator TO Entity::Terminator__partlink" to_schema="virtual" to_table="Terminator" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Terminator" pk="_id_" />
+			</fk>
+			<fk name="fk_Plasmid::Antibiotic Resistance TO Entity::Antibiotic Resistance__partlink" to_schema="virtual" to_table="Antibiotic Resistance" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Antibiotic Resistance" pk="_id_" />
+			</fk>
+			<fk name="fk_Plasmid::Origin of Replication TO Entity::Origin of Replication__partlink" to_schema="virtual" to_table="Origin of Replication" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Origin of Replication" pk="_id_" />
+			</fk>
+		</table>
+		<table name="Plasmid Prep" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Plasmid Prep
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: PP
+System name: plasmid_prep
+API ID: ts_JkWSEW6h
+Containable type: Entity
+Name template: Field(Plasmid), Separator('-'), Parent lot number(Plasmid)
+Constraint: []
+Naming options: [DELETE_NAMES, REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Plasmid" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Plasmid
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: plasmid
+Type: Entity
+Definition: Plasmid]]></comment>
+			</column>
+			<column name="Supercoiled Plasmid Prep" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Supercoiled Plasmid Prep
+Description: Exported from Benchling
+Tool tip: This optional field is relevant for linearized plasmids
+Parent link: true
+System name: supercoiled_plasmid_prep
+Type: Entity
+Definition: Plasmid Prep]]></comment>
+			</column>
+			<column name="Linearized?" type="Dropdown" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Linearized?
+Description: Exported from Benchling
+Required: true
+System name: linearized
+Type: Dropdown
+Definition: Yes or No]]></comment>
+			</column>
+			<column name="Quantity (mg)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Quantity (mg)
+Description: Exported from Benchling
+System name: quantity_mg
+Type: Decimal]]></comment>
+			</column>
+			<column name="Concentration (mg/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Concentration (mg/mL)
+Description: Exported from Benchling
+System name: concentration_mgml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Volume (mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Volume (mL)
+Description: Exported from Benchling
+System name: volume_ml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Date Made" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date Made
+Description: Exported from Benchling
+System name: date_made
+Type: Date]]></comment>
+			</column>
+			<column name="Vendor" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Vendor
+Description: Exported from Benchling
+System name: vendor
+Type: Dropdown
+Definition: Vendor]]></comment>
+			</column>
+			<column name="Vendor Lot" type="Text" jt="12" >
+				<comment><![CDATA[Name: Vendor Lot
+Description: Exported from Benchling
+System name: vendor_lot
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_Plasmid Prep::Plasmid TO Entity::Plasmid__parent_link" to_schema="virtual" to_table="Plasmid" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Plasmid" pk="_id_" />
+			</fk>
+			<fk name="fk_Plasmid Prep::Supercoiled Plasmid Prep TO Entity::Plasmid Prep__parent_link" to_schema="virtual" to_table="Plasmid Prep" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Supercoiled Plasmid Prep" pk="_id_" />
+			</fk>
+			<fk name="fk_Plasmid Prep::Linearized_ TO Dropdown::Yes or No" to_schema="virtual" to_table="Yes or No" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Linearized?" pk="Options" />
+			</fk>
+			<fk name="fk_Plasmid Prep::Vendor TO Dropdown::Vendor" to_schema="virtual" to_table="Vendor" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Vendor" pk="Options" />
+			</fk>
+		</table>
+		<table name="Positive or Negative" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Positive or Negative
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_9mvFpDGf]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+Positive
+Negative
+Unknown]]></comment>
+			</column>
+		</table>
+		<table name="Primary Cell" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Primary Cell
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: PC
+System name: primary_cell
+API ID: ts_UGWhPiqA
+Containable type: Entity
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Vendor" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Vendor
+Description: Exported from Benchling
+System name: vendor
+Type: Dropdown
+Definition: Vendor]]></comment>
+			</column>
+			<column name="Catalog Number" type="Text" jt="12" >
+				<comment><![CDATA[Name: Catalog Number
+Description: Exported from Benchling
+System name: catalog_number
+Type: Text]]></comment>
+			</column>
+			<column name="Lot Number" type="Text" jt="12" >
+				<comment><![CDATA[Name: Lot Number
+Description: Exported from Benchling
+System name: lot_number
+Type: Text]]></comment>
+			</column>
+			<column name="Donor ID" type="Text" jt="12" >
+				<comment><![CDATA[Name: Donor ID
+Description: Exported from Benchling
+System name: donor_id
+Type: Text]]></comment>
+			</column>
+			<column name="Donor Age" type="Integer" jt="4" >
+				<comment><![CDATA[Name: Donor Age
+Description: Exported from Benchling
+System name: donor_age
+Type: Integer]]></comment>
+			</column>
+			<column name="Donor Sex" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Donor Sex
+Description: Exported from Benchling
+System name: donor_sex
+Type: Dropdown
+Definition: Sex]]></comment>
+			</column>
+			<column name="Passage Number" type="Integer" jt="4" >
+				<comment><![CDATA[Name: Passage Number
+Description: Exported from Benchling
+System name: passage_number
+Type: Integer]]></comment>
+			</column>
+			<column name="Source State" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Source State
+Description: Exported from Benchling
+System name: source_state
+Type: Dropdown
+Definition: Fresh or Frozen]]></comment>
+			</column>
+			<column name="Date Received" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date Received
+Description: Exported from Benchling
+System name: date_received
+Type: Date]]></comment>
+			</column>
+			<column name="Date Frozen" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date Frozen
+Description: Exported from Benchling
+System name: date_frozen
+Type: Date]]></comment>
+			</column>
+			<column name="Pathogen Status" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Pathogen Status
+Description: Exported from Benchling
+System name: pathogen_status
+Type: Dropdown
+Definition: Positive or Negative]]></comment>
+			</column>
+			<column name="CoA" type="Attachment" jt="2006" >
+				<comment><![CDATA[Name: CoA
+Description: Exported from Benchling
+System name: coa
+Type: Attachment]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_Primary Cell::Vendor TO Dropdown::Vendor" to_schema="virtual" to_table="Vendor" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Vendor" pk="Options" />
+			</fk>
+			<fk name="fk_Primary Cell::Donor Sex TO Dropdown::Sex" to_schema="virtual" to_table="Sex" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Donor Sex" pk="Options" />
+			</fk>
+			<fk name="fk_Primary Cell::Source State TO Dropdown::Fresh or Frozen" to_schema="virtual" to_table="Fresh or Frozen" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Source State" pk="Options" />
+			</fk>
+			<fk name="fk_Primary Cell::Pathogen Status TO Dropdown::Positive or Negative" to_schema="virtual" to_table="Positive or Negative" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Pathogen Status" pk="Options" />
+			</fk>
+		</table>
+		<table name="Promoter" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Promoter
+Description: Exported from Benchling
+Entity type: DNA Sequence
+Prefix: PRM
+System name: promoter
+API ID: ts_bQpgQ7SF
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: sequence]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+		</table>
+		<table name="Protein / Antigen AA" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Protein / Antigen AA
+Description: Exported from Benchling
+Entity type: AA Sequence
+Prefix: PRO
+System name: protein_antigen_aa
+API ID: ts_y5r1NFoX
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: protein]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Parent Protein / Antigen" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Parent Protein / Antigen
+Description: Exported from Benchling
+Tool tip: If registering a Protein/Antigen that is a variation of another, the parent Protein / Antigen can be linked here
+Parent link: true
+System name: parent_protein_antigen
+Type: Entity
+Definition: Protein / Antigen AA]]></comment>
+			</column>
+			<fk name="fk_Protein _ Antigen AA::Parent Protein _ Antigen TO Entity::Protein _ Antigen AA__parent_link" to_schema="virtual" to_table="Protein / Antigen AA" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Parent Protein / Antigen" pk="_id_" />
+			</fk>
+		</table>
+		<table name="Protein or Antibody" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Protein or Antibody
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: AB
+System name: protein_or_antibody
+API ID: ts_3bnmY8qy
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES, IDS_FROM_NAMES, NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Target" type="Text" jt="12" >
+				<comment><![CDATA[Name: Target
+Description: Exported from Benchling
+System name: target
+Type: Text]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+		</table>
+		<table name="Protein or Antibody Lot" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Protein or Antibody Lot
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: ABL
+System name: protein_or_antibody_lot
+API ID: ts_OYUPTH8R
+Containable type: Entity
+Name template: Field(Protein or Antibody), Separator('-'), Parent lot number(Protein or Antibody)
+Constraint: []
+Naming options: [DELETE_NAMES, REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Protein or Antibody" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Protein or Antibody
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: protein_or_antibody
+Type: Entity
+Definition: Protein or Antibody]]></comment>
+			</column>
+			<column name="Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date
+Description: Exported from Benchling
+System name: date
+Type: Date]]></comment>
+			</column>
+			<column name="Vendor" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Vendor
+Description: Exported from Benchling
+System name: vendor
+Type: Dropdown
+Definition: Vendor]]></comment>
+			</column>
+			<column name="Vendor Lot" type="Text" jt="12" >
+				<comment><![CDATA[Name: Vendor Lot
+Description: Exported from Benchling
+System name: vendor_lot
+Type: Text]]></comment>
+			</column>
+			<column name="Target" type="Text" jt="12" >
+				<comment><![CDATA[Name: Target
+Description: Exported from Benchling
+System name: target
+Type: Text
+Computed field: [Formula name:join_string, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_e820lFiz, displayName:Protein or Antibody, externalType:field, apiIdentifier:tsf_fQg8NLug]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_NXMnMcO1, displayName:Target, externalType:field, apiIdentifier:tsf_tdUdtvPj]]]]]]]></comment>
+			</column>
+			<fk name="fk_Protein or Antibody Lot::Protein or Antibody TO Entity::Protein or Antibody__parent_link" to_schema="virtual" to_table="Protein or Antibody" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Protein or Antibody" pk="_id_" />
+			</fk>
+			<fk name="fk_Protein or Antibody Lot::Vendor TO Dropdown::Vendor" to_schema="virtual" to_table="Vendor" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Vendor" pk="Options" />
+			</fk>
+		</table>
+		<table name="RNA Characterization" >
+			<comment><![CDATA[Object type: Result_schema
+Name: RNA Characterization
+Description: Exported from Benchling
+System name: rna_characterization
+API ID: assaysch_n3UOLFHf]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Sample" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sample
+Description: Exported from Benchling
+System name: sample
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="Residual plasmid (pg/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Residual plasmid (pg/mL)
+Description: Exported from Benchling
+System name: residual_plasmid_pgml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Residual protein (pg/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Residual protein (pg/mL)
+Description: Exported from Benchling
+System name: residual_protein_pgml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Chromatogram" type="Attachment" jt="2006" >
+				<comment><![CDATA[Name: Chromatogram
+Description: Exported from Benchling
+System name: chromatogram
+Type: Attachment]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+		</table>
+		<table name="RNA Lot" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: RNA Lot
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: RL
+System name: rna_lot
+API ID: ts_wNXwNM5s
+Containable type: Entity
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Plasmid Prep" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Plasmid Prep
+Description: Exported from Benchling
+Parent link: true
+System name: plasmid_prep
+Type: Entity
+Definition: Plasmid Prep]]></comment>
+			</column>
+			<column name="Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date
+Description: Exported from Benchling
+System name: date
+Type: Date]]></comment>
+			</column>
+			<column name="Concentration (mg/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Concentration (mg/mL)
+Description: Exported from Benchling
+System name: concentration_mgml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Volume (mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Volume (mL)
+Description: Exported from Benchling
+System name: volume_ml
+Type: Decimal]]></comment>
+			</column>
+			<column name="Quantity (mg)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Quantity (mg)
+Description: Exported from Benchling
+System name: quantity_mg
+Type: Decimal]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_RNA Lot::Plasmid Prep TO Entity::Plasmid Prep__parent_link" to_schema="virtual" to_table="Plasmid Prep" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Plasmid Prep" pk="_id_" />
+			</fk>
+		</table>
+		<table name="Reagent" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Reagent
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: RG
+System name: reagent
+API ID: ts_46iRZlSr
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES, IDS_FROM_NAMES, NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Vendor" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Vendor
+Description: Exported from Benchling
+System name: vendor
+Type: Dropdown
+Definition: Vendor]]></comment>
+			</column>
+			<column name="Catalog Number" type="Text" jt="12" >
+				<comment><![CDATA[Name: Catalog Number
+Description: Exported from Benchling
+System name: catalog_number
+Type: Text]]></comment>
+			</column>
+			<column name="Storage Condition" type="Text" jt="12" >
+				<comment><![CDATA[Name: Storage Condition
+Description: Exported from Benchling
+System name: storage_condition
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_Reagent::Vendor TO Dropdown::Vendor" to_schema="virtual" to_table="Vendor" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Vendor" pk="Options" />
+			</fk>
+		</table>
+		<table name="Reagent Lot" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Reagent Lot
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: RGL
+System name: reagent_lot
+API ID: ts_kM29e84o
+Containable type: Entity
+Name template: Field(Reagent), Separator('-'), Parent lot number(Reagent)
+Constraint: []
+Naming options: [DELETE_NAMES, REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Reagent" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Reagent
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: reagent
+Type: Entity
+Definition: Reagent]]></comment>
+			</column>
+			<column name="Lot Number" type="Text" jt="12" >
+				<comment><![CDATA[Name: Lot Number
+Description: Exported from Benchling
+System name: lot_number
+Type: Text]]></comment>
+			</column>
+			<column name="Expiry Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: Expiry Date
+Description: Exported from Benchling
+System name: expiry_date
+Type: Date]]></comment>
+			</column>
+			<column name="Comments" type="Text" jt="12" >
+				<comment><![CDATA[Name: Comments
+Description: Exported from Benchling
+System name: comments
+Type: Text]]></comment>
+			</column>
+			<column name="Concentration" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Concentration
+Description: Exported from Benchling
+System name: concentration
+Type: Decimal]]></comment>
+			</column>
+			<column name="Concentration Units" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Concentration Units
+Description: Exported from Benchling
+System name: concentration_units
+Type: Dropdown
+Definition: Concentration Units]]></comment>
+			</column>
+			<column name="CoA" type="Attachment" jt="2006" >
+				<comment><![CDATA[Name: CoA
+Description: Exported from Benchling
+System name: coa
+Type: Attachment]]></comment>
+			</column>
+			<column name="Vendor" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Vendor
+Description: Exported from Benchling
+Multi-select: true
+System name: vendor
+Type: Dropdown
+Definition: Vendor
+Computed field: [Formula name:set_union_selector, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_A98yBmvU, displayName:Reagent, externalType:field, apiIdentifier:tsf_a0qvPiAa]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_PqNZ1LPp, displayName:Vendor, externalType:field, apiIdentifier:tsf_HXcQTwTR]]]]]]]></comment>
+			</column>
+			<column name="Catalog Number" type="Text" jt="12" >
+				<comment><![CDATA[Name: Catalog Number
+Description: Exported from Benchling
+System name: catalog_number
+Type: Text
+Computed field: [Formula name:join_string, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_A98yBmvU, displayName:Reagent, externalType:field, apiIdentifier:tsf_a0qvPiAa]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_JBjiEcpN, displayName:Catalog Number, externalType:field, apiIdentifier:tsf_eMtxS3eG]]]]]]]></comment>
+			</column>
+			<column name="Storage Condition" type="Text" jt="12" >
+				<comment><![CDATA[Name: Storage Condition
+Description: Exported from Benchling
+System name: storage_condition
+Type: Text
+Computed field: [Formula name:join_string, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_A98yBmvU, displayName:Reagent, externalType:field, apiIdentifier:tsf_a0qvPiAa]], property:[type:FIELD, fieldReference:[provenanceUri:mtatest-us-west-2:rnabioresearchsolution:tsf_v6DftSub, displayName:Storage Condition, externalType:field, apiIdentifier:tsf_v6DftSub]]]]]]]></comment>
+			</column>
+			<fk name="fk_Reagent Lot::Reagent TO Entity::Reagent__parent_link" to_schema="virtual" to_table="Reagent" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Reagent" pk="_id_" />
+			</fk>
+			<fk name="fk_Reagent Lot::Concentration Units TO Dropdown::Concentration Units" to_schema="virtual" to_table="Concentration Units" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Concentration Units" pk="Options" />
+			</fk>
+			<fk name="fk_Reagent Lot::Vendor TO Dropdown::Vendor__multiselect" to_schema="virtual" to_table="Vendor" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Vendor" pk="Options" />
+			</fk>
+		</table>
+		<table name="Ribogreen" >
+			<comment><![CDATA[Object type: Result_schema
+Name: Ribogreen
+Description: Exported from Benchling
+System name: ribogreen
+API ID: assaysch_22DapjBs]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Container" type="Inventory" jt="2006" >
+				<comment><![CDATA[Name: Container
+Description: Exported from Benchling
+System name: container
+Type: Inventory]]></comment>
+			</column>
+			<column name="Sample" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sample
+Description: Exported from Benchling
+System name: sample
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="EE (%)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: EE (%)
+Description: Exported from Benchling
+System name: ee
+Type: Decimal]]></comment>
+			</column>
+			<column name="Concentration (ug/mL)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Concentration (ug/mL)
+Description: Exported from Benchling
+System name: concentration_ugml
+Type: Decimal]]></comment>
+			</column>
+		</table>
+		<table name="Route of Administration" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Route of Administration
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_QNpsbBwT]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+IV
+IM
+Oral
+Other]]></comment>
+			</column>
+		</table>
+		<table name="Sequence Validation" >
+			<comment><![CDATA[Object type: Result_schema
+Name: Sequence Validation
+Description: Exported from Benchling
+System name: sequence_validation
+API ID: assaysch_H48WIVF9]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Container" type="Inventory" jt="2006" >
+				<comment><![CDATA[Name: Container
+Description: Exported from Benchling
+System name: container
+Type: Inventory]]></comment>
+			</column>
+			<column name="Sample" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sample
+Description: Exported from Benchling
+System name: entity
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="Validation Method" type="Text" jt="12" >
+				<comment><![CDATA[Name: Validation Method
+Description: Exported from Benchling
+System name: validation_method
+Type: Text]]></comment>
+			</column>
+			<column name="Sequence Mismatch Number" type="Integer" jt="4" >
+				<comment><![CDATA[Name: Sequence Mismatch Number
+Description: Exported from Benchling
+System name: sequence_mismatch_number
+Type: Integer]]></comment>
+			</column>
+			<column name="Pass/Fail" type="Dropdown" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Pass/Fail
+Description: Exported from Benchling
+Required: true
+System name: passfail
+Type: Dropdown
+Definition: Pass or Fail]]></comment>
+			</column>
+			<column name="Attachment(s)" type="Attachment" jt="2006" >
+				<comment><![CDATA[Name: Attachment(s)
+Description: Exported from Benchling
+Multi-select: true
+System name: attachments
+Type: Attachment]]></comment>
+			</column>
+			<fk name="fk_Sequence Validation::Pass_Fail TO Dropdown::Pass or Fail" to_schema="virtual" to_table="Pass or Fail" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Pass/Fail" pk="Options" />
+			</fk>
+		</table>
+		<table name="Sex" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Sex
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_0UvznIRs]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+Female
+Male]]></comment>
+			</column>
+		</table>
+		<table name="Small Molecule" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Small Molecule
+Description: Exported from Benchling
+Entity type: Molecule
+Prefix: SM
+System name: small_molecule
+API ID: ts_z6k3lLT0
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES, NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: small-molecule]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Parent Molecule" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Parent Molecule
+Description: Exported from Benchling
+Parent link: true
+System name: parent_molecule
+Type: Entity
+Definition: Small Molecule]]></comment>
+			</column>
+			<column name="Functional Group Type" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Functional Group Type
+Description: Exported from Benchling
+System name: functional_group_type
+Type: Dropdown
+Definition: Functional Group Type]]></comment>
+			</column>
+			<column name="Target" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Target
+Description: Exported from Benchling
+System name: target
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="Extinction Coefficient" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Extinction Coefficient
+Description: Exported from Benchling
+System name: extinction_coefficient
+Type: Decimal]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<column name="Canonical SMILES" type="Text" jt="12" >
+				<comment><![CDATA[Name: Canonical SMILES
+Description: Exported from Benchling
+System name: canonical_smiles
+Type: Text
+Computed field: [Formula name:canonical_smiles, Arguments:[[name:chemical_structure, property:[type:CHEMICAL_STRUCTURE]]]]]]></comment>
+			</column>
+			<column name="Molecular Weight" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Molecular Weight
+Description: Exported from Benchling
+System name: molecular_weight
+Type: Decimal
+Computed field: [Formula name:molecule_molecular_weight, Arguments:[[name:chemical_structure, property:[type:CHEMICAL_STRUCTURE]]]]]]></comment>
+			</column>
+			<fk name="fk_Small Molecule::Parent Molecule TO Entity::Small Molecule__parent_link" to_schema="virtual" to_table="Small Molecule" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Parent Molecule" pk="_id_" />
+			</fk>
+			<fk name="fk_Small Molecule::Functional Group Type TO Dropdown::Functional Group Type" to_schema="virtual" to_table="Functional Group Type" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Functional Group Type" pk="Options" />
+			</fk>
+		</table>
+		<table name="Small Molecule Lot" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Small Molecule Lot
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: SML
+System name: small_molecule_lot
+API ID: ts_ATvTbUmO
+Containable type: Entity
+Name template: Field(Small Molecule), Separator('-'), Parent lot number(Small Molecule)
+Constraint: []
+Naming options: [DELETE_NAMES, REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Small Molecule" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: Small Molecule
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: small_molecule
+Type: Entity
+Definition: Small Molecule]]></comment>
+			</column>
+			<column name="Vendor" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Vendor
+Description: Exported from Benchling
+System name: vendor
+Type: Dropdown
+Definition: Vendor]]></comment>
+			</column>
+			<column name="Part Number" type="Text" jt="12" >
+				<comment><![CDATA[Name: Part Number
+Description: Exported from Benchling
+System name: part_number
+Type: Text]]></comment>
+			</column>
+			<column name="Lot Number" type="Text" jt="12" >
+				<comment><![CDATA[Name: Lot Number
+Description: Exported from Benchling
+System name: lot_number
+Type: Text]]></comment>
+			</column>
+			<column name="Date Solubilized" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date Solubilized
+Description: Exported from Benchling
+System name: date_solubilized
+Type: Date]]></comment>
+			</column>
+			<column name="Solvent" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Solvent
+Description: Exported from Benchling
+System name: solvent
+Type: Dropdown
+Definition: Solvent]]></comment>
+			</column>
+			<column name="Concentration (mM)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Concentration (mM)
+Description: Exported from Benchling
+System name: concentration_mm
+Type: Decimal]]></comment>
+			</column>
+			<column name="Mass (mg)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Mass (mg)
+Description: Exported from Benchling
+System name: mass_mg
+Type: Decimal]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<fk name="fk_Small Molecule Lot::Small Molecule TO Entity::Small Molecule__parent_link" to_schema="virtual" to_table="Small Molecule" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Small Molecule" pk="_id_" />
+			</fk>
+			<fk name="fk_Small Molecule Lot::Vendor TO Dropdown::Vendor" to_schema="virtual" to_table="Vendor" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Vendor" pk="Options" />
+			</fk>
+			<fk name="fk_Small Molecule Lot::Solvent TO Dropdown::Solvent" to_schema="virtual" to_table="Solvent" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Solvent" pk="Options" />
+			</fk>
+		</table>
+		<table name="Solvent" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Solvent
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_KygauovG]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+Butanol
+Chloroform
+DMSO
+Ethanol
+Other
+PBS
+THF
+Water]]></comment>
+			</column>
+		</table>
+		<table name="Species" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Species
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_pQitWWTI]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+Mouse
+Rabbit
+Human
+Other]]></comment>
+			</column>
+		</table>
+		<table name="Storage Buffer" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Storage Buffer
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_XWqW3Q0W]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+1x PBS
+Water
+Other]]></comment>
+			</column>
+		</table>
+		<table name="Storage Conditions" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Storage Conditions
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_p6LmrIPd]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+RT
+4C
+-20C
+-80C]]></comment>
+			</column>
+		</table>
+		<table name="Strain" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Strain
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_G3u6olzP]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+BALB/c
+B6
+Other]]></comment>
+			</column>
+		</table>
+		<table name="Terminator" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: Terminator
+Description: Exported from Benchling
+Entity type: DNA Sequence
+Prefix: TRM
+System name: terminator
+API ID: ts_0iPm2WwQ
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: sequence]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+		</table>
+		<table name="Units" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Units
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_7oXUuD5K]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+uL
+mL
+L
+um
+mm]]></comment>
+			</column>
+		</table>
+		<table name="Vendor" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Vendor
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_NzJh2gfU]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+Thermo
+Sartorius
+Vendor X
+Corning
+In-House]]></comment>
+			</column>
+		</table>
+		<table name="Western Blot" >
+			<comment><![CDATA[Object type: Result_schema
+Name: Western Blot
+Description: Exported from Benchling
+System name: western_blot
+API ID: assaysch_5jn8PoYF]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Container" type="Inventory" jt="2006" >
+				<comment><![CDATA[Name: Container
+Description: Exported from Benchling
+System name: container
+Type: Inventory]]></comment>
+			</column>
+			<column name="Sample" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sample
+Description: Exported from Benchling
+System name: sample
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date
+Description: Exported from Benchling
+System name: date
+Type: Date]]></comment>
+			</column>
+			<column name="Relative Protein Intensity (Protein / Control)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Relative Protein Intensity (Protein / Control)
+Description: Exported from Benchling
+System name: relative_protein_intensity_protein_control
+Type: Decimal]]></comment>
+			</column>
+			<column name="Primary Antibody" type="Text" jt="12" >
+				<comment><![CDATA[Name: Primary Antibody
+Description: Exported from Benchling
+System name: primary_antibody
+Type: Text]]></comment>
+			</column>
+			<column name="Primary Antibody Concentration" type="Text" jt="12" >
+				<comment><![CDATA[Name: Primary Antibody Concentration
+Description: Exported from Benchling
+System name: primary_antibody_concentration
+Type: Text]]></comment>
+			</column>
+			<column name="Secondary Antibody" type="Text" jt="12" >
+				<comment><![CDATA[Name: Secondary Antibody
+Description: Exported from Benchling
+System name: secondary_antibody
+Type: Text]]></comment>
+			</column>
+			<column name="Secondary Antibody Concentration" type="Text" jt="12" >
+				<comment><![CDATA[Name: Secondary Antibody Concentration
+Description: Exported from Benchling
+System name: secondary_antibody_concentration
+Type: Text]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+		</table>
+		<table name="Yes or No" >
+			<comment><![CDATA[Object type: Dropdown
+Name: Yes or No
+Description: Exported from Benchling
+Alphabetize: false
+API ID: sfs_eHM6cMb9]]></comment>
+			<column name="Options" type="TEXT" jt="-1" >
+				<comment><![CDATA[Options:
+Yes
+No]]></comment>
+			</column>
+		</table>
+		<table name="[TEST} Reporter Gene Expression" >
+			<comment><![CDATA[Object type: Result_schema
+Name: [TEST} Reporter Gene Expression
+Description: Exported from Benchling
+System name: test_reporter_gene_expression
+API ID: assaysch_gC4cYJgW]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Sample" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sample
+Description: Exported from Benchling
+System name: sample
+Type: Entity
+Definition: RNA Lot]]></comment>
+			</column>
+			<column name="Cell Lot" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Cell Lot
+Description: Exported from Benchling
+System name: cell_lot
+Type: Entity
+Definition: Primary Cell]]></comment>
+			</column>
+			<column name="Reporter Gene Expression (RLU)" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Reporter Gene Expression (RLU)
+Description: Exported from Benchling
+System name: reporter_gene_expression_rlu
+Type: Decimal]]></comment>
+			</column>
+			<column name="Day" type="Integer" jt="4" >
+				<comment><![CDATA[Name: Day
+Description: Exported from Benchling
+System name: day
+Type: Integer]]></comment>
+			</column>
+			<column name="Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date
+Description: Exported from Benchling
+System name: date
+Type: Date]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+			<fk name="fk__TEST_ Reporter Gene Expression::Sample TO Entity::RNA Lot" to_schema="virtual" to_table="RNA Lot" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Sample" pk="_id_" />
+			</fk>
+			<fk name="fk__TEST_ Reporter Gene Expression::Cell Lot TO Entity::Primary Cell" to_schema="virtual" to_table="Primary Cell" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Cell Lot" pk="_id_" />
+			</fk>
+		</table>
+		<table name="gRNA" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: gRNA
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: gRNA
+System name: grna
+API ID: ts_UyduBJEe
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES, IDS_FROM_NAMES, NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: oligo-v2]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Target Gene" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Target Gene
+Description: Exported from Benchling
+System name: target_gene
+Type: Entity
+Definition: Gene]]></comment>
+			</column>
+			<fk name="fk_gRNA::Target Gene TO Entity::Gene" to_schema="virtual" to_table="Gene" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Target Gene" pk="_id_" />
+			</fk>
+		</table>
+		<table name="gRNA Lot" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: gRNA Lot
+Description: Exported from Benchling
+Entity type: Custom Entity
+Prefix: gRNALot
+System name: grna_lot
+API ID: ts_Lughy6k6
+Containable type: Entity
+Name template: Field(gRNA), Separator('-'), Parent lot number(gRNA)
+Constraint: []
+Naming options: [DELETE_NAMES, REPLACE_NAMES_FROM_PARTS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="gRNA" type="Entity" jt="2006" mandatory="y" >
+				<comment><![CDATA[Name: gRNA
+Description: Exported from Benchling
+Required: true
+Parent link: true
+System name: grna
+Type: Entity
+Definition: gRNA]]></comment>
+			</column>
+			<column name="Vendor" type="Dropdown" jt="2006" >
+				<comment><![CDATA[Name: Vendor
+Description: Exported from Benchling
+System name: vendor
+Type: Dropdown
+Definition: Vendor]]></comment>
+			</column>
+			<column name="Lot #" type="Text" jt="12" >
+				<comment><![CDATA[Name: Lot #
+Description: Exported from Benchling
+System name: lot
+Type: Text]]></comment>
+			</column>
+			<column name="Date Received" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date Received
+Description: Exported from Benchling
+System name: date_received
+Type: Date]]></comment>
+			</column>
+			<column name="CoA" type="Attachment" jt="2006" >
+				<comment><![CDATA[Name: CoA
+Description: Exported from Benchling
+System name: coa
+Type: Attachment]]></comment>
+			</column>
+			<column name="Target" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Target
+Description: Exported from Benchling
+Multi-select: true
+System name: target
+Type: Entity
+Definition: Gene
+Computed field: [Formula name:set_union_file_link, Arguments:[[name:val1, fieldReferencePath:[[provenanceUri:mta-us-west-2:rnasolution:tsf_Y49PQjYI, displayName:gRNA, externalType:field, apiIdentifier:tsf_rQ53eXij]], property:[type:FIELD, fieldReference:[provenanceUri:mta-us-west-2:rnasolution:tsf_9XCL5JwM, displayName:Target Gene, externalType:field, apiIdentifier:tsf_gRN9W87c]]]]]]]></comment>
+			</column>
+			<fk name="fk_gRNA Lot::gRNA TO Entity::gRNA__parent_link" to_schema="virtual" to_table="gRNA" type="NonIdentifying" mandatory="y" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="gRNA" pk="_id_" />
+			</fk>
+			<fk name="fk_gRNA Lot::Vendor TO Dropdown::Vendor" to_schema="virtual" to_table="Vendor" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Vendor" pk="Options" />
+			</fk>
+			<fk name="fk_gRNA Lot::Target TO Entity::Gene__multiselect" to_schema="virtual" to_table="Gene" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="Target" pk="_id_" />
+			</fk>
+		</table>
+		<table name="mRNA 3&#039; UTR" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: mRNA 3' UTR
+Description: Exported from Benchling
+Entity type: RNA Sequence
+Prefix: RNA3UTR
+System name: mrna_3_utr
+API ID: ts_uRp1d5hY
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: rna_sequence]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+		</table>
+		<table name="mRNA 5&#039; UTR" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: mRNA 5' UTR
+Description: Exported from Benchling
+Entity type: RNA Sequence
+Prefix: RNA5UTR
+System name: mrna_5_utr
+API ID: ts_4pXPpTbj
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [DELETE_NAMES, IDS_FROM_NAMES, NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: basic_folder_item]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+		</table>
+		<table name="mRNA CDS" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: mRNA CDS
+Description: Exported from Benchling
+Entity type: RNA Sequence
+Prefix: CDS
+System name: mrna_cds
+API ID: ts_e8yRYokB
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: rna_sequence]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Protein or Antigen AA" type="ft_translation_link" jt="2006" >
+				<comment><![CDATA[Name: Protein or Antigen AA
+Description: Exported from Benchling
+System name: protein_or_antigen_aa
+Type: ft_translation_link]]></comment>
+			</column>
+		</table>
+		<table name="mRNA Sequence" >
+			<comment><![CDATA[Object type: Entity_schema
+Name: mRNA Sequence
+Description: Exported from Benchling
+Entity type: RNA Sequence
+Prefix: mRNA
+System name: mrna_sequence
+API ID: ts_JP4Vrjod
+Containable type: None
+Name template: 
+Constraint: []
+Naming options: [NEW_IDS]
+RegID chips: false
+RegID display: false
+Access type: Registry-based
+Icon: rna_sequence]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="mRNA CDS" type="Part" jt="2006" >
+				<comment><![CDATA[Name: mRNA CDS
+Description: Exported from Benchling
+System name: mrna_cds
+Type: Part
+Definition: mRNA CDS]]></comment>
+			</column>
+			<column name="mRNA 5&#039; UTR" type="Part" jt="2006" >
+				<comment><![CDATA[Name: mRNA 5' UTR
+Description: Exported from Benchling
+System name: mrna_5_utr
+Type: Part
+Definition: mRNA 5' UTR]]></comment>
+			</column>
+			<column name="mRNA 3&#039; UTR" type="Part" jt="2006" >
+				<comment><![CDATA[Name: mRNA 3' UTR
+Description: Exported from Benchling
+System name: mrna_3_utr
+Type: Part
+Definition: mRNA 3' UTR]]></comment>
+			</column>
+			<column name="Theoretical Sequence Length" type="Integer" jt="4" >
+				<comment><![CDATA[Name: Theoretical Sequence Length
+Description: Exported from Benchling
+System name: theoretical_sequence_length
+Type: Integer
+Computed field: [Formula name:string_length, Arguments:[[name:val, property:[type:BASES]]]]]]></comment>
+			</column>
+			<fk name="fk_mRNA Sequence::mRNA CDS TO Entity::mRNA CDS__partlink" to_schema="virtual" to_table="mRNA CDS" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="mRNA CDS" pk="_id_" />
+			</fk>
+			<fk name="fk_mRNA Sequence::mRNA 5_ UTR TO Entity::mRNA 5_ UTR__partlink" to_schema="virtual" to_table="mRNA 5&#039; UTR" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="mRNA 5&#039; UTR" pk="_id_" />
+			</fk>
+			<fk name="fk_mRNA Sequence::mRNA 3_ UTR TO Entity::mRNA 3_ UTR__partlink" to_schema="virtual" to_table="mRNA 3&#039; UTR" type="NonIdentifying" mandatory="n" cardinality="ZeroMore" range_from="0" range_to="0" >
+				<fk_column name="mRNA 3&#039; UTR" pk="_id_" />
+			</fk>
+		</table>
+		<table name="qPCR" >
+			<comment><![CDATA[Object type: Result_schema
+Name: qPCR
+Description: Exported from Benchling
+System name: qpcr
+API ID: assaysch_lB3bSrDH]]></comment>
+			<column name="_id_" type="TEXT" jt="-1" >
+				<comment><![CDATA[Built-in Benchling API ID PK field]]></comment>
+			</column>
+			<column name="Container" type="Inventory" jt="2006" >
+				<comment><![CDATA[Name: Container
+Description: Exported from Benchling
+System name: container
+Type: Inventory]]></comment>
+			</column>
+			<column name="Sample" type="Entity" jt="2006" >
+				<comment><![CDATA[Name: Sample
+Description: Exported from Benchling
+System name: sample
+Type: Entity
+Definition: Any Entity]]></comment>
+			</column>
+			<column name="Average dCT" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: Average dCT
+Description: Exported from Benchling
+System name: average_dct
+Type: Decimal]]></comment>
+			</column>
+			<column name="Housekeeping Gene" type="Text" jt="12" >
+				<comment><![CDATA[Name: Housekeeping Gene
+Description: Exported from Benchling
+System name: housekeeping_gene
+Type: Text]]></comment>
+			</column>
+			<column name="Target Gene" type="Text" jt="12" >
+				<comment><![CDATA[Name: Target Gene
+Description: Exported from Benchling
+System name: target_gene
+Type: Text]]></comment>
+			</column>
+			<column name="Date" type="Date" jt="91" >
+				<comment><![CDATA[Name: Date
+Description: Exported from Benchling
+System name: date
+Type: Date]]></comment>
+			</column>
+			<column name="% mRNA Expression" type="Decimal" jt="3" >
+				<comment><![CDATA[Name: % mRNA Expression
+Description: Exported from Benchling
+System name: mrna_expression
+Type: Decimal]]></comment>
+			</column>
+			<column name="Notes" type="Text" jt="12" >
+				<comment><![CDATA[Name: Notes
+Description: Exported from Benchling
+System name: notes
+Type: Text]]></comment>
+			</column>
+		</table>
+	</schema>
+	<layout name="virtual" id="Layout-12d7" show_relation="columns" >
+		<entity schema="virtual" name="3&#039; UTR" color="008000" x="3760" y="1504" />
+		<entity schema="virtual" name="5&#039; UTR" color="008000" x="3920" y="1664" />
+		<entity schema="virtual" name="5&#039; or 3&#039;" color="0000FF" x="3920" y="1504" />
+		<entity schema="virtual" name="Animal" color="008000" x="1504" y="1472" />
+		<entity schema="virtual" name="Animal Sample" color="008000" x="1856" y="1584" />
+		<entity schema="virtual" name="Antibiotic Resistance" color="008000" x="3696" y="1664" />
+		<entity schema="virtual" name="Aqueous Buffer" color="0000FF" x="3552" y="1504" />
+		<entity schema="virtual" name="Assay Type" color="0000FF" x="3584" y="1344" />
+		<entity schema="virtual" name="Cell Line" color="008000" x="400" y="320" />
+		<entity schema="virtual" name="Cell Lot" color="008000" x="624" y="320" />
+		<entity schema="virtual" name="Cell Type" color="0000FF" x="224" y="592" />
+		<entity schema="virtual" name="Cell Viability" color="FF0000" x="400" y="592" />
+		<entity schema="virtual" name="Cold Storage Temperature" color="0000FF" x="3760" y="1344" />
+		<entity schema="virtual" name="Concentration Units" color="0000FF" x="4096" y="1504" />
+		<entity schema="virtual" name="Conjugate Type" color="0000FF" x="4096" y="1664" />
+		<entity schema="virtual" name="DLS" color="FF0000" x="4096" y="1280" />
+		<entity schema="virtual" name="DNA Characterization" color="FF0000" x="1904" y="2096" />
+		<entity schema="virtual" name="Dose Unit" color="0000FF" x="4080" y="1824" />
+		<entity schema="virtual" name="EC50" color="FF0000" x="2480" y="1680" />
+		<entity schema="virtual" name="Endotoxin Assay" color="FF0000" x="3840" y="1824" />
+		<entity schema="virtual" name="Entry Classification" color="008000" x="3456" y="1824" />
+		<entity schema="virtual" name="Fresh or Frozen" color="0000FF" x="3488" y="1664" />
+		<entity schema="virtual" name="Functional Group Type" color="0000FF" x="3312" y="1504" />
+		<entity schema="virtual" name="Gene" color="008000" x="2080" y="80" />
+		<entity schema="virtual" name="In Vitro Experiment" color="008000" x="1856" y="1216" />
+		<entity schema="virtual" name="In Vitro Toxicity Results" color="FF0000" x="4576" y="944" />
+		<entity schema="virtual" name="In Vivo Study" color="008000" x="1152" y="1216" />
+		<entity schema="virtual" name="In Vivo Study Animal Measurement" color="FF0000" x="1200" y="1472" />
+		<entity schema="virtual" name="In Vivo Study Animal Observation" color="FF0000" x="1200" y="1776" />
+		<entity schema="virtual" name="In Vivo Study Animal Sample Details" color="FF0000" x="896" y="1776" />
+		<entity schema="virtual" name="In Vivo Study Group" color="008000" x="1504" y="1216" />
+		<entity schema="virtual" name="In Vivo Study Treatment" color="008000" x="1152" y="896" />
+		<entity schema="virtual" name="LNP Characterization" color="FF0000" x="3584" y="1056" />
+		<entity schema="virtual" name="LNP Lot" color="008000" x="576" y="896" />
+		<entity schema="virtual" name="LNP Mixing Method" color="0000FF" x="4320" y="1072" />
+		<entity schema="virtual" name="Lipid" color="008000" x="3344" y="1296" />
+		<entity schema="virtual" name="Lipid Lot" color="008000" x="576" y="1392" />
+		<entity schema="virtual" name="Lipid Mixture Recipe" color="008000" x="288" y="1040" />
+		<entity schema="virtual" name="Mixture Prep" color="008000" x="896" y="2096" />
+		<entity schema="virtual" name="Mixture Recipe" color="008000" x="1216" y="2096" />
+		<entity schema="virtual" name="Modification" color="0000FF" x="4320" y="1504" />
+		<entity schema="virtual" name="Nucleic Acid Quantification" color="FF0000" x="4320" y="1232" />
+		<entity schema="virtual" name="Oligo" color="008000" x="1728" y="80" />
+		<entity schema="virtual" name="Oligo Conjugate" color="008000" x="3104" y="80" />
+		<entity schema="virtual" name="Oligo Conjugate Lot" color="008000" x="1728" y="432" />
+		<entity schema="virtual" name="Oligo Duplex" color="008000" x="2784" y="80" />
+		<entity schema="virtual" name="Oligo Duplex (Complex Polymer)" color="008000" x="1120" y="416" />
+		<entity schema="virtual" name="Oligo Duplex Lot" color="008000" x="1120" y="80" />
+		<entity schema="virtual" name="Oligo Format" color="0000FF" x="1456" y="432" />
+		<entity schema="virtual" name="Oligo Lot" color="008000" x="1456" y="80" />
+		<entity schema="virtual" name="Oligo Strand Type" color="0000FF" x="2576" y="192" />
+		<entity schema="virtual" name="Origin of Replication" color="008000" x="4304" y="1824" />
+		<entity schema="virtual" name="Pass or Fail" color="0000FF" x="3920" y="1120" />
+		<entity schema="virtual" name="Plasmid" color="008000" x="2320" y="896" />
+		<entity schema="virtual" name="Plasmid Prep" color="008000" x="2624" y="896" />
+		<entity schema="virtual" name="Positive or Negative" color="0000FF" x="4096" y="1120" />
+		<entity schema="virtual" name="Primary Cell" color="008000" x="2240" y="1680" />
+		<entity schema="virtual" name="Promoter" color="008000" x="4256" y="1984" />
+		<entity schema="virtual" name="Protein / Antigen AA" color="008000" x="2512" y="592" />
+		<entity schema="virtual" name="Protein or Antibody" color="008000" x="2320" y="400" />
+		<entity schema="virtual" name="Protein or Antibody Lot" color="008000" x="2544" y="352" />
+		<entity schema="virtual" name="RNA Characterization" color="FF0000" x="3184" y="2080" />
+		<entity schema="virtual" name="RNA Lot" color="008000" x="2624" y="1232" />
+		<entity schema="virtual" name="Reagent" color="008000" x="304" y="1392" />
+		<entity schema="virtual" name="Reagent Lot" color="008000" x="48" y="1392" />
+		<entity schema="virtual" name="Ribogreen" color="FF0000" x="3456" y="2080" />
+		<entity schema="virtual" name="Route of Administration" color="0000FF" x="3216" y="1920" />
+		<entity schema="virtual" name="Sequence Validation" color="FF0000" x="560" y="2096" />
+		<entity schema="virtual" name="Sex" color="0000FF" x="3280" y="1664" />
+		<entity schema="virtual" name="Small Molecule" color="008000" x="2784" y="352" />
+		<entity schema="virtual" name="Small Molecule Lot" color="008000" x="3104" y="352" />
+		<entity schema="virtual" name="Solvent" color="0000FF" x="3136" y="1504" />
+		<entity schema="virtual" name="Species" color="0000FF" x="3136" y="1344" />
+		<entity schema="virtual" name="Storage Buffer" color="0000FF" x="3152" y="1136" />
+		<entity schema="virtual" name="Storage Conditions" color="0000FF" x="2928" y="1136" />
+		<entity schema="virtual" name="Strain" color="0000FF" x="3344" y="1136" />
+		<entity schema="virtual" name="Terminator" color="008000" x="3408" y="896" />
+		<entity schema="virtual" name="Units" color="0000FF" x="3584" y="896" />
+		<entity schema="virtual" name="Vendor" color="0000FF" x="3856" y="896" />
+		<entity schema="virtual" name="Western Blot" color="FF0000" x="4512" y="1520" />
+		<entity schema="virtual" name="Yes or No" color="0000FF" x="4576" y="1232" />
+		<entity schema="virtual" name="[TEST} Reporter Gene Expression" color="FF0000" x="2240" y="2096" />
+		<entity schema="virtual" name="gRNA" color="008000" x="1120" y="672" />
+		<entity schema="virtual" name="gRNA Lot" color="008000" x="896" y="416" />
+		<entity schema="virtual" name="mRNA 3&#039; UTR" color="008000" x="4320" y="1664" />
+		<entity schema="virtual" name="mRNA 5&#039; UTR" color="008000" x="2960" y="976" />
+		<entity schema="virtual" name="mRNA CDS" color="008000" x="3152" y="960" />
+		<entity schema="virtual" name="mRNA Sequence" color="008000" x="528" y="1760" />
+		<entity schema="virtual" name="qPCR" color="FF0000" x="3840" y="2032" />
+		<group name="3&#039; UTR" color="ECF0F7" >
+			<entity schema="virtual" name="3&#039; UTR" />
+			<entity schema="virtual" name="5&#039; or 3&#039;" />
+			<entity schema="virtual" name="5&#039; UTR" />
+			<entity schema="virtual" name="Antibiotic Resistance" />
+			<entity schema="virtual" name="Aqueous Buffer" />
+			<entity schema="virtual" name="Assay Type" />
+			<entity schema="virtual" name="Cold Storage Temperature" />
+			<entity schema="virtual" name="Concentration Units" />
+			<entity schema="virtual" name="Conjugate Type" />
+			<entity schema="virtual" name="DLS" />
+			<entity schema="virtual" name="Dose Unit" />
+			<entity schema="virtual" name="Endotoxin Assay" />
+			<entity schema="virtual" name="Entry Classification" />
+			<entity schema="virtual" name="Fresh or Frozen" />
+			<entity schema="virtual" name="Functional Group Type" />
+			<entity schema="virtual" name="Lipid" />
+			<entity schema="virtual" name="LNP Characterization" />
+			<entity schema="virtual" name="Modification" />
+			<entity schema="virtual" name="mRNA 3&#039; UTR" />
+			<entity schema="virtual" name="Nucleic Acid Quantification" />
+			<entity schema="virtual" name="Origin of Replication" />
+			<entity schema="virtual" name="Pass or Fail" />
+			<entity schema="virtual" name="Positive or Negative" />
+			<entity schema="virtual" name="Promoter" />
+			<entity schema="virtual" name="qPCR" />
+			<entity schema="virtual" name="Ribogreen" />
+			<entity schema="virtual" name="RNA Characterization" />
+			<entity schema="virtual" name="Route of Administration" />
+			<entity schema="virtual" name="Sex" />
+			<entity schema="virtual" name="Solvent" />
+			<entity schema="virtual" name="Species" />
+			<entity schema="virtual" name="Storage Buffer" />
+			<entity schema="virtual" name="Strain" />
+			<entity schema="virtual" name="Terminator" />
+			<entity schema="virtual" name="Units" />
+			<entity schema="virtual" name="Vendor" />
+			<entity schema="virtual" name="Western Blot" />
+			<entity schema="virtual" name="Yes or No" />
+			<entity schema="virtual" name="LNP Mixing Method" />
+			<entity schema="virtual" name="In Vitro Toxicity Results" />
+			<entity schema="virtual" name="Storage Conditions" />
+			<entity schema="virtual" name="mRNA 5&#039; UTR" />
+			<entity schema="virtual" name="mRNA CDS" />
+		</group>
+		<group name="DNA Characterization" color="EEF7EC" >
+			<entity schema="virtual" name="DNA Characterization" />
+		</group>
+		<group name="Sequence Validation" color="F0ECF7" >
+			<entity schema="virtual" name="Sequence Validation" />
+		</group>
+		<group name="[TEST} Reporter Gene Expression" color="EEF7EC" >
+			<entity schema="virtual" name="[TEST} Reporter Gene Expression" />
+		</group>
+		<group name="Mixture Recipe" color="ECF0F7" >
+			<entity schema="virtual" name="Mixture Recipe" />
+			<entity schema="virtual" name="Mixture Prep" />
+		</group>
+		<group name="mRNA Sequence" color="F7F2EC" >
+			<entity schema="virtual" name="mRNA Sequence" />
+		</group>
+		<group name="Lipid Lot" color="F0ECF7" >
+			<entity schema="virtual" name="Lipid Lot" />
+		</group>
+		<group name="Reagent" color="ECECF7" >
+			<entity schema="virtual" name="Reagent" />
+			<entity schema="virtual" name="Reagent Lot" />
+		</group>
+		<group name="Lipid Mixture Recipe" color="ECECF7" >
+			<entity schema="virtual" name="Lipid Mixture Recipe" />
+		</group>
+		<group name="EC50" color="F7F2EC" >
+			<entity schema="virtual" name="EC50" />
+			<entity schema="virtual" name="Primary Cell" />
+		</group>
+		<group name="Cell Viability" color="ECECF7" >
+			<entity schema="virtual" name="Cell Viability" />
+			<entity schema="virtual" name="Cell Type" />
+			<entity schema="virtual" name="Cell Line" />
+			<entity schema="virtual" name="Cell Lot" />
+		</group>
+		<group name="LNP Lot" color="ECF0F7" >
+			<entity schema="virtual" name="LNP Lot" />
+		</group>
+		<group name="In Vivo Study" color="EEF7EC" >
+			<entity schema="virtual" name="In Vivo Study" />
+			<entity schema="virtual" name="In Vivo Study Treatment" />
+			<entity schema="virtual" name="In Vivo Study Animal Measurement" />
+			<entity schema="virtual" name="In Vivo Study Animal Observation" />
+			<entity schema="virtual" name="In Vivo Study Animal Sample Details" />
+			<entity schema="virtual" name="In Vivo Study Group" />
+			<entity schema="virtual" name="In Vitro Experiment" />
+			<entity schema="virtual" name="Animal" />
+			<entity schema="virtual" name="Animal Sample" />
+		</group>
+		<group name="RNA Lot" color="ECF0F7" >
+			<entity schema="virtual" name="RNA Lot" />
+			<entity schema="virtual" name="Plasmid Prep" />
+			<entity schema="virtual" name="Plasmid" />
+		</group>
+		<group name="Oligo Strand Type" color="F7F2EC" >
+			<entity schema="virtual" name="Oligo Strand Type" />
+			<entity schema="virtual" name="Protein or Antibody" />
+			<entity schema="virtual" name="Protein / Antigen AA" />
+			<entity schema="virtual" name="Small Molecule" />
+			<entity schema="virtual" name="Protein or Antibody Lot" />
+			<entity schema="virtual" name="Small Molecule Lot" />
+			<entity schema="virtual" name="Oligo Conjugate" />
+			<entity schema="virtual" name="Oligo Duplex" />
+		</group>
+		<group name="Oligo Format" color="F0ECF7" >
+			<entity schema="virtual" name="Oligo Format" />
+			<entity schema="virtual" name="Gene" />
+			<entity schema="virtual" name="gRNA" />
+			<entity schema="virtual" name="Oligo Duplex (Complex Polymer)" />
+			<entity schema="virtual" name="gRNA Lot" />
+			<entity schema="virtual" name="Oligo Conjugate Lot" />
+			<entity schema="virtual" name="Oligo Lot" />
+			<entity schema="virtual" name="Oligo" />
+			<entity schema="virtual" name="Oligo Duplex Lot" />
+		</group>
+	</layout>
+</project>

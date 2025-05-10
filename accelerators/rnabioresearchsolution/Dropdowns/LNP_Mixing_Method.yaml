@@ -1,0 +1,8 @@
+Dropdowns:
+- Name: LNP Mixing Method
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_XcCYyLCq
+  Options:
+  - T-Mixer
+  - Other

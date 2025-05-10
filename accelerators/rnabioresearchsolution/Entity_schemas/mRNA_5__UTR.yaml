@@ -1,0 +1,18 @@
+Entity_schemas:
+- Name: mRNA 5' UTR
+  Description: Exported from Benchling
+  Entity type: RNA Sequence
+  Prefix: RNA5UTR
+  System name: mrna_5_utr
+  API ID: ts_4pXPpTbj
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  - IDS_FROM_NAMES
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item

@@ -1,0 +1,19 @@
+Result_schemas:
+- Name: Endotoxin Assay
+  Description: Exported from Benchling
+  System name: endotoxin_assay
+  API ID: assaysch_jQ9B5mbC
+  Fields:
+  - Name: Container
+    Description: Exported from Benchling
+    System name: container
+    Type: Inventory
+  - Name: Sample
+    Description: Exported from Benchling
+    System name: sample
+    Type: Entity
+    Definition: Any Entity
+  - Name: Endotoxin (EU/mL)
+    Description: Exported from Benchling
+    System name: endotoxin_euml
+    Type: Decimal

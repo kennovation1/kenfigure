@@ -1,0 +1,9 @@
+Dropdowns:
+- Name: Cell Type
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_2CKEagOi
+  Options:
+  - Cell Type A
+  - Cell Type B
+  - Cell Type C

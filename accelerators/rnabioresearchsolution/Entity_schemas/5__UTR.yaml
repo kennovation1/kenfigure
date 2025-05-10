@@ -1,0 +1,16 @@
+Entity_schemas:
+- Name: 5' UTR
+  Description: Exported from Benchling
+  Entity type: DNA Sequence
+  Prefix: 5UTR
+  System name: five_prime_utr
+  API ID: ts_bTuUCgAt
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: sequence

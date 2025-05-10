@@ -1,0 +1,27 @@
+Result_schemas:
+- Name: RNA Characterization
+  Description: Exported from Benchling
+  System name: rna_characterization
+  API ID: assaysch_n3UOLFHf
+  Fields:
+  - Name: Sample
+    Description: Exported from Benchling
+    System name: sample
+    Type: Entity
+    Definition: Any Entity
+  - Name: Residual plasmid (pg/mL)
+    Description: Exported from Benchling
+    System name: residual_plasmid_pgml
+    Type: Decimal
+  - Name: Residual protein (pg/mL)
+    Description: Exported from Benchling
+    System name: residual_protein_pgml
+    Type: Decimal
+  - Name: Chromatogram
+    Description: Exported from Benchling
+    System name: chromatogram
+    Type: Attachment
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text

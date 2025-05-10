@@ -1,0 +1,16 @@
+Entity_schemas:
+- Name: Terminator
+  Description: Exported from Benchling
+  Entity type: DNA Sequence
+  Prefix: TRM
+  System name: terminator
+  API ID: ts_0iPm2WwQ
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - NEW_IDS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: sequence

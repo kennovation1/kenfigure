@@ -1,0 +1,31 @@
+Result_schemas:
+- Name: Cell Viability
+  Description: Exported from Benchling
+  System name: cell_viability
+  API ID: assaysch_pdd2Iszs
+  Fields:
+  - Name: Container
+    Description: Exported from Benchling
+    System name: container
+    Type: Inventory
+  - Name: Sample
+    Description: Exported from Benchling
+    System name: sample
+    Type: Entity
+    Definition: Any Entity
+  - Name: Assay Method
+    Description: Exported from Benchling
+    System name: assay_method
+    Type: Text
+  - Name: IC50 (nM)
+    Description: Exported from Benchling
+    System name: ic50_nm
+    Type: Decimal
+  - Name: Attachment
+    Description: Exported from Benchling
+    System name: attachment
+    Type: Attachment
+  - Name: Notes
+    Description: Exported from Benchling
+    System name: notes
+    Type: Text

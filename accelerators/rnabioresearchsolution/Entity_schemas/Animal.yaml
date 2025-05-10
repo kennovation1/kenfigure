@@ -1,0 +1,89 @@
+Entity_schemas:
+- Name: Animal
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: AN
+  System name: animal
+  API ID: ts_f9XCxhl9
+  Containable type: None
+  Name template:
+  - Type: Field
+    Definition: Benchling In Vivo Animal Name
+  - Type: Separator
+    Definition: _
+  - Type: Field
+    Definition: Animal No.
+  Constraint:
+  - Benchling In Vivo API ID (DO NOT EDIT)
+  Naming options:
+  - REPLACE_NAMES_FROM_PARTS
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: In Vivo Study
+    Description: Exported from Benchling
+    Required: true
+    Parent link: true
+    System name: in_vivo_study
+    Type: Entity
+    Definition: In Vivo Study
+  - Name: In Vivo Study Group
+    Description: Exported from Benchling
+    Parent link: true
+    System name: in_vivo_study_group
+    Type: Entity
+    Definition: In Vivo Study Group
+  - Name: Benchling In Vivo Animal Name
+    Description: Exported from Benchling
+    System name: benchling_in_vivo_animal_name
+    Type: Text
+  - Name: Animal No.
+    Description: Exported from Benchling
+    System name: animal_no
+    Type: Text
+  - Name: Cage
+    Description: Exported from Benchling
+    System name: cage
+    Type: Text
+  - Name: DOB
+    Description: Exported from Benchling
+    System name: dob
+    Type: Date
+  - Name: Sex
+    Description: Exported from Benchling
+    System name: sex
+    Type: Text
+  - Name: Strain
+    Description: Exported from Benchling
+    System name: strain
+    Type: Text
+  - Name: Species
+    Description: Exported from Benchling
+    System name: species
+    Type: Text
+  - Name: Termination Date
+    Description: Exported from Benchling
+    System name: termination_date
+    Type: Date
+  - Name: Deceased Reason
+    Description: Exported from Benchling
+    System name: deceased_reason
+    Type: Text
+  - Name: Deceased Comment
+    Description: Exported from Benchling
+    System name: deceased_comment
+    Type: Text
+  - Name: Tracking Date
+    Description: Exported from Benchling
+    System name: tracking_date
+    Type: Date
+  - Name: Benchling In Vivo Hyperlink
+    Description: Exported from Benchling
+    System name: benchling_in_vivo_hyperlink
+    Type: Text
+  - Name: Benchling In Vivo API ID (DO NOT EDIT)
+    Description: Exported from Benchling
+    System name: benchling_in_vivo_api_id_do_not_edit
+    Type: Text

@@ -1,0 +1,29 @@
+Entity_schemas:
+- Name: Mixture Recipe
+  Description: Exported from Benchling
+  Entity type: Custom Entity
+  Prefix: MR
+  System name: mixture_recipe
+  API ID: ts_ihPuA1kG
+  Containable type: None
+  Name template: []
+  Constraint: []
+  Naming options:
+  - DELETE_NAMES
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: mixture
+  Fields:
+  - Name: Target pH Range
+    Description: Exported from Benchling
+    System name: target_ph_range
+    Type: Text
+  - Name: Target Osmolality (mOsm)
+    Description: Exported from Benchling
+    System name: target_osmolality_mosm
+    Type: Text
+  - Name: Target Conductivity Range (mS/cm)
+    Description: Exported from Benchling
+    System name: target_conductivity_range_mscm
+    Type: Text

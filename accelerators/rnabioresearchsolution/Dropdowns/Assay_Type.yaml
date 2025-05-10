@@ -1,0 +1,14 @@
+Dropdowns:
+- Name: Assay Type
+  Description: Exported from Benchling
+  Alphabetize: false
+  API ID: sfs_EbJge798
+  Options:
+  - DLS
+  - Endotoxin
+  - In Vitro Toxicity
+  - Nucleic Acid Concentration
+  - qPCR
+  - Ribogreen
+  - Sequence Validation
+  - Western Blot
