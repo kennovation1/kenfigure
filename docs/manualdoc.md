@@ -1,201 +1,297 @@
 # Kenfigure Schema Documentation
 
-This document provides an overview of the Kenfigure JSON schema, with example YAML fragments and comments to explain the structure and purpose of each key and value.
+This page is a detailed reference to the Kenfigure specification.
+Please first see the overview [README.md](../README.md) file.
 
-For more details, refer to the JSON schema file.
+## General background
+- Kenfigure uses YAML format to define configuration objects. YAML is a format that is both
+  human and machine readable. The [Wikipedia YAML page](https://en.wikipedia.org/wiki/YAML)
+  provides a good overview of the syntax.
+  However, you can figure out almost everything by looking at the examples in this repository.
+- We define the specific structure (schema) of Kenfigure YAML files using a standard called
+  JSON Schema. Yes, I know, it's a little weird that something called JSON Schema is used to
+  define a YAML schema, but just go with it. You don't need to know anything about JSON Schema
+  other than knowing the URL of the JSON Schema if you want syntax checking and typing completion
+  in your Integrated Development Environment (IDE) as described in [README.md](../README.md).
+- The formal reference that defines the schema can be found in [autodoc.md](./autodoc.md).
+  However, the information below is likely much more accessible compared to the machine generated
+  autodoc.md file.
+- Naming and organization of Kenfigure is meant to mirror the Benchling UI as much as possible.
 
-THIS IS NOT YET CORRECT. THIS IS AN EXPERIMENT TO TEST THE DOCUMENTATION STYLE.
+## Directory structure
+Kenfigure is designed such that you can specify a Benchling tenant configuration using any file structure
+that is helpful to you. The recommended best practice is to keep each primary object
+(e.g., each entity schema, result schema, or dropdown) in a discrete file. However, if you find the need
+you can put multiple objects in a single file. Technically, you can put everything in a single file
+but this is not recommended.
 
-TODO:
-- This is an early draft of the doc
-- Decide on a more deliberate order
-- Add deeper keys as required
-- Factor out repeated details such as Diagram.Group
-- Expand lists
+Additionally, you can put files in multiple directories to help organize your configuration information.
+Typically I group all schema types under their own top-level directories (e.g., Entity schemas, Result schemas,
+Dropdowns) and then within each of those, I create a directory for each logical grouping of objects
+(e.g., In Vivo, In Vitro, NGS, Process Development, etc.).
 
----
+A good alternative strategy is to swap the above hierarchy and make the local groupings be the top level
+and the object type would be the subdirectories.
 
-## Metadata
+Pick whatever works for you.
 
-The `Metadata` object contains information about the model instance, such as its organization, version, and timestamps.
-
-```yaml
-Metadata:
-  Organization: example_org  # Organization handle, must match the pattern ^[a-z_][a-z0-9_]{0,32}$
-  Description: Description of the environment and model.  # Optional description of the model
-  Model version: "1.2.3"  # Semantic version of the model, e.g., 1.2.3
-  Created: "2025-05-03T12:00:00Z"  # ISO 8601 datetime when the model was created
-  Modified: "2025-05-04T12:00:00Z"  # ISO 8601 datetime when the model was last modified
-  Schema version: "1.0.0"  # Semantic version of the schema, e.g., 1.0.0
-```
-
----
-
-## Diagram
-
-The `Diagram` object defines properties for diagram rendering, such as coordinates.
-
-```yaml
-Diagram:
-  ExampleDiagram:
-    X: 100  # X-coordinate of the diagram
-    Y: 200  # Y-coordinate of the diagram
-```
-
----
-
-## Dropdowns
-
-The `Dropdowns` object defines dropdown menus and their options.
-
+## Common structures
+All top-level object types are designated by a key for the configuration object type
+followed by a list of objects of that type. For example, a dropdowns are defined as follows
 ```yaml
 Dropdowns:
   - Name: ExampleDropdown  # Name of the dropdown
-    Description: A dropdown for selecting options.  # Optional description
-    Alphabetize: true  # Whether to alphabetize options upon deployment
-    Diagram:
-      Group: Group1  # Layout group name
-      Color: "#FF0000"  # Hex color for the dropdown
-      X: 50  # X-coordinate
-      Y: 100  # Y-coordinate
-    Options:
-      - Option1  # List of dropdown options
-      - Option2
-    API ID: dropdown_123  # API ID for export operations
+    ...
+  - Name: A different dropdown  # The second dropdown
+    ...
 ```
 
----
+If you adhere to the one object per file model, then the above would like like this:
 
-## Entity Schemas
+File: ExampleDropdown.yaml
+```yaml
+Dropdowns:
+  - Name: ExampleDropdown  # Name of the dropdown
+    ...
+```
 
-The `Entity_schemas` object defines various entity schemas, such as DNA sequences or custom entities.
+File: A difference dropdown.yaml
+```yaml
+Dropdowns:
+  - Name: A different dropdown  # The second dropdown
+    ...
+```
 
+An example entity scheme would be:
+
+File: CustomEntity.yaml
 ```yaml
 Entity_schemas:
   - Name: CustomEntity  # Name of the entity schema
-    Description: A custom entity schema.  # Optional description
-    Entity type: Custom Entity  # Must match one of the predefined types
-    Prefix: CE  # Registry ID prefix
-    Naming options:
-      - NEW_IDS  # Generate new registry IDs
-    Fields:
-      - Name: Field1  # Name of the field
-        Type: Text  # Data type of the field
-        Required: true  # Whether the field is required
-        Description: A text field for the entity.  # Optional description
+    ...
 ```
 
----
+Often different configuration objects will have a very similar syntax with their peers, but may
+have subtle differences since Benchling has difference (e.g., the fields types for entity schemas
+and result schemas are not identical in Benchling).
+
+Kenfigure defines some keys (attributes) that don't exist in Benchling. These are uniform
+across all configuration object types. These include `Description` attributes for top-level
+objects and for schema fields, and then `Diagram` object. Some of these keys are used by tooling
+that makes use of the Kenfigure format
+(e.g., Kenfigure Export, Kenfigure Import, Kenfigure Diagram, Kenfigure Lint).
+These extended attributes are always optional unless your are using tooling that requires them.
+
+### Diagram
+The following defines how the common Diagram object works. Since it applies to all configuration
+objects, it will not be included in other examples.
+```yaml
+Entity_schemas:
+  - Name: CustomEntity  # Name of the entity schema
+    # The Diagram object does not affect Benchling at all. This is used by tools that support
+    # Kenfigure syntax to automatically create ER diagrams from Kenfigure specifications.
+    Diagram:
+      Group: In Vitro  # All entities that share this value will be grouped in the rendered
+                       # diagram in a group of the same name.
+      Color: yellow  # Color of table in diagram. Will override default if specified.
+                     # May be a hex web color (e.g., '#0000FF' for blue) or certain well-known
+                     # names are recognized. The default color schema is:
+                     # Green for entity schemas, Red for result tables, Blue for dropdowns,
+                     # Yellow for fieldsets, and Orange for study schemas
+      X: 100  # X-coordinate of the table on the diagram
+      Y: 200  # Y-coordinate of the table on the diagram
+    ...
+```
+
+For those who are new to YAML, the above example illustrates several points about YAML
+- Quotes are not needed around string values (there are exceptions)
+- Decimal and integer numbers are accepted for certain fields
+- The pound sign defines a comment. Comments are ignored by software that reads YAML format.
+- Objects that are defined in other objects are indicated with indentation
+- Lists are define by a leading dash character
+
+The remainder of this page will document each top-level configuration object by showing
+a commented example. This approach is more usable than the [full reference](./autodoc.md), though may not
+explain all possible options and details. If you are unsure, please consult the full reference.
+Also, the annotated examples below do not generally attempt to describe if a key is required or not.
+As a general point of style, it's preferred to document most keys even if the default value is desired.
+There are some exceptions (notably several attributes on schema fields are optional and are
+traditionally omitted for the default state).
+
+Most of the examples used below are derived from the RNA Therapeutics Bioresearch V3.1 scientific accelerator.
+They have been changed, sometimes in artificial was, to help demonstrate more of the Kenfigure syntax
+than would naturally be part of a real configuration.
+
+## Dropdowns
+```yaml
+Dropdowns:
+- Name: Species  # Name of the dropdown
+  Description: This is just a starter list for now.  # Used for internal documentation. Optional.
+    # Not available in Benchling, though that might change in the future.
+  Alphabetize: false  # This indicates if the list should be sorted. Optional. Defaults to false.
+    # The Options list below need not be sorted if this value is true, but it is recommended to
+    # keep in sorted for maintainability.
+    # Boolean values in YAML may be true/false or yes/no. It is recommended that a single style
+    # is consistently used.
+  Options:  # This list of dropdown options. Note the use of the dash to define list items
+    # As with other YAML strings, quotes are only necessary of there are embedded special characters
+    # or symbols. Note that 'Yes' and 'No' need to be quoted since otherwise they will be interpreted
+    # as Boolean values instead of strings. Strings with embedded ": " (colon space) will also need
+    # to be enclosed in quotes.
+  - Mouse
+  - Rabbit
+  - Human
+  - Other
+  Diagram: ...  # See Diagram discussion above
+  API ID: sfs_pQitWWTI  # The API ID for the dropdown. Export tools (e.g., Kenfigure Export) may set
+    # this value. Generally, there is no need to use this field since it is not settable in Benchling
+    # and since it is tenant-specific.
+```
+
+## Entity schemas
+The following assumes that you've read the above sections so that common topics are not
+repeated below. The `Diagram` and `API ID` keys are valid here but are not shown for clarity.
+
+```yaml
+Entity_schemas:
+- Name: Lipid  # Schema name
+  Description: A lipid concept entity used in formulating LNPs
+  Entity type: Molecule  # The same entity types as seen in the Benchling UI
+  Prefix: LIP  # Same as Benchling UI
+  System name: lipid  # Formerly known as "Warehouse name". Must confirm to PostgreSQL naming standards.
+  Containable type: None  # None or Entity as in UI
+  Naming options:  # At least one list item must be specified. The options may be provided as short
+    # symbol name (e.g., NEW_IDS, DELETE_NAMES, etc.) or the fully spelled out definitions as shown
+    # in the Benchling UI. See full list below.
+  - NEW_IDS
+  Name template: []  # The empty list shows that there is no name template. Details are shown below.
+  Constraint: []  # The empty list shows that there are no constraints. If there are constraints,
+    # Create a list item for each field (using the display name) included in the constraint.
+    # In addition to field names, list items may include one of the following special names if supported
+    # by the entity type:
+    # - Bases (ignore case)
+    # - Canonical SMILES
+    # - Amino acids (exact match)
+    # - Amino acids (ignore case)
+  RegID display: false  # The sames as the UI checkbox: Use Registry ID as display label
+  RegID chips: false  # The sames as the UI checkbox: Include Registry ID in chips 
+  Access type: Registry-based  # One of Registry-based or Project-based
+  Icon: small-molecule  # Name of item to use for the schema 
+  # Note that since this is a Molecule schema type, the chemical structure (SMILES) is a built-in field
+  # provided to the API.
+  Fields:  # The list of fields on the schema. Use [] if there are no fields
+  - Name: MW (g/mol)
+    Description: Fields can have descriptions too
+    System name: mw_g_mol
+    Required: true  # Default is false, true if the field is required. Yes or No are equally valid
+      # but you should select one style and stick to it.
+    Type: Decimal  # See below for more type options.
+  - Name: Notes
+    Description: A freeform notes field
+    System name: notes
+    Type: Text
+  - Name: CoA
+    Description: The COA is part of the concept entity since it has concept-level
+      information. However, it also includes lot-level information and therefore
+      appears at the lot level too.
+    System name: coa
+    Type: Attachment
+```
+
+### Naming options
+The following are the valid naming options, each added as a list item to the `Naming options` key.
+The two values are each line are synonymous with each other.
+- NEW_IDS, Generate new registry IDs
+- IDS_FROM_NAMES, Generate registry IDs based on entity names
+- DELETE_NAMES, Generate new registry IDs and replace name with registry ID
+- SET_FROM_NAME_PARTS, Generate new registry IDs, rename according to name template, and keep old name as alias
+- REPLACE_NAMES_FROM_PARTS, Generate new registry IDs, and replace name according to name template
+- KEEP_NAMES, Keep existing entity names as registry IDs
+- REPLACE_ID_AND_NAME_FROM_PARTS, Generate registry IDs and names according to name template
+
+### Name template
+A name template is define as a list of name components such as:
+```yaml
+Name template:
+- Type: Field  # Component is a field from the current schema. The specific field is in the Definition.
+  Definition: Lipid  # The field within the current schema to use as the name component
+- Type: Separator  # A separator string. The actual string appears in the Definition.
+  Definition: '-'  # The separator string.
+                   # Dash, underscore, colon, and other special characters should be in quotes
+- Type: Text  # A text name template component. The Definition key defines the specific text string.
+  Definition: lot  # The text string for the component.
+- Type: Parent lot number  # A parent lot number component. The field pointing to the parent entity
+                           # (must have type "Parent") is specified in the Definition field.
+  Definition: Lipid  # The field on the current entity that points to the parent entity.
+```
+
+The available special `Type` values are:
+- Types that require a `Definition` field:
+  - Text
+  - Separator
+  - Field
+  - Parent lot number
+  - Registry ID of field
+- Types that do not require a `Definition` field:
+  - Registry ID number
+  - Creation year
+  - Creation date
+  - Project
+
+### Entity schema fields
+Above shows some simple example fields. Here we shows the full specification for an
+entity schema field.
+```yaml
+Name: Lipid  # Field display name
+Description: Parent concept for this lot
+Tool tip: Reference to an existing registered Lipid entity
+System name: lipid  # Field PostgreSQL-compatible system (Warehouse) name
+Type: Entity  # May be any of the following types:
+ # Date, Datetime, Decimal, Integer, Long text, Dropdown, Text, Attachment, Entry, Entity, Category, Part,
+ # Inventory, ft_translation_link, ft_assay_result_link, ft_assay_run_link, Batch, Transcription
+ # (The ft_ types will have new names in the future.)
+Definition: Lipid  # Name of a Benchling object applicable to the Type. Omit if not applicable for the Type.
+  # May also be one of the "generic" entities:
+  # Any Entity, Custom Entity, AA Sequence, DNA Sequence, Molecule, Mixture
+Required: true  # or false
+Multi-select: true  # or false
+Parent-link: true  # or false
+Computed:  # This section is only partially documented and defined in Kenfigure schema.
+  # This is still converging and can be quite complicated. The current recommendation is to
+  # not worry too much about the formality of computed fields and just document your understanding
+  # of how the field is computed. Kenfigure tooling does have a defined format, but it varies
+  # quite a bit depending on the formula.
+  Formula name: molecule_molecular_weight
+```
+
+## Metadata
+The `Metadata` object is mostly only used by Kenfigure tooling, but you might find
+it useful for record keeping as well.
+
+```yaml
+Metadata:
+  Organization: biotech_r_us  # Organization name
+  Description: RNA Therapeutics Bioresearch V3.1 scientific accelerator model
+  Model version: 3.1.0  # The version of the data model represented by the Kenfigure files
+  Created: '2025-05-09T13:50:59+00:00'  # The datetime when the model was first created
+  Modified: '2025-05-09T13:50:59+00:00'  # The datetime when the model was last modified
+  Schema version: 0.1.0  # The Kenfigure schema version
+```
+
+## TODO - finish fleshing out the following sections
 
 ## Fieldset Schemas
 
-The `Fieldset_schemas` object defines reusable fieldsets that can be attached to entities.
-
-```yaml
-Fieldset_schemas:
-  - Name: ExampleFieldset  # Name of the fieldset
-    Description: A reusable fieldset.  # Optional description
-    Entity type: Custom Entity  # Type of entity this fieldset applies to
-    Fields:
-      - Name: Field1  # Name of the field
-        Type: Integer  # Data type of the field
-        Required: false  # Whether the field is required
-```
-
----
+## Result Schemas
 
 ## Study Schemas
 
-The `Study_schemas` object defines schemas for studies.
-
-```yaml
-Study_schemas:
-  - Name: ExampleStudy  # Name of the study schema
-    Prefix: ST  # ID prefix for the study schema
-    Fields:
-      - Name: StudyField1  # Name of the field
-        Type: Date  # Data type of the field
-        Required: true  # Whether the field is required
-    Approval required: true  # Whether approval is required before execution
-```
-
----
-
 ## Container Schemas
-
-The `Container_schemas` object defines schemas for containers.
-
-```yaml
-Container_schemas:
-  ExampleContainer:
-    Description: A container schema.  # Optional description
-```
-
----
 
 ## Box Schemas
 
-The `Box_schemas` object defines schemas for boxes.
-
-```yaml
-Box_schemas:
-  ExampleBox:
-    Description: A box schema.  # Optional description
-```
-
----
-
 ## Plate Schemas
-
-The `Plate_schemas` object defines schemas for plates.
-
-```yaml
-Plate_schemas:
-  ExamplePlate:
-    Description: A plate schema.  # Optional description
-```
-
----
 
 ## Location Schemas
 
-The `Location_schemas` object defines schemas for locations.
-
-```yaml
-Location_schemas:
-  ExampleLocation:
-    Description: A location schema.  # Optional description
-```
-
----
-
-## Result Schemas
-
-The `Result_schemas` object defines schemas for results.
-
-```yaml
-Result_schemas:
-  - Name: ExampleResult  # Name of the result schema
-    Description: A result schema.  # Optional description
-    Fields:
-      - Name: ResultField1  # Name of the field
-        Type: Decimal  # Data type of the field
-        Required: true  # Whether the field is required
-```
-
----
-
 ## Feature Flags
-
-The `Feature_flags` object defines back-end feature flag settings.
-
-```yaml
-Feature_flags:
-  ExampleFeature:
-    Current: true  # Current value of the feature flag
-    Default: false  # Default value of the feature flag
-    Description: A feature flag for enabling a feature.  # Description of the feature flag
-    Planned: null  # Planned value (optional)
-```
-
----

@@ -11,10 +11,13 @@ of your Benchling tenant configurations.
 Because it is a structured human *and* machine readable format, it works exceptionally well with git
 and can therefore form the foundation of a top-notch change management process.
 
-*Kenfigure* is highly useful solely as a standalone documentation tool, but I also use it for internal tools I've developed
-to programmatically deploy configurations, extract and document configurations, check against a set of schema quality rules
-and create dynamic ER diagrams. I created the spec for my internal tool use, but am making it publicly available since it
-is highly valuable as a way to document the source-of-truth for Benchling configurations even without leveraging any tools.
+*Kenfigure* is highly useful solely as a standalone documentation tool,
+but I also use it for internal tools I've developed
+to programmatically deploy configurations, extract and document configurations,
+check against a set of schema quality rules and create dynamic ER diagrams.
+I created the spec for my internal tool use, but am making it publicly available since it
+is highly valuable as a way to document the source-of-truth for Benchling configurations
+even without leveraging any tools.
 
 Here's a very stripped down example:
 ```yaml
@@ -48,8 +51,10 @@ Entity_schemas:
 
 See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annotated example.
 
-- ***TODO*** Flesh out documentation page. Add more examples.
-- ***TODO*** Create an entire directory tree from a test environment export to YAML.
+# Documentation
+- Here is the primary [Kenfigure documentation](./manualdoc.md) in the form of annotated examples.
+- The complete [schema reference is here](./autodoc.md). This is not as user friendly, but it is
+  comprehensive.
 
 # Benefits 
 Here are some benefits of documenting your Benchling configuration in *kenfigure* files in git. In no particular order:
@@ -103,6 +108,12 @@ proprietary tools or others.)
 
 # Limitations
 - Does not yet handle Benchling Workflows, In Vivo, Lab Automation/Connect, Insights, Bioprocess
+
+# Schema
+- [Kenfigure JSON schema](./jsonschemas/latest/kenfigure.schema.json)
+- Flattened version that doesn't use $refs: [Kenfigure JSON schema flat](./jsonschemas/latest/kenfigure.schema_flat.json)
+- I haven't decided if I need to bother producing flat versions. Please let me know if you can't use the
+  normal version with $refs and need a flat version for some reason (and what that reason is).
 
 # JSON schema technical notes
 - The JSON schemas files are in the `jsonschemas` directory.
