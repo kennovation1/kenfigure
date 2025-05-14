@@ -52,8 +52,8 @@ Entity_schemas:
 See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annotated example.
 
 # Documentation
-- Here is the primary [Kenfigure documentation](./manualdoc.md) in the form of annotated examples.
-- The complete [schema reference is here](./autodoc.md). This is not as user friendly, but it is
+- Here is the primary [Kenfigure documentation](./annotated.md) in the form of annotated examples.
+- The complete [schema reference is here](./reference.md). This is not as user friendly, but it is
   comprehensive.
 
 # Benefits 

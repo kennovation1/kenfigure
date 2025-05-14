@@ -13,9 +13,9 @@ Please first see the overview [README.md](../README.md) file.
   define a YAML schema, but just go with it. You don't need to know anything about JSON Schema
   other than knowing the URL of the JSON Schema if you want syntax checking and typing completion
   in your Integrated Development Environment (IDE) as described in [README.md](../README.md).
-- The formal reference that defines the schema can be found in [autodoc.md](./autodoc.md).
+- The formal reference that defines the schema can be found in [reference.md](./reference.md).
   However, the information below is likely much more accessible compared to the machine generated
-  autodoc.md file.
+  reference.md file.
 - Naming and organization of Kenfigure is meant to mirror the Benchling UI as much as possible.
 
 ## Directory structure
@@ -111,7 +111,7 @@ For those who are new to YAML, the above example illustrates several points abou
 - Lists are define by a leading dash character
 
 The remainder of this page will document each top-level configuration object by showing
-a commented example. This approach is more usable than the [full reference](./autodoc.md), though may not
+a commented example. This approach is more usable than the [full reference](./reference.md), though may not
 explain all possible options and details. If you are unsure, please consult the full reference.
 Also, the annotated examples below do not generally attempt to describe if a key is required or not.
 As a general point of style, it's preferred to document most keys even if the default value is desired.
