@@ -1,7 +1,7 @@
 # Kenfigure Schema Documentation
 
 This page is a detailed reference to the Kenfigure specification.
-Please first see the overview [README.md](../README.md) file.
+Please first see the overview [Kenfigure.com home page](./index.md).
 
 ## General background
 - Kenfigure uses YAML format to define configuration objects. YAML is a format that is both
@@ -12,7 +12,7 @@ Please first see the overview [README.md](../README.md) file.
   JSON Schema. Yes, I know, it's a little weird that something called JSON Schema is used to
   define a YAML schema, but just go with it. You don't need to know anything about JSON Schema
   other than knowing the URL of the JSON Schema if you want syntax checking and typing completion
-  in your Integrated Development Environment (IDE) as described in [README.md](../README.md).
+  in your Integrated Development Environment (IDE) as described in [Kenfigure.com home page](./index.md).
 - The formal reference that defines the schema can be found in [reference.md](./reference.md).
   However, the information below is likely much more accessible compared to the machine generated
   reference.md file.
@@ -55,7 +55,7 @@ Dropdowns:
     ...
 ```
 
-File: A difference dropdown.yaml
+File: A different dropdown.yaml
 ```yaml
 Dropdowns:
   - Name: A different dropdown  # The second dropdown
@@ -98,8 +98,8 @@ Entity_schemas:
                      # names are recognized. The default color schema is:
                      # Green for entity schemas, Red for result tables, Blue for dropdowns,
                      # Yellow for fieldsets, and Orange for study schemas
-      X: 100  # X-coordinate of the table on the diagram
-      Y: 200  # Y-coordinate of the table on the diagram
+      X: 100  # X-coordinate of the table on the diagram. Normally layout tool (e.g., Kenfigure Layout) generated.
+      Y: 200  # Y-coordinate of the table on the diagram. Normally layout tool (e.g., Kenfigure Layout) generated.
     ...
 ```
 
