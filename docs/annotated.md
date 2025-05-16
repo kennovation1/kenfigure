@@ -123,6 +123,8 @@ They have been changed, sometimes in artificial was, to help demonstrate more of
 than would naturally be part of a real configuration.
 
 ## Dropdowns
+File: Species.yaml
+
 ```yaml
 Dropdowns:
 - Name: Species  # Name of the dropdown
@@ -152,6 +154,8 @@ Dropdowns:
 The following assumes that you've read the above sections so that common topics are not
 repeated below. The `Diagram` and `API ID` keys are valid here but are not shown for clarity.
 
+File: Lipid.yaml
+
 ```yaml
 Entity_schemas:
 - Name: Lipid  # Schema name
@@ -179,6 +183,11 @@ Entity_schemas:
   Icon: small-molecule  # Name of item to use for the schema 
   # Note that since this is a Molecule schema type, the chemical structure (SMILES) is a built-in field
   # provided to the API.
+  Notify: Manually attach the Lipid Usage dashboard  # Used by Kenfigure Import tooling to print a message
+    # to the administrator. Usually this is used to prompt the user to perform a manual action that cannot
+    # be automated. 
+  Fieldsets:  # A list of fieldsets that the schema implements. Omit or set to [] if not applicable.
+  - LNP Component
   Fields:  # The list of fields on the schema. Use [] if there are no fields
   - Name: MW (g/mol)
     Description: Fields can have descriptions too
@@ -264,6 +273,67 @@ Computed:  # This section is only partially documented and defined in Kenfigure 
   Formula name: molecule_molecular_weight
 ```
 
+## Fieldset Schemas
+Setting some attributes versus leaving them unspecified alters the behavior in significant ways.
+See Benchling documentation for now to configure fieldsets.
+
+File: Test Substance.yaml
+```yaml
+Fieldset_schemas:
+- Name: Test Substance  # Name of the fieldset
+  Description: A generic fieldset that in intended to be applied batch entities
+    that might be used as test samples.
+  Entity type: None  # "None" or one of the following entity schema types: Custom Entity,
+    # DNA Sequence, DNA Oligo, RNA Oligo, RNA Sequence, AA Sequence, Molecule, Mixture
+  System name: test_substance
+  Prefix: TS
+  Constraint: []
+  Category: true  # Always true for now
+  Naming options: []
+  Name template: []
+  Fields: []  # List of fields in the fieldset. May be an empty list or omitted.
+```
+
+## Result Schemas
+TODO
+
+## Study Schemas
+TODO
+
+## Feature Flags
+The initial version of the feature flags file is typically created using a custom tool
+(e.g., Kenfigure Export). Once initialized, it may then be maintained in git or periodically
+updated via a fresh export. The export includes all attributes including `Description`.
+
+File: feature_flags.yaml
+```yaml
+Feature_flags:  # Top-level key for Feature Flags object
+  MOLBIO:  # Second level is a general Benchling-defined category
+    MOLBIO_ALIGNMENT_CAPITALIZATION_QUALITY_THRESHOLD:  # A feature flag in the current category
+      Current: '20'  # The current value of the feature flag
+      Default: '20'  # The Benchling-defined default for this feature
+      # The Benchling-provided description for the feature flag
+      Description: 'This value configures the Phred score threshold for DNA alignments.
+        When users choose to display ''quality base capitalization'' in the visibility
+        options dropdown on an alignment, bases at or above this score will be rendered
+        in uppercase, and bases below will be rendered in lowercase. '
+    MOLBIO_ALIGNMENT_TRIM_STRINGENCY:  # A different feature flag in the current category
+      Current: '0.05'  # Numeric values are treated as strings
+      Default: '0.05'
+      Description: This value dictates the strategy for trimming a DNA alignment with
+        trace data. The ends of each read are trimmed to exclude bases where the probability
+        of an incorrect base call rises above the configured value. (renamed from
+        ALIGNMENT_TRIM_STRINGENCY)
+    MOLBIO_ENABLE_EXTERNAL_BLAST:
+      Current: false  # Many feature flags are Booleans
+      Default: false
+      Description: If enabled, users can select a region of a sequence or oligo in
+        Benchling and send that sequence to the NCBI BLAST public website. Disabling
+        the flag hides this feature and prevents Benchling data from being sent to
+        NCBI BLAST. (renamed from MOLBIO_ENABLE_BLAST)
+    # Other data types includes strings and lists
+```
+
 ## Metadata
 The `Metadata` object is mostly only used by Kenfigure tooling, but you might find
 it useful for record keeping as well.
@@ -278,20 +348,14 @@ Metadata:
   Schema version: 0.1.0  # The Kenfigure schema version
 ```
 
-## TODO - finish fleshing out the following sections
-
-## Fieldset Schemas
-
-## Result Schemas
-
-## Study Schemas
-
 ## Container Schemas
+TODO
 
 ## Box Schemas
+TODO
 
 ## Plate Schemas
+TODO
 
 ## Location Schemas
-
-## Feature Flags
+TODO
