@@ -295,7 +295,46 @@ Fieldset_schemas:
 ```
 
 ## Result Schemas
-TODO
+File: LNP_Characterization.yaml
+```yaml
+Result_schemas:
+- Name: LNP Characterization  # Result schema name
+  Description: Captures LNP characterization measures after formulation
+  System name: lnp_characterization
+  Fields:
+  - Name: Sample
+    Description: The sample entity being characterized
+    Tool tip: The sample entity being characterized  # If tool tip and description are the same
+      # then it is common to omit the Description. Sometimes the description will have more detail.
+    Required: true  # By convention we only include the required attribute when it is true
+    Multi-select: false  # Normally if false, the attribute is not shown. Shown here just for
+      # documentation purposes.
+    System name: sample
+    Type: Entity
+    Definition: LNP Batch  # The specific entity. Only required for some Type values`
+  - Name: LNP
+    Description: The LNP concept for the provided LMP Batch provided in the Sample field.
+      Caution that snapshot fields fields don't update if the operands changes.
+    Tool tip: The LNP concept for the provided LMP Batch provided in the Sample field.
+      This is a a computed snapshot field.
+    System name: lnp
+    Type: Entity
+    Snapshot:  # This section is only partially documented and defined in Kenfigure schema.
+      # This is still converging and can be quite complicated. The current recommendation is to
+      # not worry too much about the formality of computed fields and just document your understanding
+      # of how the field is computed. Kenfigure tooling does have a defined format, but it varies
+      # quite a bit depending on the formula.
+      Formula: identity_fn
+      Arguments: ...
+  - Name: EE (%)
+    Description: Encapsulation Efficiency percent
+    Tool tip: The encapsulation efficiency as a percentage (i.e., 0 to 100) 
+    System name: ee_pct
+    Type: Decimal
+      # The value types for result fields are:
+      # Date, Datetime, Decimal, Integer, Long text, Dropdown, Text, Attachment,
+      # Entry, Entity, Category, Part, Inventory, JSON, Boolean, ft_assay_result_link, Run
+```
 
 ## Study Schemas
 TODO
