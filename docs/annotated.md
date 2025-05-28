@@ -337,7 +337,23 @@ Result_schemas:
 ```
 
 ## Study Schemas
-TODO
+File: In Vivo Study.yaml
+```yaml
+Study_schemas:
+- Name: v2_In Vivo Study
+  Description: Any sort of in vivo scientific activity
+  Prefix: VIVO
+  System name: in_vivo_study
+  Name template: []
+  Entry templates: []
+  Approval required: True  # Require approval of study design before proceeding to execution
+  Fields:
+  - Name: Program
+    Tool tip: Program study is associated with
+    System name: program
+    Type: Dropdown
+    Definition: Programs
+```
 
 ## Feature Flags
 The initial version of the feature flags file is typically created using a custom tool
