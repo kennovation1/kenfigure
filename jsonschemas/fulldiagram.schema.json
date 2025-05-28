@@ -3,7 +3,7 @@
   "$id": "https://kenfigure.com/jsonschemas/latest/fulldiagram.schema.json",
   "title": "Model instance metadata",
   "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
-  "comment": "Persistance of diagram properties",
+  "comment": "Persistence of diagram properties",
 	"type": "object",
 	"additionalProperties": {
 	  "type": "object",

@@ -11,7 +11,7 @@
   - <a id="properties/Metadata/properties/Created"></a>**`Created`** *(string, format: date-time)*: Datetime the model was created.
   - <a id="properties/Metadata/properties/Modified"></a>**`Modified`** *(string, format: date-time)*: Datetime the model was last modified.
   - <a id="properties/Metadata/properties/Schema%20version"></a>**`Schema version`** *(string, required)*: Semantic version of the KBConfig JSON schema (e.g., 1.0.0). Must match pattern: `^[0-9]+\.[0-9]+\.[0-9]+$` ([Test](https://regexr.com/?expression=%5E%5B0-9%5D%2B%5C.%5B0-9%5D%2B%5C.%5B0-9%5D%2B%24)).
-- <a id="properties/Diagram"></a>**`Diagram`** *(object)*: Persistance of diagram properties. Can contain additional properties.
+- <a id="properties/Diagram"></a>**`Diagram`** *(object)*: Persistence of diagram properties. Can contain additional properties.
   - <a id="properties/Diagram/additionalProperties"></a>**Additional properties** *(object)*
     - <a id="properties/Diagram/additionalProperties/properties/X"></a>**`X`** *(integer, required)*: X location coordinate.
     - <a id="properties/Diagram/additionalProperties/properties/Y"></a>**`Y`** *(integer, required)*: Y location coordinate.

@@ -10,7 +10,7 @@
       "$ref": "https://kenfigure.com/jsonschemas/latest/metadata.schema.json"
     },
     "Diagram": {
-      "description": "Persistance of diagram properties",
+      "description": "Persistence of diagram properties",
       "$ref": "https://kenfigure.com/jsonschemas/latest/fulldiagram.schema.json"
     },
     "Dropdowns": {
