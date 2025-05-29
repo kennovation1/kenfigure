@@ -16,6 +16,11 @@
         "description": "Plate schema name.",
         "type": "string"
       },
+      "System name": {
+        "description": "Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+        "type": "string",
+        "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+      },
       "Description": {
         "description": "Documentation for the plate schema. This is not saved to Benchling.",
         "type": "string"
@@ -79,11 +84,6 @@
             "Tool tip": {
               "description": "Field tool tip appears on hover on column headings.",
               "type": "string"
-            },
-            "Warehouse name": {
-              "description": "DEPRECATED - Use 'System name' instead. Internal system name. Default will be an automatic conversion of Name to a Benchlinng/PostgreSQL compatible name.",
-              "type": "string",
-              "pattern": "^[a-z_][a-z0-9_]{0,62}$"
             },
             "System name": {
               "description": "Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
