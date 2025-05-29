@@ -7,7 +7,7 @@ all: copy-readme copy-jsonschemas-latest
 
 # Autogenerate documentation from jsonschemas/kenfigure.schema_flat.json
 doc:
-	jsonschema2md  --examples-as-yaml --show-examples all jsonschemas/kenfigure.schema_flat.json docs/autodoc.md
+	jsonschema2md  --examples-as-yaml --show-examples all jsonschemas/kenfigure.schema_flat.json docs/reference.md
 
 # Copy README.md to docs/index.md
 copy-readme:
