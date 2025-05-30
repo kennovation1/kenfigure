@@ -55,6 +55,10 @@ See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annot
 - Here is the primary [Kenfigure documentation](./annotated.md) in the form of annotated examples.
 - The complete [schema reference is here](./reference.md). This is not as user friendly, but it is
   comprehensive.
+- The [schema design style guide](./schema_design_style_guide.md)
+  is an opinionated guide related to style aspects of schema design in Benchling.
+  This is a companion to Kenfigure by is independent of the Kenfigure specification.
+  Some custom tooling (e.g., Kenfigure Schema Lint) may use the style guide as a source for style rules.
 
 # Benefits 
 Here are some benefits of documenting your Benchling configuration in *kenfigure* files in git. In no particular order:
