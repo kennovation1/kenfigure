@@ -3,11 +3,12 @@ COPY_DEST = docs
 .PHONY: all doc copy-readme copy-jsonschemas-latest copy-jsonschemas-version
 
 # Default action: copy README and latest jsonschemas
-all: copy-readme copy-jsonschemas-latest
+all: doc copy-readme copy-jsonschemas-latest
 
 # Autogenerate documentation from jsonschemas/kenfigure.schema_flat.json
 doc:
-	jsonschema2md  --examples-as-yaml --show-examples all jsonschemas/kenfigure.schema_flat.json docs/reference.md
+	@echo "Generating $(COPY_DEST)/reference.md"
+	jsonschema2md  --examples-as-yaml --show-examples all jsonschemas/kenfigure.schema_flat.json $(COPY_DEST)/reference.md
 
 # Copy README.md to docs/index.md
 copy-readme:

@@ -4,23 +4,23 @@
 
 ## Properties
 
-- <a id="properties/Metadata"></a>**`Metadata`** *(object)*: Metadata that describes the model instance.
+- <a id="properties/Metadata"></a>**`Metadata`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
   - <a id="properties/Metadata/properties/Organization"></a>**`Organization`** *(string, required)*: Organization handle. Must match pattern: `^[a-z_][a-z0-9_]{0,32}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C32%7D%24)).
   - <a id="properties/Metadata/properties/Description"></a>**`Description`** *(string)*: Description of the environment and model.
   - <a id="properties/Metadata/properties/Model%20version"></a>**`Model version`** *(string)*: Semantic version for the model (e.g., 1.2.3). Must match pattern: `^[0-9]+\.[0-9]+\.[0-9]+$` ([Test](https://regexr.com/?expression=%5E%5B0-9%5D%2B%5C.%5B0-9%5D%2B%5C.%5B0-9%5D%2B%24)).
   - <a id="properties/Metadata/properties/Created"></a>**`Created`** *(string, format: date-time)*: Datetime the model was created.
   - <a id="properties/Metadata/properties/Modified"></a>**`Modified`** *(string, format: date-time)*: Datetime the model was last modified.
   - <a id="properties/Metadata/properties/Schema%20version"></a>**`Schema version`** *(string, required)*: Semantic version of the KBConfig JSON schema (e.g., 1.0.0). Must match pattern: `^[0-9]+\.[0-9]+\.[0-9]+$` ([Test](https://regexr.com/?expression=%5E%5B0-9%5D%2B%5C.%5B0-9%5D%2B%5C.%5B0-9%5D%2B%24)).
-- <a id="properties/Diagram"></a>**`Diagram`** *(object)*: Persistence of diagram properties. Can contain additional properties.
+- <a id="properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Can contain additional properties.
   - <a id="properties/Diagram/additionalProperties"></a>**Additional properties** *(object)*
     - <a id="properties/Diagram/additionalProperties/properties/X"></a>**`X`** *(integer, required)*: X location coordinate.
     - <a id="properties/Diagram/additionalProperties/properties/Y"></a>**`Y`** *(integer, required)*: Y location coordinate.
-- <a id="properties/Dropdowns"></a>**`Dropdowns`** *(array)*: Dropdowns and their options. Length must be at least 0. Items must be unique.
+- <a id="properties/Dropdowns"></a>**`Dropdowns`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
   - <a id="properties/Dropdowns/items"></a>**Items** *(object)*: Dropdown and its options.
     - <a id="properties/Dropdowns/items/properties/Name"></a>**`Name`** *(string, required)*: Dropdown name.
     - <a id="properties/Dropdowns/items/properties/Description"></a>**`Description`** *(string)*: Documentation description for the dropdown (not saved to Benchling).
     - <a id="properties/Dropdowns/items/properties/Alphabetize"></a>**`Alphabetize`** *(boolean)*: Alphabetize upon deployment if true.
-    - <a id="properties/Dropdowns/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
+    - <a id="properties/Dropdowns/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
       - <a id="properties/Dropdowns/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Dropdowns/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Dropdowns/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -28,7 +28,7 @@
     - <a id="properties/Dropdowns/items/properties/Options"></a>**`Options`** *(array)*: Dropdown values list (may be empty). Length must be at least 0. Items must be unique.
       - <a id="properties/Dropdowns/items/properties/Options/items"></a>**Items** *(string)*
     - <a id="properties/Dropdowns/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity created during an export operation. This is ignored for import operations.
-- <a id="properties/Entity_schemas"></a>**`Entity_schemas`** *(array)*: All types of entity schemas (e.g., Custom enity, DNA Sequence, etc.). Length must be at least 0. Items must be unique.
+- <a id="properties/Entity_schemas"></a>**`Entity_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
   - <a id="properties/Entity_schemas/items"></a>**Items** *(object)*: Complete description of the entity schema. Some attributes only apply to certain schema types.
     - <a id="properties/Entity_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Entity schema name.
     - <a id="properties/Entity_schemas/items/properties/Warehouse%20name"></a>**`Warehouse name`** *(string)*: DEPRECATED - Use 'System name' instead. Internal system name. Default will be an automatic conversion of Name to a Benchlinng/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
@@ -54,7 +54,7 @@
           - <a id="properties/Entity_schemas/items/properties/Constraint/items/anyOf/0"></a>*string*: Must be one of: `["Bases (ignore case)", "Canonical SMILES", "Amino acids (exact match)", "Amino acids (ignore case)"]`.
           - <a id="properties/Entity_schemas/items/properties/Constraint/items/anyOf/1"></a>*string*
     - <a id="properties/Entity_schemas/items/properties/Access%20type"></a>**`Access type`** *(string)*: The registered objects of this schema will have permissions that are either Registry-based (default) or Project-based. Must be one of: `["Registry-based", "Project-based"]`.
-    - <a id="properties/Entity_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
+    - <a id="properties/Entity_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
       - <a id="properties/Entity_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Entity_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Entity_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -86,7 +86,7 @@
             - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Computed/properties/Property/properties/Type"></a>**`Type`** *(string, required)*: The type of property. Normally Field, but use BASES to access the built-in Bases field. Must be one of: `["Field", "BASES"]`.
             - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Computed/properties/Property/properties/Definition"></a>**`Definition`** *(string)*: The name of the field if type is Field.
     - <a id="properties/Entity_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity schema created during an export operation. This is ignored for import operations.
-- <a id="properties/Fieldset_schemas"></a>**`Fieldset_schemas`** *(array)*: All types of fieldset schemas (e.g., Custom enity, DNA Sequence, etc.). Does not currently support tool tips or parent links for fields. Length must be at least 0. Items must be unique.
+- <a id="properties/Fieldset_schemas"></a>**`Fieldset_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
   - <a id="properties/Fieldset_schemas/items"></a>**Items** *(object)*: Complete description of the fieldset schema. Some attributes only apply to certain schema types.
     - <a id="properties/Fieldset_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Fieldset schema name.
     - <a id="properties/Fieldset_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
@@ -106,7 +106,7 @@
         - **Any of**
           - <a id="properties/Fieldset_schemas/items/properties/Constraint/items/anyOf/0"></a>*string*: Must be one of: `["Bases (ignore case)", "Canonical SMILES", "Amino acids (exact match)", "Amino acids (ignore case)"]`.
           - <a id="properties/Fieldset_schemas/items/properties/Constraint/items/anyOf/1"></a>*string*
-    - <a id="properties/Fieldset_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
+    - <a id="properties/Fieldset_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
       - <a id="properties/Fieldset_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Fieldset_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Fieldset_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -133,7 +133,7 @@
             - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Computed/properties/Property/properties/Type"></a>**`Type`** *(string, required)*: The type of property. Normally Field, but use BASES to access the built-in Bases field. Must be one of: `["Field", "BASES"]`.
             - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Computed/properties/Property/properties/Definition"></a>**`Definition`** *(string)*: The name of the field if type is Field.
     - <a id="properties/Fieldset_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity schema created during an export operation. This is ignored for import operations.
-- <a id="properties/Study_schemas"></a>**`Study_schemas`** *(array)*: All Study schemas. Length must be at least 0. Items must be unique.
+- <a id="properties/Study_schemas"></a>**`Study_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
   - <a id="properties/Study_schemas/items"></a>**Items** *(object)*: Complete description of the study schema.
     - <a id="properties/Study_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Study schema name.
     - <a id="properties/Study_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
@@ -147,7 +147,7 @@
       - <a id="properties/Study_schemas/items/properties/Entry%20templates/items"></a>**Items** *(string)*
     - <a id="properties/Study_schemas/items/properties/Approval%20required"></a>**`Approval required`** *(boolean)*: Require approval of Design before proceeding to Execution.
     - <a id="properties/Study_schemas/items/properties/Study%20type"></a>**`Study type`** *(string)*: Must match one of the Benchling-defined types. Must be one of: `["CUSTOM"]`.
-    - <a id="properties/Study_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
+    - <a id="properties/Study_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
       - <a id="properties/Study_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Study_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Study_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -164,17 +164,119 @@
         - <a id="properties/Study_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`** *(string)*: Name of target object if Type is a one of the link types.
         - <a id="properties/Study_schemas/items/properties/Fields/items/properties/Computed%20field"></a>**`Computed field`** *(string)*: Describes the computed field. Only present for computed fields.
     - <a id="properties/Study_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the study schema created during an export operation. This is ignored for import operations.
-- <a id="properties/Container_schemas"></a>**`Container_schemas`** *(object)*: Container schemas.
-- <a id="properties/Box_schemas"></a>**`Box_schemas`** *(object)*: Box schemas.
-- <a id="properties/Plate_schemas"></a>**`Plate_schemas`** *(object)*: Plate schemas.
-- <a id="properties/Location_schemas"></a>**`Location_schemas`** *(object)*: Location schemas.
-- <a id="properties/Result_schemas"></a>**`Result_schemas`** *(array)*: Result schemas. Length must be at least 0. Items must be unique.
+- <a id="properties/Container_schemas"></a>**`Container_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+  - <a id="properties/Container_schemas/items"></a>**Items** *(object)*: Complete description of the container schema.
+    - <a id="properties/Container_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Container schema name.
+    - <a id="properties/Container_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
+    - <a id="properties/Container_schemas/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the container schema. This is not saved to Benchling.
+    - <a id="properties/Container_schemas/items/properties/Notify"></a>**`Notify`** *(string)*: Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action.
+    - <a id="properties/Container_schemas/items/properties/Prefix"></a>**`Prefix`** *(string, required)*: The registry ID prefix. Must match pattern: `^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$` ([Test](https://regexr.com/?expression=%5E%5Ba-zA-Z0-9_.-%5D%2A%5Ba-zA-Z_.-%5D%3F%24)).
+    - <a id="properties/Container_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+      - <a id="properties/Container_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
+      - <a id="properties/Container_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
+      - <a id="properties/Container_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
+      - <a id="properties/Container_schemas/items/properties/Diagram/properties/Y"></a>**`Y`** *(integer)*: Y location coordinate.
+    - <a id="properties/Container_schemas/items/properties/Fields"></a>**`Fields`** *(array)*: Metadata fields. Length must be at least 0. Items must be unique.
+      - <a id="properties/Container_schemas/items/properties/Fields/items"></a>**Items** *(object)*: Metadata field definitions.
+        - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Name"></a>**`Name`** *(string, required)*: Field name.
+        - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the field. This is not saved to Benchling.
+        - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Tool%20tip"></a>**`Tool tip`** *(string)*: Field tool tip appears on hover on column headings.
+        - <a id="properties/Container_schemas/items/properties/Fields/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
+        - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Field is a multi-select field when true.
+        - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Type"></a>**`Type`** *(string, required)*: Data type for the field. Must be one of: `["Date", "Datetime", "Decimal", "Integer", "Long text", "Dropdown", "Text", "Attachment", "Entry", "Entity", "Category", "Inventory"]`.
+        - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types.
+          - **Any of**
+            - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", "Any inventory"]`.
+            - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
+    - <a id="properties/Container_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity schema created during an export operation. This is ignored for import operations.
+- <a id="properties/Box_schemas"></a>**`Box_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+  - <a id="properties/Box_schemas/items"></a>**Items** *(object)*: Complete description of the box schema.
+    - <a id="properties/Box_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Box schema name.
+    - <a id="properties/Box_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
+    - <a id="properties/Box_schemas/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the box schema. This is not saved to Benchling.
+    - <a id="properties/Box_schemas/items/properties/Notify"></a>**`Notify`** *(string)*: Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as creating certain standard boxes.
+    - <a id="properties/Box_schemas/items/properties/Prefix"></a>**`Prefix`** *(string, required)*: The registry ID prefix. Must match pattern: `^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$` ([Test](https://regexr.com/?expression=%5E%5Ba-zA-Z0-9_.-%5D%2A%5Ba-zA-Z_.-%5D%3F%24)).
+    - <a id="properties/Box_schemas/items/properties/Height"></a>**`Height`** *(integer, required)*: Height of the box (number of rows). Minimum: `1`.
+    - <a id="properties/Box_schemas/items/properties/Width"></a>**`Width`** *(integer, required)*: Width of the box (number of columns). Minimum: `1`.
+    - <a id="properties/Box_schemas/items/properties/Container%20Schema"></a>**`Container Schema`** *(string)*: Container schema for each slot in the box. May be omitted.
+    - <a id="properties/Box_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+      - <a id="properties/Box_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
+      - <a id="properties/Box_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
+      - <a id="properties/Box_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
+      - <a id="properties/Box_schemas/items/properties/Diagram/properties/Y"></a>**`Y`** *(integer)*: Y location coordinate.
+    - <a id="properties/Box_schemas/items/properties/Fields"></a>**`Fields`** *(array)*: Metadata fields. Length must be at least 0. Items must be unique.
+      - <a id="properties/Box_schemas/items/properties/Fields/items"></a>**Items** *(object)*: Metadata field definitions.
+        - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Name"></a>**`Name`** *(string, required)*: Field name.
+        - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the field. This is not saved to Benchling.
+        - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Tool%20tip"></a>**`Tool tip`** *(string)*: Field tool tip appears on hover on column headings.
+        - <a id="properties/Box_schemas/items/properties/Fields/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
+        - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Field is a multi-select field when true.
+        - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Type"></a>**`Type`** *(string, required)*: Data type for the field. Must be one of: `["Date", "Datetime", "Decimal", "Integer", "Long text", "Dropdown", "Text", "Attachment", "Entry", "Entity", "Category", "Inventory"]`.
+        - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types.
+          - **Any of**
+            - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", "Any inventory"]`.
+            - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
+    - <a id="properties/Box_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity schema created during an export operation. This is ignored for import operations.
+- <a id="properties/Plate_schemas"></a>**`Plate_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+  - <a id="properties/Plate_schemas/items"></a>**Items** *(object)*: Complete description of the plate schema.
+    - <a id="properties/Plate_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Plate schema name.
+    - <a id="properties/Plate_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
+    - <a id="properties/Plate_schemas/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the plate schema. This is not saved to Benchling.
+    - <a id="properties/Plate_schemas/items/properties/Notify"></a>**`Notify`** *(string)*: Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action.
+    - <a id="properties/Plate_schemas/items/properties/Prefix"></a>**`Prefix`** *(string, required)*: The registry ID prefix. Must match pattern: `^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$` ([Test](https://regexr.com/?expression=%5E%5Ba-zA-Z0-9_.-%5D%2A%5Ba-zA-Z_.-%5D%3F%24)).
+    - <a id="properties/Plate_schemas/items/properties/Size"></a>**`Size`** *(string, required)*: Number of wells in the plate and its geometry (rows x columns). Rows are lettered A-Z and columns are numbered 1-N. Must be one of: `["384 (16 x 24)", "96 (8 x 12)", "48 (6 x 8)", "24 (4 x 6)", "12 (3 x 4)", "6 (2 x 3)"]`.
+    - <a id="properties/Plate_schemas/items/properties/Type"></a>**`Type`** *(string, required)*: Type of plate (fixed well or matrix). Must be one of: `["Well plate", "Matrix plate"]`.
+    - <a id="properties/Plate_schemas/items/properties/Container%20Schema"></a>**`Container Schema`** *(string)*: Container schema for each well in the plate. May be omitted.
+    - <a id="properties/Plate_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+      - <a id="properties/Plate_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
+      - <a id="properties/Plate_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
+      - <a id="properties/Plate_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
+      - <a id="properties/Plate_schemas/items/properties/Diagram/properties/Y"></a>**`Y`** *(integer)*: Y location coordinate.
+    - <a id="properties/Plate_schemas/items/properties/Fields"></a>**`Fields`** *(array)*: Metadata fields. Length must be at least 0. Items must be unique.
+      - <a id="properties/Plate_schemas/items/properties/Fields/items"></a>**Items** *(object)*: Metadata field definitions.
+        - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Name"></a>**`Name`** *(string, required)*: Field name.
+        - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the field. This is not saved to Benchling.
+        - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Tool%20tip"></a>**`Tool tip`** *(string)*: Field tool tip appears on hover on column headings.
+        - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
+        - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Field is a multi-select field when true.
+        - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Type"></a>**`Type`** *(string, required)*: Data type for the field. Must be one of: `["Date", "Datetime", "Decimal", "Integer", "Long text", "Dropdown", "Text", "Attachment", "Entry", "Entity", "Category", "Inventory"]`.
+        - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types.
+          - **Any of**
+            - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", "Any inventory"]`.
+            - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
+    - <a id="properties/Plate_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity schema created during an export operation. This is ignored for import operations.
+- <a id="properties/Location_schemas"></a>**`Location_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+  - <a id="properties/Location_schemas/items"></a>**Items** *(object)*: Complete description of the location schema.
+    - <a id="properties/Location_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Location schema name.
+    - <a id="properties/Location_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
+    - <a id="properties/Location_schemas/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the location schema. This is not saved to Benchling.
+    - <a id="properties/Location_schemas/items/properties/Notify"></a>**`Notify`** *(string)*: Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action.
+    - <a id="properties/Location_schemas/items/properties/Prefix"></a>**`Prefix`** *(string, required)*: The registry ID prefix. Must match pattern: `^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$` ([Test](https://regexr.com/?expression=%5E%5Ba-zA-Z0-9_.-%5D%2A%5Ba-zA-Z_.-%5D%3F%24)).
+    - <a id="properties/Location_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+      - <a id="properties/Location_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
+      - <a id="properties/Location_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
+      - <a id="properties/Location_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
+      - <a id="properties/Location_schemas/items/properties/Diagram/properties/Y"></a>**`Y`** *(integer)*: Y location coordinate.
+    - <a id="properties/Location_schemas/items/properties/Fields"></a>**`Fields`** *(array)*: Metadata fields. Length must be at least 0. Items must be unique.
+      - <a id="properties/Location_schemas/items/properties/Fields/items"></a>**Items** *(object)*: Metadata field definitions.
+        - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Name"></a>**`Name`** *(string, required)*: Field name.
+        - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the field. This is not saved to Benchling.
+        - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Tool%20tip"></a>**`Tool tip`** *(string)*: Field tool tip appears on hover on column headings.
+        - <a id="properties/Location_schemas/items/properties/Fields/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
+        - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Field is a multi-select field when true.
+        - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Type"></a>**`Type`** *(string, required)*: Data type for the field. Must be one of: `["Date", "Datetime", "Decimal", "Integer", "Long text", "Dropdown", "Text", "Attachment", "Entry", "Entity", "Category", "Inventory"]`.
+        - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types.
+          - **Any of**
+            - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", "Any inventory"]`.
+            - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
+    - <a id="properties/Location_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity schema created during an export operation. This is ignored for import operations.
+- <a id="properties/Result_schemas"></a>**`Result_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
   - <a id="properties/Result_schemas/items"></a>**Items** *(object)*: Complete description of the result schema.
     - <a id="properties/Result_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Result schema name.
     - <a id="properties/Result_schemas/items/properties/Warehouse%20name"></a>**`Warehouse name`** *(string)*: DEPRECATED - Use 'System name' instead. Internal system name. Default will be an automatic conversion of Name to a Benchlinng/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
     - <a id="properties/Result_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
     - <a id="properties/Result_schemas/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the entity. This is not saved to Benchling.
-    - <a id="properties/Result_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
+    - <a id="properties/Result_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
       - <a id="properties/Result_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Result_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Result_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -196,7 +298,7 @@
             - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Snapshot/properties/Arguments/properties/Steps"></a>**`Steps`** *(array)*: Lookup steps. Currently supports a list of 2 field values. First must be an entity field in the current schema. Second must be a field on the schema pointed to by step 1. Length must be equal to 2.
               - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Snapshot/properties/Arguments/properties/Steps/items"></a>**Items** *(string)*
     - <a id="properties/Result_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity created during an export operation. This is ignored for import operations.
-- <a id="properties/Feature_flags"></a>**`Feature_flags`** *(object)*: Back-end feature flag settings. Must be fetched and changed by Benchling. Use feature_flags.py to convert to/from csv. Can contain additional properties.
+- <a id="properties/Feature_flags"></a>**`Feature_flags`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Can contain additional properties.
   - <a id="properties/Feature_flags/additionalProperties"></a>**Additional properties** *(object)*: Can contain additional properties.
     - <a id="properties/Feature_flags/additionalProperties/additionalProperties"></a>**Additional properties** *(object)*: Cannot contain additional properties.
       - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Current"></a>**`Current`** *(['string', 'boolean'], required)*
