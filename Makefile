@@ -1,30 +1,30 @@
 COPY_DEST = docs
 
-.PHONY: all doc copy-readme copy-jsonschemas-latest copy-jsonschemas-version
+.PHONY: all reference index latest version
 
 # Default action: copy README and latest jsonschemas
-all: doc copy-readme copy-jsonschemas-latest
+all: reference index latest
 
 # Autogenerate documentation from jsonschemas/kenfigure.schema_flat.json
-doc:
+reference:
 	@echo "Generating $(COPY_DEST)/reference.md"
 	jsonschema2md  --examples-as-yaml --show-examples all jsonschemas/kenfigure.schema_flat.json $(COPY_DEST)/reference.md
 
 # Copy README.md to docs/index.md
-copy-readme:
+index:
 	@echo "Copying README.md to $(COPY_DEST)/index.md"
 	cp README.md $(COPY_DEST)/index.md
 
 # Copy jsonschemas directory recursively to docs/jsonschemas/latest/
-copy-jsonschemas-latest:
+latest:
 	@echo "Copying jsonschemas/ to $(COPY_DEST)/jsonschemas/latest/"
 	cp -r jsonschemas/* $(COPY_DEST)/jsonschemas/latest/
 
-# Set VERSION from the command line, e.g., `make copy-jsonschemas-version VERSION=1.2.3`
+# Set VERSION from the command line, e.g., `make version VERSION=1.2.3`
 # Fail if VERSION is not supplied
-copy-jsonschemas-version:
+version:
 	@if [ -z "$(VERSION)" ]; then \
-		echo "Error: VERSION is not set. Use 'make copy-jsonschemas-version VERSION=<version>'"; \
+		echo "Error: VERSION is not set. Use 'make version VERSION=<version>'"; \
 		exit 1; \
 	fi
 	@echo "Creating directory $(COPY_DEST)/jsonschemas/$(VERSION)/"
