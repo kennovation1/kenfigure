@@ -180,7 +180,7 @@ Entity_schemas:
   RegID display: false  # The sames as the UI checkbox: Use Registry ID as display label
   RegID chips: false  # The sames as the UI checkbox: Include Registry ID in chips 
   Access type: Registry-based  # One of Registry-based or Project-based
-  Icon: small-molecule  # Name of item to use for the schema 
+  Icon: small-molecule  # Name of icon to use for the schema 
   # Note that since this is a Molecule schema type, the chemical structure (SMILES) is a built-in field
   # provided to the API.
   Notify: Manually attach the Lipid Usage dashboard  # Used by Kenfigure Import tooling to print a message
@@ -363,6 +363,7 @@ Location_schemas:
     Description: A generic freezer location. Use this for all freezers and refrigerators.
       By convention, the name should include the temperature of the freezer (e.g., "Arctic -80C")
     System name: freezer
+    Icon: fridge  # Name of an existing icon to use
     Fields: []
 ```
 
@@ -374,6 +375,7 @@ Container_schemas:
     Description: A generic vial container schema. Use this for all vials.
       Optionally, users may set the type of vial.
     System name: vial
+    Icon: tube  # Name of an existing icon to use
     Fields:
       - Name: Vial type
         System name: vial_type
@@ -395,6 +397,7 @@ Box_schemas:
     Height: 9  # Number of rows
     Width: 9  # Number of columns
     Container schema: Vial  # May be omitted. If present, specifies a container schema that must be used for filled positions.
+    Icon: box  # Name of an existing icon to use
     Fields: []
 ```
 
@@ -410,6 +413,7 @@ Plate_schemas:
     # 6 (2 x 3), 12 (3 x 4), 24 (4 x 6), 48 (6 x 8), 96 (8 x 12), 384 (16 x 24)
     Type: Well plate  # May also be "Matrix plate"
     Container schema: null  # May be omitted if not needed
+    Icon: plate  # Name of an existing icon to use
     Fields: []
 ```
 
