@@ -1,6 +1,6 @@
 # Kenfigure Schema
 
-*© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.*
+*Kenfigure™: a YAML spec to define Benchling configurations. © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.*
 
 ## Properties
 
