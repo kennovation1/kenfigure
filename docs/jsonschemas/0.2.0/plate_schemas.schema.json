@@ -54,7 +54,7 @@
           "Matrix plate"
         ]
       },
-      "Container Schema": {
+      "Container schema": {
         "description": "Container schema for each well in the plate. May be omitted.",
         "type": "string"
       },

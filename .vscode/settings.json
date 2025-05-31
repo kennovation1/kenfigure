@@ -1,5 +1,11 @@
 {
 	"cSpell.words": [
 		"Bioprocess"
-	]
+	],
+	"yaml.schemas": {
+		"https://kenfigure.com/jsonschemas/latest/kenfigure.schema.json": [
+			"*.yaml",
+			"**/*.yaml"
+		]
+	}
 }

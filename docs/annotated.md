@@ -355,6 +355,64 @@ Study_schemas:
     Definition: Programs
 ```
 
+## Location Schemas
+```yaml
+Location_schemas:
+  - Name: Freezer
+    Prefix: FR
+    Description: A generic freezer location. Use this for all freezers and refrigerators.
+      By convention, the name should include the temperature of the freezer (e.g., "Arctic -80C")
+    System name: freezer
+    Fields: []
+```
+
+## Container Schemas
+```yaml
+Container_schemas:
+  - Name: Vial
+    Prefix: VIAL
+    Description: A generic vial container schema. Use this for all vials.
+      Optionally, users may set the type of vial.
+    System name: vial
+    Fields:
+      - Name: Vial type
+        System name: vial_type
+        Description: The type of vial (e.g., Eppendorf 1.5 mL, ...)
+        Tool tip: Select the vial type if applicable.
+        Multi-select: false  # Normally omitted if false
+        Type: Dropdown
+        Definition: Vial Types  # The name of the dropdown or entity depending on the Type.
+        # Omit if the Type does not require a Definition.
+```
+
+## Box Schemas
+```yaml
+Box_schemas:
+  - Name: Vial box 9x9
+    System name: vial_box_9x9
+    Description: A 9x9 box that is restricted to holding vials.
+    Prefix: 9x9VBOX  # Note that prefixes may not end with a digit
+    Height: 9  # Number of rows
+    Width: 9  # Number of columns
+    Container schema: Vial  # May be omitted. If present, specifies a container schema that must be used for filled positions.
+    Fields: []
+```
+
+## Plate Schemas
+```yaml
+Plate_schemas:
+  - Name: 96 Well Plate
+    System name: plate_96_well
+    Description: Any sort of 96 well microtiter plate
+    Prefix: 96WELL
+    Size: 96 (8 x 12)
+    # Valid values for Size are:
+    # 6 (2 x 3), 12 (3 x 4), 24 (4 x 6), 48 (6 x 8), 96 (8 x 12), 384 (16 x 24)
+    Type: Well plate  # May also be "Matrix plate"
+    Container schema: null  # May be omitted if not needed
+    Fields: []
+```
+
 ## Feature Flags
 The initial version of the feature flags file is typically created using a custom tool
 (e.g., Kenfigure Export). Once initialized, it may then be maintained in git or periodically
@@ -402,15 +460,3 @@ Metadata:
   Modified: '2025-05-09T13:50:59+00:00'  # The datetime when the model was last modified
   Schema version: 0.1.0  # The Kenfigure schema version
 ```
-
-## Container Schemas
-TODO
-
-## Box Schemas
-TODO
-
-## Plate Schemas
-TODO
-
-## Location Schemas
-TODO

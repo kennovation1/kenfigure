@@ -198,7 +198,7 @@
     - <a id="properties/Box_schemas/items/properties/Prefix"></a>**`Prefix`** *(string, required)*: The registry ID prefix. Must match pattern: `^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$` ([Test](https://regexr.com/?expression=%5E%5Ba-zA-Z0-9_.-%5D%2A%5Ba-zA-Z_.-%5D%3F%24)).
     - <a id="properties/Box_schemas/items/properties/Height"></a>**`Height`** *(integer, required)*: Height of the box (number of rows). Minimum: `1`.
     - <a id="properties/Box_schemas/items/properties/Width"></a>**`Width`** *(integer, required)*: Width of the box (number of columns). Minimum: `1`.
-    - <a id="properties/Box_schemas/items/properties/Container%20Schema"></a>**`Container Schema`** *(string)*: Container schema for each slot in the box. May be omitted.
+    - <a id="properties/Box_schemas/items/properties/Container%20schema"></a>**`Container schema`** *(string)*: Container schema for each slot in the box. May be omitted.
     - <a id="properties/Box_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
       - <a id="properties/Box_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Box_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
@@ -226,7 +226,7 @@
     - <a id="properties/Plate_schemas/items/properties/Prefix"></a>**`Prefix`** *(string, required)*: The registry ID prefix. Must match pattern: `^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$` ([Test](https://regexr.com/?expression=%5E%5Ba-zA-Z0-9_.-%5D%2A%5Ba-zA-Z_.-%5D%3F%24)).
     - <a id="properties/Plate_schemas/items/properties/Size"></a>**`Size`** *(string, required)*: Number of wells in the plate and its geometry (rows x columns). Rows are lettered A-Z and columns are numbered 1-N. Must be one of: `["384 (16 x 24)", "96 (8 x 12)", "48 (6 x 8)", "24 (4 x 6)", "12 (3 x 4)", "6 (2 x 3)"]`.
     - <a id="properties/Plate_schemas/items/properties/Type"></a>**`Type`** *(string, required)*: Type of plate (fixed well or matrix). Must be one of: `["Well plate", "Matrix plate"]`.
-    - <a id="properties/Plate_schemas/items/properties/Container%20Schema"></a>**`Container Schema`** *(string)*: Container schema for each well in the plate. May be omitted.
+    - <a id="properties/Plate_schemas/items/properties/Container%20schema"></a>**`Container schema`** *(string)*: Container schema for each well in the plate. May be omitted.
     - <a id="properties/Plate_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
       - <a id="properties/Plate_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Plate_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
