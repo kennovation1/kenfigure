@@ -1,9 +1,13 @@
 COPY_DEST = docs
 
-.PHONY: all reference index latest version
+.PHONY: all flatten reference index latest version
 
 # Default action: copy README and latest jsonschemas
-all: reference index latest
+all: flatten reference index latest
+
+flatten:
+	@echo "Flattening jsonschemas/kenfigure.schema.json to jsonschemas/kenfigure.schema_flat.json"
+	python tools/flatten_schema.py
 
 # Autogenerate documentation from jsonschemas/kenfigure.schema_flat.json
 reference:
