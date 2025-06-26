@@ -69,8 +69,14 @@ the style for the structure of the Kenfigure YAML files.
   field naming is less critical in some cases.
 
 # Field system names
+- Must conform to PostgreSQL naming restrictions
 - System names should contain a representation of the units that appear in the field name. If a ratio, the '/' should be converted
   to an underscore ('_') (note that Benchling will silently drop the slash when auto-generating system names).
   E.g., "Concentration (mg/mL)" should have a system name "concentration_mg_ml".
 - System names representing percent units, should use a "_pct" suffix (note that Benchling silently drops the '%' symbol when auto-generating system names).
   E.g., The display name "Purity (%)" should have a system name "purity_pct".
+- Superscripts generally should be dropped. E.g., "cm^2" or "cm²" should be converted to "cm2". If units are complex, review and use common sense.
+- For fun, here is a more complex example multiple superscripts, multiple divisions, and a greek letter:
+  - Display name: Avg Radiant Efficiency [p/s/cm²/sr] / [µW/cm²]
+  - System name: avg_radiant_efficiency_p_s_cm2_sr_uw_cm2
+- Do not use double underscores (two consecutive underscores). E.g., For "Total Flux (p/s)", use "total_flux_p_s" not "total_flux__(p/s)".
