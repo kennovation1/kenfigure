@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kenfigure.com/jsonschemas/latest/kenfigure.schema.json",
+  "title": "Kenfigure Schema",
+  "description": "Kenfigure™: a YAML spec to define Benchling configurations. © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
+  "type": "object",
+  "properties": {
+    "Metadata": {
+      "description": "Metadata that describes the model instance",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/metadata.schema.json"
+    },
+    "Diagram": {
+      "description": "Persistence of diagram properties",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/fulldiagram.schema.json"
+    },
+    "Dropdowns": {
+      "description": "Dropdowns and their values",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/dropdowns.schema.json"
+    },
+    "Entity_schemas": {
+      "description": "Entity schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/entity_schemas.schema.json"
+    },
+    "Fieldset_schemas": {
+      "description": "Fieldset schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/fieldset_schemas.schema.json"
+    },
+    "Study_schemas": {
+      "description": "Study schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/study_schemas.schema.json"
+    },
+    "Container_schemas": {
+      "description": "Container schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/container_schemas.schema.json"
+    },
+    "Box_schemas": {
+      "description": "Box schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/box_schemas.schema.json"
+    },
+    "Plate_schemas": {
+      "description": "Plate schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/plate_schemas.schema.json"
+    },
+    "Location_schemas": {
+      "description": "Location schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/location_schemas.schema.json"
+    },
+    "Result_schemas": {
+      "description": "Result schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/result_schemas.schema.json"
+    },
+    "Feature_flags": {
+      "description": "Feature flags",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/feature_flags.schema.json"
+    }
+  }
+}

@@ -408,9 +408,8 @@ Plate_schemas:
     System name: plate_96_well
     Description: Any sort of 96 well microtiter plate
     Prefix: 96WELL
-    Size: 96 (8 x 12)
-    # Valid values for Size are:
-    # 6 (2 x 3), 12 (3 x 4), 24 (4 x 6), 48 (6 x 8), 96 (8 x 12), 384 (16 x 24)
+    Height: 8  # Number of lettered rows
+    Width: 12  # Number of columns
     Type: Well plate  # May also be "Matrix plate"
     Container schema: null  # May be omitted if not needed
     Icon: plate  # Name of an existing icon to use

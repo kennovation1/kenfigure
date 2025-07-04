@@ -1,28 +1,29 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "https://kenfigure.com/jsonschemas/latest/plate_schemas.schema.json",
-  "title": "Plate schemas",
+	"$id": "https://kenfigure.com/jsonschemas/latest/location_schemas.schema.json",
+  "title": "Location schemas",
   "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
   "type": "array",
   "minItems": 0,
   "uniqueItems": true,
   "items": {
-    "title": "Plate schema definition",
-    "description": "Complete description of the plate schema.",
-    "required": ["Name", "Prefix", "Height",  "Width", "Type"],
+    "title": "Location schema definition",
+    "description": "Complete description of the location schema.",
+    "required": ["Name", "Prefix"],
     "type": "object",
     "properties": {
       "Name": {
-        "description": "Plate schema name.",
+        "description": "Location schema name.",
         "type": "string"
       },
       "System name": {
         "description": "Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+        "comment": "The system name on location schemas is not currently settable (or visible) via the UI.",
         "type": "string",
         "pattern": "^[a-z_][a-z0-9_]{0,62}$"
       },
       "Description": {
-        "description": "Documentation for the plate schema. This is not saved to Benchling.",
+        "description": "Documentation for the location schema. This is not saved to Benchling.",
         "type": "string"
       },
       "Notify": {
@@ -33,28 +34,6 @@
         "description": "The registry ID prefix",
         "type": "string",
         "pattern": "^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$"
-      },
-      "Height": {
-        "description": "Height of the plate (number of lettered rows).",
-        "type": "integer",
-        "minimum": 1
-      },
-      "Width": {
-        "description": "Width of the plate (number of columns).",
-        "type": "integer",
-        "minimum": 1
-      },
-      "Type": {
-        "description": "Type of plate (fixed well or matrix)",
-        "type": "string",
-        "enum": [
-          "Well plate",
-          "Matrix plate"
-        ]
-      },
-      "Container schema": {
-        "description": "Container schema for each well in the plate. May be omitted.",
-        "type": "string"
       },
       "Diagram": {
         "description": "Properties solely used for diagram rendering.",

@@ -1,22 +1,27 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "https://kenfigure.com/jsonschemas/latest/fieldset_schemas.schema.json",
-  "title": "Fieldset schemas",
+	"$id": "https://kenfigure.com/jsonschemas/latest/entity_schemas.schema.json",
+  "title": "Entity schemas",
   "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
-  "comment": "All types of fieldset schemas (e.g., Custom enity, DNA Sequence, etc.). Does not currently support tool tips or parent links for fields.",
+  "comment": "All types of entity schemas (e.g., Custom enity, DNA Sequence, etc.).",
   "type": "array",
   "minItems": 0,
   "uniqueItems": true,
   "items": {
-    "$comment": "See various TODOs",
-    "title": "Fieldset schema definition",
-    "description": "Complete description of the fieldset schema.",
-    "required": ["Name"],
+    "$comment": "See various TODOs. Add type-specific fields for types like DNA Sequence, etc.",
+    "title": "Entity schema definition",
+    "description": "Complete description of the entity schema. Some attributes only apply to certain schema types.",
+    "required": ["Name", "Entity type", "Prefix", "Containable type", "Naming options"],
     "type": "object",
     "properties": {
       "Name": {
-        "description": "Fieldset schema name.",
+        "description": "Entity schema name.",
         "type": "string"
+      },
+      "Warehouse name": {
+        "description": "DEPRECATED - Use 'System name' instead. Internal system name. Default will be an automatic conversion of Name to a Benchlinng/PostgreSQL compatible name.",
+        "type": "string",
+        "pattern": "^[a-z_][a-z0-9_]{0,62}$"
       },
       "System name": {
         "description": "Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
@@ -24,31 +29,75 @@
         "pattern": "^[a-z_][a-z0-9_]{0,62}$"
       },
       "Description": {
-        "description": "Documentation for the fieldset schema. This is not saved to Benchling.",
+        "description": "Documentation for the entity schema. This is not saved to Benchling.",
         "type": "string"
       },
       "Notify": {
-        "description": "Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as setting permissions.",
+        "description": "Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as configuring an embedded dashboard or setting permissions.",
         "type": "string"
       },
       "Entity type": {
-        "description": "Must match one of the Benchling-defined types. May be 'None' to enable attaching to any type of entity schema.",
+        "description": "Must match one of the Benchling-defined types.",
         "type": "string",
-        "enum": ["None", "Custom Entity", "DNA Sequence", "DNA Oligo", "RNA Oligo", "RNA Sequence", "AA Sequence", "Molecule", "Mixture"]
+        "enum": ["Custom Entity", "DNA Sequence", "DNA Oligo", "RNA Oligo", "RNA Sequence", "AA Sequence", "Molecule", "Entry", "Mixture"]
       },
-      "Category": {
-        "description": "If true (default), this fieldset will appear as a navigation category for end users, and an option for field definitions.",
-        "type": "boolean"
+      "Icon": {
+        "description": "Icon for the schema. Matches benchling names without any translation.",
+        "type": "string",
+        "enum": [
+          "antibody",
+          "bacteria",
+          "basic_folder_item",
+          "box",
+          "cell-line",
+          "compound",
+          "entry",
+          "fridge",
+          "linear",
+          "material",
+          "mixture",
+          "mouse",
+          "oligo",
+          "oligo-v2",
+          "plate",
+          "primer_pair",
+          "protein",
+          "rna_sequence",
+          "sample-slide",
+          "sequence",
+          "small-molecule",
+          "small-molecule-beaker",
+          "vial",
+          "chromatography",
+          "human"
+        ]
       },
       "Prefix": {
-        "description": "The registry ID prefix. If specified, will override the prefix for all attached entity schemas.",
+        "description": "The registry ID prefix",
         "type": "string",
         "pattern": "^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$"
       },
+      "RegID display": {
+        "description": "Use Registry ID as display label when true.",
+        "type": "boolean"
+      },
+      "RegID chips": {
+        "description": "Include Registry ID in chips when true.",
+        "type": "boolean"
+      },
+      "Show bases": {
+        "description": "Show bases in expanded view.",
+        "type": "boolean"
+      },
+      "Containable type": {
+        "description": "Entity can be transferred into containers when set to 'Entity'.",
+        "type": "string",
+        "enum": ["None", "Entity"]
+      },
       "Naming options": {
-        "description": "Available registration naming options. If specified, will override the naming options for all attached entity schemas.",
+        "description": "Available registration naming options.",
         "type": "array",
-        "minItems": 0,
+        "minItems": 1,
         "uniqueItems": true,
         "items": {
           "description": "Valid enum values include symbolic names and full text versions",
@@ -99,7 +148,7 @@
         "$comment": "TODO: Need to define this better. How handle pre-defiend values like separator, lot, etc."
       },
       "Constraint": {
-        "description": "List of fields to define constraint. Maybe empty. May contain special built-in field descriptions. If specified, will override the constraint for all attached entity schemas.",
+        "description": "List of fields to define constraint. Maybe empty. May contain special built-in field descriptions.",
         "type": "array",
         "minItems": 0,
         "uniqueItems": true,
@@ -120,9 +169,24 @@
           ]
         }
       },
+      "Access type": {
+        "description": "The registered objects of this schema will have permissions that are either Registry-based (default) or Project-based.",
+        "type": "string",
+        "enum": ["Registry-based", "Project-based"]
+      },
       "Diagram": {
         "description": "Properties solely used for diagram rendering.",
         "$ref": "https://kenfigure.com/jsonschemas/latest/diagram.schema.json"
+      },
+      "Fieldsets": {
+        "description": "Fieldsets that the entity implements.",
+        "type": "array",
+        "minItems": 0,
+        "uniqueItems": true,
+        "items": {
+          "description": "A list of zero or more Fieldset names",
+          "type": "string"
+        }
       },
       "Fields": {
         "description": "Metadata fields",
@@ -143,6 +207,15 @@
               "description": "Documentation for the field. This is not saved to Benchling.",
               "type": "string"
             },
+            "Tool tip": {
+              "description": "Field tool tip appears on hover on column headings.",
+              "type": "string"
+            },
+            "Warehouse name": {
+              "description": "DEPRECATED - Use 'System name' instead. Internal system name. Default will be an automatic conversion of Name to a Benchlinng/PostgreSQL compatible name.",
+              "type": "string",
+              "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+            },
             "System name": {
               "description": "Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
               "type": "string",
@@ -150,6 +223,10 @@
             },
             "Required": {
               "description": "Field is required when true",
+              "type": "boolean"
+            },
+            "Parent link": {
+              "description": "Entity reference is a parent link when true.",
               "type": "boolean"
             },
             "Multi-select": {
@@ -170,11 +247,14 @@
                 "Attachment",
                 "Entry",
                 "Entity",
+                "Category",
                 "Part",
                 "Inventory",
                 "ft_translation_link",
                 "ft_assay_result_link",
-                "ft_assay_run_link"
+                "ft_assay_run_link",
+                "Batch",
+                "Transcription"
               ]
             },
             "Definition": {
@@ -213,6 +293,10 @@
                     "set_union_selector",
                     "join_string",
                     "multiply_with_exponents",
+                    "molecule_molecular_weight",
+                    "chemical_formula_with_salts",
+                    "standard_molecular_weight_with_salts",
+                    "subtract_dates",
 
                     "mod_aware_molecular_weight",
                     "render_molecule_from_smiles",

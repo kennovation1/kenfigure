@@ -87,7 +87,7 @@
             - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Computed/properties/Property/properties/Definition"></a>**`Definition`** *(string)*: The name of the field if type is Field.
     - <a id="properties/Entity_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity schema created during an export operation. This is ignored for import operations.
 - <a id="properties/Fieldset_schemas"></a>**`Fieldset_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
-  - <a id="properties/Fieldset_schemas/items"></a>**Items** *(object)*: Complete description of the fieldset schema. Some attributes only apply to certain schema types.
+  - <a id="properties/Fieldset_schemas/items"></a>**Items** *(object)*: Complete description of the fieldset schema.
     - <a id="properties/Fieldset_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Fieldset schema name.
     - <a id="properties/Fieldset_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
     - <a id="properties/Fieldset_schemas/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the fieldset schema. This is not saved to Benchling.
@@ -224,7 +224,8 @@
     - <a id="properties/Plate_schemas/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the plate schema. This is not saved to Benchling.
     - <a id="properties/Plate_schemas/items/properties/Notify"></a>**`Notify`** *(string)*: Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action.
     - <a id="properties/Plate_schemas/items/properties/Prefix"></a>**`Prefix`** *(string, required)*: The registry ID prefix. Must match pattern: `^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$` ([Test](https://regexr.com/?expression=%5E%5Ba-zA-Z0-9_.-%5D%2A%5Ba-zA-Z_.-%5D%3F%24)).
-    - <a id="properties/Plate_schemas/items/properties/Size"></a>**`Size`** *(string, required)*: Number of wells in the plate and its geometry (rows x columns). Rows are lettered A-Z and columns are numbered 1-N. Must be one of: `["384 (16 x 24)", "96 (8 x 12)", "48 (6 x 8)", "24 (4 x 6)", "12 (3 x 4)", "6 (2 x 3)"]`.
+    - <a id="properties/Plate_schemas/items/properties/Height"></a>**`Height`** *(integer, required)*: Height of the plate (number of lettered rows). Minimum: `1`.
+    - <a id="properties/Plate_schemas/items/properties/Width"></a>**`Width`** *(integer, required)*: Width of the plate (number of columns). Minimum: `1`.
     - <a id="properties/Plate_schemas/items/properties/Type"></a>**`Type`** *(string, required)*: Type of plate (fixed well or matrix). Must be one of: `["Well plate", "Matrix plate"]`.
     - <a id="properties/Plate_schemas/items/properties/Container%20schema"></a>**`Container schema`** *(string)*: Container schema for each well in the plate. May be omitted.
     - <a id="properties/Plate_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.

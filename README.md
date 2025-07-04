@@ -1,6 +1,6 @@
 # Kenfigure™
 ![License: ODC-BY 1.0](https://img.shields.io/badge/License-ODC--BY%201.0-blue)
-![Version](https://img.shields.io/badge/version-v0.2.0-orange)
+![Version](https://img.shields.io/badge/version-v1.1.0-orange)
 
 # Overview
 *Kenfigure*: a YAML spec to define Benchling configurations
@@ -130,8 +130,8 @@ proprietary tools or others.)
   is for use with IDEs and sharing more generally so that there will be no
   reference resolution hurdles. This allows us to keep the source files separate for manageability.
 
-## VS Code specific notes
-- For VSCode, install the YAML plugin from Red Hat and add the following in
+## VS Code and Cursor specific notes
+- For VSCode or Cursor, install the YAML plugin from Red Hat and add the following in
   `.vscode/settings.json` to associate the schema file with YAML files in the listed locations.
 ```json
 {
@@ -145,12 +145,12 @@ proprietary tools or others.)
 ```
   You may want to narrow the matching files (`"*.yaml"` and `"**/*.yaml"`) by adding a more specific path prefix for your environment.
 - Once the above is configured, use `CTRL` + `space` for typing completion. You can also hover to get various hints.
-- GitHub Copilot can also provide excellent typing completions
-  - Works especially well if you have your entire environment documented since Copilot learns from your entire context
+- GitHub Copilot with VS Code and Cursor can also provide excellent typing completions
+  - Works especially well if you have your entire environment documented since they learn from your entire context
   - As always, review AI-generated completions carefully since it can confidently make mistakes.
-    It will not necessarily abide by the JSON schema, so you'll need to sometimes decide to take the VS Code
-    completion (based on the JSON schema) instead of the Copilot completion.
-  - Can he helpful for creating appropriate tooltips or at least giving your a good start.
+    It will not necessarily abide by the JSON schema, so you'll need to sometimes decide to take the IDE
+    completion (based on the JSON schema) instead of the AI completion.
+  - The AI can he helpful for creating appropriate tooltips or at least giving your a good start.
 
 ## Other IDEs
 If you use a different IDE, please create a pull request so we can document and applicable notes.
