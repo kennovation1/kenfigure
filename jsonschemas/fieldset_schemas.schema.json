@@ -8,9 +8,9 @@
   "minItems": 0,
   "uniqueItems": true,
   "items": {
-    "$comment": "See various TODOs. Add type-specific fields for types like DNA Sequence, etc.",
+    "$comment": "See various TODOs",
     "title": "Fieldset schema definition",
-    "description": "Complete description of the fieldset schema. Some attributes only apply to certain schema types.",
+    "description": "Complete description of the fieldset schema.",
     "required": ["Name"],
     "type": "object",
     "properties": {
