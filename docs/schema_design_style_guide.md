@@ -80,3 +80,6 @@ the style for the structure of the Kenfigure YAML files.
   - Display name: Avg Radiant Efficiency [p/s/cm²/sr] / [µW/cm²]
   - System name: avg_radiant_efficiency_p_s_cm2_sr_uw_cm2
 - Do not use double underscores (two consecutive underscores). E.g., For "Total Flux (p/s)", use "total_flux_p_s" not "total_flux__(p/s)".
+
+---
+© 2025 Go2 Software LLC. All rights reserved.

@@ -170,3 +170,5 @@ Please contact [info@go2software.com](mailto:info@go2software.com) for commercia
 Use of the name "Kenfigure" in derivative projects or commercial products is not permitted without permission.
 
 Benchling is a trademark of Benchling, Inc.
+
+© 2025 Go2 Software LLC. All rights reserved.

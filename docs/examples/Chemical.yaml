@@ -1,5 +1,5 @@
 # This is a sanitized fragment of my YAML config for documenting Benchling configurations.
-# Copyright (c) 2025 by Ken Robbins, Go2 Sotware LLC. All rights reserved.
+# Copyright (c) 2025 by Ken Robbins, Go2 Software LLC. All rights reserved.
 #
 # This is controlled by a JSON Schema specification which provides validation in the editor
 # and in any code that reads/writes these files. The JSON Schema also provides context-sensitive
