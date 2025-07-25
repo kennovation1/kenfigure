@@ -1,3 +1,5 @@
+[Kenfigure home](https://kenfigure.com)
+
 # Benchling schema design style guide
 This is an opinionated guide related to style aspects of schema design in Benchling.
 You may choose to adhere to this style, or use it as a basis to create your own.

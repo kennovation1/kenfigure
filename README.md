@@ -58,12 +58,12 @@ See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annot
 - The [schema design style guide](./schema_design_style_guide.md)
   is an opinionated guide related to style aspects of schema design in Benchling.
   This is a companion to Kenfigure by is independent of the Kenfigure specification.
-  Some custom tooling (e.g., Kenfigure Schema Lint) may use the style guide as a source for style rules.
+  Some custom tooling (e.g., Kenfigure Tool Schema Lint) may use the style guide as a source for style rules.
 
 # Benefits 
 Here are some benefits of documenting your Benchling configuration in *kenfigure* files in git. In no particular order:
 (Note that I'm included some benefits are required additional tooling that is not open source.
-I've left these bullet points here since it helps to show the future possibilities when it's with Go2 Software
+I've left these bullet points here since it helps to show the future possibilities whether it's with Go2 Software
 proprietary tools or others.)
 - Allows comments, notes, annotations on schemas and schema fields
 - Version control including branching and pull requests
@@ -166,8 +166,8 @@ You are free to use, adapt, and share this schema with proper attribution.
 Commercial use of software tools that rely on this schema may require a separate license.  
 Please contact [info@go2software.com](mailto:info@go2software.com) for commercial licensing inquiries.
 
-**Kenfigure™** is an trademark of Go2 Software LLC.  
-Use of the name "Kenfigure" in derivative projects or commercial products is not permitted without permission.
+**Kenfigure™** and Kenfiguration™ are trademarks of Go2 Software LLC.  
+Use of the names "Kenfigure" or "Kenfiguration" in derivative projects or commercial products is not permitted without permission.
 
 Benchling is a trademark of Benchling, Inc.
 

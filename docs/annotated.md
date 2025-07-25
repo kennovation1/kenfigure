@@ -1,3 +1,5 @@
+[Kenfigure home](https://kenfigure.com)
+
 # Kenfigure Schema Documentation
 
 This page is a detailed reference to the Kenfigure specification.
@@ -34,6 +36,8 @@ A good alternative strategy is to swap the above hierarchy and make the local gr
 and the object type would be the subdirectories.
 
 Pick whatever works for you.
+
+A collected of files, however organized, is called a "Kenfiguration™".
 
 ## Common structures
 All top-level object types are designated by a key for the configuration object type
@@ -79,7 +83,7 @@ Kenfigure defines some keys (attributes) that don't exist in Benchling. These ar
 across all configuration object types. These include `Description` attributes for top-level
 objects and for schema fields, and then `Diagram` object. Some of these keys are used by tooling
 that makes use of the Kenfigure format
-(e.g., Kenfigure Export, Kenfigure Import, Kenfigure Diagram, Kenfigure Lint).
+(e.g., Kenfigure Tool Export, Kenfigure Tool Import, Kenfigure Tool Diagram, Kenfigure Tool Lint).
 These extended attributes are always optional unless your are using tooling that requires them.
 
 ### Diagram
@@ -145,7 +149,7 @@ Dropdowns:
   - Human
   - Other
   Diagram: ...  # See Diagram discussion above
-  API ID: sfs_pQitWWTI  # The API ID for the dropdown. Export tools (e.g., Kenfigure Export) may set
+  API ID: sfs_pQitWWTI  # The API ID for the dropdown. Export tools (e.g., Kenfigure Tool) may set
     # this value. Generally, there is no need to use this field since it is not settable in Benchling
     # and since it is tenant-specific.
 ```
@@ -183,7 +187,7 @@ Entity_schemas:
   Icon: small-molecule  # Name of icon to use for the schema 
   # Note that since this is a Molecule schema type, the chemical structure (SMILES) is a built-in field
   # provided to the API.
-  Notify: Manually attach the Lipid Usage dashboard  # Used by Kenfigure Import tooling to print a message
+  Notify: Manually attach the Lipid Usage dashboard  # Used by tooling (e.g., Kenfigure Tool) to print a message
     # to the administrator. Usually this is used to prompt the user to perform a manual action that cannot
     # be automated. 
   Fieldsets:  # A list of fieldsets that the schema implements. Omit or set to [] if not applicable.
@@ -265,10 +269,10 @@ Definition: Lipid  # Name of a Benchling object applicable to the Type. Omit if 
 Required: true  # or false
 Multi-select: true  # or false
 Parent-link: true  # or false
-Computed:  # This section is only partially documented and defined in Kenfigure schema.
+Computed:  # This section is only partially documented and defined in the Kenfigure schema.
   # This is still converging and can be quite complicated. The current recommendation is to
   # not worry too much about the formality of computed fields and just document your understanding
-  # of how the field is computed. Kenfigure tooling does have a defined format, but it varies
+  # of how the field is computed. The Kenfigure Tool does have a defined format, but it varies
   # quite a bit depending on the formula.
   Formula name: molecule_molecular_weight
 ```
@@ -322,7 +326,7 @@ Result_schemas:
     Snapshot:  # This section is only partially documented and defined in Kenfigure schema.
       # This is still converging and can be quite complicated. The current recommendation is to
       # not worry too much about the formality of computed fields and just document your understanding
-      # of how the field is computed. Kenfigure tooling does have a defined format, but it varies
+      # of how the field is computed. The Kenfigure Tool does have a defined format, but it varies
       # quite a bit depending on the formula.
       Formula: identity_fn
       Arguments: ...
@@ -418,7 +422,7 @@ Plate_schemas:
 
 ## Feature Flags
 The initial version of the feature flags file is typically created using a custom tool
-(e.g., Kenfigure Export). Once initialized, it may then be maintained in git or periodically
+(e.g., Kenfigure Tool). Once initialized, it may then be maintained in git or periodically
 updated via a fresh export. The export includes all attributes including `Description`.
 
 File: feature_flags.yaml
