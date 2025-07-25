@@ -166,7 +166,7 @@ You are free to use, adapt, and share this schema with proper attribution.
 Commercial use of software tools that rely on this schema may require a separate license.  
 Please contact [info@go2software.com](mailto:info@go2software.com) for commercial licensing inquiries.
 
-**Kenfigure™** and Kenfiguration™ are trademarks of Go2 Software LLC.  
+**Kenfigure™** and **Kenfiguration™** are trademarks of Go2 Software LLC.  
 Use of the names "Kenfigure" or "Kenfiguration" in derivative projects or commercial products is not permitted without permission.
 
 Benchling is a trademark of Benchling, Inc.
