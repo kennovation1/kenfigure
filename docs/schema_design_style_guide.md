@@ -28,7 +28,7 @@ the style for the structure of the Kenfigure YAML files.
 # Object naming
 - Schema and dropdown names should be Title Case
 - Dropdown names should be plural nouns (e.g., Strains)
-- Schema names (other than Result schemas) should be singular nous (e.g., Plasmid)
+- Schema names (other than Result schemas) should be singular nouns (e.g., Plasmid)
 - Result schema names are often procedural or descriptive phrases since they do not represent objects like entity schemas do.
   E.g., "Flow Cytometry", "Body Weight", "LNP Characterization"
 
@@ -37,7 +37,7 @@ the style for the structure of the Kenfigure YAML files.
 - ID prefixes should not end with a character that could be confused with a digit. Namely, do not use 'O' (letter O), 'l' (lowercase L), or 'I' (capital I).
 - ID prefixes should be as short as possible without sacrificing clarity. Generally, they should be no greater than 8 characters.
 - Tooltips should be added to all fields
-- Parent link fields for batch (lot) entity schemas should typically be required fields since they may be meaningless without their parent
+- Parent link fields for batch (lot) entity schemas should typically be required fields since a batch may be meaningless without its parent
 - The name of a parent link (or entity link) should generally match the name of the entity to which it points.
   For example, the parent link field on a Nanoparticle Batch schema should be called "Nanoparticle" if the parent entity schema is called Nanoparticle.
   If schema names have prefixes (e.g., v2_) then those should not be part of the field name. For example, if the schema is called v2_Nanoparticle, the
@@ -66,7 +66,7 @@ the style for the structure of the Kenfigure YAML files.
 - Names should be self-documenting, but should not be used as a crutch for training. Names should not be instructions.
 - Name use should be consistent across the entire platform. For example, don't use "Sequence length", "Seq length", and "Sequence len".
   Pick one and use it everywhere. Another example might be abbreviations like "conc." v. "concentration". Pick one and use it consistently.
-- Conventions may be ignored when it impedes the easy import from instrument output and would required extensive manual field mapping.
+- Conventions may be ignored when it impedes the easy import from instrument output and would require extensive manual field mapping.
   In this case, it may be better to match the instrument output. Note that with the (new) ability to save mappings, matching instrument
   field naming is less critical in some cases.
 
