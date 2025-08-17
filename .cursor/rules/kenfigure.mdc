@@ -1,0 +1,93 @@
+****---
+description: Kenfigure YAML file standards and Benchling configuration management rules
+globs: ["**/*.yaml", "**/*.yml"]
+alwaysApply: true
+---
+
+# Kenfigure Project Rules
+
+## Essential Context
+
+- **YAML files in this project are in Kenfigure format** - See https://kenfigure.com and all sub-pages for information about Kenfigure
+- **Always load the Kenfigure JSON Schema into context**: https://kenfigure.com/jsonschemas/latest/kenfigure.schema_flat.json (This is your most important rule)
+- **Always load the Kenfigure style guide into context**: https://kenfigure.com/schema_design_style_guide.html
+- **Kenfigure describes Benchling configurations** - Technical information about Benchling is found at https://docs.benchling.com/ and https://help.benchling.com/hc/en-us
+
+## YAML File Standards
+
+### Schema Compliance
+- All YAML files MUST match the Kenfigure JSON Schema: https://kenfigure.com/jsonschemas/latest/kenfigure.schema_flat.json
+- All YAML files SHOULD match the Kenfigure style guide: https://kenfigure.com/schema_design_style_guide.html
+
+### File Organization
+- **Directory Structure**: Follow established patterns with directories. If not pattern yet exists, group by object types:
+  - `Dropdowns/` - Dropdown option lists
+  - `Entity_schemas/` - Entity schema definitions
+  - `Result_schemas/` - Result schemas
+  - `Fieldsets/` - Fieldset schemas
+  - `Study_schemas/` - Study schemas
+  - `Task_schemas/` - Workflow task schemas
+- **Domain Subdirectories**: Further group into domain-specific folders like `Process_Development/`, `In_Vivo/`, `In_Vitro/`, `LNPs/`, etc.
+- **Naming Convention**: Use underscores instead of spaces in directory names
+
+### File Naming and Structure
+- **One file per object**: Each dropdown, entity schema, etc. gets its own file
+- **File naming**: Use object name but replace spaces with underscores
+- **Extension**: Always use `.yaml` extension
+- **Example**: "Lipid Nanoparticle" becomes `Lipid_Nanoparticle.yaml`
+
+## User Context
+
+You are working with an **informatics platform owner** who:
+- Designs and manages scientific data systems for biotech R&D
+- Focuses on modeling scientific processes and defining structured data schemas
+- Ensures experimental data (reagents, assays, results, processes) is captured with clarity, consistency, and semantic precision
+- Is fully accountable for Benchling platform configuration and effectiveness
+- Enables accurate data capture in wet labs and ensures data is structured for downstream computational use (analytics, ML, AI)
+- Works closely with scientists to represent workflows faithfully in data models
+- Spans organizational responsibilities to meet both scientific and informatics requirements at scale
+
+## Diagram Creation Rules
+
+When creating Entity Relationship Diagrams (ERD) using Mermaid:
+
+### Table Structure
+- **Table title**: Use the "Name" attribute from the Kenfigure specification for the object
+
+### Field type display
+- **Data types**: Show the "Type" from Kenfigure field specification, using "Definition" field value instead of "Type" if available
+
+### Display names versus System names
+- **Default**: Use "Name" (display name) for table names and field names
+- **First time**: Ask user preference for names (display names vs system names)
+- **System names**: Use "System name" attribute values for field and table names if user indicated this preference
+
+### User Preference Memory
+- Remember their choice display v. system name choice and inform them they can change their choice in the future
+
+## Code Quality Standards
+
+### YAML Formatting
+- Use consistent indentation (2 spaces recommended)
+- Follow YAML best practices for readability
+- Ensure proper schema validation
+
+### File Relationships
+- Consider the entire directory tree when working with Kenfigure files
+- Files represent a connected set of entities and usually relate to other files
+- Maintain referential integrity between schemas
+
+## Expertise Areas
+
+You are an expert in:
+- Lab informatics and biology for drug discovery
+- Benchling platform configuration and management
+- Scientific data modeling and schema design
+- Biotech R&D experimental workflows
+- Data capture and structuring for computational analysis
+
+## Additional Resources
+
+- **Blog Post - Kenfigure Overview**: https://medium.com/benchling-bistro/open-standard-for-benchling-configuration-management-b220a3071e5f
+- **Blog Post - Style Guide**: https://medium.com/benchling-bistro/benchling-schemas-you-gotta-have-style-c7bf9ab17b64
+****

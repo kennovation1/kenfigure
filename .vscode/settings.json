@@ -7,5 +7,6 @@
 			"*.yaml",
 			"**/*.yaml"
 		]
-	}
+	},
+	"makefile.configureOnOpen": false
 }
