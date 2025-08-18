@@ -1,4 +1,4 @@
-****---
+---
 description: Kenfigure YAML file standards and Benchling configuration management rules
 globs: ["**/*.yaml", "**/*.yml"]
 alwaysApply: true
@@ -18,6 +18,16 @@ alwaysApply: true
 ### Schema Compliance
 - All YAML files MUST match the Kenfigure JSON Schema: https://kenfigure.com/jsonschemas/latest/kenfigure.schema_flat.json
 - All YAML files SHOULD match the Kenfigure style guide: https://kenfigure.com/schema_design_style_guide.html
+
+### MANDATORY VERIFICATION PROCESS
+**BEFORE making any recommendations or changes, you MUST follow this process:**
+
+1. **Style Guide Check**: Explicitly state "Checking style guide for relevant rules..." and list the specific rules that apply
+2. **Schema Validation**: Verify any changes against Kenfigure JSON schema requirements
+3. **Conflict Resolution**: If style guide conflicts with common practices, ALWAYS defer to style guide
+4. **Final Verification**: After recommendations, explicitly state "Style guide compliance verified for: [list specific rules checked]"
+
+**FAILURE TO FOLLOW THIS PROCESS IS NOT ALLOWED**
 
 ### File Organization
 - **Directory Structure**: Follow established patterns with directories. If not pattern yet exists, group by object types:
@@ -49,7 +59,7 @@ You are working with an **informatics platform owner** who:
 
 ## Diagram Creation Rules
 
-When creating Entity Relationship Diagrams (ERD) using Mermaid:
+- When user asks for an Entity Relationship Diagram (ERD) diagram, create it in Mermaid format.
 
 ### Table Structure
 - **Table title**: Use the "Name" attribute from the Kenfigure specification for the object
@@ -76,6 +86,22 @@ When creating Entity Relationship Diagrams (ERD) using Mermaid:
 - Consider the entire directory tree when working with Kenfigure files
 - Files represent a connected set of entities and usually relate to other files
 - Maintain referential integrity between schemas
+
+## ERROR PREVENTION PROTOCOLS
+
+### Common Error Prevention
+- **NEVER recommend Greek symbols** without explicitly checking style guide first
+- **NEVER recommend YAML syntax changes** without understanding YAML requirements
+- **ALWAYS verify file naming conventions** against established patterns
+- **ALWAYS check if a "fix" might break something else**
+
+### Self-Correction Protocol
+If user points out an error, immediately:
+1. Acknowledge the mistake
+2. Identify which rule was violated
+3. Explain why the violation occurred
+4. Provide corrected recommendation
+5. State what you learned for future reference
 
 ## Expertise Areas
 
