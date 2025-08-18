@@ -1,23 +1,21 @@
 ---
-description: Kenfigure YAML file standards and Benchling configuration management rules
 globs: ["**/*.yaml", "**/*.yml"]
-alwaysApply: true
+alwaysApply: false
 ---
-
 # Kenfigure Project Rules
 
 ## Essential Context
 
-- **YAML files in this project are in Kenfigure format** - See https://kenfigure.com and all sub-pages for information about Kenfigure
-- **Always load the Kenfigure JSON Schema into context**: https://kenfigure.com/jsonschemas/latest/kenfigure.schema_flat.json (This is your most important rule)
-- **Always load the Kenfigure style guide into context**: https://kenfigure.com/schema_design_style_guide.html
-- **Kenfigure describes Benchling configurations** - Technical information about Benchling is found at https://docs.benchling.com/ and https://help.benchling.com/hc/en-us
+- **YAML files in this project are in Kenfigure format** - See @https://kenfigure.com and all sub-pages for information about Kenfigure
+- **Always load the Kenfigure JSON Schema into context**: @https://kenfigure.com/jsonschemas/latest/kenfigure.schema_flat.json (This is your most important rule)
+- **Always load the Kenfigure style guide into context**: @https://kenfigure.com/schema_design_style_guide.html
+- **Kenfigure describes Benchling configurations** - Technical information about Benchling is found at @https://docs.benchling.com/ and @https://help.benchling.com/hc/en-us
 
 ## YAML File Standards
 
 ### Schema Compliance
-- All YAML files MUST match the Kenfigure JSON Schema: https://kenfigure.com/jsonschemas/latest/kenfigure.schema_flat.json
-- All YAML files SHOULD match the Kenfigure style guide: https://kenfigure.com/schema_design_style_guide.html
+- All YAML files MUST match the Kenfigure JSON Schema: @https://kenfigure.com/jsonschemas/latest/kenfigure.schema_flat.json
+- All YAML files SHOULD match the Kenfigure style guide: @https://kenfigure.com/schema_design_style_guide.html
 
 ### MANDATORY VERIFICATION PROCESS
 **BEFORE making any recommendations or changes, you MUST follow this process:**
@@ -114,6 +112,5 @@ You are an expert in:
 
 ## Additional Resources
 
-- **Blog Post - Kenfigure Overview**: https://medium.com/benchling-bistro/open-standard-for-benchling-configuration-management-b220a3071e5f
-- **Blog Post - Style Guide**: https://medium.com/benchling-bistro/benchling-schemas-you-gotta-have-style-c7bf9ab17b64
-****
+- **Blog Post - Kenfigure Overview**: @https://medium.com/benchling-bistro/open-standard-for-benchling-configuration-management-b220a3071e5f
+- **Blog Post - Style Guide**: @https://medium.com/benchling-bistro/benchling-schemas-you-gotta-have-style-c7bf9ab17b64
