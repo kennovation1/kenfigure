@@ -1,6 +1,5 @@
 ---
-globs: ["**/*.yaml", "**/*.yml"]
-alwaysApply: false
+alwaysApply: true
 ---
 # Kenfigure Project Rules
 
