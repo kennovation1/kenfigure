@@ -4415,101 +4415,95 @@ Type: Text]]></comment>
 		</table>
 	</schema>
 	<layout name="Manual layout" id="Layout-455" show_relation="columns" >
-		<comment><![CDATA[Manual layout]]></comment>
-		<entity schema="virtual" name="3&#039; UTR" color="008000" x="3876" y="1904" />
-		<entity schema="virtual" name="5&#039; UTR" color="008000" x="3876" y="1989" />
-		<entity schema="virtual" name="5&#039; or 3&#039;" color="0000FF" x="4114" y="3774" />
-		<entity schema="virtual" name="Animal" color="008000" x="1615" y="2210" />
-		<entity schema="virtual" name="Animal Sample" color="008000" x="2074" y="2244" />
-		<entity schema="virtual" name="Antibiotic Resistance" color="008000" x="3145" y="1904" />
-		<entity schema="virtual" name="Aqueous Buffer" color="0000FF" x="4284" y="3774" />
-		<entity schema="virtual" name="Assay Type" color="0000FF" x="3910" y="3587" />
-		<entity schema="virtual" name="Cell Line" color="008000" x="680" y="102" />
-		<entity schema="virtual" name="Cell Lot" color="008000" x="680" y="408" />
-		<entity schema="virtual" name="Cell Type" color="0000FF" x="476" y="221" />
-		<entity schema="virtual" name="Cell Viability" color="FF0000" x="476" y="442" />
-		<entity schema="virtual" name="Cold Storage Temperature" color="0000FF" x="3791" y="3791" />
-		<entity schema="virtual" name="Concentration Units" color="0000FF" x="2873" y="3706" />
-		<entity schema="virtual" name="Conjugate Type" color="0000FF" x="4165" y="697" />
-		<entity schema="virtual" name="DLS" color="FF0000" x="1258" y="3383" />
-		<entity schema="virtual" name="DNA Characterization" color="FF0000" x="1020" y="3655" />
-		<entity schema="virtual" name="Dose Unit" color="0000FF" x="3927" y="3672" />
-		<entity schema="virtual" name="EC50" color="FF0000" x="544" y="1224" />
-		<entity schema="virtual" name="Endotoxin Assay" color="FF0000" x="2023" y="3689" />
-		<entity schema="virtual" name="Entry Classification" color="008000" x="204" y="3434" />
-		<entity schema="virtual" name="Fresh or Frozen" color="0000FF" x="442" y="969" />
-		<entity schema="virtual" name="Functional Group Type" color="0000FF" x="3655" y="1241" />
-		<entity schema="virtual" name="Gene" color="008000" x="2686" y="816" />
-		<entity schema="virtual" name="In Vitro Experiment" color="008000" x="782" y="1224" />
-		<entity schema="virtual" name="In Vitro Toxicity Results" color="FF0000" x="2074" y="3383" />
-		<entity schema="virtual" name="In Vivo Study" color="008000" x="1564" y="1615" />
-		<entity schema="virtual" name="In Vivo Study Animal Measurement" color="FF0000" x="1411" y="2618" />
-		<entity schema="virtual" name="In Vivo Study Animal Observation" color="FF0000" x="1768" y="2618" />
-		<entity schema="virtual" name="In Vivo Study Animal Sample Details" color="FF0000" x="2142" y="2635" />
-		<entity schema="virtual" name="In Vivo Study Group" color="008000" x="1751" y="1904" />
-		<entity schema="virtual" name="In Vivo Study Treatment" color="008000" x="1955" y="1547" />
-		<entity schema="virtual" name="LNP Characterization" color="FF0000" x="153" y="2465" />
-		<entity schema="virtual" name="LNP Lot" color="008000" x="408" y="1649" />
-		<entity schema="virtual" name="LNP Mixing Method" color="0000FF" x="748" y="1904" />
-		<entity schema="virtual" name="Lipid" color="008000" x="170" y="2074" />
-		<entity schema="virtual" name="Lipid Lot" color="008000" x="408" y="2210" />
-		<entity schema="virtual" name="Lipid Mixture Recipe" color="008000" x="136" y="1700" />
-		<entity schema="virtual" name="Mixture Prep" color="008000" x="3264" y="3672" />
-		<entity schema="virtual" name="Mixture Recipe" color="008000" x="3247" y="3417" />
-		<entity schema="virtual" name="Modification" color="0000FF" x="3774" y="3587" />
-		<entity schema="virtual" name="Nucleic Acid Quantification" color="FF0000" x="1445" y="3383" />
-		<entity schema="virtual" name="Oligo" color="008000" x="1700" y="153" />
-		<entity schema="virtual" name="Oligo Conjugate" color="008000" x="3876" y="578" />
-		<entity schema="virtual" name="Oligo Conjugate Lot" color="008000" x="2108" y="1224" />
-		<entity schema="virtual" name="Oligo Duplex" color="008000" x="3553" y="323" />
-		<entity schema="virtual" name="Oligo Duplex (Complex Polymer)" color="008000" x="2567" y="1292" />
-		<entity schema="virtual" name="Oligo Duplex Lot" color="008000" x="2193" y="833" />
-		<entity schema="virtual" name="Oligo Format" color="0000FF" x="4284" y="3672" />
-		<entity schema="virtual" name="Oligo Lot" color="008000" x="1734" y="799" />
-		<entity schema="virtual" name="Oligo Strand Type" color="0000FF" x="1802" y="544" />
-		<entity schema="virtual" name="Origin of Replication" color="008000" x="3145" y="1989" />
-		<entity schema="virtual" name="Pass or Fail" color="0000FF" x="816" y="3740" />
-		<entity schema="virtual" name="Plasmid" color="008000" x="3485" y="1819" />
-		<entity schema="virtual" name="Plasmid Prep" color="008000" x="3468" y="2176" />
-		<entity schema="virtual" name="Positive or Negative" color="0000FF" x="2686" y="1598" />
-		<entity schema="virtual" name="Primary Cell" color="008000" x="680" y="765" />
-		<entity schema="virtual" name="Promoter" color="008000" x="3196" y="1819" />
-		<entity schema="virtual" name="Protein / Antigen AA" color="008000" x="4216" y="918" />
-		<entity schema="virtual" name="Protein or Antibody" color="008000" x="3978" y="935" />
-		<entity schema="virtual" name="Protein or Antibody Lot" color="008000" x="3978" y="1156" />
-		<entity schema="virtual" name="RNA Characterization" color="FF0000" x="1275" y="3689" />
-		<entity schema="virtual" name="RNA Lot" color="008000" x="3485" y="2516" />
-		<entity schema="virtual" name="Reagent" color="008000" x="2550" y="3196" />
-		<entity schema="virtual" name="Reagent Lot" color="008000" x="2533" y="3519" />
-		<entity schema="virtual" name="Ribogreen" color="FF0000" x="1547" y="3689" />
-		<entity schema="virtual" name="Route of Administration" color="0000FF" x="4063" y="3672" />
-		<entity schema="virtual" name="Sequence Validation" color="FF0000" x="510" y="3655" />
-		<entity schema="virtual" name="Sex" color="0000FF" x="459" y="833" />
-		<entity schema="virtual" name="Small Molecule" color="008000" x="3638" y="884" />
-		<entity schema="virtual" name="Small Molecule Lot" color="008000" x="3213" y="816" />
-		<entity schema="virtual" name="Solvent" color="0000FF" x="2941" y="1683" />
-		<entity schema="virtual" name="Species" color="0000FF" x="476" y="119" />
-		<entity schema="virtual" name="Storage Buffer" color="0000FF" x="3774" y="3672" />
-		<entity schema="virtual" name="Storage Conditions" color="0000FF" x="408" y="2601" />
-		<entity schema="virtual" name="Strain" color="0000FF" x="4233" y="3587" />
-		<entity schema="virtual" name="Terminator" color="008000" x="3825" y="1819" />
-		<entity schema="virtual" name="Units" color="0000FF" x="4080" y="3587" />
-		<entity schema="virtual" name="Vendor" color="0000FF" x="2380" y="3009" />
-		<entity schema="virtual" name="Western Blot" color="FF0000" x="1700" y="3383" />
-		<entity schema="virtual" name="Yes or No" color="0000FF" x="3825" y="2193" />
-		<entity schema="virtual" name="[TEST} Reporter Gene Expression" color="FF0000" x="595" y="2839" />
-		<entity schema="virtual" name="gRNA" color="008000" x="1292" y="867" />
-		<entity schema="virtual" name="gRNA Lot" color="008000" x="1275" y="1173" />
-		<entity schema="virtual" name="mRNA 3&#039; UTR" color="008000" x="646" y="3434" />
-		<entity schema="virtual" name="mRNA 5&#039; UTR" color="008000" x="646" y="3349" />
-		<entity schema="virtual" name="mRNA CDS" color="008000" x="918" y="3179" />
-		<entity schema="virtual" name="mRNA Sequence" color="008000" x="884" y="3349" />
-		<entity schema="virtual" name="qPCR" color="FF0000" x="1802" y="3689" />
-		<callout x="51" y="85" pointer="SV" >
-			<comment><![CDATA[Digram auto-generated by Kenfigure Diagram.
-
-Manual optimization of layout by Ken Robbins 9/6/2025.]]></comment>
-		</callout>
+		<entity schema="virtual" name="3&#039; UTR" color="008000" x="3791" y="1887" />
+		<entity schema="virtual" name="5&#039; UTR" color="008000" x="3791" y="1972" />
+		<entity schema="virtual" name="5&#039; or 3&#039;" color="0000FF" x="4029" y="3757" />
+		<entity schema="virtual" name="Animal" color="008000" x="1530" y="2193" />
+		<entity schema="virtual" name="Animal Sample" color="008000" x="1989" y="2227" />
+		<entity schema="virtual" name="Antibiotic Resistance" color="008000" x="3060" y="1887" />
+		<entity schema="virtual" name="Aqueous Buffer" color="0000FF" x="4199" y="3757" />
+		<entity schema="virtual" name="Assay Type" color="0000FF" x="3825" y="3570" />
+		<entity schema="virtual" name="Cell Line" color="008000" x="595" y="85" />
+		<entity schema="virtual" name="Cell Lot" color="008000" x="595" y="391" />
+		<entity schema="virtual" name="Cell Type" color="0000FF" x="391" y="204" />
+		<entity schema="virtual" name="Cell Viability" color="FF0000" x="391" y="425" />
+		<entity schema="virtual" name="Cold Storage Temperature" color="0000FF" x="3706" y="3774" />
+		<entity schema="virtual" name="Concentration Units" color="0000FF" x="2788" y="3689" />
+		<entity schema="virtual" name="Conjugate Type" color="0000FF" x="4080" y="680" />
+		<entity schema="virtual" name="DLS" color="FF0000" x="1173" y="3366" />
+		<entity schema="virtual" name="DNA Characterization" color="FF0000" x="935" y="3638" />
+		<entity schema="virtual" name="Dose Unit" color="0000FF" x="3842" y="3655" />
+		<entity schema="virtual" name="EC50" color="FF0000" x="459" y="1207" />
+		<entity schema="virtual" name="Endotoxin Assay" color="FF0000" x="1938" y="3672" />
+		<entity schema="virtual" name="Entry Classification" color="008000" x="119" y="3417" />
+		<entity schema="virtual" name="Fresh or Frozen" color="0000FF" x="357" y="952" />
+		<entity schema="virtual" name="Functional Group Type" color="0000FF" x="3570" y="1224" />
+		<entity schema="virtual" name="Gene" color="008000" x="2601" y="799" />
+		<entity schema="virtual" name="In Vitro Experiment" color="008000" x="697" y="1207" />
+		<entity schema="virtual" name="In Vitro Toxicity Results" color="FF0000" x="1989" y="3366" />
+		<entity schema="virtual" name="In Vivo Study" color="008000" x="1479" y="1598" />
+		<entity schema="virtual" name="In Vivo Study Animal Measurement" color="FF0000" x="1326" y="2601" />
+		<entity schema="virtual" name="In Vivo Study Animal Observation" color="FF0000" x="1683" y="2601" />
+		<entity schema="virtual" name="In Vivo Study Animal Sample Details" color="FF0000" x="2057" y="2618" />
+		<entity schema="virtual" name="In Vivo Study Group" color="008000" x="1666" y="1887" />
+		<entity schema="virtual" name="In Vivo Study Treatment" color="008000" x="1870" y="1530" />
+		<entity schema="virtual" name="LNP Characterization" color="FF0000" x="68" y="2448" />
+		<entity schema="virtual" name="LNP Lot" color="008000" x="323" y="1632" />
+		<entity schema="virtual" name="LNP Mixing Method" color="0000FF" x="663" y="1887" />
+		<entity schema="virtual" name="Lipid" color="008000" x="85" y="2057" />
+		<entity schema="virtual" name="Lipid Lot" color="008000" x="323" y="2193" />
+		<entity schema="virtual" name="Lipid Mixture Recipe" color="008000" x="51" y="1683" />
+		<entity schema="virtual" name="Mixture Prep" color="008000" x="3179" y="3655" />
+		<entity schema="virtual" name="Mixture Recipe" color="008000" x="3162" y="3400" />
+		<entity schema="virtual" name="Modification" color="0000FF" x="3689" y="3570" />
+		<entity schema="virtual" name="Nucleic Acid Quantification" color="FF0000" x="1360" y="3366" />
+		<entity schema="virtual" name="Oligo" color="008000" x="1615" y="136" />
+		<entity schema="virtual" name="Oligo Conjugate" color="008000" x="3791" y="561" />
+		<entity schema="virtual" name="Oligo Conjugate Lot" color="008000" x="2023" y="1207" />
+		<entity schema="virtual" name="Oligo Duplex" color="008000" x="3468" y="306" />
+		<entity schema="virtual" name="Oligo Duplex (Complex Polymer)" color="008000" x="2482" y="1275" />
+		<entity schema="virtual" name="Oligo Duplex Lot" color="008000" x="2108" y="816" />
+		<entity schema="virtual" name="Oligo Format" color="0000FF" x="4199" y="3655" />
+		<entity schema="virtual" name="Oligo Lot" color="008000" x="1649" y="782" />
+		<entity schema="virtual" name="Oligo Strand Type" color="0000FF" x="1717" y="527" />
+		<entity schema="virtual" name="Origin of Replication" color="008000" x="3060" y="1972" />
+		<entity schema="virtual" name="Pass or Fail" color="0000FF" x="731" y="3723" />
+		<entity schema="virtual" name="Plasmid" color="008000" x="3400" y="1802" />
+		<entity schema="virtual" name="Plasmid Prep" color="008000" x="3383" y="2159" />
+		<entity schema="virtual" name="Positive or Negative" color="0000FF" x="2601" y="1581" />
+		<entity schema="virtual" name="Primary Cell" color="008000" x="595" y="748" />
+		<entity schema="virtual" name="Promoter" color="008000" x="3111" y="1802" />
+		<entity schema="virtual" name="Protein / Antigen AA" color="008000" x="4131" y="901" />
+		<entity schema="virtual" name="Protein or Antibody" color="008000" x="3893" y="918" />
+		<entity schema="virtual" name="Protein or Antibody Lot" color="008000" x="3893" y="1139" />
+		<entity schema="virtual" name="RNA Characterization" color="FF0000" x="1190" y="3672" />
+		<entity schema="virtual" name="RNA Lot" color="008000" x="3400" y="2499" />
+		<entity schema="virtual" name="Reagent" color="008000" x="2465" y="3179" />
+		<entity schema="virtual" name="Reagent Lot" color="008000" x="2448" y="3502" />
+		<entity schema="virtual" name="Ribogreen" color="FF0000" x="1462" y="3672" />
+		<entity schema="virtual" name="Route of Administration" color="0000FF" x="3978" y="3655" />
+		<entity schema="virtual" name="Sequence Validation" color="FF0000" x="425" y="3638" />
+		<entity schema="virtual" name="Sex" color="0000FF" x="374" y="816" />
+		<entity schema="virtual" name="Small Molecule" color="008000" x="3553" y="867" />
+		<entity schema="virtual" name="Small Molecule Lot" color="008000" x="3128" y="799" />
+		<entity schema="virtual" name="Solvent" color="0000FF" x="2856" y="1666" />
+		<entity schema="virtual" name="Species" color="0000FF" x="391" y="102" />
+		<entity schema="virtual" name="Storage Buffer" color="0000FF" x="3689" y="3655" />
+		<entity schema="virtual" name="Storage Conditions" color="0000FF" x="323" y="2584" />
+		<entity schema="virtual" name="Strain" color="0000FF" x="4148" y="3570" />
+		<entity schema="virtual" name="Terminator" color="008000" x="3740" y="1802" />
+		<entity schema="virtual" name="Units" color="0000FF" x="3995" y="3570" />
+		<entity schema="virtual" name="Vendor" color="0000FF" x="2295" y="2992" />
+		<entity schema="virtual" name="Western Blot" color="FF0000" x="1615" y="3366" />
+		<entity schema="virtual" name="Yes or No" color="0000FF" x="3740" y="2176" />
+		<entity schema="virtual" name="[TEST} Reporter Gene Expression" color="FF0000" x="510" y="2822" />
+		<entity schema="virtual" name="gRNA" color="008000" x="1207" y="850" />
+		<entity schema="virtual" name="gRNA Lot" color="008000" x="1190" y="1156" />
+		<entity schema="virtual" name="mRNA 3&#039; UTR" color="008000" x="561" y="3417" />
+		<entity schema="virtual" name="mRNA 5&#039; UTR" color="008000" x="561" y="3332" />
+		<entity schema="virtual" name="mRNA CDS" color="008000" x="833" y="3162" />
+		<entity schema="virtual" name="mRNA Sequence" color="008000" x="799" y="3332" />
+		<entity schema="virtual" name="qPCR" color="FF0000" x="1717" y="3672" />
 		<group name="Unreferenced dropdowns" color="ECF0F7" >
 			<entity schema="virtual" name="Units" />
 			<entity schema="virtual" name="Strain" />
