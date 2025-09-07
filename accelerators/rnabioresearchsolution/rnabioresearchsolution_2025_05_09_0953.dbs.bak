@@ -1773,7 +1773,7 @@ Type: Attachment]]></comment>
 		<table name="Lipid Lot" >
 			<comment><![CDATA[Object type: Entity_schema
 Name: Lipid Lot
-Description: A physical sample of a Lipid concept
+Description: Exported from Benchling
 Entity type: Custom Entity
 Prefix: LL
 System name: lipid_lot
@@ -1819,7 +1819,7 @@ Type: Text]]></comment>
 			</column>
 			<column name="Storage Conditions" type="Dropdown" jt="2006" >
 				<comment><![CDATA[Name: Storage Conditions
-Description: Temperature at which lot is stored
+Description: Exported from Benchling
 System name: storage_conditions
 Type: Dropdown
 Definition: Storage Conditions]]></comment>
@@ -4554,11 +4554,11 @@ Manual optimization of layout by Ken Robbins 9/6/2025.]]></comment>
 		<group name="LNP" color="ECF0F7" >
 			<entity schema="virtual" name="LNP Lot" />
 			<entity schema="virtual" name="Storage Conditions" />
+			<entity schema="virtual" name="Lipid Lot" />
 			<entity schema="virtual" name="Lipid Mixture Recipe" />
 			<entity schema="virtual" name="Lipid" />
 			<entity schema="virtual" name="LNP Mixing Method" />
 			<entity schema="virtual" name="LNP Characterization" />
-			<entity schema="virtual" name="Lipid Lot" />
 		</group>
 		<group name="In Vivo Study" color="EEF7EC" >
 			<entity schema="virtual" name="In Vivo Study Animal Sample Details" />

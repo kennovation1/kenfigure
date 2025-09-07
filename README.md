@@ -153,7 +153,7 @@ proprietary tools or others.)
   - The AI can he helpful for creating appropriate tooltips or at least giving your a good start.
 
 ## Other IDEs
-If you use a different IDE, please create a pull request so we can document and applicable notes.
+If you use a different IDE, please create a pull request so we can document any applicable notes.
 
 Here's some doc for how to configure [PyCharm for YAML editing with a custom schema](https://www.jetbrains.com/help/pycharm/yaml.html#json_schema).
 

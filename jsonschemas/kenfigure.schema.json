@@ -52,6 +52,10 @@
     "Feature_flags": {
       "description": "Feature flags",
       "$ref": "https://kenfigure.com/jsonschemas/latest/feature_flags.schema.json"
+    },
+    "Template_collections": {
+      "description": "Template collections",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/template_collections.schema.json"
     }
   }
 }

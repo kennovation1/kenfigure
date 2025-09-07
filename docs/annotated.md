@@ -454,6 +454,16 @@ Feature_flags:  # Top-level key for Feature Flags object
     # Other data types includes strings and lists
 ```
 
+## Template Collections
+
+File: template_collections.yaml
+```yaml
+Template_collections:  # Top-level key for Template Collections object
+  - Name: Manufacturing Analytics
+    Description: Templates for the manufacturing analytics team
+    Owner: biotech_r_us  # Organization name (optional if there is only one organization)
+```
+
 ## Metadata
 The `Metadata` object is mostly only used by Kenfigure tooling, but you might find
 it useful for record keeping as well.
