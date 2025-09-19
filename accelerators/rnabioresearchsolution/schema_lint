@@ -1,0 +1,36 @@
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "Oligo Lot"
+OK SchemaLint: Entity schema (schema="Lipid Mixture Recipe") field system name "ionizable_lipid_mol" does not end with "_pct" but display name "Ionizable Lipid Mol %" indicates percent units
+OK SchemaLint: Entity schema (schema="Lipid Mixture Recipe") field system name "helper_lipid_mol" does not end with "_pct" but display name "Helper Lipid Mol %" indicates percent units
+OK SchemaLint: Entity schema (schema="Lipid Mixture Recipe") field system name "stability_lipid_mol" does not end with "_pct" but display name "Stability Lipid Mol%" indicates percent units
+OK SchemaLint: Entity schema (schema="Lipid Mixture Recipe") field system name "peg_mol" does not end with "_pct" but display name "PEG Lipid Mol%" indicates percent units
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "Oligo Duplex Lot"
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "Cell Lot"
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "Oligo Conjugate Lot"
+OK SchemaLint: Number of naming options (3) is greater than 1. Are they all needed? Entity schema: "Protein or Antibody"
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "Lipid Lot"
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "In Vivo Study"
+OK SchemaLint: Number of naming options (3) is greater than 1. Are they all needed? Entity schema: "3' UTR"
+OK SchemaLint: Schema (name=Origin of Replication) prefix "ORI" ends with a character that could be confused with a digit
+OK SchemaLint: Number of naming options (3) is greater than 1. Are they all needed? Entity schema: "Oligo Duplex (Complex Polymer)"
+OK SchemaLint: Number of naming options (3) is greater than 1. Are they all needed? Entity schema: "gRNA"
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "Reagent Lot"
+OK SchemaLint: Number of naming options (3) is greater than 1. Are they all needed? Entity schema: "Reagent"
+OK SchemaLint: Number of naming options (3) is greater than 1. Are they all needed? Entity schema: "Oligo Duplex"
+OK SchemaLint: Number of naming options (3) is greater than 1. Are they all needed? Entity schema: "Oligo Conjugate"
+OK SchemaLint: Entity schema (schema="Oligo") field system name "gc" does not end with "_pct" but display name "GC %" indicates percent units
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "Oligo"
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "Plasmid Prep"
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "Small Molecule"
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "Small Molecule Lot"
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "In Vivo Study Group"
+OK SchemaLint: Number of naming options (3) is greater than 1. Are they all needed? Entity schema: "Entry Classification"
+OK SchemaLint: Schema (name=Protein / Antigen AA) prefix "PRO" ends with a character that could be confused with a digit
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "gRNA Lot"
+OK SchemaLint: Number of naming options (2) is greater than 1. Are they all needed? Entity schema: "Protein or Antibody Lot"
+OK SchemaLint: Number of naming options (3) is greater than 1. Are they all needed? Entity schema: "mRNA 5' UTR"
+OK SchemaLint: Schema (schema="In Vitro Toxicity Results") field system name "cell_viability" does not end with "_pct" but display name "Cell Viability (%)" indicates percent units
+OK SchemaLint: Schema (schema="LNP Characterization") field system name "ee" does not end with "_pct" but display name "EE (%)" indicates percent units
+OK SchemaLint: Schema (schema="Ribogreen") field system name "ee" does not end with "_pct" but display name "EE (%)" indicates percent units
+OK SchemaLint: Schema (schema="DNA Characterization") field system name "supercoiled" does not end with "_pct" but display name "% Supercoiled" indicates percent units
+OK SchemaLint: Schema (schema="DNA Characterization") field system name "linear" does not end with "_pct" but display name "% Linear" indicates percent units
+OK SchemaLint: Schema (schema="qPCR") field system name "mrna_expression" does not end with "_pct" but display name "% mRNA Expression" indicates percent units
