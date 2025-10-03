@@ -48,13 +48,12 @@ Entity_schemas:
     Group: Chemicals  # All entities with the same name are rendered in a group of that name
   Fields:
   - Name: CAS RN
-    Description: Create a pseudo CAS RN if no official number exists
     Tool tip: Create a pseudo CAS RN if no official number exists
     System name: cas_rn
     Type: Text
   - Name: Original SMILES
     Description: Templates or other doc should tell users to specify their SMILES
-      here and in the build-in SMILES field. This way we have a copy of the original
+      here and in the built-in SMILES field. This way we have a copy of the original
       SMILES before canonicalization. Benchling does have an internal original SMILES
       field wich I suppose I could hoist via a computed field.
     Tool tip: Copy of original input SMILES before canonicalization
@@ -91,9 +90,6 @@ Entity_schemas:
     Type: Dropdown
     Definition: Monomer Analogs
   - Name: Monomer caps
-    Description: Monomer end caps listed in order of R1, R2, R3 for sugar, R1, R2 for
-      phosphate, R1 for base. Monomers are defined with end caps included in SMILES
-      and therefore in physiochemical property calculations.
     Tool tip: Monomer end caps listed in order of R1, R2, R3 for sugar, R1, R2 for
       phosphate, R1 for base. Monomers are defined with end caps included in SMILES
       and therefore in physiochemical property calculations.
@@ -104,12 +100,10 @@ Entity_schemas:
   # Normally the following fields are only on the Batch entity, but for demo purpose, I stuffed it here
   # Note that Benchling always strips salts!
   - Name: Salts
-    Description: Automatically populated during import to include a list of salts stripped from the input SMILES.
     Tool tip: Automatically populated during import to include a list of salts stripped from the input SMILES.
     System name: salts
     Type: Text
   - Name: MW with salts
-    Description: Molecular weight of the batch including any salts
     Tool tip: Molecular weight of the batch including any salts
     System name: mw_with_salts
     Type: Decimal
