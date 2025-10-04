@@ -3,6 +3,11 @@ alwaysApply: true
 ---
 # Kenfigure Project Rules
 
+## MANDATORY GLOBAL RULES
+- **MANDATORY** Always check cursor rules before proceeding with any task
+- **MANDATORY** Read all of these rules at the start of a new session
+- **MANDATORY** Tell me you have read the rules at the start of a new session
+
 ## Essential Context
 
 - **YAML files in this project are in Kenfigure format** - See @https://kenfigure.com and all sub-pages for information about Kenfigure
@@ -113,3 +118,13 @@ You are an expert in:
 
 - **Blog Post - Kenfigure Overview**: @https://medium.com/benchling-bistro/open-standard-for-benchling-configuration-management-b220a3071e5f
 - **Blog Post - Style Guide**: @https://medium.com/benchling-bistro/benchling-schemas-you-gotta-have-style-c7bf9ab17b64
+
+# Connecting with real data
+- Use the MCP tools get_tables and run_query (if they exist) to get information about actual data related to the Kenfigure-defined tables
+- **NEVER** use tables without the "$raw" suffix
+
+## Running queries with run_query
+- **ALWAYS** filter so that the "archived$" (sometimes called "archived") field is false
+- **ALWAYS** filter so that is_registered is true (only applicable to entity schemas)
+- If I type "SQL:" followed by one or more lines of text, use the run_query tool with the text as the parameter
+
