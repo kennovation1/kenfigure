@@ -150,7 +150,16 @@ proprietary tools or others.)
   - As always, review AI-generated completions carefully since it can confidently make mistakes.
     It will not necessarily abide by the JSON schema, so you'll need to sometimes decide to take the IDE
     completion (based on the JSON schema) instead of the AI completion.
-  - The AI can he helpful for creating appropriate tooltips or at least giving your a good start.
+  - The AI can be helpful for creating appropriate tooltips or at least giving you a good start.
+
+### Cursor rules
+See [.cursor/rules/kenfigure.mdc](https://github.com/kennovation1/kenfigure/blob/78dedd79021cc64673d4e9525a5dd2268bd015ce/.cursor/rules/kenfigure.mdc)
+in the [GitHub repo](https://github.com/kennovation1/kenfigure) for a Cursor rules file that that works well.
+Getting these rules optimized is an ongoing process, so check back for updates.
+Of course contributions are welcome too!
+
+### GitHub Copilot AGENT.md rules
+I have not yet testing using AGENT.md files, but I suspect you could readily adapt the above Cursor rules file.
 
 ## Other IDEs
 If you use a different IDE, please create a pull request so we can document any applicable notes.
