@@ -335,7 +335,7 @@ Result_schemas:
     Tool tip: The encapsulation efficiency as a percentage (i.e., 0 to 100) 
     System name: ee_pct
     Type: Decimal
-      # The value types for result fields are:
+      # The valid types for result fields are:
       # Date, Datetime, Decimal, Integer, Long text, Dropdown, Text, Attachment,
       # Entry, Entity, Category, Part, Inventory, JSON, Boolean, ft_assay_result_link, Run
 ```
