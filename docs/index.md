@@ -52,7 +52,7 @@ Entity_schemas:
 See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annotated example.
 
 # Documentation and essential references
-- [Kenfigure documentation](./annotated.md) - This is the primary documnetation in the form of annotated examples.
+- [Kenfigure documentation](./annotated.md) - This is the primary documentation in the form of annotated examples.
 - [Complete schema reference](./reference.md) - This is not as user friendly, but it is comprehensive.
 - [Schema design style guide](./schema_design_style_guide.md) - This is an
   opinionated guide related to style aspects of schema design in Benchling.
