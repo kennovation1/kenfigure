@@ -265,7 +265,7 @@ Type: Entity  # May be any of the following types:
  # (The ft_ types will have new names in the future.)
 Definition: Lipid  # Name of a Benchling object applicable to the Type. Omit if not applicable for the Type.
   # May also be one of the "generic" entities:
-  # Any Entity, Custom Entity, AA Sequence, DNA Sequence, Molecule, Mixture
+  # Any entity, Custom entity, AA sequence, DNA sequence, Molecule, Mixture, Any inventory
 Required: true  # or false
 Multi-select: true  # or false
 Parent-link: true  # or false
@@ -335,7 +335,7 @@ Result_schemas:
     Tool tip: The encapsulation efficiency as a percentage (i.e., 0 to 100) 
     System name: ee_pct
     Type: Decimal
-      # The valid types for result fields are:
+      # The valid types for result fields are
       # Date, Datetime, Decimal, Integer, Long text, Dropdown, Text, Attachment,
       # Entry, Entity, Category, Part, Inventory, JSON, Boolean, ft_assay_result_link, Run
 ```
