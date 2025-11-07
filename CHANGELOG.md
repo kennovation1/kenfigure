@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.1] - 2025-12-07
+
+- Added 'Any inventory' as a valid generic object reference
+- Added missing generic entity enums on Study and Result schema fields
+- Minor documentation fixes related to generic object references
+
 ## [1.2.0] - 2025-09-01
 
 - Added JSON schema support for Template collections

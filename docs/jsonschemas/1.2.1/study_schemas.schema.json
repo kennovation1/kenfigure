@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://kenfigure.com/jsonschemas/latest/study_schemas.schema.json",
+  "title": "Study schemas",
+  "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
+  "type": "array",
+  "minItems": 0,
+  "uniqueItems": true,
+  "items": {
+    "$comment": "TODO: Study schemas are new and might change more often than other objects.",
+    "title": "Study schema definition",
+    "description": "Complete description of the study schema.",
+    "required": ["Name", "Prefix"],
+    "type": "object",
+    "properties": {
+      "Name": {
+        "description": "Study schema name.",
+        "type": "string"
+      },
+      "System name": {
+        "description": "Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+        "type": "string",
+        "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+      },
+      "Description": {
+        "description": "Documentation for the study schema. This is not saved to Benchling.",
+        "type": "string"
+      },
+      "Prefix": {
+        "description": "The ID prefix for a study schema.",
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$"
+      },
+      "Name template": {
+        "description": "Naming template.",
+        "type": "array",
+        "minItems": 0,
+        "uniqueItems": false,
+        "items": {
+          "title": "Name template components",
+          "description": "Name template components",
+          "type": "object",
+          "required": ["Type"],
+          "properties": {
+            "Type": {
+              "description": "The type of name component.",
+              "$comment": "TODO: I'm not sure that this is the right enum list for study name templates",
+              "type": "string",
+              "enum": [
+                "Registry ID number",
+                "Creation year",
+                "Creation date",
+                "Project",
+                "Text",
+                "Separator",
+                "Field",
+                "Registry ID of field"
+              ]
+            },
+            "Definition": {
+              "description": "Depending on Type will be text, a field name, or may be omitted if N/A.",
+              "type": "string"
+            }
+          }
+        },
+        "$comment": "TODO: Need to define this better. How handle pre-defiend values like separator, lot, etc."
+      },
+      "Entry templates": {
+        "description": "List entry templates that are applicable to the study schema. Maybe empty.",
+        "type": "array",
+        "minItems": 0,
+        "uniqueItems": true,
+        "items": {
+          "type": "string"
+        }
+      },
+      "Approval required": {
+        "description": "Require approval of Design before proceeding to Execution.",
+        "type": "boolean"
+      },
+      "Study type": {
+        "description": "Must match one of the Benchling-defined types.",
+        "type": "string",
+        "enum": ["CUSTOM"]
+      },
+      "Diagram": {
+        "description": "Properties solely used for diagram rendering.",
+        "$ref": "https://kenfigure.com/jsonschemas/latest/diagram.schema.json"
+      },
+      "Fields": {
+        "description": "Metadata fields",
+        "type": "array",
+        "minItems": 0,
+        "uniqueItems" : true,
+        "items" : {
+          "title": "List of metadata fields",
+          "description": "Metadata field definitions",
+          "type": "object",
+          "required": ["Name", "Type"],
+          "properties": {
+            "Name": {
+              "description": "Field name.",
+              "type": "string"
+            },
+            "Description": {
+              "description": "Documentation for the field. This is not saved to Benchling.",
+              "type": "string"
+            },
+            "Tool tip": {
+              "description": "Field tool tip appears on hover on column headings. Not currently supported by Benchling.",
+              "type": "string"
+            },
+            "System name": {
+              "description": "Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+              "type": "string",
+              "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+            },
+            "Required": {
+              "description": "Field is required when true",
+              "type": "boolean"
+            },
+            "Multi-select": {
+              "description": "Field is a multi-select field when true.",
+              "type": "boolean"
+            },
+            "Type": {
+              "description": "Data type for the field.",
+              "type": "string",
+              "enum": [
+                "Date",
+                "Datetime",
+                "Decimal",
+                "Integer",
+                "Long text",
+                "Dropdown",
+                "Text",
+                "Attachment",
+                "Entity",
+                "JSON",
+                "Boolean"
+              ]
+            },
+            "Definition": {
+              "description": "Name of target object if Type is a one of the link types or Dropdown.",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "Any Entity",
+                    "Custom Entity",
+                    "AA Sequence",
+                    "DNA Sequence",
+                    "Molecule",
+                    "Mixture",
+                    "Any inventory"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "Computed field": {
+              "description": "Describes the computed field. Only present for computed fields.",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "API ID": {
+        "description": "API ID for the study schema created during an export operation. This is ignored for import operations.",
+        "type": "string"
+      }
+    }
+  }
+}
