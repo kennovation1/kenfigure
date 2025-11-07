@@ -100,7 +100,7 @@
               ]
             },
             "Definition": {
-              "description": "Name of target object if Type is a one of the link types. May optionally point to a dropdown if type is Integer or Decimal.",
+              "description": "Name of target object if Type is a one of the link types or Dropdown. May optionally point to a dropdown if type is Integer or Decimal.",
               "anyOf": [
                 {
                   "type": "string",
