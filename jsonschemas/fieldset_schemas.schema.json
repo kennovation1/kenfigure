@@ -188,7 +188,8 @@
                     "AA Sequence",
                     "DNA Sequence",
                     "Molecule",
-                    "Mixture"
+                    "Mixture",
+                    "Any inventory"
                   ]
                 },
                 {
