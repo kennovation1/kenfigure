@@ -141,8 +141,24 @@
               ]
             },
             "Definition": {
-              "description": "Name of target object if Type is a one of the link types.",
-              "type": "string"
+              "description": "Name of target object if Type is a one of the link types or Dropdown.",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "Any Entity",
+                    "Custom Entity",
+                    "AA Sequence",
+                    "DNA Sequence",
+                    "Molecule",
+                    "Mixture",
+                    "Any inventory"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ]
             },
             "Computed field": {
               "description": "Describes the computed field. Only present for computed fields.",

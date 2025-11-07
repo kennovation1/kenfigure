@@ -72,9 +72,9 @@
         - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Parent%20link"></a>**`Parent link`** *(boolean)*: Entity reference is a parent link when true.
         - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Field is a multi-select field when true.
         - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Type"></a>**`Type`** *(string, required)*: Data type for the field. Must be one of: `["Date", "Datetime", "Decimal", "Integer", "Long text", "Dropdown", "Text", "Attachment", "Entry", "Entity", "Category", "Part", "Inventory", "ft_translation_link", "ft_assay_result_link", "ft_assay_run_link", "Batch", "Transcription"]`.
-        - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types.
+        - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types or Dropdown.
           - **Any of**
-            - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture"]`.
+            - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", "Any inventory"]`.
             - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
         - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Computed"></a>**`Computed`** *(object)*: Describes the computed field. Only present for computed fields.
           - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Computed/properties/Formula%20name"></a>**`Formula name`** *(string)*: Name of formula using native Benchling tokens for now. Must be one of: `["UNSUPPORTED_FORMULA", "sum_floats", "string_length", "dna_sequence_gc_percent", "set_union_file_link", "set_union_selector", "join_string", "multiply_with_exponents", "molecule_molecular_weight", "chemical_formula_with_salts", "standard_molecular_weight_with_salts", "subtract_dates", "mod_aware_molecular_weight", "render_molecule_from_smiles", "identity_fn", "aggregate_bioentity_link_unsorted_with_duplicates", "aggregate_dropdown_unsorted_with_duplicates", "aggregate_text_unsorted_with_duplicates"]`.
@@ -119,9 +119,9 @@
         - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Required"></a>**`Required`** *(boolean)*: Field is required when true.
         - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Field is a multi-select field when true.
         - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Type"></a>**`Type`** *(string, required)*: Data type for the field. Must be one of: `["Date", "Datetime", "Decimal", "Integer", "Long text", "Dropdown", "Text", "Attachment", "Entry", "Entity", "Part", "Inventory", "ft_translation_link", "ft_assay_result_link", "ft_assay_run_link"]`.
-        - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types.
+        - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types or Dropdown.
           - **Any of**
-            - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture"]`.
+            - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", "Any inventory"]`.
             - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
         - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Computed"></a>**`Computed`** *(object)*: Describes the computed field. Only present for computed fields.
           - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Computed/properties/Formula%20name"></a>**`Formula name`** *(string)*: Name of formula using native Benchling tokens for now. Must be one of: `["UNSUPPORTED_FORMULA", "sum_floats", "string_length", "dna_sequence_gc_percent", "set_union_file_link", "set_union_selector", "join_string", "multiply_with_exponents", "mod_aware_molecular_weight", "render_molecule_from_smiles", "identity_fn", "aggregate_bioentity_link_unsorted_with_duplicates", "aggregate_dropdown_unsorted_with_duplicates", "aggregate_text_unsorted_with_duplicates"]`.
@@ -161,7 +161,10 @@
         - <a id="properties/Study_schemas/items/properties/Fields/items/properties/Required"></a>**`Required`** *(boolean)*: Field is required when true.
         - <a id="properties/Study_schemas/items/properties/Fields/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Field is a multi-select field when true.
         - <a id="properties/Study_schemas/items/properties/Fields/items/properties/Type"></a>**`Type`** *(string, required)*: Data type for the field. Must be one of: `["Date", "Datetime", "Decimal", "Integer", "Long text", "Dropdown", "Text", "Attachment", "Entity", "JSON", "Boolean"]`.
-        - <a id="properties/Study_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`** *(string)*: Name of target object if Type is a one of the link types.
+        - <a id="properties/Study_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types or Dropdown.
+          - **Any of**
+            - <a id="properties/Study_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", "Any inventory"]`.
+            - <a id="properties/Study_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
         - <a id="properties/Study_schemas/items/properties/Fields/items/properties/Computed%20field"></a>**`Computed field`** *(string)*: Describes the computed field. Only present for computed fields.
     - <a id="properties/Study_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the study schema created during an export operation. This is ignored for import operations.
 - <a id="properties/Container_schemas"></a>**`Container_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
@@ -184,7 +187,7 @@
         - <a id="properties/Container_schemas/items/properties/Fields/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
         - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Field is a multi-select field when true.
         - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Type"></a>**`Type`** *(string, required)*: Data type for the field. Must be one of: `["Date", "Datetime", "Decimal", "Integer", "Long text", "Dropdown", "Text", "Attachment", "Entry", "Entity", "Category", "Inventory"]`.
-        - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types.
+        - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types or Dropdown.
           - **Any of**
             - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", "Any inventory"]`.
             - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
@@ -212,7 +215,7 @@
         - <a id="properties/Box_schemas/items/properties/Fields/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
         - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Field is a multi-select field when true.
         - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Type"></a>**`Type`** *(string, required)*: Data type for the field. Must be one of: `["Date", "Datetime", "Decimal", "Integer", "Long text", "Dropdown", "Text", "Attachment", "Entry", "Entity", "Category", "Inventory"]`.
-        - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types.
+        - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types or Dropdown.
           - **Any of**
             - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", "Any inventory"]`.
             - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
@@ -241,7 +244,7 @@
         - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
         - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Field is a multi-select field when true.
         - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Type"></a>**`Type`** *(string, required)*: Data type for the field. Must be one of: `["Date", "Datetime", "Decimal", "Integer", "Long text", "Dropdown", "Text", "Attachment", "Entry", "Entity", "Category", "Inventory"]`.
-        - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types.
+        - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types or Dropdown.
           - **Any of**
             - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", "Any inventory"]`.
             - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
@@ -266,7 +269,7 @@
         - <a id="properties/Location_schemas/items/properties/Fields/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
         - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Field is a multi-select field when true.
         - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Type"></a>**`Type`** *(string, required)*: Data type for the field. Must be one of: `["Date", "Datetime", "Decimal", "Integer", "Long text", "Dropdown", "Text", "Attachment", "Entry", "Entity", "Category", "Inventory"]`.
-        - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types.
+        - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types or Dropdown.
           - **Any of**
             - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", "Any inventory"]`.
             - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
@@ -292,7 +295,10 @@
         - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Required"></a>**`Required`** *(boolean)*: Field is required when true.
         - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Field is a multi-select field when true.
         - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Type"></a>**`Type`** *(string, required)*: Data type for the field. Must be one of: `["Date", "Datetime", "Decimal", "Integer", "Long text", "Dropdown", "Text", "Attachment", "Entry", "Entity", "Category", "Part", "Inventory", "JSON", "Boolean", "ft_assay_result_link", "Run"]`.
-        - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`** *(string)*: Name of target object if Type is a one of the link types. May optionally point to a dropdown if type is Integer or Decimal.
+        - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Definition"></a>**`Definition`**: Name of target object if Type is a one of the link types or Dropdown. May optionally point to a dropdown if type is Integer or Decimal.
+          - **Any of**
+            - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: `["Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", "Any inventory"]`.
+            - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
         - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Snapshot"></a>**`Snapshot`** *(object)*: Describes the snapshot computation if this is a snapshot computed field.
           - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Snapshot/properties/Formula"></a>**`Formula`**: Name of formula using native Benchling tokens for now. TODO-For now, leave the items for arguments unspecified until this matures more. Add filters and other features. Must be one of: `["UNSUPPORTED_FORMULA", "identity_fn"]`.
           - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Snapshot/properties/Arguments"></a>**`Arguments`** *(object, required)*: Formula arguments. These are dependent on the particular formula.

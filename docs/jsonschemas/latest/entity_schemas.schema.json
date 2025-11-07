@@ -258,7 +258,7 @@
               ]
             },
             "Definition": {
-              "description": "Name of target object if Type is a one of the link types.",
+              "description": "Name of target object if Type is a one of the link types or Dropdown.",
               "anyOf": [
                 {
                   "type": "string",
@@ -268,7 +268,8 @@
                     "AA Sequence",
                     "DNA Sequence",
                     "Molecule",
-                    "Mixture"
+                    "Mixture",
+                    "Any inventory"
                   ]
                 },
                 {
