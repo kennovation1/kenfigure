@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://kenfigure.com/jsonschemas/latest/templates.schema.json",
+  "title": "Templates",
+  "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
+  "type": "array",
+  "minItems": 0,
+  "uniqueItems": true,
+  "items": {
+    "title": "Entry template definition",
+    "description": "Description of an entry template.",
+    "comment": "Does not support template content or default schema values yet.",
+    "required": ["Name", "Collection"],
+    "type": "object",
+    "properties": {
+      "Name": {
+        "description": "Template name.",
+        "type": "string",
+        "pattern": "^\\S.*\\S$|^\\S$"
+      },
+      "Description": {
+        "description": "Description of the template.",
+        "type": "string"
+      },
+      "Collection": {
+        "description": "Name of the template collection that the template belongs to.",
+        "type": "string",
+        "pattern": "^\\S.*\\S$|^\\S$"
+      },
+      "Schema": {
+        "description": "Name of the entry schema attached to the template.",
+        "type": "string",
+        "pattern": "^\\S.*\\S$|^\\S$"
+      },
+      "Fill-in only": {
+        "description": "If true, entries created from this template will be locked. Users can only fill in tables, text boxes, checkboxes, and files. If false (or omitted), entries created from this template can be modified by end users.",
+        "type": "boolean"
+      },
+      "Notify": {
+        "description": "Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as configuration access rights.",
+        "type": "string"
+      }
+    }
+  }
+}

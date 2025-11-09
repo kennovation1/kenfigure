@@ -464,6 +464,26 @@ Template_collections:  # Top-level key for Template Collections object
     Owner: biotech_r_us  # Organization name (optional if there is only one organization)
 ```
 
+## Templates
+```yaml
+Templates:  # Top-level key for Template object
+  - Name: qPCR
+    Description: Simple generic qPCR assay template
+    Collection: Manufacturing Analytics
+    Schema: MA Entry  # An entry schema reference
+    Fill-in only: false  # Set to true for a non-modifiable fill-in only type of template
+    # Template content is not currently defined.
+```
+
+## Sub-templates
+```yaml
+Sub_templates:  # Top-level key for Sub_template object
+  - Name: dPCR
+    Description: Simple generic dPCR assay sub-template
+    Collection: Manufacturing Analytics
+    # Sub-template content is not currently defined.
+```
+
 ## Metadata
 The `Metadata` object is mostly only used by Kenfigure tooling, but you might find
 it useful for record keeping as well.

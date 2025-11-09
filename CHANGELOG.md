@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2025-12-08
+
+- Add Template and Sub-template support for non-content attributes.
+  Does not define content specification or default entry schema values.
+
 ## [1.2.1] - 2025-12-07
 
 - Added 'Any inventory' as a valid generic object reference

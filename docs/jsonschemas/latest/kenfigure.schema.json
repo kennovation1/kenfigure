@@ -56,6 +56,14 @@
     "Template_collections": {
       "description": "Template collections",
       "$ref": "https://kenfigure.com/jsonschemas/latest/template_collections.schema.json"
+    },
+    "Templates": {
+      "description": "Templates",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/templates.schema.json"
+    },
+    "Sub_templates": {
+      "description": "Sub templates",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/sub_templates.schema.json"
     }
   }
 }

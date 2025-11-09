@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://kenfigure.com/jsonschemas/latest/sub_templates.schema.json",
+  "title": "Sub templates",
+  "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
+  "type": "array",
+  "minItems": 0,
+  "uniqueItems": true,
+  "items": {
+    "title": "Sub-template definition",
+    "description": "Description of a sub-template.",
+    "comment": "Does not support sub-template content.",
+    "required": ["Name", "Collection"],
+    "type": "object",
+    "properties": {
+      "Name": {
+        "description": "Sub-template name.",
+        "type": "string",
+        "pattern": "^\\S.*\\S$|^\\S$"
+      },
+      "Description": {
+        "description": "Description of the sub-template.",
+        "type": "string"
+      },
+      "Collection": {
+        "description": "Name of the template collection that the sub-template belongs to.",
+        "type": "string",
+        "pattern": "^\\S.*\\S$|^\\S$"
+      },
+      "Notify": {
+        "description": "Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as configuration access rights.",
+        "type": "string"
+      }
+    }
+  }
+}
