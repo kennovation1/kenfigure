@@ -179,7 +179,7 @@
             "pattern": "^[a-z_][a-z0-9_]{0,62}$"
           },
           "Description": {
-            "description": "Documentation for the entity schema. This is not saved to Benchling.",
+            "description": "Documentation for the entity schema. Maps to Schema Description in Benchling.",
             "type": "string"
           },
           "Notify": {
