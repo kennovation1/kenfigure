@@ -59,6 +59,7 @@
           "mouse",
           "oligo",
           "oligo-v2",
+          "plant",
           "plasmid",
           "plate",
           "primer_pair",
@@ -70,7 +71,8 @@
           "small-molecule-beaker",
           "vial",
           "chromatography",
-          "human"
+          "human",
+          "worm"
         ]
       },
       "Prefix": {
