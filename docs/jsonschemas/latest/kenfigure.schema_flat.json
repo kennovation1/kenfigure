@@ -1776,6 +1776,10 @@
             "description": "Documentation for the entity. This is not saved to Benchling.",
             "type": "string"
           },
+          "Notify": {
+            "description": "Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as setting permissions.",
+            "type": "string"
+          },
           "Diagram": {
             "$schema": "https://json-schema.org/draft/2020-12/schema",
             "$id": "https://kenfigure.com/jsonschemas/latest/diagram.schema.json",
