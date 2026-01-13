@@ -130,9 +130,17 @@
               "properties": {
                 "Formula": {
                   "description": "Name of formula using native Benchling tokens for now. TODO-For now, leave the items for arguments unspecified until this matures more. Add filters and other features.",
-                  "enum": [
-                    "UNSUPPORTED_FORMULA",
-                    "identity_fn"
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "UNSUPPORTED_FORMULA",
+                        "identity_fn"
+                      ]
+                    },
+                    {
+                      "type": "string"
+                    }
                   ]
                 },
                 "Arguments": {

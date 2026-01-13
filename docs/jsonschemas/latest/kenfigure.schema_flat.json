@@ -490,25 +490,33 @@
                     "Formula": {
                       "description": "Name of formula using native Benchling tokens for now.",
                       "type": "string",
-                      "enum": [
-                        "UNSUPPORTED_FORMULA",
-                        "sum_floats",
-                        "string_length",
-                        "dna_sequence_gc_percent",
-                        "set_union_file_link",
-                        "set_union_selector",
-                        "join_string",
-                        "multiply_with_exponents",
-                        "molecule_molecular_weight",
-                        "chemical_formula_with_salts",
-                        "standard_molecular_weight_with_salts",
-                        "subtract_dates",
-                        "mod_aware_molecular_weight",
-                        "render_molecule_from_smiles",
-                        "identity_fn",
-                        "aggregate_bioentity_link_unsorted_with_duplicates",
-                        "aggregate_dropdown_unsorted_with_duplicates",
-                        "aggregate_text_unsorted_with_duplicates"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "UNSUPPORTED_FORMULA",
+                            "sum_floats",
+                            "string_length",
+                            "dna_sequence_gc_percent",
+                            "set_union_file_link",
+                            "set_union_selector",
+                            "join_string",
+                            "multiply_with_exponents",
+                            "molecule_molecular_weight",
+                            "chemical_formula_with_salts",
+                            "standard_molecular_weight_with_salts",
+                            "subtract_dates",
+                            "mod_aware_molecular_weight",
+                            "render_molecule_from_smiles",
+                            "identity_fn",
+                            "aggregate_bioentity_link_unsorted_with_duplicates",
+                            "aggregate_dropdown_unsorted_with_duplicates",
+                            "aggregate_text_unsorted_with_duplicates"
+                          ]
+                        },
+                        {
+                          "type": "string"
+                        }
                       ]
                     },
                     "Path": {
@@ -824,21 +832,33 @@
                     "Formula": {
                       "description": "Name of formula using native Benchling tokens for now.",
                       "type": "string",
-                      "enum": [
-                        "UNSUPPORTED_FORMULA",
-                        "sum_floats",
-                        "string_length",
-                        "dna_sequence_gc_percent",
-                        "set_union_file_link",
-                        "set_union_selector",
-                        "join_string",
-                        "multiply_with_exponents",
-                        "mod_aware_molecular_weight",
-                        "render_molecule_from_smiles",
-                        "identity_fn",
-                        "aggregate_bioentity_link_unsorted_with_duplicates",
-                        "aggregate_dropdown_unsorted_with_duplicates",
-                        "aggregate_text_unsorted_with_duplicates"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "UNSUPPORTED_FORMULA",
+                            "sum_floats",
+                            "string_length",
+                            "dna_sequence_gc_percent",
+                            "set_union_file_link",
+                            "set_union_selector",
+                            "join_string",
+                            "multiply_with_exponents",
+                            "molecule_molecular_weight",
+                            "chemical_formula_with_salts",
+                            "standard_molecular_weight_with_salts",
+                            "subtract_dates",
+                            "mod_aware_molecular_weight",
+                            "render_molecule_from_smiles",
+                            "identity_fn",
+                            "aggregate_bioentity_link_unsorted_with_duplicates",
+                            "aggregate_dropdown_unsorted_with_duplicates",
+                            "aggregate_text_unsorted_with_duplicates"
+                          ]
+                        },
+                        {
+                          "type": "string"
+                        }
                       ]
                     },
                     "Path": {
@@ -1103,25 +1123,33 @@
                     "Formula": {
                       "description": "Name of formula using native Benchling tokens for now.",
                       "type": "string",
-                      "enum": [
-                        "UNSUPPORTED_FORMULA",
-                        "sum_floats",
-                        "string_length",
-                        "dna_sequence_gc_percent",
-                        "set_union_file_link",
-                        "set_union_selector",
-                        "join_string",
-                        "multiply_with_exponents",
-                        "molecule_molecular_weight",
-                        "chemical_formula_with_salts",
-                        "standard_molecular_weight_with_salts",
-                        "subtract_dates",
-                        "mod_aware_molecular_weight",
-                        "render_molecule_from_smiles",
-                        "identity_fn",
-                        "aggregate_bioentity_link_unsorted_with_duplicates",
-                        "aggregate_dropdown_unsorted_with_duplicates",
-                        "aggregate_text_unsorted_with_duplicates"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "UNSUPPORTED_FORMULA",
+                            "sum_floats",
+                            "string_length",
+                            "dna_sequence_gc_percent",
+                            "set_union_file_link",
+                            "set_union_selector",
+                            "join_string",
+                            "multiply_with_exponents",
+                            "molecule_molecular_weight",
+                            "chemical_formula_with_salts",
+                            "standard_molecular_weight_with_salts",
+                            "subtract_dates",
+                            "mod_aware_molecular_weight",
+                            "render_molecule_from_smiles",
+                            "identity_fn",
+                            "aggregate_bioentity_link_unsorted_with_duplicates",
+                            "aggregate_dropdown_unsorted_with_duplicates",
+                            "aggregate_text_unsorted_with_duplicates"
+                          ]
+                        },
+                        {
+                          "type": "string"
+                        }
                       ]
                     },
                     "Path": {
@@ -1978,9 +2006,17 @@
                   "properties": {
                     "Formula": {
                       "description": "Name of formula using native Benchling tokens for now. TODO-For now, leave the items for arguments unspecified until this matures more. Add filters and other features.",
-                      "enum": [
-                        "UNSUPPORTED_FORMULA",
-                        "identity_fn"
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "enum": [
+                            "UNSUPPORTED_FORMULA",
+                            "identity_fn"
+                          ]
+                        },
+                        {
+                          "type": "string"
+                        }
                       ]
                     },
                     "Arguments": {
