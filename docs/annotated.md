@@ -274,7 +274,7 @@ Computed:  # This section is only partially documented and defined in the Kenfig
   # not worry too much about the formality of computed fields and just document your understanding
   # of how the field is computed. The Kenfigure Tool does have a defined format, but it varies
   # quite a bit depending on the formula.
-  Formula name: molecule_molecular_weight
+  Formula: molecule_molecular_weight
 ```
 
 ## Fieldset Schemas

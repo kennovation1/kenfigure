@@ -165,7 +165,7 @@
               "type": "object",
               "required": ["Formula"],
               "properties": {
-                "Formula name": {
+                "Formula": {
                   "description": "Name of formula using native Benchling tokens for now.",
                   "type": "string",
                   "enum": [

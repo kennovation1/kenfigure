@@ -11,7 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.3.2] - 2026-01-13
 
-- Fix attribute definition in Study schema fields from "Computed field" to "Computed"
+- Change "Computed field" to "Computed" in Study schema fields (to match Entity and Fieldset schemas)
+- Change "Formula name" to "Formula" in all computed fields (Entity, Fieldset, Schema). Result schema was already correct.
 
 ## [1.3.1] - 2025-12-08
 
