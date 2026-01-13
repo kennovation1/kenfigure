@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://kenfigure.com/jsonschemas/latest/box_schemas.schema.json",
+  "title": "Box schemas",
+  "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
+  "type": "array",
+  "minItems": 0,
+  "uniqueItems": true,
+  "items": {
+    "title": "Box schema definition",
+    "description": "Complete description of the box schema.",
+    "required": ["Name", "Prefix", "Height", "Width"],
+    "type": "object",
+    "properties": {
+      "Name": {
+        "description": "Box schema name.",
+        "type": "string"
+      },
+      "System name": {
+        "description": "Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+        "type": "string",
+        "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+      },
+      "Description": {
+        "description": "Documentation for the box schema. This is not saved to Benchling.",
+        "type": "string"
+      },
+      "Notify": {
+        "description": "Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as creating certain standard boxes.",
+        "type": "string"
+      },
+      "Prefix": {
+        "description": "The registry ID prefix",
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$"
+      },
+      "Height": {
+        "description": "Height of the box (number of rows).",
+        "type": "integer",
+        "minimum": 1
+      },
+      "Width": {
+        "description": "Width of the box (number of columns).",
+        "type": "integer",
+        "minimum": 1
+      },
+      "Container schema": {
+        "description": "Container schema for each slot in the box. May be omitted.",
+        "type": "string"
+      },
+      "Diagram": {
+        "description": "Properties solely used for diagram rendering.",
+        "$ref": "https://kenfigure.com/jsonschemas/latest/diagram.schema.json"
+      },
+      "Fields": {
+        "description": "Metadata fields",
+        "type": "array",
+        "minItems": 0,
+        "uniqueItems" : true,
+        "items": {
+          "title": "List of metadata fields",
+          "description": "Metadata field definitions",
+          "type": "object",
+          "required": ["Name", "Type"],
+          "properties": {
+            "Name": {
+              "description": "Field name.",
+              "type": "string"
+            },
+            "Description": {
+              "description": "Documentation for the field. This is not saved to Benchling.",
+              "type": "string"
+            },
+            "Tool tip": {
+              "description": "Field tool tip appears on hover on column headings.",
+              "type": "string"
+            },
+           "System name": {
+              "description": "Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name.",
+              "type": "string",
+              "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+            },
+            "Multi-select": {
+              "description": "Field is a multi-select field when true.",
+              "type": "boolean"
+            },
+            "Type": {
+              "description": "Data type for the field.",
+              "type": "string",
+              "enum": [
+                "Date",
+                "Datetime",
+                "Decimal",
+                "Integer",
+                "Long text",
+                "Dropdown",
+                "Text",
+                "Attachment",
+                "Entry",
+                "Entity",
+                "Category",
+                "Inventory"
+              ]
+            },
+            "Definition": {
+              "description": "Name of target object if Type is a one of the link types or Dropdown.",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "Any Entity",
+                    "Custom Entity",
+                    "AA Sequence",
+                    "DNA Sequence",
+                    "Molecule",
+                    "Mixture",
+                    "Any inventory"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "API ID": {
+        "description": "API ID for the entity schema created during an export operation. This is ignored for import operations.",
+        "type": "string"
+      }
+    }
+  }
+}

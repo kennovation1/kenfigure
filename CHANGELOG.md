@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.2] - 2026-01-13
+
+- Fix attribute definition in Study schema fields from "Computed field" to "Computed"
+
 ## [1.3.1] - 2025-12-08
 
 - Add Template and Sub-template support for non-content attributes.

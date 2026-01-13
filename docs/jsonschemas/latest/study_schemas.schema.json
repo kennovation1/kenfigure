@@ -160,9 +160,79 @@
                 }
               ]
             },
-            "Computed field": {
+            "Computed": {
               "description": "Describes the computed field. Only present for computed fields.",
-              "type": "string"
+              "type": "object",
+              "required": ["Formula"],
+              "properties": {
+                "Formula name": {
+                  "description": "Name of formula using native Benchling tokens for now.",
+                  "type": "string",
+                  "enum": [
+                    "UNSUPPORTED_FORMULA",
+                    "sum_floats",
+                    "string_length",
+                    "dna_sequence_gc_percent",
+                    "set_union_file_link",
+                    "set_union_selector",
+                    "join_string",
+                    "multiply_with_exponents",
+                    "molecule_molecular_weight",
+                    "chemical_formula_with_salts",
+                    "standard_molecular_weight_with_salts",
+                    "subtract_dates",
+
+                    "mod_aware_molecular_weight",
+                    "render_molecule_from_smiles",
+                    "identity_fn",
+                    "aggregate_bioentity_link_unsorted_with_duplicates",
+                    "aggregate_dropdown_unsorted_with_duplicates",
+                    "aggregate_text_unsorted_with_duplicates"
+                  ]
+                },
+                "Path": {
+                  "description": "List of entities to get to the final entity or field. TODO-Can this just be a list. Will type ever not be Field?",
+                  "type": "array",
+                  "minItems": 0,
+                  "items": {
+                    "title": "List of path objects.",
+                    "type": "object",
+                    "required": ["Type"],
+                    "properties": {
+                      "Type": {
+                        "description": "Type of path component. Only Field is valid for now.",
+                        "type": "string",
+                        "enum": [
+                          "Field"
+                        ]
+                      },
+                      "Definition": {
+                        "description": "Name for the given type. Usually a field name.",
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "Property": {
+                  "description": "The final value to return/compute at the end of the Path.",
+                  "type": "object",
+                  "required": ["Type"],
+                  "properties": {
+                    "Type": {
+                      "description": "The type of property. Normally Field, but use BASES to access the built-in Bases field.",
+                      "type": "string",
+                      "enum": [
+                          "Field",
+                          "BASES"
+                      ]
+                    },
+                    "Definition": {
+                      "description": "The name of the field if type is Field.",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
             }
           }
         }
