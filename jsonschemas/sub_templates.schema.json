@@ -5,7 +5,8 @@
   "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
   "type": "array",
   "minItems": 0,
-  "uniqueItems": true,
+  "uniqueItems": false,
+  "comment": "For some reason, Benchling allows duplicate sub-templates, so uniqueItems is false.",
   "items": {
     "title": "Sub-template definition",
     "description": "Description of a sub-template.",

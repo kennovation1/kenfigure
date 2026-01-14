@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change "Computed field" to "Computed" in Study schema fields (to match Entity and Fieldset schemas).
 - Change "Formula name" to "Formula" in all computed fields (Entity, Fieldset, Schema). Result schema was already correct.
 - Relax validation on enums for Formula values so that any string is allowed for now.
+- Allow duplicate templates and sub-templates even in the same collection since Benchling allows this. This may change in the future.
 
 ## [1.3.1] - 2025-12-08
 

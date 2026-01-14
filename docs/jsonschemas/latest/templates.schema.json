@@ -5,7 +5,8 @@
   "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
   "type": "array",
   "minItems": 0,
-  "uniqueItems": true,
+  "uniqueItems": false,
+  "comment": "For some reason, Benchling allows duplicate templates, so uniqueItems is false.",
   "items": {
     "title": "Entry template definition",
     "description": "Description of an entry template.",
