@@ -333,7 +333,7 @@
       - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Default"></a>**`Default`** *(['string', 'boolean'], required)*
       - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Description"></a>**`Description`** *(['string', 'boolean'], required)*
       - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Planned"></a>**`Planned`** *(['string', 'boolean'])*
-- <a id="properties/Template_collections"></a>**`Template_collections`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Template_collections"></a>**`Template_collections`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0.
   - <a id="properties/Template_collections/items"></a>**Items** *(object)*: Complete description of the template collection.
     - <a id="properties/Template_collections/items/properties/Name"></a>**`Name`** *(string, required)*: Template collection name. Must match pattern: `^\S.*\S$|^\S$` ([Test](https://regexr.com/?expression=%5E%5CS.%2A%5CS%24%7C%5E%5CS%24)).
     - <a id="properties/Template_collections/items/properties/Description"></a>**`Description`** *(string)*: Description of the template collection.
