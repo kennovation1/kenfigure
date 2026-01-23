@@ -101,6 +101,7 @@
                 "Boolean",
                 "ft_assay_result_link",
                 "ft_assay_request_link",
+                "Batch",
                 "Run"
               ]
             },
