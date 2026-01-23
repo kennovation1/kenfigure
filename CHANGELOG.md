@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Relax validation on enums for Formula values so that any string is allowed for now.
 - Allow duplicate templates and sub-templates even in the same collection since Benchling allows this. This may change in the future.
 - Allow duplicate template collections since Benchling allows this. This may change in the future.
-- Add ft_assay_request_link as a valid data type for entity schemas and fieldsets
+- Add ft_assay_request_link as a valid data type for entity schemas, fieldsets, and result schemas.
 
 ## [1.3.1] - 2025-12-08
 
