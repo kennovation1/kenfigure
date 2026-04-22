@@ -73,15 +73,21 @@ the style for the structure of the Kenfigure YAML files.
 # Field system names
 - Must conform to PostgreSQL naming restrictions
 - System names should contain a representation of the units that appear in the field name. If a ratio, the '/' should be converted
-  to an underscore ('_') (note that Benchling will silently drop the slash when auto-generating system names).
+  to an underscore ('_'). (Note that Benchling will silently drop the slash when auto-generating system names).
   E.g., "Concentration (mg/mL)" should have a system name "concentration_mg_ml".
-- System names representing percent units, should use a "_pct" suffix (note that Benchling silently drops the '%' symbol when auto-generating system names).
-  E.g., The display name "Purity (%)" should have a system name "purity_pct".
-- Superscripts generally should be dropped. E.g., "cm^2" or "cm²" should be converted to "cm2". If units are complex, review and use common sense.
+- System names representing percent units, should use a "_pct" suffix. (Note that Benchling silently drops the '%' symbol when
+  auto-generating system names). E.g., The display name "Purity (%)" should have a system name "purity_pct".
+- Superscripts generally should be dropped. E.g., "cm^2" or "cm²" should be converted to "cm2".
+  If units are complex, review and use common sense.
 - For fun, here is a more complex example multiple superscripts, multiple divisions, and a greek letter:
   - Display name: Avg Radiant Efficiency [p/s/cm²/sr] / [µW/cm²]
   - System name: avg_radiant_efficiency_p_s_cm2_sr_uw_cm2
 - Do not use double underscores (two consecutive underscores). E.g., For "Total Flux (p/s)", use "total_flux_p_s" not "total_flux__(p/s)".
+- Plus and minus modifiers in display names should be converted to "pos" and "neg" respectively. E.g., "CD4+" should become "cd4_pos".
+  (Note that Benchling will silently drop the sign which changes the meaning.) In some cases "plus" and "minus" may be appropriate
+  depending on the context.
+- Display units that use scientific notation should be converted to E Notation for system names. E.g., "PLT (10^9/L)" should be "plt_1e9_l".
+  (Note that by default Benchling would convert this example to plt__109l.)
 
 ---
-© 2025 Go2 Software LLC. All rights reserved.
+© 2026 Go2 Software LLC. All rights reserved.
