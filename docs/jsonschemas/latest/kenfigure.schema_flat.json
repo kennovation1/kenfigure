@@ -447,6 +447,7 @@
                     "Long text",
                     "Dropdown",
                     "Text",
+                    "Boolean",
                     "Attachment",
                     "Entry",
                     "Entity",

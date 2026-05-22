@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-05-22
+
+- Add Boolean type support for Entity schema fields.
+
 ## [1.3.2] - 2026-01-13
 
 - Change "Computed field" to "Computed" in Study schema fields (to match Entity and Fieldset schemas).

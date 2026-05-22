@@ -261,7 +261,7 @@ Tool tip: Reference to an existing registered Lipid entity
 System name: lipid  # Field PostgreSQL-compatible system (Warehouse) name
 Type: Entity  # May be any of the following types:
  # Date, Datetime, Decimal, Integer, Long text, Dropdown, Text, Attachment, Entry, Entity, Category, Part,
- # Inventory, ft_translation_link, ft_assay_result_link, ft_assay_run_link, Batch, Transcription
+ # Inventory, Boolean, ft_translation_link, ft_assay_result_link, ft_assay_run_link, Batch, Transcription
  # (The ft_ types will have new names in the future.)
 Definition: Lipid  # Name of a Benchling object applicable to the Type. Omit if not applicable for the Type.
   # May also be one of the "generic" entities:
