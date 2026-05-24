@@ -6,3 +6,4 @@ local_notes/**
 accelerators/**/*.dat
 .cursor/mcp.json
 tmp/**
+.venv
