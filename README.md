@@ -58,8 +58,7 @@ See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annot
   opinionated guide related to style aspects of schema design in Benchling.
   This is a companion to Kenfigure but is independent of the Kenfigure specification.
   Some custom tooling (e.g., Kenfigure Tool Schema Lint) may use the style guide as a source for style rules.
-- [Kenfigure Tool export](./kenfigure_tool_export.md) - Describes a free tool to export an existing Benchling environment
-  into Kenfigure format.
+- [Kenfigure Tool User Guide](./kenfigure_tool_user_guide.md) - A Benchling App Canvas application that converts between Benchling and Kenfigure formats. Includes Git integration.
 - [Kenfigure JSON schema](./jsonschemas/latest/kenfigure.schema_flat.json) - The full (flattened) JSON schema for Kenfigure.
 
 # Benefits 

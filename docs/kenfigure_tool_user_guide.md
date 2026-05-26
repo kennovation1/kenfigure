@@ -1,5 +1,17 @@
 [Kenfigure home](https://kenfigure.com)
 
+# Kenfigure Tool User Guide
+
+***THIS PAGE IS OUT OF DATE AND WILL BE UPDATED VERY SOON***
+
+***We are about to exit the beta phase and release as GA.
+Features to be added to this document include import capabilities,
+direct Git integration, Advanced Settings configuration, new UI design.***
+
+Check back soon!
+Ken
+
+
 # Kenfigure Tool Export
 Most Kenfigure use cases are based on existing Benchling deployments.
 Therefore, we've created a tool that exports a current environment to Kenfigure format.
