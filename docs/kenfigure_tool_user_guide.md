@@ -4,17 +4,15 @@
 
 ## What is Kenfigure Tool?
 
-Kenfigure Tool is a Benchling Canvas app that converts your Benchling configuration between Benchling's native format and Kenfigure format. There's nothing to download or install on your computer — the tool runs entirely within Benchling as a canvas widget.
+Kenfigure Tool is a Benchling Canvas app that converts your Benchling configuration between Benchling's native format and Kenfigure™ format. There's nothing to download or install on your computer — the tool runs entirely within Benchling as a canvas widget.
 
 Kenfigure format is a human-readable text representation of your Benchling schemas and configuration. Storing your configuration in Kenfigure format means you can track it in a version control system (git), compare environments side by side, review changes before applying them, and use your configuration as context for AI tools.
 
 **What you can do with Kenfigure Tool:**
 
 - **Export your Benchling configuration** — Convert a Configuration Migration export file from Benchling into Kenfigure format. Use this to create an initial snapshot in your git repository, or to detect what has changed since your last export.
-
 - **Import to Benchling** — Convert Kenfigure files back into a Configuration Migration import file, which you can then apply to any Benchling tenant. *(Licensed feature — see [Licensing](#licensing).)*
-
-- **Connect directly to your git repository** — Instead of downloading and managing files manually, Kenfigure Tool can read from and write to your git repository. Exports can be committed directly to a branch, or submitted as a pull request (a proposed change ready for review) before being merged.
+- **Connect directly to your git repository** — In addition to downloading and managing files manually, Kenfigure Tool can also read from and write to your git repository. Exports can be committed directly to a branch, or submitted as a "pull request" (a proposed change ready for review) before being merged.
 
 Every export you run also feeds [Kenfigure Diagram](#kenfigure-diagram), a companion product that renders your configuration as an interactive schema diagram.
 
@@ -48,17 +46,18 @@ Note: Bitbucket is supported for most git operations, but not for the pull reque
 
 ### Kenfigure Diagram feature access
 
-Kenfigure Diagram works for all users with Organization membership — no additional Benchling permissions are required for the core diagram view. However, a few specific features pull live data from your Benchling tenant and need additional read access. If that access isn't available, only the affected feature is disabled; the rest of Kenfigure Diagram continues to work normally.
+Kenfigure Diagram uses a separate login from Benchling. Therefore, you can independently control who has access to the diagram visualization and exploration.
+Read-only and Admin (to save layouts, groupings, schema lint suppressions) roles are supported. A user does not need a Benchling login to use Kenfigure Diagram
+except for the Benchling AI chat interface that is made available inside Kenfigure Diagram.
+
+The Kenfigure Diagram application does not need access to Benchling for nearly all features.
+However, a few specific features pull live data from your Benchling tenant and need additional read access. If that access isn't available, only the affected feature is disabled; the rest of Kenfigure Diagram continues to work normally.
 
 **Features that require read access to registry data:**
 
 - **Entity counts** — Shows the number of entities of each schema type in the diagram
-- **Open in Benchling search** — Clicking a schema opens a filtered search in your Benchling tenant
-- **Open schema editor** — Clicking a schema opens the schema configuration view in Benchling's admin settings
-
-**Features that require the ability to read the Benchling user list:**
-
-- **AI agent window (Prompt Builder)** — AI operations run as a specific Benchling user, so the app needs to read the user list to let you choose which user to run as
+- **Open in Benchling search** — Clicking a displayed schema count opens a filtered search in your Benchling tenant
+- **Open schema editor** — Clicking a schema menu option opens the schema configuration view in Benchling's admin settings
 
 ---
 
@@ -66,6 +65,7 @@ Kenfigure Diagram works for all users with Organization membership — no additi
 
 ### Standard installation
 
+TODO-Ken: start snip. Replace this with new process once Public is enabled. Probably just include the URL pattern
 To get started, email [info@go2.software](mailto:info@go2.software) and include:
 
 - Your Benchling tenant URL (e.g., `https://yourcompany.benchling.com`)
@@ -73,23 +73,18 @@ To get started, email [info@go2.software](mailto:info@go2.software) and include:
 - Whether your tenant uses an IP allowlist for apps (if so, let us know and we'll provide what you need)
 
 We'll reply with an install URL.
+TODO-Ken: end snip
 
 Once you have your install URL:
 
 1. Open the URL while logged into your Benchling tenant. You'll see the app installation screen.
-
-   *[Screenshot: App installation screen showing the Install button]*
-
+  *[Screenshot: App installation screen showing the Install button]*
 2. Click **Install**.
-
 3. **Before activating**, add the app to your Organization — this step must be done first or the canvas will not function:
-   - Go to **Tenant Admin** > select your Organization > **Apps** > search for "Kenfigure Tool" > **Add App**
-
+  - Go to **Tenant Admin** > select your Organization > **Apps** > search for "Kenfigure Tool" > **Add App**
    *[Screenshot: Adding Kenfigure Tool to an Organization]*
-
 4. Return to the app screen (Connections > Apps > Kenfigure Tool if you navigated away) and click **Activate**.
-
-   *[Screenshot: Activated app ready for use]*
+  *[Screenshot: Activated app ready for use]*
 
 The app is now installed and ready to use.
 
@@ -115,9 +110,7 @@ Because each new Validated Cloud version is a fresh installation, upgrading invo
 2. Add the app to your Organization
 3. Re-apply your **Advanced Settings** configuration
 4. Re-enter your **Git Access Token**
-
-   You can't read the old token back from the previous installation, so have it ready in a password manager before you start. If you don't have it, generate a new one from your git provider and update whatever systems reference it.
-
+  You can't read the old token back from the previous installation, so have it ready in a password manager before you start. If you don't have it, generate a new one from your git provider and update whatever systems reference it.
 5. Archive the old app version in Benchling
 
 ---
@@ -138,12 +131,14 @@ When Advanced Settings is absent or contains invalid JSON, the git buttons on th
 
 The configuration uses the following fields inside a `git` block:
 
-| Field | Required | Default | Description |
-|---|---|---|---|
-| `repo_url` | Yes | — | The HTTPS URL of your git repository. SSH URLs are not supported. |
-| `path` | No | *(repo root)* | A subfolder within the repository where your Kenfigure files live. |
-| `branch` | No | `main` | The branch to read from and write to. |
-| `write_strategy` | No | `direct` | How exports are written back to the repo: `direct` commits to the branch immediately; `branch_pr` creates a new branch and opens a pull request for review. GitHub and GitLab only for `branch_pr`. |
+
+| Field            | Required | Default       | Description                                                                                                                                                                                         |
+| ---------------- | -------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `repo_url`       | Yes      | —             | The HTTPS URL of your git repository. SSH URLs are not supported.                                                                                                                                   |
+| `path`           | No       | *(repo root)* | A subfolder within the repository where your Kenfigure files live.                                                                                                                                  |
+| `branch`         | No       | `main`        | The branch to read from and write to.                                                                                                                                                               |
+| `write_strategy` | No       | `direct`      | How exports are written back to the repo: `direct` commits to the branch immediately; `branch_pr` creates a new branch and opens a pull request for review. GitHub and GitLab only for `branch_pr`. |
+
 
 **Minimal example** — uses the root of the repository, default branch:
 
@@ -180,7 +175,8 @@ The configuration uses the following fields inside a `git` block:
 }
 ```
 
-With `branch_pr`, each export creates a new branch and opens a pull request targeting your configured branch. This lets someone review the changes before merging. If nothing changed since the last export, the app detects this and skips creating a branch or pull request.
+With `branch_pr`, each export creates a new branch and opens a pull request targeting your configured branch. This lets someone review the changes before merging. If nothing changed since the last export, the app detects this and skips creating a branch or pull request. Reviewing a pull request is an excellent way to review changes to the Benchling environment since the last export
+or to verify that nothing has changed.
 
 ### Git Access Token
 
@@ -192,13 +188,19 @@ When this item isn't set, the git buttons appear on the canvas but are disabled 
 
 The permissions your token needs depend on what you want to do:
 
-| Operation | Permissions needed |
-|---|---|
-| Import from Git | Contents: Read, Metadata: Read |
-| Export to Git (direct commit) | Contents: Read + Write, Metadata: Read |
-| Export to Git (pull request) | Contents: Read + Write, Metadata: Read, Pull requests: Read + Write |
+
+| Operation                     | Permissions needed                                                  |
+| ----------------------------- | ------------------------------------------------------------------- |
+| Import from Git               | Contents: Read, Metadata: Read                                      |
+| Export to Git (direct commit) | Contents: Read + Write, Metadata: Read                              |
+| Export to Git (pull request)  | Contents: Read + Write, Metadata: Read, Pull requests: Read + Write |
+
 
 #### Generating a token
+
+The following provides convenience guides for generating git access tokens.
+The specific menu structure is subject to change. Check your git provider's
+documentation for definitive instructions.
 
 **GitHub — fine-grained personal access token:**
 
@@ -211,11 +213,29 @@ The permissions your token needs depend on what you want to do:
 
 **GitLab:**
 
-Create a project access token or a personal access token with the `api` scope. The `api` scope covers all of the above operations.
+1. Navigate to your project and go to **Settings** > **Access Tokens**
+2. Click **Add a new token**
+3. Give it a name and set an expiration
+4. Select the **read_repository** scope (and **write_repository** if you'll be exporting to Git)
+5. Click **Create project access token** — copy the value immediately, as you won't be able to see it again
+
+**Bitbucket:**
+
+Bitbucket uses "App passwords" for git access over HTTPS.
+
+1. Log in to Bitbucket, click your avatar in the bottom-left corner, and select **Personal settings**
+2. In the left sidebar, click **App passwords** (under Security)
+3. Click **Create app password**
+4. Give it a label
+5. Under **Repositories**, select **Read** (and **Write** if you'll be exporting to Git)
+6. Click **Create** — copy the value immediately, as you won't be able to see it again
+
+When using an App password, your git repository URL must include your Bitbucket username
+(e.g., `https://yourusername@bitbucket.org/yourworkspace/yourrepo.git`).
 
 #### Entering your token
 
-Go to **CONFIGURATION** > **Git Access Token** > paste your token value > save.
+Go to **CONFIGURATION** > **Git Access Token** > paste your token value > Submit.
 
 ---
 
@@ -223,7 +243,7 @@ Go to **CONFIGURATION** > **Git Access Token** > paste your token value > save.
 
 ### Home page
 
-Open the app via **Connections** (the plug icon in the Benchling navigation bar) > **Apps** > **Kenfigure Tool**.
+Open the app via **Connections** (the icon that looks like a folder with a recycling symbol at the bottom of the Benchling navigation bar) > **Apps** > **Kenfigure Tool**.
 
 *[Screenshot: Connections icon location in the Benchling navigation bar]*
 
@@ -231,7 +251,7 @@ The Home page has four tabs:
 
 - **GENERAL** — The main conversion canvas. This is identical to the canvas you get when inserting Kenfigure Tool into a Notebook entry — use whichever is more convenient.
 - **CONFIGURATION** — Where a Tenant Admin sets up Advanced Settings and the Git Access Token.
-- **ACCESS** — Manage which users or teams can use the app.
+- **ACCESS** — Shows the access granted to the app
 - **ACTIVITY** — The conversion activity log (see [Activity Log](#activity-log)).
 
 *[Screenshot: App Home page showing the four tabs: GENERAL, CONFIGURATION, ACCESS, ACTIVITY]*
@@ -247,13 +267,13 @@ The canvas that appears is identical to the GENERAL tab on the Home page.
 
 ### Canvas layout
 
-The canvas has two main sections stacked vertically, plus a footer.
+The canvas has an Export section, Import section, and some useful references at the bottom.
 
 *[Screenshot: Full canvas showing both the Export and Import sections and the footer]*
 
 **Export from Benchling** (top section)
 
-Upload a `.dat` file from Benchling's Configuration Migration, then choose where to send the converted output:
+Upload a `.dat` file exported from Benchling using the Configuration Migration tool, then choose where to send the converted output:
 
 - **Export to File** — converts and gives you a downloadable `.zip` file
 - **Export to Git** — converts and writes directly to your git repository
@@ -262,12 +282,12 @@ Upload a `.dat` file from Benchling's Configuration Migration, then choose where
 
 Provide Kenfigure files and convert them back to a Benchling-ready file:
 
-- Upload a `.zip` file and click **Import from File** — delivers a downloadable `.dat` file
-- Click **Import from Git** — no file upload needed; the app fetches files from your repository
+- **Import from File** — upload a `.zip` file of Kenfigure files; converts and delivers a downloadable `.dat` file
+- **Import from Git** — no file upload needed; the app fetches files from your repository and delivers a downloadable `.dat` file
 
 The git buttons appear in both sections. If git is not configured or the access token is missing, they are present but grayed out, with a note explaining why.
 
-Below the Import section you'll find links to **Open Kenfigure Diagram** (if your tenant is provisioned) and **Open Git repository** (if git is configured).
+Below the Import section you'll find links to **Open Kenfigure Diagram** and **Open Git repository** (if git is configured).
 
 The footer contains a link to this User Guide, a link to Kenfigure.com, a version timestamp, and a **Reset** button.
 
@@ -278,44 +298,45 @@ The footer contains a link to this User Guide, a link to Kenfigure.com, a versio
 Before using Kenfigure Tool, export your Benchling configuration using the Configuration Migration tool:
 
 1. In Benchling, go to **Settings** > **Configuration Migration**
-2. Select the Organization — or the specific items — you want to export
-3. Click **Export**. Benchling generates and downloads a `.dat` file to your computer.
+2. Select the Organization (if you have more than one)
+3. Select "Migrate entire org" or "Select items to migrate". We recommend that you use "Select items to migrate" and then select all schemas and dropdowns (see tip below)
+4. Click **Export**. Benchling generates and downloads a `.dat` file to your computer.
 
-   Tip: you don't need to include Workflows or Templates. Kenfigure doesn't support those yet, and including them — especially Templates — can make the file very large.
+Tip: you don't need to include Workflows or Templates. Kenfigure doesn't support those yet, and including them — especially Templates — can make the file very large and will slow things down.
 
 *[Screenshot: Configuration Migration export screen in Benchling]*
 
-#### Step 2 — Upload the .dat file to the canvas
+#### Step 2 — Upload the .dat file to the Kenfigure Tool canvas
 
-In the **Export from Benchling** section at the top of the canvas, click the upload area and select your `.dat` file.
+In the **Export from Benchling** section at the top of the canvas, click the "Upload file" and select your `.dat` file.
 
 *[Screenshot: Export section with a .dat file uploaded, before clicking a button]*
 
 #### Step 3a — Export to File
 
-Click **Export to File**. The status area will briefly show a "Converting…" message, then after a few seconds to about a minute a download link will appear.
+Click **Export to File**. This button converts the uploaded file to Kenfigure format and outputs that as a zipped file.
+The status area will briefly show a "Converting…" message, then after a few seconds to about a minute a download link will appear.
 
 Click the link to download the `.zip` file.
 
 *[Screenshot: Export section showing the download link after a successful Export to File]*
 
 The `.zip` contains your Kenfigure files organized by schema type. It also includes a file called `schema_lint_errors.log`, which contains style suggestions based on Kenfigure's schema design guidelines. These are optional recommendations — review them at your discretion and act on whatever makes sense for your team.
+(Kenfigure Diagram allows you to view your schema lint warnings interactively and in context and provides a means to suppress individual warnings.)
 
 #### Step 3b — Export to Git
 
-Click **Export to Git**. The app fetches your configured repository, runs the conversion, and writes the results back.
+Click **Export to Git**. This button converts the uploaded file to Kenfigure format and sends the resulting files directly to your configured git repository.
 
-- With the **direct** write strategy, changes are committed directly to your configured branch. A link to the repository appears in the status area when it's done.
+- With the **direct** write strategy (default), changes are committed directly to your configured branch. A link to the repository appears in the status area when it's done.
+- With the **branch_pr** (branch and pull request) strategy, a new branch is created and a pull request is opened targeting your configured branch.
+  A link to the pull request appears in the status area.
 
-- With the **pull request** strategy, a new branch is created and a pull request is opened targeting your configured branch. A link to the pull request appears in the status area.
-
-  *[Screenshot: Export section showing the "Open pull request" link after a successful Export to Git with branch_pr]*
-
-If nothing in your configuration changed since the last export, no commit or pull request is created and the status area reports "no changes detected."
+*[Screenshot: Export section showing the "Open pull request" link after a successful Export to Git with branch_pr]*
 
 ### Import workflow: Kenfigure → Benchling
 
-> **Note:** Import is a licensed feature. If the Import buttons are disabled, contact [info@go2.software](mailto:info@go2.software).
+> **Note:** Import is a premium feature. If the Import buttons are disabled, contact [info@go2.software](mailto:info@go2.software) to get it enabled for your tenant.
 
 #### Option A — Import from File
 
@@ -328,7 +349,7 @@ If nothing in your configuration changed since the last export, no commit or pul
 No file upload is needed.
 
 1. Click **Import from Git**
-2. The app fetches the Kenfigure files from your configured repository and converts them
+2. The app fetches the Kenfigure files from your configured repository and converts them to Benchling format
 3. A download link appears — click it to download the `.dat` file
 
 *[Screenshot: Import section showing the download link after a successful Import from Git]*
@@ -343,9 +364,10 @@ Once you have a `.dat` file from either option above:
 
 ### Status messages and timing
 
-Each section — Export and Import — has its own status area below the buttons. They update independently, so a previous result in one section doesn't interfere with what you're doing in the other.
+Each section — Export and Import — has its own status area below the buttons.
 
-After clicking a button, it usually takes a few seconds before the status updates. Benchling queues requests before dispatching them to Kenfigure Tool, which causes this brief delay — it's normal and not a sign anything is wrong.
+After clicking a button, it usually takes a few seconds before the status clears the old status and
+provides its first update.
 
 Conversions themselves can take from a few seconds up to about a minute, depending on the size and complexity of your configuration.
 
@@ -383,13 +405,15 @@ Contact [info@go2.software](mailto:info@go2.software) to learn more or to get Ke
 
 ## Licensing
 
-| Feature | Availability |
-|---|---|
-| Export to File | Free for all users |
-| Export to Git | Contact info@go2.software |
-| Import from File | Licensed — contact info@go2.software |
-| Import from Git | Licensed — contact info@go2.software |
-| Kenfigure Diagram | Licensed — contact info@go2.software |
+
+| Feature           | Availability                                                     |
+| ----------------- | ---------------------------------------------------------------- |
+| Export to File    | Free for all users                                                       |
+| Export to Git     | Contact [info@go2.software](mailto:info@go2.software)                    |
+| Import from File  | Premium — contact [info@go2.software](mailto:info@go2.software) to enable |
+| Import from Git   | Premium — contact [info@go2.software](mailto:info@go2.software) to enable |
+| Kenfigure Diagram | Premium — contact [info@go2.software](mailto:info@go2.software) to enable |
+
 
 ---
 
@@ -439,3 +463,14 @@ The conversion failed. Download the `.log` file and review it for details. Commo
 **Limitation of liability:** The developers and providers of this tool are not liable for any damages, losses, or issues arising from its use, including but not limited to data loss or incorrect configurations.
 
 **User responsibility:** Users are responsible for validating exported and imported configurations and for ensuring compliance with their organization's policies and procedures.
+
+---
+
+## Trademark and Copyright
+
+**Kenfigure™** and **Kenfiguration™** are trademarks of Go2 Software LLC.
+Use of the names "Kenfigure" or "Kenfiguration" in derivative projects or commercial products is not permitted without permission.
+
+Benchling is a trademark of Benchling, Inc.
+
+© 2026 Go2 Software LLC. All rights reserved.
