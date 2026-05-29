@@ -11,7 +11,7 @@ Kenfigure format is a human-readable text representation of your Benchling schem
 **What you can do with Kenfigure Tool:**
 
 - **Export your Benchling configuration** — Convert a Configuration Migration export file from Benchling into Kenfigure format. Use this to create an initial snapshot in your git repository, or to detect what has changed since your last export.
-- **Import to Benchling** — Convert Kenfigure files back into a Configuration Migration import file, which you can then apply to any Benchling tenant. *(Licensed feature — see [Licensing](#licensing).)*
+- **Import to Benchling** — Convert Kenfigure files back into a Configuration Migration import file, which you can then apply to any Benchling tenant. *(Premium feature — see [Licensing](#licensing).)*
 - **Connect directly to your git repository** — In addition to downloading and managing files manually, Kenfigure Tool can also read from and write to your git repository. Exports can be committed directly to a branch, or submitted as a "pull request" (a proposed change ready for review) before being merged.
 
 Every export you run also feeds [Kenfigure Diagram](#kenfigure-diagram), a companion product that renders your configuration as an interactive schema diagram.
@@ -437,10 +437,12 @@ The Git Access Token hasn't been set. Open the CONFIGURATION tab and enter your 
 Your token doesn't have access to the target repository. Add the repository to your fine-grained PAT's repository access list and try again. Note that this error can appear even for read-only operations — GitHub's error message is misleading in that case.
 
 **The canvas shows "Converting…" and never updates**
-Wait up to about 30 seconds — a brief delay is normal while Benchling dispatches the request. If the status still hasn't updated, click the **ellipsis (⋯) menu** in the canvas toolbar and select **Reset Canvas**, then check the ACTIVITY tab for error details.
+Wait up to about a minute (longer for very complex configurations). If the status still hasn't updated, click the **ellipsis (⋯) menu** in the canvas toolbar and select **Reset Canvas**, then check the ACTIVITY tab for error details.
 
 **The conversion produced a .log file instead of a .zip or .dat**
-The conversion failed. Download the `.log` file and review it for details. Common causes include a malformed `.dat` file or a schema validation error in your Kenfigure files. If the error isn't clear, send the log to [info@go2.software](mailto:info@go2.software) and we'll help.
+The conversion failed. Download the `.log` file and review it for details. Common causes include a schema validation error in your Kenfigure files.
+It's helpful to configure your IDE with the Kenfigure JSON schema so that your IDE informs you of syntax errors. See [kenfigure.com](https://kenfigure.com) for details.
+If the error isn't clear, send the log to [info@go2.software](mailto:info@go2.software) and we'll help.
 
 ---
 
