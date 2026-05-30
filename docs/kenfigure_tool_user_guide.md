@@ -410,8 +410,8 @@ Contact [info@go2.software](mailto:info@go2.software) to learn more or to get Ke
 
 | Feature           | Availability                                                     |
 | ----------------- | ---------------------------------------------------------------- |
-| Export to File    | Free for all users                                                       |
-| Export to Git     | Contact [info@go2.software](mailto:info@go2.software)                    |
+| Export to File    | Free for all users                                               |
+| Export to Git     | Free for all users                                               |
 | Import from File  | Premium — contact [info@go2.software](mailto:info@go2.software) to enable |
 | Import from Git   | Premium — contact [info@go2.software](mailto:info@go2.software) to enable |
 | Kenfigure Diagram | Premium — contact [info@go2.software](mailto:info@go2.software) to enable |
