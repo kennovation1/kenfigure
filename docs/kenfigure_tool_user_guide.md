@@ -78,13 +78,13 @@ TODO-Ken: end snip
 Once you have your install URL:
 
 1. Open the URL while logged into your Benchling tenant. You'll see the app installation screen.
-  *[Screenshot: App installation screen showing the Install button]*
+  *TODO[Screenshot: App installation screen showing the Install button]*
 2. Click **Install**.
 3. **Before activating**, add the app to your Organization — this step must be done first or the canvas will not function:
   - Go to **Tenant Admin** > select your Organization > **Apps** > search for "Kenfigure Tool" > **Add App**
-   *[Screenshot: Adding Kenfigure Tool to an Organization]*
+   ![Screenshot: Adding Kenfigure Tool to an Organization](images/adding_app_to_org.png)
 4. Return to the app screen (Connections > Apps > Kenfigure Tool if you navigated away) and click **Activate**.
-  *[Screenshot: Activated app ready for use]*
+  *TODO[Screenshot: Activated app ready for use]*
 
 The app is now installed and ready to use.
 
@@ -121,7 +121,7 @@ Kenfigure Tool configuration is managed by a Tenant Admin via the **CONFIGURATIO
 
 There are two configuration items: **Advanced Settings**, which controls git integration, and **Git Access Token**, which provides the credential for git operations. Both are needed only if you're using git features — file-based exports and imports work with no configuration at all.
 
-*[Screenshot: The CONFIGURATION tab showing the Advanced Settings and Git Access Token fields]*
+![Screenshot: The CONFIGURATION tab showing the Advanced Settings and Git Access Token fields](images/configuration.png)
 
 ### Advanced Settings
 
@@ -245,7 +245,7 @@ Go to **CONFIGURATION** > **Git Access Token** > paste your token value > Submit
 
 Open the app via **Connections** (the icon that looks like a folder with a recycling symbol at the bottom of the Benchling navigation bar) > **Apps** > **Kenfigure Tool**.
 
-*[Screenshot: Connections icon location in the Benchling navigation bar]*
+![Screenshot: Connections icon location in the Benchling navigation bar](images/navbar_connections.png)
 
 The Home page has four tabs:
 
@@ -254,7 +254,7 @@ The Home page has four tabs:
 - **ACCESS** — Shows the access granted to the app
 - **ACTIVITY** — The conversion activity log (see [Activity Log](#activity-log)).
 
-*[Screenshot: App Home page showing the four tabs: GENERAL, CONFIGURATION, ACCESS, ACTIVITY]*
+![Screenshot: App Home page showing the four tabs: GENERAL, CONFIGURATION, ACCESS, ACTIVITY](images/tabs.png)
 
 ### Inserting the canvas into a Notebook entry
 
@@ -269,7 +269,7 @@ The canvas that appears is identical to the GENERAL tab on the Home page.
 
 The canvas has an Export section, Import section, and some useful references at the bottom.
 
-*[Screenshot: Full canvas showing both the Export and Import sections and the footer]*
+![Screenshot: Full canvas showing both the Export and Import sections and the footer](images/full_screen.png)
 
 **Export from Benchling** (top section)
 
@@ -299,18 +299,18 @@ Before using Kenfigure Tool, export your Benchling configuration using the Confi
 
 1. In Benchling, go to **Settings** > **Configuration Migration**
 2. Select the Organization (if you have more than one)
-3. Select "Migrate entire org" or "Select items to migrate". We recommend that you use "Select items to migrate" and then select all schemas and dropdowns (see tip below)
+3. Select "Select items to migrate" or "Migrate entire org". We recommend that you use "Select items to migrate" and then select all schemas and dropdowns (see tip below)
 4. Click **Export**. Benchling generates and downloads a `.dat` file to your computer.
 
 Tip: you don't need to include Workflows or Templates. Kenfigure doesn't support those yet, and including them — especially Templates — can make the file very large and will slow things down.
 
-*[Screenshot: Configuration Migration export screen in Benchling]*
+![Screenshot: Configuration Migration export screen in Benchling](images/config_migration_export.png)
 
 #### Step 2 — Upload the .dat file to the Kenfigure Tool canvas
 
 In the **Export from Benchling** section at the top of the canvas, click the "Upload file" and select your `.dat` file.
 
-*[Screenshot: Export section with a .dat file uploaded, before clicking a button]*
+![Screenshot: Export section with a .dat file uploaded, before clicking a button](images/export_uploaded.png)
 
 #### Step 3a — Export to File
 
@@ -319,7 +319,7 @@ The status area will briefly show a "Converting…" message, then after a few se
 
 Click the link to download the `.zip` file.
 
-*[Screenshot: Export section showing the download link after a successful Export to File]*
+![Screenshot: Export section showing the download link after a successful Export to File](images/export_zip.png)
 
 The `.zip` contains your Kenfigure files organized by schema type. It also includes a file called `schema_lint_errors.log`, which contains style suggestions based on Kenfigure's schema design guidelines. These are optional recommendations — review them at your discretion and act on whatever makes sense for your team.
 (Kenfigure Diagram allows you to view your schema lint warnings interactively and in context and provides a means to suppress individual warnings.)
@@ -332,7 +332,7 @@ Click **Export to Git**. This button converts the uploaded file to Kenfigure for
 - With the **branch_pr** (branch and pull request) strategy, a new branch is created and a pull request is opened targeting your configured branch.
   A link to the pull request appears in the status area.
 
-*[Screenshot: Export section showing the "Open pull request" link after a successful Export to Git with branch_pr]*
+![Screenshot: Export section showing the "Open pull request" link after a successful Export to Git with branch_pr](images/export_pr.png)
 
 ### Import workflow: Kenfigure → Benchling
 
@@ -352,7 +352,7 @@ No file upload is needed.
 2. The app fetches the Kenfigure files from your configured repository and converts them to Benchling format
 3. A download link appears — click it to download the `.dat` file
 
-*[Screenshot: Import section showing the download link after a successful Import from Git]*
+![Screenshot: Import section showing the download link after a successful Import from Git](images/import_git.png)
 
 #### Applying the .dat file to Benchling
 
@@ -389,7 +389,9 @@ Each entry shows the operation name, timestamp, and whether it succeeded or fail
 
 It takes a few seconds after opening the ACTIVITY tab for the most recent entry to appear.
 
-*[Screenshot: Activity log showing a few entries, with one expanded to show detail messages]*
+The log messages in an expanded session are ordered with the most recent at the top.
+
+![Screenshot: Activity log showing a few entries, with one expanded to show detail messages](images/activity.png)
 
 ---
 
