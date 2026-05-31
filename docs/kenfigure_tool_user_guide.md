@@ -46,9 +46,9 @@ Note: Bitbucket is supported for most git operations, but not for the pull reque
 
 ### Kenfigure Diagram feature access
 
-Kenfigure Diagram uses a separate login from Benchling. Therefore, you can independently control who has access to the diagram visualization and exploration.
-Read-only and Admin (to save layouts, groupings, schema lint suppressions) roles are supported. A user does not need a Benchling login to use Kenfigure Diagram
-except for the Benchling AI chat interface that is made available inside Kenfigure Diagram.
+Kenfigure Diagram requires a separate login from Benchling. Access is provisioned per-tenant by Go2 Software — contact [info@go2.software](mailto:info@go2.software) to get users added.
+
+Two roles are supported: **Read-only** (view diagrams, explore, and search) and **Editor** (also save layouts, groupings, and schema lint suppressions). A user does not need a Benchling login to use Kenfigure Diagram except for the Benchling AI chat interface inside Prompt Builder (which requires a Benchling OAuth connection).
 
 The Kenfigure Diagram application does not need access to Benchling for nearly all features.
 However, a few specific features pull live data from your Benchling tenant and need additional read access. If that access isn't available, only the affected feature is disabled; the rest of Kenfigure Diagram continues to work normally.
@@ -64,16 +64,6 @@ However, a few specific features pull live data from your Benchling tenant and n
 ## Installation
 
 ### Standard installation
-
-TODO-Ken: start snip. Replace this with new process once Public is enabled. Probably just include the URL pattern
-To get started, email [info@go2.software](mailto:info@go2.software) and include:
-
-- Your Benchling tenant URL (e.g., `https://yourcompany.benchling.com`)
-- Your name and company name
-- Whether your tenant uses an IP allowlist for apps (if so, let us know and we'll provide what you need)
-
-We'll reply with an install URL.
-TODO-Ken: end snip
 
 Once you have your install URL:
 
@@ -407,14 +397,17 @@ Contact [info@go2.software](mailto:info@go2.software) to learn more or to get Ke
 
 ## Licensing
 
+| Feature                   | Availability |
+| ------------------------- | ------------ |
+| Export to File            | Free for all users |
+| Export to Git             | Free for all users |
+| Import from File          | Premium — see [feature_enablement.html](https://kenfigure.com/feature_enablement.html) |
+| Import from Git           | Premium — see [feature_enablement.html](https://kenfigure.com/feature_enablement.html) |
+| Kenfigure Diagram         | Premium — see [feature_enablement.html](https://kenfigure.com/feature_enablement.html) |
 
-| Feature           | Availability                                                     |
-| ----------------- | ---------------------------------------------------------------- |
-| Export to File    | Free for all users                                               |
-| Export to Git     | Free for all users                                               |
-| Import from File  | Premium — contact [info@go2.software](mailto:info@go2.software) to enable |
-| Import from Git   | Premium — contact [info@go2.software](mailto:info@go2.software) to enable |
-| Kenfigure Diagram | Premium — contact [info@go2.software](mailto:info@go2.software) to enable |
+When a premium feature is not licensed for your tenant, the relevant button in the canvas is disabled and shows a link to the [feature enablement page](https://kenfigure.com/feature_enablement.html) with instructions on how to request access. There is no error message — the canvas simply presents the features that are available.
+
+If the Import buttons are visible but disabled, your tenant has not been provisioned for Import mode. See [feature_enablement.html](https://kenfigure.com/feature_enablement.html) to request access.
 
 
 ---
