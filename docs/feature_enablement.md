@@ -13,6 +13,7 @@ Importing back to Benchling and the use of the powerful Kenfigure Diagram applic
 are part of the premium upgrade to Kenfigure Tool.
 Please ask your Benchling administrator to contact us about upgrading to the premium
 version of Kenfigure Tool. 
+
 ---
 
 ## Available Features in the upgrade
