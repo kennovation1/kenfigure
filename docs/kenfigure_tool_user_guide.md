@@ -65,38 +65,58 @@ However, a few specific features pull live data from your Benchling tenant and n
 
 ### Standard installation
 
-Once you have your install URL:
+(See [Validated Cloud installation](#validated-cloud-installation) for Validated Cloud tenants.)
 
-1. Open the URL while logged into your Benchling tenant. You'll see the app installation screen.
-  *TODO[Screenshot: App installation screen showing the Install button]*
-2. Click **Install**.
-3. **Before activating**, add the app to your Organization — this step must be done first or the canvas will not function:
+1. Make sure that you are logged into your Benchling tenant.
+2. Browse to https://YOUR-TENANT.benchling.com/app-catalog/apps/appdef_xoILIM9FJI/install
+3. You'll see the app installation screen.
+  ![Screenshot: App installation screen showing the Install button](images/install.png)
+4. Click **Install**.
+5. Hang on! Do NOT click **Create** yet.
+6. **Before creating**, add the app to your Organization — this step must be done first or the canvas will not function:
   - Go to **Tenant Admin** > select your Organization > **Apps** > search for "Kenfigure Tool" > **Add App**
    ![Screenshot: Adding Kenfigure Tool to an Organization](images/adding_app_to_org.png)
-4. Return to the app screen (Connections > Apps > Kenfigure Tool if you navigated away) and click **Activate**.
-  *TODO[Screenshot: Activated app ready for use]*
+7. Return to the app screen (Connections > Apps > Kenfigure Tool if you navigated away) and click **Create**.
+  ![Screenshot: App screen showing Create button](images/create.png)
 
-The app is now installed and ready to use.
+The app is now installed and ready to use!
+
+![Screenshot: App home page after installation is completed](images/installed_default_entitlements.png)
+
+The **Export to git** button will be disabled until you configure a git repository (see [Configuration](#configuration)).
+
+Contact [info@go2.sofware](mailto:info@go2.software) to upgrade to activate the **Import** buttons.
+
+Repeat for each tenant on which you'd like to install Kenfigure Tool.
 
 ### Validated Cloud installation
 
-For Benchling Validated Cloud tenants, the standard install URL process isn't available. Installation is done using the app manifest and requires working directly with Go2 Software. Email [info@go2.software](mailto:info@go2.software) to get started.
-
-Keep in mind that on Validated Cloud there is no in-place upgrade path — each new version of the app is a fresh installation. See [Upgrading: Validated Cloud](#validated-cloud) below.
+For Benchling Validated Cloud tenants, the standard install URL process isn't available. Installation is done using an app manifest file that you can obtain from Go2 Software. Email [info@go2.software](mailto:info@go2.software) to get started.
 
 ---
 
 ## Upgrading
 
+Upgrading a canvas app only refers to changing the Benchling configuration and metadata.
+Therefore an app version upgrade might change what's available on the Configuration tab,
+what events Benchling sends to the Kenfigure Tool service, or the app name or description.
+An upgrade could also make available new canvases to insert into notebook entries.
+Functional changes are independent of the canvas app version and do not require an upgrade
+(like most Software-as-a-Service services).
+
 ### Standard upgrade
 
-When a new version of Kenfigure Tool is available, we'll send you an upgrade URL. Open it in your Benchling tenant and follow the prompts to upgrade.
+If an app version upgrade is required (not a common event) you simply open the URL
+that you used to install the app. Instead of an **Install** button, you'll see
+an **Upgrade** button. You will not need to add the app the the organization since that only
+needs to be done once. If an upgrade is available, we'll communicate that through
+the email.
 
-### Validated Cloud {#validated-cloud}
+### Validated Cloud
 
 Because each new Validated Cloud version is a fresh installation, upgrading involves:
 
-1. Install the new version from the updated manifest (provided by Go2 Software)
+1. Install the new version from the updated manifest file (provided by Go2 Software)
 2. Add the app to your Organization
 3. Re-apply your **Advanced Settings** configuration
 4. Re-enter your **Git Access Token**
