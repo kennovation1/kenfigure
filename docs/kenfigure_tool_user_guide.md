@@ -421,13 +421,13 @@ Contact [info@go2.software](mailto:info@go2.software) to learn more or to get Ke
 | ------------------------- | ------------ |
 | Export to File            | Free for all users |
 | Export to Git             | Free for all users |
-| Import from File          | Premium — see [feature_enablement.html](https://kenfigure.com/feature_enablement.html) |
-| Import from Git           | Premium — see [feature_enablement.html](https://kenfigure.com/feature_enablement.html) |
-| Kenfigure Diagram         | Premium — see [feature_enablement.html](https://kenfigure.com/feature_enablement.html) |
+| Import from File          | Premium — see [Feature enablement](https://kenfigure.com/feature_enablement.html) |
+| Import from Git           | Premium — see [Feature enablement](https://kenfigure.com/feature_enablement.html) |
+| Kenfigure Diagram         | Premium — see [Feature enablement](https://kenfigure.com/feature_enablement.html) |
 
 When a premium feature is not licensed for your tenant, the relevant button in the canvas is disabled and shows a link to the [feature enablement page](https://kenfigure.com/feature_enablement.html) with instructions on how to request access. There is no error message — the canvas simply presents the features that are available.
 
-If the Import buttons are visible but disabled, your tenant has not been provisioned for Import mode. See [feature_enablement.html](https://kenfigure.com/feature_enablement.html) to request access.
+If the Import buttons are visible but disabled, your tenant has not been provisioned for Import mode. See [Feature enablement](https://kenfigure.com/feature_enablement.html) to request access.
 
 
 ---
@@ -483,7 +483,7 @@ If the error isn't clear, send the log to [info@go2.software](mailto:info@go2.so
 
 ---
 
-## Trademark and Copyright
+[Back to Kenfigure home](https://kenfigure.com) · [Feature enablement](https://kenfigure.com/feature_enablement.html)
 
 **Kenfigure™** and **Kenfiguration™** are trademarks of Go2 Software LLC.
 Use of the names "Kenfigure" or "Kenfiguration" in derivative projects or commercial products is not permitted without permission.
