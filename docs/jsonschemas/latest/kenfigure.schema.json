@@ -13,6 +13,10 @@
       "description": "Persistence of diagram properties",
       "$ref": "https://kenfigure.com/jsonschemas/latest/fulldiagram.schema.json"
     },
+    "Dashboards": {
+      "description": "Benchling Insights Dashboards and their SQL blocks",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/dashboards.schema.json"
+    },
     "Dropdowns": {
       "description": "Dropdowns and their values",
       "$ref": "https://kenfigure.com/jsonschemas/latest/dropdowns.schema.json"
