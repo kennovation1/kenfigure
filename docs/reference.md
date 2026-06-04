@@ -15,19 +15,22 @@
   - <a id="properties/Diagram/additionalProperties"></a>**Additional properties** *(object)*
     - <a id="properties/Diagram/additionalProperties/properties/X"></a>**`X`** *(integer, required)*: X location coordinate.
     - <a id="properties/Diagram/additionalProperties/properties/Y"></a>**`Y`** *(integer, required)*: Y location coordinate.
-- <a id="properties/Dashboards"></a>**`Dashboards`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Dashboards"></a>**`Dashboards`** *(array)*: © 2026 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
   - <a id="properties/Dashboards/items"></a>**Items** *(object)*: A Benchling Insights Dashboard containing one or more SQL query blocks.
     - <a id="properties/Dashboards/items/properties/Name"></a>**`Name`** *(string, required)*: Dashboard name.
     - <a id="properties/Dashboards/items/properties/Project"></a>**`Project`** *(string)*: Name of the Benchling project this dashboard belongs to.
     - <a id="properties/Dashboards/items/properties/Description"></a>**`Description`** *(string)*: Documentation description for the dashboard.
     - <a id="properties/Dashboards/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the dashboard created during an export operation. This is ignored for import operations.
     - <a id="properties/Dashboards/items/properties/Parameters"></a>**`Parameters`** *(array)*: Dashboard parameters. Not populated by export (not currently exposed by the Benchling API); defined for forward-compatibility. Length must be at least 0.
-      - <a id="properties/Dashboards/items/properties/Parameters/items"></a>**Items** *(object)*: A parameter that can be referenced in the dashboard's SQL queries.
-        - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Name"></a>**`Name`** *(string, required)*: Parameter name as displayed in the dashboard UI.
+      - <a id="properties/Dashboards/items/properties/Parameters/items"></a>**Items** *(object)*: A parameter that can be referenced in the dashboard's SQL queries using the {{param}} placeholder.
+        - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Name"></a>**`Name`** *(string, required)*: Parameter name as displayed in the dashboard UI. This is the value that will be substituted into the SQL query using the {{param}} placeholder.
         - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Type"></a>**`Type`** *(string, required)*: The parameter's type controls which values it accepts and how those values are substituted into the SQL query. Must be one of: "Text", "Number", "Date", "Dropdown", "Entry", "Entity", "Folder", "Project", "Inventory", "Study", "Team", "User", "Workflow task group", or "Workflow task".
-        - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Definition"></a>**`Definition`** *(string)*: Required for Dropdown type: the name of the Benchling dropdown to use as the parameter's source.
+        - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Definition"></a>**`Definition`**: Name of the target object if Type is Dropdown, Entity, Inventory, Study, Workflow task group, or Workflow task.
+          - **Any of**
+            - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: "Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", or "Any inventory".
+            - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Definition/anyOf/1"></a>*string*
         - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Whether the parameter allows multiple values to be selected at once.
-    - <a id="properties/Dashboards/items/properties/Blocks"></a>**`Blocks`** *(array)*: SQL query blocks within the dashboard, in display order. Length must be at least 0.
+    - <a id="properties/Dashboards/items/properties/Blocks"></a>**`Blocks`** *(array)*: SQL query blocks within the dashboard, in display (reading) order. Length must be at least 0.
       - <a id="properties/Dashboards/items/properties/Blocks/items"></a>**Items** *(object)*: A single SQL query block in the dashboard.
         - <a id="properties/Dashboards/items/properties/Blocks/items/properties/Name"></a>**`Name`** *(string, required)*: Block name as displayed in the dashboard UI.
         - <a id="properties/Dashboards/items/properties/Blocks/items/properties/Description"></a>**`Description`** *(string)*: Documentation description for this block.

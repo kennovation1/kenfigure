@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
 	"$id": "https://kenfigure.com/jsonschemas/latest/dashboards.schema.json",
   "title": "Dashboards and their SQL blocks",
-  "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
+  "description": "© 2026 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
   "type": "array",
   "minItems": 0,
   "uniqueItems": true,
@@ -34,12 +34,12 @@
         "minItems": 0,
         "items": {
           "title": "Dashboard parameter",
-          "description": "A parameter that can be referenced in the dashboard's SQL queries.",
+          "description": "A parameter that can be referenced in the dashboard's SQL queries using the {{param}} placeholder.",
           "required": ["Name", "Type"],
           "type": "object",
           "properties": {
             "Name": {
-              "description": "Parameter name as displayed in the dashboard UI.",
+              "description": "Parameter name as displayed in the dashboard UI. This is the value that will be substituted into the SQL query using the {{param}} placeholder.",
               "type": "string"
             },
             "Type": {
@@ -63,8 +63,24 @@
               ]
             },
             "Definition": {
-              "description": "Required for Dropdown type: the name of the Benchling dropdown to use as the parameter's source.",
-              "type": "string"
+              "description": "Name of the target object if Type is Dropdown, Entity, Inventory, Study, Workflow task group, or Workflow task.",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "Any Entity",
+                    "Custom Entity",
+                    "AA Sequence",
+                    "DNA Sequence",
+                    "Molecule",
+                    "Mixture",
+                    "Any inventory"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ]
             },
             "Multi-select": {
               "description": "Whether the parameter allows multiple values to be selected at once.",
@@ -74,7 +90,7 @@
         }
       },
       "Blocks": {
-        "description": "SQL query blocks within the dashboard, in display order.",
+        "description": "SQL query blocks within the dashboard, in display (reading) order.",
         "type": "array",
         "minItems": 0,
         "items": {
