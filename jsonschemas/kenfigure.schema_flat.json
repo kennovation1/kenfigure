@@ -142,24 +142,8 @@
                   ]
                 },
                 "Definition": {
-                  "description": "Name of the target object if Type is Dropdown, Entity, Inventory, Study, Workflow task group, or Workflow task.",
-                  "anyOf": [
-                    {
-                      "type": "string",
-                      "enum": [
-                        "Any Entity",
-                        "Custom Entity",
-                        "AA Sequence",
-                        "DNA Sequence",
-                        "Molecule",
-                        "Mixture",
-                        "Any inventory"
-                      ]
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ]
+                  "description": "Name of the target object if Type is Dropdown, Entity, Inventory, Study, Workflow task group, or Workflow task. Use 'All' to allow all instances of the type.",
+                  "type": "string"
                 },
                 "Multi-select": {
                   "description": "Whether the parameter allows multiple values to be selected at once.",

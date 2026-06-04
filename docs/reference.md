@@ -25,10 +25,7 @@
       - <a id="properties/Dashboards/items/properties/Parameters/items"></a>**Items** *(object)*: A parameter that can be referenced in the dashboard's SQL queries using the {{param}} placeholder.
         - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Name"></a>**`Name`** *(string, required)*: Parameter name as displayed in the dashboard UI. This is the value that will be substituted into the SQL query using the {{param}} placeholder.
         - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Type"></a>**`Type`** *(string, required)*: The parameter's type controls which values it accepts and how those values are substituted into the SQL query. Must be one of: "Text", "Number", "Date", "Dropdown", "Entry", "Entity", "Folder", "Project", "Inventory", "Study", "Team", "User", "Workflow task group", or "Workflow task".
-        - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Definition"></a>**`Definition`**: Name of the target object if Type is Dropdown, Entity, Inventory, Study, Workflow task group, or Workflow task.
-          - **Any of**
-            - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: "Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", or "Any inventory".
-            - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Definition/anyOf/1"></a>*string*
+        - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Definition"></a>**`Definition`** *(string)*: Name of the target object if Type is Dropdown, Entity, Inventory, Study, Workflow task group, or Workflow task. Use 'All' to allow all instances of the type.
         - <a id="properties/Dashboards/items/properties/Parameters/items/properties/Multi-select"></a>**`Multi-select`** *(boolean)*: Whether the parameter allows multiple values to be selected at once.
     - <a id="properties/Dashboards/items/properties/Blocks"></a>**`Blocks`** *(array)*: SQL query blocks within the dashboard, in display (reading) order. Length must be at least 0.
       - <a id="properties/Dashboards/items/properties/Blocks/items"></a>**Items** *(object)*: A single SQL query block in the dashboard.
