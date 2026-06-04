@@ -344,6 +344,47 @@ Click **Export to Git**. This button converts the uploaded file to Kenfigure for
 
 ![Screenshot: Export section showing the "Open pull request" link after a successful Export to Git with branch_pr](images/export_pr.png)
 
+### Export dashboards workflow: Benchling → Kenfigure
+
+This workflow exports all Benchling Insights Dashboards in your tenant directly to Kenfigure format.
+No `.dat` file upload is needed — the app pulls dashboard data from Benchling automatically.
+
+#### Step 1 — Click Export Dashboards to File *or* Export Dashboards to Git
+
+In the **Export from Benchling** section, locate the **Export Dashboards to File** and **Export Dashboards to Git** buttons.
+
+- **Export Dashboards to File**: fetches all dashboards and outputs a `.zip` file for download.
+  Click the download link that appears in the status area when it's done.
+- **Export Dashboards to Git**: fetches all dashboards and commits the resulting files directly to
+  your configured git repository. A link to the repository or pull request appears when done.
+
+#### Output structure
+
+Dashboards are written under a `Dashboards/` directory at the same level as `Entity_schemas/`,
+`Dropdowns/`, etc. Each dashboard gets its own sub-directory named after the dashboard
+(with spaces replaced by underscores). Inside each directory:
+
+- `<Dashboard_Name>.yaml` — dashboard metadata (name, project, description) and block list,
+  with each block's `SQL` key referencing its `.sql` file
+- `<Block_Name>.sql` — one file per SQL block, for easy editing, review, and AI assistance
+
+Example:
+
+```
+Dashboards/
+  Sequence_QC_Summary/
+    Sequence_QC_Summary.yaml
+    Entity_Count_by_Project.sql
+    Failed_QC_Lots.sql
+  Lot_Release_Results/
+    Lot_Release_Results.yaml
+    Lot_Summary.sql
+```
+
+> **Note:** Dashboard Parameters and Chart configuration are defined in the Kenfigure schema
+> for forward-compatibility, but are not populated by export because Benchling does not currently
+> expose those fields via the API. You can add them by hand after export.
+
 ### Import workflow: Kenfigure → Benchling
 
 > **Note:** Import is a premium feature. If the Import buttons are disabled, contact [info@go2.software](mailto:info@go2.software) to get it enabled for your tenant.

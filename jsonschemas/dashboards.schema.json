@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://kenfigure.com/jsonschemas/latest/dashboards.schema.json",
+  "title": "Dashboards and their SQL blocks",
+  "description": "© 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
+  "type": "array",
+  "minItems": 0,
+  "uniqueItems": true,
+  "items": {
+    "title": "Dashboard and its SQL blocks",
+    "description": "A Benchling Insights Dashboard containing one or more SQL query blocks.",
+    "required": ["Name"],
+    "type": "object",
+    "properties": {
+      "Name": {
+        "description": "Dashboard name.",
+        "type": "string"
+      },
+      "Project": {
+        "description": "Name of the Benchling project this dashboard belongs to.",
+        "type": "string"
+      },
+      "Description": {
+        "description": "Documentation description for the dashboard.",
+        "type": "string"
+      },
+      "API ID": {
+        "description": "API ID for the dashboard created during an export operation. This is ignored for import operations.",
+        "type": "string"
+      },
+      "Parameters": {
+        "description": "Dashboard parameters. Not populated by export (not currently exposed by the Benchling API); defined for forward-compatibility.",
+        "type": "array",
+        "minItems": 0,
+        "items": {
+          "title": "Dashboard parameter",
+          "description": "A parameter that can be referenced in the dashboard's SQL queries.",
+          "required": ["Name", "Type"],
+          "type": "object",
+          "properties": {
+            "Name": {
+              "description": "Parameter name as displayed in the dashboard UI.",
+              "type": "string"
+            },
+            "Type": {
+              "description": "The parameter's type controls which values it accepts and how those values are substituted into the SQL query.",
+              "type": "string",
+              "enum": [
+                "Text",
+                "Number",
+                "Date",
+                "Dropdown",
+                "Entry",
+                "Entity",
+                "Folder",
+                "Project",
+                "Inventory",
+                "Study",
+                "Team",
+                "User",
+                "Workflow task group",
+                "Workflow task"
+              ]
+            },
+            "Definition": {
+              "description": "Required for Dropdown type: the name of the Benchling dropdown to use as the parameter's source.",
+              "type": "string"
+            },
+            "Multi-select": {
+              "description": "Whether the parameter allows multiple values to be selected at once.",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "Blocks": {
+        "description": "SQL query blocks within the dashboard, in display order.",
+        "type": "array",
+        "minItems": 0,
+        "items": {
+          "title": "SQL block",
+          "description": "A single SQL query block in the dashboard.",
+          "required": ["Name"],
+          "type": "object",
+          "properties": {
+            "Name": {
+              "description": "Block name as displayed in the dashboard UI.",
+              "type": "string"
+            },
+            "Description": {
+              "description": "Documentation description for this block.",
+              "type": "string"
+            },
+            "SQL": {
+              "description": "The SQL query for this block. May be a filename (e.g. 'Block_1.sql') referencing a file in the same dashboard directory, or an inline SQL string using the YAML pipe ('|') operator. Best practice is to use a separate .sql file.",
+              "type": "string"
+            },
+            "Chart": {
+              "description": "Chart display configuration. Not populated by export (not currently exposed by the Benchling API); defined for forward-compatibility.",
+              "type": "object",
+              "properties": {
+                "Type": {
+                  "description": "The chart type used to display query results.",
+                  "type": "string",
+                  "enum": [
+                    "Table",
+                    "Bar chart",
+                    "Line chart",
+                    "Pie chart",
+                    "Scatter plot",
+                    "Heatmap"
+                  ]
+                },
+                "Parameters": {
+                  "description": "Free-form string describing chart configuration (axes, grouping, colors, etc.). Intentionally unstructured until Benchling exposes chart config in the API.",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

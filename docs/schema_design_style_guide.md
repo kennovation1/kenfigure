@@ -89,5 +89,34 @@ the style for the structure of the Kenfigure YAML files.
 - Display units that use scientific notation should be converted to E Notation for system names. E.g., "PLT (10^9/L)" should be "plt_1e9_l".
   (Note that by default Benchling would convert this example to plt__109l.)
 
+# Dashboards
+
+This section covers naming and organization conventions for Benchling Insights Dashboards managed
+in Kenfigure.
+
+## Dashboard naming
+- Dashboard names should be Title Case and describe what the dashboard surfaces (e.g., "Sequence QC Summary", "Lot Release Results")
+- Names should not include redundant words like "Dashboard" or "Report" unless they are genuinely part of the name
+- Keep names concise — they appear as directory names on disk (spaces become underscores)
+
+## Block naming
+- Block names should be short, descriptive phrases in Title Case (e.g., "Entity Count by Project", "Failed QC Lots")
+- Names should describe the result of the query, not the query mechanism
+
+## SQL files
+- Each block's SQL should live in a separate `.sql` file in the dashboard's directory (not inlined in the YAML). This makes SQL easier to edit in an IDE, diff in git, and hand to an AI coding assistant.
+- The `.sql` file name is derived from the block name with non-word characters replaced by underscores (e.g., block "Entity Count by Project" → `Entity_Count_by_Project.sql`)
+- The YAML `SQL` key for each block should hold the `.sql` filename as a relative reference (e.g., `SQL: Entity_Count_by_Project.sql`)
+- SQL style is outside the scope of this guide; adopt a consistent style within your team
+
+## Chart configuration
+- `Chart.Type` and `Chart.Parameters` are defined in the schema for forward-compatibility but are not populated by export (Benchling does not currently expose chart config via the API)
+- Document chart preferences as free-form text in `Chart.Parameters` if you want to capture intent for future automation
+
+## Parameters
+- Dashboard parameters are defined in the schema for forward-compatibility but are not populated by export (Benchling does not currently expose parameter definitions via the API)
+- If you add parameters by hand, `Type` must be one of the 14 values in the `Parameters.Type` enum (Text, Number, Date, Dropdown, Entry, Entity, Folder, Project, Inventory, Study, Team, User, Workflow task group, Workflow task)
+- `Definition` is required for `Dropdown` type parameters and should be the name of the source dropdown
+
 ---
 © 2026 Go2 Software LLC. All rights reserved.
