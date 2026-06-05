@@ -375,9 +375,11 @@ Run_schemas:
   # contents are not individually documented or validated by the Kenfigure schema.
   # Environment-specific IDs are stripped on export and regenerated on import.
   Input file configurations:  # Omit if there are no input file configurations
-  - ...  # opaque passthrough blob
+  - Passthrough: true  # The rest of this entry is an opaque passthrough blob whose
+      # structure is preserved verbatim from Benchling (env-specific IDs stripped).
+      # It is not individually documented or validated by the Kenfigure schema.
   Output file configurations:  # Omit if there are no output file configurations
-  - ...  # opaque passthrough blob
+  - Passthrough: true  # See Input file configurations note above.
   # Notes on unsupported features:
   # - Connection schema: the association between a run schema and its connection schema (e.g.,
   #   an instrument integration) is stored on the connection schema side, not the run schema.
