@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add Run schema support (Run_schemas). Run schemas support fields of type: Date, Datetime,
+  Decimal, Integer, Long text, Dropdown, Text, Attachment, Entry, Entity, Inventory, JSON,
+  Boolean, Run (links to another run schema). Input and output file configurations are
+  represented as opaque passthrough objects.
+
 ## [1.5.0] - 2026-06-03
 
 - Add support for Insights Dashboards

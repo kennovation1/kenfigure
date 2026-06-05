@@ -53,6 +53,10 @@
       "description": "Result schemas",
       "$ref": "https://kenfigure.com/jsonschemas/latest/result_schemas.schema.json"
     },
+    "Run_schemas": {
+      "description": "Run schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/run_schemas.schema.json"
+    },
     "Feature_flags": {
       "description": "Feature flags",
       "$ref": "https://kenfigure.com/jsonschemas/latest/feature_flags.schema.json"

@@ -340,6 +340,53 @@ Result_schemas:
       # Entry, Entity, Category, Part, Inventory, JSON, Boolean, ft_assay_result_link, Run
 ```
 
+## Run Schemas
+File: Flow Panel Run.yaml
+```yaml
+Run_schemas:
+- Name: Flow Panel Run  # Run schema name
+  Description: Captures results from a flow cytometry panel run
+  System name: flow_panel_run
+  Allow creating new runs: true  # Corresponds to "Allow creating new runs from the notebook"
+    # in the Benchling UI. At least one of this or "Allow inserting runs from inbox" must be true.
+  # Allow inserting runs from inbox: true  # Corresponds to "Allow inserting runs from inbox
+    # in the notebook" in the Benchling UI. Omit when false.
+  Fields:
+  - Name: Sample
+    Tool tip: The sample entity associated with this run
+    Required: true  # By convention we only include the required attribute when it is true
+    System name: sample
+    Type: Entity
+    Definition: Cell Line  # The specific entity schema name. Required for Entity type.
+  - Name: Operator
+    System name: operator
+    Type: Dropdown
+    Definition: Operators  # The dropdown name. Required for Dropdown type.
+  - Name: Prior Run
+    System name: prior_run
+    Type: Run
+    Definition: Flow Panel Run  # The run schema name. Required for Run type.
+      # Use the Run type when a field links to an instance of another (or the same) run schema.
+      # The valid types for run schema fields are
+      # Date, Datetime, Decimal, Integer, Long text, Dropdown, Text, Attachment,
+      # Entry, Entity, Inventory, JSON, Boolean, Run
+  # Input file configurations and Output file configurations are stored as passthrough objects.
+  # Their full structure is preserved from Benchling and round-tripped faithfully, but the
+  # contents are not individually documented or validated by the Kenfigure schema.
+  # Environment-specific IDs are stripped on export and regenerated on import.
+  Input file configurations:  # Omit if there are no input file configurations
+  - ...  # opaque passthrough blob
+  Output file configurations:  # Omit if there are no output file configurations
+  - ...  # opaque passthrough blob
+  # Notes on unsupported features:
+  # - Connection schema: the association between a run schema and its connection schema (e.g.,
+  #   an instrument integration) is stored on the connection schema side, not the run schema.
+  #   It is not exported by Benchling Config Migration and must be (re)set via the Benchling UI
+  #   after deploying a run schema to a new environment.
+  # - Analysis template: similarly, analysis template associations are not part of the run
+  #   schema export and must be configured manually after deployment.
+```
+
 ## Study Schemas
 File: In Vivo Study.yaml
 ```yaml
