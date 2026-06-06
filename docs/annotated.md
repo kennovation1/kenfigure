@@ -347,46 +347,44 @@ Run_schemas:
 - Name: Flow Panel Run  # Run schema name
   Description: Captures results from a flow cytometry panel run
   System name: flow_panel_run
+  # At least one of the following "Notebook preference" flags must be true. Either may be omitted if false.
   Allow creating new runs: true  # Corresponds to "Allow creating new runs from the notebook"
-    # in the Benchling UI. At least one of this or "Allow inserting runs from inbox" must be true.
-  # Allow inserting runs from inbox: true  # Corresponds to "Allow inserting runs from inbox
-    # in the notebook" in the Benchling UI. Omit when false.
+    # in the Benchling UI. 
+  Allow inserting runs from inbox: true  # Corresponds to "Allow inserting runs from inbox in the notebook"
+    # in the Benchling UI.
   Fields:
   - Name: Sample
     Tool tip: The sample entity associated with this run
-    Required: true  # By convention we only include the required attribute when it is true
+    Required: true
     System name: sample
     Type: Entity
-    Definition: Cell Line  # The specific entity schema name. Required for Entity type.
-  - Name: Operator
-    System name: operator
-    Type: Dropdown
-    Definition: Operators  # The dropdown name. Required for Dropdown type.
+    Definition: Cell Line
   - Name: Prior Run
     System name: prior_run
     Type: Run
     Definition: Flow Panel Run  # The run schema name. Required for Run type.
-      # Use the Run type when a field links to an instance of another (or the same) run schema.
-      # The valid types for run schema fields are
+      # The valid types for run schema fields are:
       # Date, Datetime, Decimal, Integer, Long text, Dropdown, Text, Attachment,
       # Entry, Entity, Inventory, JSON, Boolean, Run
+
   # Input file configurations and Output file configurations are stored as passthrough objects.
   # Their full structure is preserved from Benchling and round-tripped faithfully, but the
   # contents are not individually documented or validated by the Kenfigure schema.
-  # Environment-specific IDs are stripped on export and regenerated on import.
   Input file configurations:  # Omit if there are no input file configurations
   - Passthrough: true  # The rest of this entry is an opaque passthrough blob whose
       # structure is preserved verbatim from Benchling (env-specific IDs stripped).
       # It is not individually documented or validated by the Kenfigure schema.
   Output file configurations:  # Omit if there are no output file configurations
   - Passthrough: true  # See Input file configurations note above.
-  # Notes on unsupported features:
-  # - Connection schema: the association between a run schema and its connection schema (e.g.,
-  #   an instrument integration) is stored on the connection schema side, not the run schema.
-  #   It is not exported by Benchling Config Migration and must be (re)set via the Benchling UI
-  #   after deploying a run schema to a new environment.
-  # - Analysis template: similarly, analysis template associations are not part of the run
-  #   schema export and must be configured manually after deployment.
+
+  # Notes on Connection schema and Analysis template fields in the UI.
+  # Even though the settings for the Connection schema and Analysis template values
+  # appear in the edit Run schema UI in Benchling. These attributes are not actually part
+  # of the Run schema and not supported by Configuration Migration. Therefore, you will
+  # need to manually set these values in the UI.
+  # The best practice recommendation is therefore to add a Notify key to guide administrators
+  # to do this manually. For example:
+  Notify: Manually set the Connection schema to "Benchling FileWatcher"
 ```
 
 ## Study Schemas
