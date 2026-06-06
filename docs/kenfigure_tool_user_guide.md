@@ -344,7 +344,7 @@ Click **Export to Git**. This button converts the uploaded file to Kenfigure for
 
 ![Screenshot: Export section showing the "Open pull request" link after a successful Export to Git with branch_pr](images/export_pr.png)
 
-### Export dashboards workflow: Benchling → Kenfigure (COMING SOON)
+### Export dashboards workflow: Benchling → Kenfigure
 
 This workflow exports all Benchling Insights Dashboards in your tenant directly to Kenfigure format.
 No `.dat` file upload is needed — the app pulls dashboard data directly from Benchling.
@@ -355,8 +355,9 @@ In the **Export from Benchling** section, locate the **Export Dashboards to File
 
 - **Export Dashboards to File**: fetches all dashboards and outputs a `.zip` file for download.
   Click the download link that appears in the status area when it's done.
-- **Export Dashboards to Git**: fetches all dashboards and commits the resulting files directly to
-  your configured git repository. A link to the repository or pull request appears when done.
+- **Export Dashboards to Git**: fetches all dashboards and either commits the resulting files directly to
+  your configured git repository or creates a pull requests depending on your git configuration `write_strategy`.
+  A link to the repository or pull request appears when done.
 
 #### Output structure
 

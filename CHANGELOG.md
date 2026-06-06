@@ -7,7 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [Unreleased]
+## [1.6.0]
+
+- Add support for Run schemas.  Input and output file configurations are
+  represented as opaque passthrough objects and not explicitly defined in the JSON schema.
+  To create file configurations, implement in Benchling first and then export to Kenfigure format.
 
 ## [1.5.0] - 2026-06-03
 

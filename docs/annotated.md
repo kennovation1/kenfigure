@@ -340,6 +340,53 @@ Result_schemas:
       # Entry, Entity, Category, Part, Inventory, JSON, Boolean, ft_assay_result_link, Run
 ```
 
+## Run Schemas
+File: Flow Panel Run.yaml
+```yaml
+Run_schemas:
+- Name: Flow Panel Run  # Run schema name
+  Description: Captures results from a flow cytometry panel run
+  System name: flow_panel_run
+  # At least one of the following "Notebook preference" flags must be true. Either may be omitted if false.
+  Allow creating new runs: true  # Corresponds to "Allow creating new runs from the notebook"
+    # in the Benchling UI. 
+  Allow inserting runs from inbox: true  # Corresponds to "Allow inserting runs from inbox in the notebook"
+    # in the Benchling UI.
+  Fields:
+  - Name: Sample
+    Tool tip: The sample entity associated with this run
+    Required: true
+    System name: sample
+    Type: Entity
+    Definition: Cell Line
+  - Name: Prior Run
+    System name: prior_run
+    Type: Run
+    Definition: Flow Panel Run  # The run schema name. Required for Run type.
+      # The valid types for run schema fields are:
+      # Date, Datetime, Decimal, Integer, Long text, Dropdown, Text, Attachment,
+      # Entry, Entity, Inventory, JSON, Boolean, Run
+
+  # Input file configurations and Output file configurations are stored as passthrough objects.
+  # Their full structure is preserved from Benchling and round-tripped faithfully, but the
+  # contents are not individually documented or validated by the Kenfigure schema.
+  Input file configurations:  # Omit if there are no input file configurations
+  - Passthrough: true  # The rest of this entry is an opaque passthrough blob whose
+      # structure is preserved verbatim from Benchling (env-specific IDs stripped).
+      # It is not individually documented or validated by the Kenfigure schema.
+  Output file configurations:  # Omit if there are no output file configurations
+  - Passthrough: true  # See Input file configurations note above.
+
+  # Notes on Connection schema and Analysis template fields in the UI.
+  # Even though the settings for the Connection schema and Analysis template values
+  # appear in the edit Run schema UI in Benchling. These attributes are not actually part
+  # of the Run schema and not supported by Configuration Migration. Therefore, you will
+  # need to manually set these values in the UI.
+  # The best practice recommendation is therefore to add a Notify key to guide administrators
+  # to do this manually. For example:
+  Notify: Manually set the Connection schema to "Benchling FileWatcher"
+```
+
 ## Study Schemas
 File: In Vivo Study.yaml
 ```yaml
