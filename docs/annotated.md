@@ -546,4 +546,4 @@ Metadata:
 ```
 
 ---
-© 2025 Go2 Software LLC. All rights reserved.
+© 2026 Go2 Software LLC. All rights reserved.
