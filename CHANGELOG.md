@@ -7,7 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.6.0]
+## [1.7.0] - 2026-06-13
+
+- Add support for Benchling Connect: Instrument Gateways, Connection Schemas, and Connections.
+
+## [1.6.0] - 2026-6-05
 
 - Add support for Run schemas.  Input and output file configurations are
   represented as opaque passthrough objects and not explicitly defined in the JSON schema.
