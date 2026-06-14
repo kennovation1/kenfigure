@@ -577,10 +577,6 @@ Connection_schemas:
 
 ## Connections
 
-The path fields differ by gateway type:
-- **Local Windows**: use `Output directory` and `Input directory` (Windows paths).
-- **S3 Cloud**: use `Output prefix` and `Input prefix` (S3 key prefixes, no leading `/`).
-
 File: BD_FACSLyric.yaml
 ```yaml
 Connections:
