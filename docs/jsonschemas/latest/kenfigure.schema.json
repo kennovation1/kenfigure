@@ -72,6 +72,18 @@
     "Sub_templates": {
       "description": "Sub templates",
       "$ref": "https://kenfigure.com/jsonschemas/latest/sub_templates.schema.json"
+    },
+    "Instrument_gateways": {
+      "description": "Benchling Connect instrument gateways (S3 Cloud or Local Windows)",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/instrument_gateways.schema.json"
+    },
+    "Connection_schemas": {
+      "description": "Benchling Connect connection schemas defining integration adapters and their configurable fields",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/connection_schemas.schema.json"
+    },
+    "Connections": {
+      "description": "Benchling Connect connections binding instruments to gateways and connection schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/connections.schema.json"
     }
   }
 }
