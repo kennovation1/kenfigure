@@ -1,0 +1,4 @@
+source 'https://rubygems.org'
+
+# Matches the Jekyll/GitHub Pages stack used in production.
+gem 'github-pages', group: :jekyll_plugins

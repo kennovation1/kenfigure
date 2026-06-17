@@ -1,3 +1,22 @@
+title: Kenfigure
+description: Kenfigure™ is a YAML spec to define Benchling configurations
+repository: kennovation1/kenfigure
+
 remote_theme: pages-themes/midnight@v0.2.0
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-remote-theme
+
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: default
+
+company:
+  name: Go2 Software LLC
+  legal_name: Go2 Software LLC
+  address: 365 Boston Post Road, Suite 132, Sudbury, MA 01776, USA
+  privacy_email: privacy@go2.software
+  contact_email: info@go2.software
+
+copyright_year: 2026

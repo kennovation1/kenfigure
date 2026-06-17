@@ -47,6 +47,22 @@ In your pull request, explain:
 
 ---
 
+## 🌐 Local site preview
+
+The published site at [kenfigure.com](https://kenfigure.com) is built with Jekyll from the `docs/` directory. Preview changes locally before pushing:
+
+**Requirements:** [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+```bash
+make docs-serve    # http://localhost:4000 (live reload on file changes)
+make docs-build    # one-off build to docs/_site/
+make docs-stop     # stop the preview server
+```
+
+If you have Ruby 3+ and Bundler installed locally, you can use `make docs-serve-native` instead of Docker.
+
+---
+
 ## 💼 Commercial Use Notice
 
 While the Kenfigure schema is open under the [ODC-BY 1.0 license](https://opendatacommons.org/licenses/by/1-0/), **commercial use of software tools based on this schema may require a separate license**. See the `NOTICE` file or contact [info@go2software.com](mailto:info@go2software.com).

@@ -1,0 +1,17 @@
+services:
+  jekyll:
+    image: jekyll/jekyll:4
+    platform: linux/amd64
+    working_dir: /srv/jekyll/docs
+    command: >
+      bash -lc "bundle install && bundle exec jekyll serve
+      --host 0.0.0.0 --livereload --force_polling"
+    ports:
+      - '4000:4000'
+      - '35729:35729'
+    volumes:
+      - .:/srv/jekyll
+      - jekyll-bundle:/usr/local/bundle
+
+volumes:
+  jekyll-bundle:

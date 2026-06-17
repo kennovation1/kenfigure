@@ -1,0 +1,25 @@
+<footer class="site-footer" aria-label="Site footer">
+  <hr class="site-footer__rule">
+
+  <nav class="site-footer__nav" aria-label="Legal and policies">
+    <ul>
+      <li><a href="https://github.com/kennovation1/kenfigure/blob/main/LICENSE">Schema License (ODC-BY)</a></li>
+      <li><a href="mailto:{{ site.company.contact_email | default: 'info@go2.software' }}">Contact</a></li>
+    </ul>
+  </nav>
+
+  <p class="site-footer__meta">
+    &copy; {{ site.copyright_year | default: '2026' }}
+    {{ site.company.name | default: 'Go2 Software LLC' }}. All rights reserved.
+  </p>
+
+  <p class="site-footer__meta">
+    Kenfigure&trade; and Kenfiguration&trade; are trademarks of Go2 Software LLC.
+    Use of these names in derivative projects, commercial offerings, or branding requires written permission.
+  </p>
+
+  <p class="site-footer__meta site-footer__meta--muted">
+    {{ site.company.legal_name | default: 'Go2 Software LLC' }},
+    {{ site.company.address | default: '365 Boston Post Road, #132, Sudbury, MA 01776, USA' }}
+  </p>
+</footer>
