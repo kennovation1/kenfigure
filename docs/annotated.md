@@ -609,6 +609,3 @@ Metadata:
   Modified: '2025-05-09T13:50:59+00:00'  # The datetime when the model was last modified
   Schema version: 0.1.0  # The Kenfigure schema version
 ```
-
----
-© 2026 Go2 Software LLC. All rights reserved.

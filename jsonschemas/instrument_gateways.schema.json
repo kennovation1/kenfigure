@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://kenfigure.com/jsonschemas/latest/instrument_gateways.schema.json",
   "title": "Instrument gateways",
-  "description": "© 2026 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
+  "description": "Benchling Connect instrument gateways (S3 Cloud or Local Windows).",
   "type": "array",
   "minItems": 0,
   "uniqueItems": true,

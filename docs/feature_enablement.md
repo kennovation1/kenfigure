@@ -91,10 +91,3 @@ Contact [info@go2.software](mailto:info@go2.software)
 ---
 
 [Back to Kenfigure home](https://kenfigure.com) · [User Guide](https://kenfigure.com/kenfigure_tool_user_guide.html)
-
-**Kenfigure™** and **Kenfiguration™** are trademarks of Go2 Software LLC.
-Use of the names "Kenfigure" or "Kenfiguration" in derivative projects or commercial products is not permitted without permission.
-
-Benchling is a trademark of Benchling, Inc.
-
-© 2026 Go2 Software LLC. All rights reserved.

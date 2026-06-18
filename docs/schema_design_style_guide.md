@@ -119,6 +119,3 @@ Here we include Kenfigure-specific nuances in addition to style guidance.
 - Dashboard parameters are defined in the schema for forward-compatibility but are not populated by export (Benchling does not currently expose parameter definitions via the API)
 - If you add parameters by hand, `Type` must be one of the 14 values in the `Parameters.Type` enum (Text, Number, Date, Dropdown, Entry, Entity, Folder, Project, Inventory, Study, Team, User, Workflow task group, Workflow task)
 - `Definition` is required for `Dropdown` type parameters and should be the name of the source dropdown
-
----
-© 2026 Go2 Software LLC. All rights reserved.

@@ -167,7 +167,7 @@ If you use a different IDE, please create a pull request so we can document any 
 
 Here's some doc for how to configure [PyCharm for YAML editing with a custom schema](https://www.jetbrains.com/help/pycharm/yaml.html#json_schema).
 
-# License and Trademark
+# License
 
 **Kenfigure™** is provided under the [Open Data Commons Attribution License (ODC-BY 1.0)](https://opendatacommons.org/licenses/by/1-0/).
 
@@ -175,10 +175,3 @@ You are free to use, adapt, and share this schema with proper attribution.
 
 Commercial use of software tools that rely on this schema may require a separate license.  
 Please contact [info@go2software.com](mailto:info@go2software.com) for commercial licensing inquiries.
-
-**Kenfigure™** and **Kenfiguration™** are trademarks of Go2 Software LLC.  
-Use of the names "Kenfigure" or "Kenfiguration" in derivative projects or commercial products is not permitted without permission.
-
-Benchling is a trademark of Benchling, Inc.
-
-© 2026 Go2 Software LLC. All rights reserved.

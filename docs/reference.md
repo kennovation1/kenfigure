@@ -1,21 +1,21 @@
 # Kenfigure Schema
 
-*Kenfigure™: a YAML spec to define Benchling configurations. © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.*
+*Kenfigure™: a YAML spec to define Benchling configurations.*
 
 ## Properties
 
-- <a id="properties/Metadata"></a>**`Metadata`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+- <a id="properties/Metadata"></a>**`Metadata`** *(object)*: Metadata that describes the model instance.
   - <a id="properties/Metadata/properties/Organization"></a>**`Organization`** *(string, required)*: Organization handle. Must match pattern: `^[a-z_][a-z0-9_]{0,32}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C32%7D%24)).
   - <a id="properties/Metadata/properties/Description"></a>**`Description`** *(string)*: Description of the environment and model.
   - <a id="properties/Metadata/properties/Model%20version"></a>**`Model version`** *(string)*: Semantic version for the model (e.g., 1.2.3). Must match pattern: `^[0-9]+\.[0-9]+\.[0-9]+$` ([Test](https://regexr.com/?expression=%5E%5B0-9%5D%2B%5C.%5B0-9%5D%2B%5C.%5B0-9%5D%2B%24)).
   - <a id="properties/Metadata/properties/Created"></a>**`Created`** *(string, format: date-time)*: Datetime the model was created.
   - <a id="properties/Metadata/properties/Modified"></a>**`Modified`** *(string, format: date-time)*: Datetime the model was last modified.
   - <a id="properties/Metadata/properties/Schema%20version"></a>**`Schema version`** *(string, required)*: Semantic version of the KBConfig JSON schema (e.g., 1.0.0). Must match pattern: `^[0-9]+\.[0-9]+\.[0-9]+$` ([Test](https://regexr.com/?expression=%5E%5B0-9%5D%2B%5C.%5B0-9%5D%2B%5C.%5B0-9%5D%2B%24)).
-- <a id="properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Can contain additional properties.
+- <a id="properties/Diagram"></a>**`Diagram`** *(object)*: Persistence of diagram properties. Can contain additional properties.
   - <a id="properties/Diagram/additionalProperties"></a>**Additional properties** *(object)*
     - <a id="properties/Diagram/additionalProperties/properties/X"></a>**`X`** *(integer, required)*: X location coordinate.
     - <a id="properties/Diagram/additionalProperties/properties/Y"></a>**`Y`** *(integer, required)*: Y location coordinate.
-- <a id="properties/Dashboards"></a>**`Dashboards`** *(array)*: © 2026 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Dashboards"></a>**`Dashboards`** *(array)*: Benchling Insights Dashboards and their SQL blocks. Length must be at least 0. Items must be unique.
   - <a id="properties/Dashboards/items"></a>**Items** *(object)*: A Benchling Insights Dashboard containing one or more SQL query blocks.
     - <a id="properties/Dashboards/items/properties/Name"></a>**`Name`** *(string, required)*: Dashboard name.
     - <a id="properties/Dashboards/items/properties/Project"></a>**`Project`** *(string)*: Name of the Benchling project this dashboard belongs to.
@@ -35,12 +35,12 @@
         - <a id="properties/Dashboards/items/properties/Blocks/items/properties/Chart"></a>**`Chart`** *(object)*: Chart display configuration. Not populated by export (not currently exposed by the Benchling API); defined for forward-compatibility.
           - <a id="properties/Dashboards/items/properties/Blocks/items/properties/Chart/properties/Type"></a>**`Type`** *(string)*: The chart type used to display query results. Must be one of: "Table", "Bar chart", "Line chart", "Pie chart", "Scatter plot", or "Heatmap".
           - <a id="properties/Dashboards/items/properties/Blocks/items/properties/Chart/properties/Parameters"></a>**`Parameters`** *(string)*: Free-form string describing chart configuration (axes, grouping, colors, etc.). Intentionally unstructured until Benchling exposes chart config in the API.
-- <a id="properties/Dropdowns"></a>**`Dropdowns`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Dropdowns"></a>**`Dropdowns`** *(array)*: Dropdowns and their values. Length must be at least 0. Items must be unique.
   - <a id="properties/Dropdowns/items"></a>**Items** *(object)*: Dropdown and its options.
     - <a id="properties/Dropdowns/items/properties/Name"></a>**`Name`** *(string, required)*: Dropdown name.
     - <a id="properties/Dropdowns/items/properties/Description"></a>**`Description`** *(string)*: Documentation description for the dropdown (not saved to Benchling).
     - <a id="properties/Dropdowns/items/properties/Alphabetize"></a>**`Alphabetize`** *(boolean)*: Alphabetize upon deployment if true.
-    - <a id="properties/Dropdowns/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+    - <a id="properties/Dropdowns/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
       - <a id="properties/Dropdowns/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Dropdowns/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Dropdowns/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -48,7 +48,7 @@
     - <a id="properties/Dropdowns/items/properties/Options"></a>**`Options`** *(array)*: Dropdown values list (may be empty). Length must be at least 0. Items must be unique.
       - <a id="properties/Dropdowns/items/properties/Options/items"></a>**Items** *(string)*
     - <a id="properties/Dropdowns/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity created during an export operation. This is ignored for import operations.
-- <a id="properties/Entity_schemas"></a>**`Entity_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Entity_schemas"></a>**`Entity_schemas`** *(array)*: Entity schemas (e.g., Custom Entity, DNA Sequence, etc.). Length must be at least 0. Items must be unique.
   - <a id="properties/Entity_schemas/items"></a>**Items** *(object)*: Complete description of the entity schema. Some attributes only apply to certain schema types.
     - <a id="properties/Entity_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Entity schema name.
     - <a id="properties/Entity_schemas/items/properties/Warehouse%20name"></a>**`Warehouse name`** *(string)*: DEPRECATED - Use 'System name' instead. Internal system name. Default will be an automatic conversion of Name to a Benchlinng/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
@@ -74,7 +74,7 @@
           - <a id="properties/Entity_schemas/items/properties/Constraint/items/anyOf/0"></a>*string*: Must be one of: "Bases (ignore case)", "Canonical SMILES", "Amino acids (exact match)", or "Amino acids (ignore case)".
           - <a id="properties/Entity_schemas/items/properties/Constraint/items/anyOf/1"></a>*string*
     - <a id="properties/Entity_schemas/items/properties/Access%20type"></a>**`Access type`** *(string)*: The registered objects of this schema will have permissions that are either Registry-based (default) or Project-based. Must be one of: "Registry-based" or "Project-based".
-    - <a id="properties/Entity_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+    - <a id="properties/Entity_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
       - <a id="properties/Entity_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Entity_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Entity_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -109,7 +109,7 @@
             - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Computed/properties/Property/properties/Type"></a>**`Type`** *(string, required)*: The type of property. Normally Field, but use BASES to access the built-in Bases field. Must be one of: "Field" or "BASES".
             - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Computed/properties/Property/properties/Definition"></a>**`Definition`** *(string)*: The name of the field if type is Field.
     - <a id="properties/Entity_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity schema created during an export operation. This is ignored for import operations.
-- <a id="properties/Fieldset_schemas"></a>**`Fieldset_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Fieldset_schemas"></a>**`Fieldset_schemas`** *(array)*: Fieldset schemas. Length must be at least 0. Items must be unique.
   - <a id="properties/Fieldset_schemas/items"></a>**Items** *(object)*: Complete description of the fieldset schema.
     - <a id="properties/Fieldset_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Fieldset schema name.
     - <a id="properties/Fieldset_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
@@ -129,7 +129,7 @@
         - **Any of**
           - <a id="properties/Fieldset_schemas/items/properties/Constraint/items/anyOf/0"></a>*string*: Must be one of: "Bases (ignore case)", "Canonical SMILES", "Amino acids (exact match)", or "Amino acids (ignore case)".
           - <a id="properties/Fieldset_schemas/items/properties/Constraint/items/anyOf/1"></a>*string*
-    - <a id="properties/Fieldset_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+    - <a id="properties/Fieldset_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
       - <a id="properties/Fieldset_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Fieldset_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Fieldset_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -159,7 +159,7 @@
             - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Computed/properties/Property/properties/Type"></a>**`Type`** *(string, required)*: The type of property. Normally Field, but use BASES to access the built-in Bases field. Must be one of: "Field" or "BASES".
             - <a id="properties/Fieldset_schemas/items/properties/Fields/items/properties/Computed/properties/Property/properties/Definition"></a>**`Definition`** *(string)*: The name of the field if type is Field.
     - <a id="properties/Fieldset_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity schema created during an export operation. This is ignored for import operations.
-- <a id="properties/Study_schemas"></a>**`Study_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Study_schemas"></a>**`Study_schemas`** *(array)*: Study schemas. Length must be at least 0. Items must be unique.
   - <a id="properties/Study_schemas/items"></a>**Items** *(object)*: Complete description of the study schema.
     - <a id="properties/Study_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Study schema name.
     - <a id="properties/Study_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
@@ -173,7 +173,7 @@
       - <a id="properties/Study_schemas/items/properties/Entry%20templates/items"></a>**Items** *(string)*
     - <a id="properties/Study_schemas/items/properties/Approval%20required"></a>**`Approval required`** *(boolean)*: Require approval of Design before proceeding to Execution.
     - <a id="properties/Study_schemas/items/properties/Study%20type"></a>**`Study type`** *(string)*: Must match one of the Benchling-defined types. Must be one of: "CUSTOM".
-    - <a id="properties/Study_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+    - <a id="properties/Study_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
       - <a id="properties/Study_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Study_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Study_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -204,14 +204,14 @@
             - <a id="properties/Study_schemas/items/properties/Fields/items/properties/Computed/properties/Property/properties/Type"></a>**`Type`** *(string, required)*: The type of property. Normally Field, but use BASES to access the built-in Bases field. Must be one of: "Field" or "BASES".
             - <a id="properties/Study_schemas/items/properties/Fields/items/properties/Computed/properties/Property/properties/Definition"></a>**`Definition`** *(string)*: The name of the field if type is Field.
     - <a id="properties/Study_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the study schema created during an export operation. This is ignored for import operations.
-- <a id="properties/Container_schemas"></a>**`Container_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Container_schemas"></a>**`Container_schemas`** *(array)*: Container schemas. Length must be at least 0. Items must be unique.
   - <a id="properties/Container_schemas/items"></a>**Items** *(object)*: Complete description of the container schema.
     - <a id="properties/Container_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Container schema name.
     - <a id="properties/Container_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
     - <a id="properties/Container_schemas/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the container schema. This is not saved to Benchling.
     - <a id="properties/Container_schemas/items/properties/Notify"></a>**`Notify`** *(string)*: Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action.
     - <a id="properties/Container_schemas/items/properties/Prefix"></a>**`Prefix`** *(string, required)*: The registry ID prefix. Must match pattern: `^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$` ([Test](https://regexr.com/?expression=%5E%5Ba-zA-Z0-9_.-%5D%2A%5Ba-zA-Z_.-%5D%3F%24)).
-    - <a id="properties/Container_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+    - <a id="properties/Container_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
       - <a id="properties/Container_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Container_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Container_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -229,7 +229,7 @@
             - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: "Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", or "Any inventory".
             - <a id="properties/Container_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
     - <a id="properties/Container_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity schema created during an export operation. This is ignored for import operations.
-- <a id="properties/Box_schemas"></a>**`Box_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Box_schemas"></a>**`Box_schemas`** *(array)*: Box schemas. Length must be at least 0. Items must be unique.
   - <a id="properties/Box_schemas/items"></a>**Items** *(object)*: Complete description of the box schema.
     - <a id="properties/Box_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Box schema name.
     - <a id="properties/Box_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
@@ -239,7 +239,7 @@
     - <a id="properties/Box_schemas/items/properties/Height"></a>**`Height`** *(integer, required)*: Height of the box (number of rows). Minimum: `1`.
     - <a id="properties/Box_schemas/items/properties/Width"></a>**`Width`** *(integer, required)*: Width of the box (number of columns). Minimum: `1`.
     - <a id="properties/Box_schemas/items/properties/Container%20schema"></a>**`Container schema`** *(string)*: Container schema for each slot in the box. May be omitted.
-    - <a id="properties/Box_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+    - <a id="properties/Box_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
       - <a id="properties/Box_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Box_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Box_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -257,7 +257,7 @@
             - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: "Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", or "Any inventory".
             - <a id="properties/Box_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
     - <a id="properties/Box_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity schema created during an export operation. This is ignored for import operations.
-- <a id="properties/Plate_schemas"></a>**`Plate_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Plate_schemas"></a>**`Plate_schemas`** *(array)*: Plate schemas. Length must be at least 0. Items must be unique.
   - <a id="properties/Plate_schemas/items"></a>**Items** *(object)*: Complete description of the plate schema.
     - <a id="properties/Plate_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Plate schema name.
     - <a id="properties/Plate_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
@@ -268,7 +268,7 @@
     - <a id="properties/Plate_schemas/items/properties/Width"></a>**`Width`** *(integer, required)*: Width of the plate (number of columns). Minimum: `1`.
     - <a id="properties/Plate_schemas/items/properties/Type"></a>**`Type`** *(string, required)*: Type of plate (fixed well or matrix). Must be one of: "Well plate" or "Matrix plate".
     - <a id="properties/Plate_schemas/items/properties/Container%20schema"></a>**`Container schema`** *(string)*: Container schema for each well in the plate. May be omitted.
-    - <a id="properties/Plate_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+    - <a id="properties/Plate_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
       - <a id="properties/Plate_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Plate_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Plate_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -286,14 +286,14 @@
             - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: "Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", or "Any inventory".
             - <a id="properties/Plate_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
     - <a id="properties/Plate_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity schema created during an export operation. This is ignored for import operations.
-- <a id="properties/Location_schemas"></a>**`Location_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Location_schemas"></a>**`Location_schemas`** *(array)*: Location schemas. Length must be at least 0. Items must be unique.
   - <a id="properties/Location_schemas/items"></a>**Items** *(object)*: Complete description of the location schema.
     - <a id="properties/Location_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Location schema name.
     - <a id="properties/Location_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
     - <a id="properties/Location_schemas/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the location schema. This is not saved to Benchling.
     - <a id="properties/Location_schemas/items/properties/Notify"></a>**`Notify`** *(string)*: Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action.
     - <a id="properties/Location_schemas/items/properties/Prefix"></a>**`Prefix`** *(string, required)*: The registry ID prefix. Must match pattern: `^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$` ([Test](https://regexr.com/?expression=%5E%5Ba-zA-Z0-9_.-%5D%2A%5Ba-zA-Z_.-%5D%3F%24)).
-    - <a id="properties/Location_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+    - <a id="properties/Location_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
       - <a id="properties/Location_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Location_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Location_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -311,14 +311,14 @@
             - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: "Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", or "Any inventory".
             - <a id="properties/Location_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
     - <a id="properties/Location_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity schema created during an export operation. This is ignored for import operations.
-- <a id="properties/Result_schemas"></a>**`Result_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Result_schemas"></a>**`Result_schemas`** *(array)*: Result schemas. Length must be at least 0. Items must be unique.
   - <a id="properties/Result_schemas/items"></a>**Items** *(object)*: Complete description of the result schema.
     - <a id="properties/Result_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Result schema name.
     - <a id="properties/Result_schemas/items/properties/Warehouse%20name"></a>**`Warehouse name`** *(string)*: DEPRECATED - Use 'System name' instead. Internal system name. Default will be an automatic conversion of Name to a Benchlinng/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
     - <a id="properties/Result_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name for the field. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
     - <a id="properties/Result_schemas/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the entity. This is not saved to Benchling.
     - <a id="properties/Result_schemas/items/properties/Notify"></a>**`Notify`** *(string)*: Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as setting permissions.
-    - <a id="properties/Result_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+    - <a id="properties/Result_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
       - <a id="properties/Result_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Result_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Result_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -346,7 +346,7 @@
             - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Snapshot/properties/Arguments/properties/Steps"></a>**`Steps`** *(array)*: Lookup steps. Currently supports a list of 2 field values. First must be an entity field in the current schema. Second must be a field on the schema pointed to by step 1. Length must be equal to 2.
               - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Snapshot/properties/Arguments/properties/Steps/items"></a>**Items** *(string)*
     - <a id="properties/Result_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity created during an export operation. This is ignored for import operations.
-- <a id="properties/Run_schemas"></a>**`Run_schemas`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Run_schemas"></a>**`Run_schemas`** *(array)*: Run schemas. Length must be at least 0. Items must be unique.
   - <a id="properties/Run_schemas/items"></a>**Items** *(object)*: Complete description of the run schema.
     - <a id="properties/Run_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Run schema name.
     - <a id="properties/Run_schemas/items/properties/System%20name"></a>**`System name`** *(string)*: Internal system name. Default will be an automatic conversion of Name to a Benchling/PostgreSQL compatible name. Must match pattern: `^[a-z_][a-z0-9_]{0,62}$` ([Test](https://regexr.com/?expression=%5E%5Ba-z_%5D%5Ba-z0-9_%5D%7B0%2C62%7D%24)).
@@ -354,7 +354,7 @@
     - <a id="properties/Run_schemas/items/properties/Notify"></a>**`Notify`** *(string)*: Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as setting permissions.
     - <a id="properties/Run_schemas/items/properties/Allow%20creating%20new%20runs"></a>**`Allow creating new runs`** *(boolean)*: When true, allows users to create new runs from the notebook. Corresponds to the 'Allow creating new runs from the notebook' checkbox in the Benchling UI. At least one of 'Allow creating new runs' or 'Allow inserting runs from inbox' must be true.
     - <a id="properties/Run_schemas/items/properties/Allow%20inserting%20runs%20from%20inbox"></a>**`Allow inserting runs from inbox`** *(boolean)*: When true, allows users to insert runs from the inbox into the notebook. Corresponds to the 'Allow inserting runs from inbox in the notebook' checkbox in the Benchling UI. At least one of 'Allow creating new runs' or 'Allow inserting runs from inbox' must be true.
-    - <a id="properties/Run_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+    - <a id="properties/Run_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
       - <a id="properties/Run_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Run_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Run_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
@@ -377,20 +377,20 @@
     - <a id="properties/Run_schemas/items/properties/Output%20file%20configurations"></a>**`Output file configurations`** *(array)*: Output file configurations for automation. These are stored as passthrough objects — the structure is preserved verbatim from Benchling and is not fully schematized. Environment-specific IDs are stripped on export and regenerated on import. Length must be at least 0.
       - <a id="properties/Run_schemas/items/properties/Output%20file%20configurations/items"></a>**Items** *(object)*: A single output file configuration. Contents are opaque passthrough data.
     - <a id="properties/Run_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the schema created during an export operation. This is ignored for import operations.
-- <a id="properties/Feature_flags"></a>**`Feature_flags`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Can contain additional properties.
+- <a id="properties/Feature_flags"></a>**`Feature_flags`** *(object)*: Feature flags. Back-end settings that must be fetched and changed by Benchling. Can contain additional properties.
   - <a id="properties/Feature_flags/additionalProperties"></a>**Additional properties** *(object)*: Can contain additional properties.
     - <a id="properties/Feature_flags/additionalProperties/additionalProperties"></a>**Additional properties** *(object)*: Cannot contain additional properties.
       - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Current"></a>**`Current`** *(string or boolean, required)*
       - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Default"></a>**`Default`** *(string or boolean, required)*
       - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Description"></a>**`Description`** *(string or boolean, required)*
       - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Planned"></a>**`Planned`** *(string or boolean)*
-- <a id="properties/Template_collections"></a>**`Template_collections`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0.
+- <a id="properties/Template_collections"></a>**`Template_collections`** *(array)*: Template collections. Length must be at least 0.
   - <a id="properties/Template_collections/items"></a>**Items** *(object)*: Complete description of the template collection.
     - <a id="properties/Template_collections/items/properties/Name"></a>**`Name`** *(string, required)*: Template collection name. Must match pattern: `^\S.*\S$|^\S$` ([Test](https://regexr.com/?expression=%5E%5CS.%2A%5CS%24%7C%5E%5CS%24)).
     - <a id="properties/Template_collections/items/properties/Description"></a>**`Description`** *(string)*: Description of the template collection.
     - <a id="properties/Template_collections/items/properties/Owner"></a>**`Owner`** *(string)*: Owner (an organization) of the template collection.
     - <a id="properties/Template_collections/items/properties/Notify"></a>**`Notify`** *(string)*: Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as configuration access rights.
-- <a id="properties/Templates"></a>**`Templates`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0.
+- <a id="properties/Templates"></a>**`Templates`** *(array)*: Templates. Length must be at least 0.
   - <a id="properties/Templates/items"></a>**Items** *(object)*: Description of an entry template.
     - <a id="properties/Templates/items/properties/Name"></a>**`Name`** *(string, required)*: Template name. Must match pattern: `^\S.*\S$|^\S$` ([Test](https://regexr.com/?expression=%5E%5CS.%2A%5CS%24%7C%5E%5CS%24)).
     - <a id="properties/Templates/items/properties/Description"></a>**`Description`** *(string)*: Description of the template.
@@ -398,26 +398,26 @@
     - <a id="properties/Templates/items/properties/Schema"></a>**`Schema`** *(string)*: Name of the entry schema attached to the template. Must match pattern: `^\S.*\S$|^\S$` ([Test](https://regexr.com/?expression=%5E%5CS.%2A%5CS%24%7C%5E%5CS%24)).
     - <a id="properties/Templates/items/properties/Fill-in%20only"></a>**`Fill-in only`** *(boolean)*: If true, entries created from this template will be locked. Users can only fill in tables, text boxes, checkboxes, and files. If false (or omitted), entries created from this template can be modified by end users.
     - <a id="properties/Templates/items/properties/Notify"></a>**`Notify`** *(string)*: Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as configuration access rights.
-- <a id="properties/Sub_templates"></a>**`Sub_templates`** *(array)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0.
+- <a id="properties/Sub_templates"></a>**`Sub_templates`** *(array)*: Sub templates. Length must be at least 0.
   - <a id="properties/Sub_templates/items"></a>**Items** *(object)*: Description of a sub-template.
     - <a id="properties/Sub_templates/items/properties/Name"></a>**`Name`** *(string, required)*: Sub-template name. Must match pattern: `^\S.*\S$|^\S$` ([Test](https://regexr.com/?expression=%5E%5CS.%2A%5CS%24%7C%5E%5CS%24)).
     - <a id="properties/Sub_templates/items/properties/Description"></a>**`Description`** *(string)*: Description of the sub-template.
     - <a id="properties/Sub_templates/items/properties/Collection"></a>**`Collection`** *(string, required)*: Name of the template collection that the sub-template belongs to. Must match pattern: `^\S.*\S$|^\S$` ([Test](https://regexr.com/?expression=%5E%5CS.%2A%5CS%24%7C%5E%5CS%24)).
     - <a id="properties/Sub_templates/items/properties/Notify"></a>**`Notify`** *(string)*: Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as configuration access rights.
-- <a id="properties/Instrument_gateways"></a>**`Instrument_gateways`** *(array)*: © 2026 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Instrument_gateways"></a>**`Instrument_gateways`** *(array)*: Benchling Connect instrument gateways (S3 Cloud or Local Windows). Length must be at least 0. Items must be unique.
   - <a id="properties/Instrument_gateways/items"></a>**Items** *(object)*: Complete description of a Benchling Connect instrument gateway. A gateway is the infrastructure through which instrument files flow into and out of Benchling.
     - <a id="properties/Instrument_gateways/items/properties/Name"></a>**`Name`** *(string, required)*: Gateway name.
     - <a id="properties/Instrument_gateways/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the gateway, including setup details and operational nuances. Not saved to Benchling.
     - <a id="properties/Instrument_gateways/items/properties/Type"></a>**`Type`** *(string, required)*: Gateway type. 'S3 Cloud' uses an AWS S3 bucket for cloud-to-cloud file transfer. 'Local Windows' monitors a directory on a Windows machine or network share. Must be one of: "S3 Cloud" or "Local Windows".
     - <a id="properties/Instrument_gateways/items/properties/Bucket"></a>**`Bucket`** *(string)*: AWS S3 bucket name. Only applicable when Type is 'S3 Cloud'.
     - <a id="properties/Instrument_gateways/items/properties/Bucket%20policy"></a>**`Bucket policy`** *(string)*: AWS S3 bucket policy JSON generated by Benchling (Feature Settings > Instrument Gateways > Generate Policy). Grants Benchling's IAM role the required s3:ListBucket, s3:GetObject, and s3:PutObject permissions scoped to the tenant. Only applicable when Type is 'S3 Cloud'.
-    - <a id="properties/Instrument_gateways/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+    - <a id="properties/Instrument_gateways/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
       - <a id="properties/Instrument_gateways/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Instrument_gateways/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Instrument_gateways/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
       - <a id="properties/Instrument_gateways/items/properties/Diagram/properties/Y"></a>**`Y`** *(integer)*: Y location coordinate.
     - <a id="properties/Instrument_gateways/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the gateway created during an export operation. This is ignored for import operations.
-- <a id="properties/Connection_schemas"></a>**`Connection_schemas`** *(array)*: © 2026 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Connection_schemas"></a>**`Connection_schemas`** *(array)*: Benchling Connect connection schemas defining integration adapters and their configurable fields. Length must be at least 0. Items must be unique.
   - <a id="properties/Connection_schemas/items"></a>**Items** *(object)*: Complete description of a Benchling Connect connection schema. A connection schema defines how an integration adapter parses instrument files and what configurable fields are available on connections that use it.
     - <a id="properties/Connection_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Connection schema name.
     - <a id="properties/Connection_schemas/items/properties/Description"></a>**`Description`** *(string)*: Documentation for the connection schema. Not saved to Benchling.
@@ -436,13 +436,13 @@
           - **Any of**
             - <a id="properties/Connection_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: "Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", or "Any inventory".
             - <a id="properties/Connection_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
-    - <a id="properties/Connection_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+    - <a id="properties/Connection_schemas/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
       - <a id="properties/Connection_schemas/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Connection_schemas/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Connection_schemas/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.
       - <a id="properties/Connection_schemas/items/properties/Diagram/properties/Y"></a>**`Y`** *(integer)*: Y location coordinate.
     - <a id="properties/Connection_schemas/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the connection schema created during an export operation. This is ignored for import operations.
-- <a id="properties/Connections"></a>**`Connections`** *(array)*: © 2026 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited. Length must be at least 0. Items must be unique.
+- <a id="properties/Connections"></a>**`Connections`** *(array)*: Benchling Connect connections binding instruments to gateways and connection schemas. Length must be at least 0. Items must be unique.
   - <a id="properties/Connections/items"></a>**Items** *(object)*: Configuration aspect of a Benchling Connect connection. A connection binds a specific instrument to a gateway and connection schema. The data/run aspects of connections are not modeled here.
     - <a id="properties/Connections/items/properties/Name"></a>**`Name`** *(string, required)*: Connection name, typically the instrument name or model.
     - <a id="properties/Connections/items/properties/Benchling%20gateway"></a>**`Benchling gateway`** *(string, required)*: Name of the instrument gateway through which this instrument's files are transferred.
@@ -453,7 +453,7 @@
       - <a id="properties/Connections/items/properties/File%20extensions/items"></a>**Items** *(string)*
     - <a id="properties/Connections/items/properties/Output%20directory"></a>**`Output directory`** *(string)*: Path to a local directory to monitor and retrieve files coming into Benchling, e.g. 'C:\path\to\directory'.
     - <a id="properties/Connections/items/properties/Input%20directory"></a>**`Input directory`** *(string)*: Path to a local directory to send files from Benchling, e.g. 'C:\path\to\input\directory'.
-    - <a id="properties/Connections/items/properties/Diagram"></a>**`Diagram`** *(object)*: © 2025 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.
+    - <a id="properties/Connections/items/properties/Diagram"></a>**`Diagram`** *(object)*: Properties solely used for diagram rendering.
       - <a id="properties/Connections/items/properties/Diagram/properties/Group"></a>**`Group`** *(string)*: The layout group name.
       - <a id="properties/Connections/items/properties/Diagram/properties/Color"></a>**`Color`** *(string)*: Object color. Will override default if specified. May be a hex web color (e.g., '#0000FF' for blue) or certain well-known names are recognized.
       - <a id="properties/Connections/items/properties/Diagram/properties/X"></a>**`X`** *(integer)*: X location coordinate.

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
 	"$id": "https://kenfigure.com/jsonschemas/latest/dashboards.schema.json",
   "title": "Dashboards and their SQL blocks",
-  "description": "© 2026 Go2 Software LLC. Licensed under the Open Data Commons Attribution License (ODC-By). 'Kenfigure' is a trademark of Go2 Software LLC. Unauthorized use is prohibited.",
+  "description": "Benchling Insights Dashboards and their SQL blocks.",
   "type": "array",
   "minItems": 0,
   "uniqueItems": true,
