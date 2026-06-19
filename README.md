@@ -60,6 +60,7 @@ See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annot
   Some custom tooling (e.g., Kenfigure Tool Schema Lint) may use the style guide as a source for style rules.
 - [Kenfigure Tool User Guide](./kenfigure_tool_user_guide.md) - A Benchling App Canvas application that converts between Benchling and Kenfigure formats. Includes Git integration.
 - [Kenfigure JSON schema](./jsonschemas/latest/kenfigure.schema_flat.json) - The full (flattened) JSON schema for Kenfigure.
+- [Kenfigure on GitHub](https://github.com/kennovation1/kenfigure) - Open-source schema repository, issues, and contributions.
 
 # Benefits 
 Here are some benefits of documenting your Benchling configuration in *kenfigure* files in git. In no particular order:
