@@ -344,7 +344,7 @@ Result_schemas:
 File: Flow Panel Run.yaml
 ```yaml
 Run_schemas:
-- Name: Flow Panel Run  # Run schema name
+- Name: Flow Panel Run
   Description: Captures results from a flow cytometry panel run
   System name: flow_panel_run
   # At least one of the following "Notebook preference" flags must be true. Either may be omitted if false.
@@ -362,24 +362,23 @@ Run_schemas:
   - Name: Prior Run
     System name: prior_run
     Type: Run
-    Definition: Flow Panel Run  # The run schema name. Required for Run type.
+    Definition: Flow Panel Run
       # The valid types for run schema fields are:
       # Date, Datetime, Decimal, Integer, Long text, Dropdown, Text, Attachment,
       # Entry, Entity, Inventory, JSON, Boolean, Run
 
-  # Input file configurations and Output file configurations are stored as passthrough objects.
-  # Their full structure is preserved from Benchling and round-tripped faithfully, but the
-  # contents are not individually documented or validated by the Kenfigure schema.
+  # Input file configurations and Output file configurations are stored as "passthrough" objects.
+  # Their full structure is preserved from Benchling and round-tripped faithfully using
+  # Kenfigure tooling, but the contents are not individually documented or validated
+  # by the Kenfigure schema due to their high complexity and variability.
   Input file configurations:  # Omit if there are no input file configurations
-  - Passthrough: true  # The rest of this entry is an opaque passthrough blob whose
-      # structure is preserved verbatim from Benchling (env-specific IDs stripped).
-      # It is not individually documented or validated by the Kenfigure schema.
+  - Passthrough: true  # The rest of this entry is an opaque passthrough blob
   Output file configurations:  # Omit if there are no output file configurations
   - Passthrough: true  # See Input file configurations note above.
 
-  # Notes on Connection schema and Analysis template fields in the UI.
-  # Even though the settings for the Connection schema and Analysis template values
-  # appear in the edit Run schema UI in Benchling. These attributes are not actually part
+  # Notes on "Connection schema" and "Analysis template" fields in the UI:
+  # Even though the settings for the "Connection schema" and "Analysis template" values
+  # appear in the edit Run schema UI in Benchling, these attributes are not actually part
   # of the Run schema and not supported by Configuration Migration. Therefore, you will
   # need to manually set these values in the UI.
   # The best practice recommendation is therefore to add a Notify key to guide administrators
@@ -585,14 +584,14 @@ Connections:
   Benchling location: Instrument Data  # Required. Benchling folder where files are stored.
   Instrument type: Benchling FileWatcher  # Required. Name of the connection schema.
     # Available instrument types are determined by the type of gateway selected.
-  Default timezone: UTC  # Optional. Added to timestamps in an instrument file if they are not already set
+  Default timezone: UTC  # Optional. Added to timestamps in an instrument file if they are not already set.
     # Use "UTC" or an IANA region/zone string such as "US/Eastern" or "Europe/London".
     # This is a picklist in Benchling but defined as a plain string in Kenfigure.
   File extensions:  # Optional. List of file extensions to monitor, without a leading dot.
   - csv
-  Output directory: \\Lab Data\EQ432_BD_FACSLyric\TO_benchling
+  Output directory: \\Lab Data\INST123_BD_FACSLyric\TO_benchling
     # Path to a local directory to monitor and retrieve files coming into Benchling
-  Input directory: \\Lab Data\EQ432_BD_FACSLyric\FROM_benchling
+  Input directory: \\Lab Data\INST123_BD_FACSLyric\FROM_benchling
     # Path to a local directory to send files from Benchling
 ```
 
