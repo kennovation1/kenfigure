@@ -3,6 +3,15 @@
 
   <nav class="site-footer__nav" aria-label="Legal and policies">
     <ul>
+      <li><a href="{{ '/pricing.html' | relative_url }}">Pricing</a></li>
+      <li><a href="{{ '/faq.html' | relative_url }}">FAQ</a></li>
+      <li><a href="{{ '/feature_matrix.html' | relative_url }}">Feature Support Matrix</a></li>
+      <li><a href="{{ '/privacy_policy.html' | relative_url }}">Privacy Policy</a></li>
+      <li><a href="{{ '/subscription_terms.html' | relative_url }}">Subscription Terms</a></li>
+      <li><a href="{{ '/subscription_terms.html' | relative_url }}#refund-policy">Refund Policy</a></li>
+      <li><a href="{{ '/free_tier_terms.html' | relative_url }}">Free-Tier Terms</a></li>
+      <li><a href="{{ '/data_processing_addendum.html' | relative_url }}">Data Processing Addendum</a></li>
+      <li><a href="{{ '/security_data_handling.html' | relative_url }}">Security &amp; Data Handling</a></li>
       <li><a href="https://github.com/kennovation1/kenfigure/blob/main/LICENSE">Schema License (ODC-BY)</a></li>
       <li><a href="mailto:{{ site.company.contact_email | default: 'info@go2.software' }}">Contact</a></li>
     </ul>
@@ -14,12 +23,12 @@
   </p>
 
   <p class="site-footer__meta">
-    Kenfigure&trade; and Kenfiguration&trade; are trademarks of Go2 Software LLC.
+    Kenfigure&trade;, Kenfigure Pro&trade;, Kenfigure Tool&trade;, Kenfigure Diagram&trade;, and Kenfiguration&trade; are trademarks of Go2 Software LLC.
     Use of these names in derivative projects, commercial offerings, or branding requires written permission.
   </p>
 
   <p class="site-footer__meta site-footer__meta--muted">
     {{ site.company.legal_name | default: 'Go2 Software LLC' }},
-    {{ site.company.address | default: '365 Boston Post Road, #132, Sudbury, MA 01776, USA' }}
+    {{ site.company.address | default: '365 Boston Post Road, Suite 132, Sudbury, MA 01776, USA' }}
   </p>
 </footer>
