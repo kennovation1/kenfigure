@@ -67,6 +67,8 @@ Kenfigure supports Benchling **Validated Cloud**. For GxP-regulated teams, a ver
 
 Validated Cloud is supported across all tiers above. Because Validated Cloud deployments vary, [contact us](mailto:info@go2.software) for a tailored quote.
 
+Kenfigure is designed to operate within Validated Cloud environments. Direct participation in IQ/OQ/PQ protocol authoring or formal validation documentation is available as a professional services engagement at separate rates.
+
 ---
 
 ## Multi-year: commit, prepay, save
