@@ -105,7 +105,6 @@ builds on the open standard to close the loop from source of truth back to Bench
 - **Computed and snapshot fields** — create and inspect computed fields without requiring Benchling support
 - **Drift detection and correction** — detect and reconcile drift between your YAML and the live Benchling state
 - **Notify directive** — embed manual instructions (e.g., configure a dashboard, set permissions) as part of an import sequence
-- **Feature flag control** — apply feature flag settings from YAML alongside all other configuration changes
 - **Prompt Builder** — assemble targeted schema context for SQL development or AI tools from Kenfigure Diagram
 
 → [Learn more about Kenfigure Pro™](kenfigure_pro.html)
