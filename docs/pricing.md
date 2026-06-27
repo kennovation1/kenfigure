@@ -11,6 +11,8 @@ _Kenfigure is a product of Go2 Software LLC · Last updated: June 2026_
 
 Kenfigure helps Benchling administrators bring their configuration under control — export it to a versionable source of truth, make reviewed changes safely, and understand complex deployments through interactive diagrams. The free **Kenfigure Tool™ (Export)** is available to everyone. **Kenfigure Pro™** adds **Kenfigure Tool (Import)** and **Kenfigure Diagram™** on an annual subscription.
 
+_New to Kenfigure Pro? [Read the product overview](kenfigure_pro.html) to see what's included and who it's for._
+
 <style>
 .pricing-order-btn {
   display: inline-block; margin: 1rem 0;

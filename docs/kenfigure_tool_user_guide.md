@@ -451,9 +451,9 @@ The log messages in an expanded session are ordered with the most recent at the 
 
 Every export you run through Kenfigure Tool also makes your configuration immediately available in Kenfigure Diagram.
 
-Kenfigure Diagram is a licensed companion product that renders your Kenfigure configuration as an interactive schema diagram — a fast way to explore the structure of your Benchling environment, share it with your team, and find relationships that are hard to see in a list. If your tenant is provisioned for Kenfigure Diagram, the canvas shows an **Open Kenfigure Diagram** link that takes you directly to your tenant's view.
+Kenfigure Diagram is a part of **[Kenfigure Pro™](kenfigure_pro.html)** that renders your Kenfigure configuration as an interactive schema diagram — a fast way to explore the structure of your Benchling environment, share it with your team, and find relationships that are hard to see in a list. If your tenant is provisioned for Kenfigure Diagram, the canvas shows an **Open Kenfigure Diagram** link that takes you directly to your tenant's view.
 
-Contact [info@go2.software](mailto:info@go2.software) to learn more or to get Kenfigure Diagram set up for your tenant.
+See the [Kenfigure Pro page](kenfigure_pro.html) to learn more, or contact [info@go2.software](mailto:info@go2.software) to get Kenfigure Diagram set up for your tenant.
 
 ---
 
@@ -463,13 +463,13 @@ Contact [info@go2.software](mailto:info@go2.software) to learn more or to get Ke
 | ------------------------- | ------------ |
 | Export to File            | Free for all users |
 | Export to Git             | Free for all users |
-| Import from File          | Premium — see [Feature enablement](https://kenfigure.com/feature_enablement.html) |
-| Import from Git           | Premium — see [Feature enablement](https://kenfigure.com/feature_enablement.html) |
-| Kenfigure Diagram         | Premium — see [Feature enablement](https://kenfigure.com/feature_enablement.html) |
+| Import from File          | Kenfigure Pro™ — see [Kenfigure Pro](kenfigure_pro.html) |
+| Import from Git           | Kenfigure Pro™ — see [Kenfigure Pro](kenfigure_pro.html) |
+| Kenfigure Diagram         | Kenfigure Pro™ — see [Kenfigure Pro](kenfigure_pro.html) |
 
-When a premium feature is not licensed for your tenant, the relevant button in the canvas is disabled and shows a link to the [feature enablement page](https://kenfigure.com/feature_enablement.html) with instructions on how to request access. There is no error message — the canvas simply presents the features that are available.
+When a Kenfigure Pro feature is not licensed for your tenant, the relevant button in the canvas is disabled and shows a link to the [feature enablement page](feature_enablement.html). There is no error message — the canvas simply presents the features that are available.
 
-If the Import buttons are visible but disabled, your tenant has not been provisioned for Import mode. See [Feature enablement](https://kenfigure.com/feature_enablement.html) to request access.
+If the Import buttons are visible but disabled, your tenant has not been provisioned for **Kenfigure Tool (Import)**. See [Feature enablement](feature_enablement.html) or [contact us](mailto:info@go2.software) to request access.
 
 
 ---
@@ -525,4 +525,4 @@ If the error isn't clear, send the log to [info@go2.software](mailto:info@go2.so
 
 ---
 
-[Back to Kenfigure home](https://kenfigure.com) · [Feature enablement](https://kenfigure.com/feature_enablement.html)
+[Back to Kenfigure home](https://kenfigure.com) · [Feature enablement](feature_enablement.html)
