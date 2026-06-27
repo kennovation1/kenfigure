@@ -9,6 +9,8 @@ layout: default
 
 _Go2 Software LLC · [info@go2.software](mailto:info@go2.software)_
 
+_Not sure what Kenfigure Pro is? [Read the product overview](kenfigure_pro.html) first._
+
 ---
 
 ## Getting started

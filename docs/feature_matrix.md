@@ -55,4 +55,8 @@ Top-level Kenfigure object types from the [Kenfigure JSON schema](https://kenfig
 
 ---
 
+Interested in adding Export, Import, or Diagram to your team? See [Kenfigure Pro™](kenfigure_pro.html) or the [Pricing page](pricing.html).
+
+---
+
 [Back to Kenfigure home](https://kenfigure.com)

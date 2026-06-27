@@ -11,13 +11,12 @@ of your Benchling tenant configurations.
 Because it is a structured human *and* machine readable format, it works exceptionally well with git
 and can therefore form the foundation of a top-notch change management process.
 
-*Kenfigure* is highly useful solely as a standalone documentation tool,
-but I also use it for internal tools I've developed
-to programmatically deploy configurations, extract and document configurations,
-check against a set of schema quality rules and create dynamic ER diagrams.
-I created the spec for my internal tool use, but am making it publicly available since it
-is highly valuable as a way to document the source-of-truth for Benchling configurations
-even without leveraging any tools.
+*Kenfigure* is highly useful as a standalone documentation and source-of-truth tool — valuable on
+its own, independent of any additional tooling. Go2 Software also builds
+[**Kenfigure Pro™**](kenfigure_pro.html) on the standard: a commercial
+suite (Kenfigure Tool™ and Kenfigure Diagram™) for programmatic configuration export and import,
+schema quality checking, and interactive ER diagrams. The spec is openly published and independently
+useful whether or not you use those tools.
 
 Here's a very stripped down example:
 ```yaml
@@ -52,60 +51,63 @@ Entity_schemas:
 See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annotated example.
 
 # Documentation and essential references
-- [Kenfigure documentation](./annotated.md) - This is the primary documentation in the form of annotated examples.
-- [Complete schema reference](./reference.md) - This is not as user friendly, but it is comprehensive.
-- [Schema design style guide](./schema_design_style_guide.md) - This is an
-  opinionated guide related to style aspects of schema design in Benchling.
-  This is a companion to Kenfigure but is independent of the Kenfigure specification.
-  Some custom tooling (e.g., Kenfigure Tool Schema Lint) may use the style guide as a source for style rules.
-- [Kenfigure Tool User Guide](./kenfigure_tool_user_guide.md) - A Benchling App Canvas application that converts between Benchling and Kenfigure formats. Includes Git integration.
+- [Kenfigure documentation](./annotated.md) - Primary documentation in the form of annotated examples.
+- [Complete schema reference](./reference.md) - Comprehensive but dense; the annotated docs are more approachable.
+- [Schema design style guide](./schema_design_style_guide.md) - Opinionated style guidance for Benchling schema design.
+  A companion to Kenfigure but independent of the specification.
+  Kenfigure Tool Schema Lint uses the style guide as a source for quality rules.
+- [Kenfigure Tool User Guide](./kenfigure_tool_user_guide.md) - Guide for the Benchling Canvas app (Export/Import, Git integration).
 - [Kenfigure JSON schema](./jsonschemas/latest/kenfigure.schema_flat.json) - The full (flattened) JSON schema for Kenfigure.
 - [Kenfigure on GitHub](https://github.com/kennovation1/kenfigure) - Open-source schema repository, issues, and contributions.
+- [Kenfigure Pro™](kenfigure_pro.html) - The commercial tool suite built on this standard (Kenfigure Tool Import, Kenfigure Diagram).
 
-# Benefits 
-Here are some benefits of documenting your Benchling configuration in *kenfigure* files in git. In no particular order:
-(Note that I'm included some benefits are required additional tooling that is not open source.
-I've left these bullet points here since it helps to show the future possibilities whether it's with Go2 Software
-proprietary tools or others.)
-- Allows comments, notes, annotations on schemas and schema fields
+# Benefits
+
+## What the open standard gives you
+
+Here are the benefits of documenting your Benchling configuration as *Kenfigure* YAML files in git.
+These require only the open standard — no commercial tooling:
+
+- Comments, notes, and annotations on schemas and schema fields
 - Version control including branching and pull requests
-- Version difference inspection
-- Reusable/shareable components and patterns
+- Version difference inspection — diff any two configurations or environment states
+- Reusable and shareable components and patterns
 - Templatized components and patterns
-- Faster configuration (no UI clicking) [using additional tooling]
-- Fewer errors
-- Consistency between environments
-- Configuration rollback [using additional tooling]
-- Can integrate with visualization tools [e.g., I have a tool to create ER diagrams from the *kenfigure* specification]
-  - Support hints for automated diagram layout generation
-- Enables the ability to write model checkers and style checkers [e.g., I have a tool, "SchemaLint", that checks for many issues and anti-patters that I seen over the years]
-  - No more fields with hidden leading or trialing spaces!
-- Allows for more complete, verifiable, and easier configurations review (particular useful for validated environments)
-- Documentation for validated environments
-- Enables global spell checking
-- Enables global search to find configuration information, verify settings, check for consistency, check for conflicts, etc.
-- Easy global search and replace
-- Basic tools like grep (and grep -R) can make it very easy to see things like "all prefixes" or "all names" or all
-  schemas that refer to a given entity.
-- IDE support for hover hints and typing completion
-- GitHub Copilot typing completions
-- Can implement special operations (e.g., to help migrations) such as bulk disable/enable require fields on entity schemas. [using additional tooling]
-- Copy & paste of common sections (e.g., fields)
-- Can try multiple model configurations
-- Edit, review, share, revise, all before committing to Benchling
-- There are lots of features of VSCode and DbSchema that are now possible. May are not listed here. Some thoughts...
-  - VSCode allows section expand/collapse, navigation crumbs, great when fleshing out multiple similar fields (lipid A, B, C...)
-  - DbSchema has various navigation and pan/zoom features. Cool to create layout from group
-  - YAML supports grouping which can drive DbSchema and in the future I may use this for filters and such
-  - Create layout from group is powerful
-- Create and inspect computed fields without requiring Benchling support [using additional tooling]
-- Detects and corrects drift [using additional tooling]
-- Supports Notify directive for manual instructions for imports (e.g., configure dashboard, set permissions) [using additional tooling]
-- Tracks feature flag settings and can convert to/from a CSV that Benchling support provides and can use to as a guide to perform updates
-  by filtering on "Planned Value" fields. By keeping feature flags in YAML it's easy to manage config changes with git and also
-  to see differences between tenants or versions (since diffs of sorted yamls is easier than diffs of Benchling xlsx files). This also
-  makes it possible to control feature flags along with all other configs. [using additional tooling]
-- Git management of YAMLs allows for hierarchical grouping of schemas in a folder tree
+- Fewer errors — YAML is reviewed before being applied, and IDE schema validation catches mistakes early
+- Consistency across environments — a single reviewed source of truth shared by Dev, Test, and Prod
+- More complete, verifiable, and auditable configuration reviews (particularly useful for validated environments)
+- Documentation suitable for validated environments
+- Global spell checking (IDE or editor spell checker runs across all YAML files)
+- Global search — find all uses of a field name, check for consistency, detect conflicts, see all prefixes at once
+- Easy global search and replace across the entire configuration
+- Quick grep queries: `grep -R "prefix:" .` lists every schema prefix in one command
+- IDE support for hover hints and typing completion (see VS Code / Cursor setup below)
+- GitHub Copilot and other AI assistant completions — especially effective when the full configuration is in context
+- Copy and paste of common sections (e.g., standard field groups)
+- Draft and iterate on multiple model configurations before committing anything to Benchling
+- Edit, review, share, and revise collaboratively before any change touches Benchling
+- VSCode-specific benefits: section expand/collapse, navigation breadcrumbs, great for building out multiple similar fields
+- YAML folder-tree grouping allows hierarchical organization of schemas in a directory structure
+- Track feature flag settings as YAML — diff tenants or versions far more easily than comparing Benchling's xlsx export files
+
+## What Kenfigure Pro adds
+
+[**Kenfigure Pro™**](kenfigure_pro.html) (Kenfigure Tool™ and Kenfigure Diagram™)
+builds on the open standard to close the loop from source of truth back to Benchling:
+
+- **Faster, accurate configuration import** — push changes back to Benchling directly from YAML; no manual UI clicking
+- **Configuration rollback** — roll back to any previously versioned state and import it
+- **Interactive ER diagrams** — Kenfigure Diagram renders your schema as an explorable, searchable entity-relationship diagram
+  - Diagram layout hints in the YAML drive automatic grouping
+- **Schema lint with visual indicators** — Kenfigure Tool Schema Lint flags anti-patterns and style issues; Kenfigure Diagram surfaces them inline with suppression tracking
+  - No more fields with hidden leading or trailing spaces, inconsistent naming, or other common issues
+- **Bulk operations** — bulk enable/disable required fields on entity schemas and similar special operations
+- **Computed and snapshot fields** — create and inspect computed fields without requiring Benchling support
+- **Drift detection and correction** — detect and reconcile drift between your YAML and the live Benchling state
+- **Notify directive** — embed manual instructions (e.g., configure a dashboard, set permissions) as part of an import sequence
+- **Prompt Builder** — assemble targeted schema context for SQL development or AI tools from Kenfigure Diagram
+
+→ [Learn more about Kenfigure Pro™](kenfigure_pro.html)
 
 # Mindset
 - Generally the key names in the specification match or closely match the terminology Benchling uses in the UI.
@@ -174,5 +176,6 @@ Here's some doc for how to configure [PyCharm for YAML editing with a custom sch
 
 You are free to use, adapt, and share this schema with proper attribution.
 
-Commercial use of software tools that rely on this schema may require a separate license.  
-Please contact [info@go2software.com](mailto:info@go2software.com) for commercial licensing inquiries.
+Commercial use of software tools that rely on this schema may require a separate license.
+See [Kenfigure Pro™](kenfigure_pro.html) for Go2 Software's commercial tool suite,
+or contact [info@go2.software](mailto:info@go2.software) with questions.

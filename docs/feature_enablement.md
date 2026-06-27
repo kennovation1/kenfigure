@@ -2,21 +2,20 @@
 
 # Enable Kenfigure Features
 
-This page describes the premium features available for Kenfigure Tool and Kenfigure Diagram and how to get them enabled for your tenant.
+This page describes the **Kenfigure Pro™** features available for Kenfigure Tool and Kenfigure Diagram and how to get them enabled for your tenant.
 
 If you arrived here from a disabled button or link in the Kenfigure Tool canvas, you're in the right place.
 
 Kenfigure Tool provides the ability to export your Benchling configuration into Kenfigure
-format either as a .zip file or directly to your git repository.
+format either as a .zip file or directly to your git repository — free for all users.
 
-Importing back to Benchling and the use of the powerful Kenfigure Diagram application
-are part of the premium upgrade to Kenfigure Tool.
-Please ask your Benchling administrator to contact us about upgrading to the premium
-version of Kenfigure Tool. 
+Importing back to Benchling and the use of Kenfigure Diagram are part of
+**[Kenfigure Pro™](kenfigure_pro.html)**.
+Please ask your Benchling administrator to contact us about subscribing to Kenfigure Pro.
 
 ---
 
-## Available Features in the upgrade
+## What Kenfigure Pro includes
 
 ### Import to Benchling (Canvas Import)
 
@@ -60,7 +59,7 @@ git Kenfigure specification.
 
 ## How to Enable
 
-**To request access:**, email [info@go2.software](mailto:info@go2.software)
+Email [info@go2.software](mailto:info@go2.software) to subscribe to Kenfigure Pro or to request access for your tenant.
 
 ---
 
@@ -86,8 +85,8 @@ No. Feature enablement is handled server-side and takes effect immediately witho
 
 ## Pricing
 
-Contact [info@go2.software](mailto:info@go2.software) 
+See the **[Kenfigure Pricing page](pricing.html)** for current subscription tiers and pricing, or the **[Kenfigure Pro overview](kenfigure_pro.html)** for a full description of what's included. For Enterprise or Validated Cloud inquiries, contact [info@go2.software](mailto:info@go2.software).
 
 ---
 
-[Back to Kenfigure home](https://kenfigure.com) · [User Guide](https://kenfigure.com/kenfigure_tool_user_guide.html)
+[Back to Kenfigure home](https://kenfigure.com) · [User Guide](kenfigure_tool_user_guide.html)
