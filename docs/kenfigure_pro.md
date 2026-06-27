@@ -24,7 +24,7 @@ The configuration-management discipline software teams apply to code — now for
 
 ---
 
-## The problem with Benchling configuration management
+## The challenge of Benchling configuration management
 
 Benchling configuration — entity schemas, dropdowns, result schemas, templates, and more — is complex, evolves constantly, and exists only as UI clicks. There is no version history, no way to propose and review a change before it is applied, no easy path to reproduce a configuration in a new environment, and no visual overview of how everything fits together.
 
