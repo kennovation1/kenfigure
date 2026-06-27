@@ -61,6 +61,8 @@ make docs-stop     # stop the preview server
 
 If you have Ruby 3+ and Bundler installed locally, you can use `make docs-serve-native` instead of Docker.
 
+**Order form links:** Pages that link to the Kenfigure Pro order form use `docs/_data/urls.yml` and `jekyll.environment` so local preview (`http://localhost:8001/order`) and production (`https://auth.kenfigure.com/order`) resolve automatically. Run kenfigure-auth locally on port 8001 when testing those links. See `local_notes/jekyll.md` for details.
+
 ---
 
 ## 💼 Commercial Use Notice
