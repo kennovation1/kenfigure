@@ -22,7 +22,7 @@ _New to Kenfigure Pro? [Read the product overview](kenfigure_pro.html) to see wh
 .pricing-order-btn:hover { background: #219a52; color: #fff; }
 </style>
 
-<a href="https://auth.kenfigure.com/order" class="pricing-order-btn">Order Kenfigure Pro →</a>
+<a href="{{ site.data.urls.auth_base_url[jekyll.environment] }}/order" class="pricing-order-btn">Order Kenfigure Pro →</a>
 
 ---
 
@@ -116,9 +116,9 @@ See the **[FAQ](faq.html)** for answers on licensing, coverage, security, and mo
 
 ## How to buy
 
-Choose your tier and term and complete the **[order form](https://auth.kenfigure.com/order)**. We provision your company and primary user(s) once your order is placed — you don't have to wait for payment to clear to get started.
+Choose your tier and term and complete the **[order form]({{ site.data.urls.auth_base_url[jekyll.environment] }}/order)**. We provision your company and primary user(s) once your order is placed — you don't have to wait for payment to clear to get started.
 
-For **Enterprise** or **Validated Cloud**, [request a quote](https://auth.kenfigure.com/order) for a tailored price.
+For **Enterprise** or **Validated Cloud**, [request a quote]({{ site.data.urls.auth_base_url[jekyll.environment] }}/order) for a tailored price.
 
 <style>
 .pricing-order-btn {
@@ -129,7 +129,7 @@ For **Enterprise** or **Validated Cloud**, [request a quote](https://auth.kenfig
 .pricing-order-btn:hover { background: #219a52; color: #fff; }
 </style>
 
-<a href="https://auth.kenfigure.com/order" class="pricing-order-btn">Order Kenfigure Pro →</a>
+<a href="{{ site.data.urls.auth_base_url[jekyll.environment] }}/order" class="pricing-order-btn">Order Kenfigure Pro →</a>
 
 
 ---

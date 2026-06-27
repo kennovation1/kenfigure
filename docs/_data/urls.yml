@@ -1,0 +1,3 @@
+auth_base_url:
+  development: http://localhost:8001
+  production: https://auth.kenfigure.com

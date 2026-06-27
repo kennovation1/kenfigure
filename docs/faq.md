@@ -29,7 +29,7 @@ Kenfigure Pro works with the standard Benchling enterprise platform. Validated C
 
 **How do I get started?**
 
-Choose your tier on the [pricing page](pricing.html) and complete the [order form](https://auth.kenfigure.com/order). We provision your account once your order is placed — you do not have to wait for payment to clear. The free **Kenfigure Tool™ (Export)** is available to anyone immediately with no order form required: install the Benchling Canvas app and export. See the [Kenfigure Tool User Guide](./kenfigure_tool_user_guide.md) for details and installation instructions.
+Choose your tier on the [pricing page](pricing.html) and complete the [order form]({{ site.data.urls.auth_base_url[jekyll.environment] }}/order). We provision your account once your order is placed — you do not have to wait for payment to clear. The free **Kenfigure Tool™ (Export)** is available to anyone immediately with no order form required: install the Benchling Canvas app and export. See the [Kenfigure Tool User Guide](./kenfigure_tool_user_guide.md) for details and installation instructions.
 
 ---
 
