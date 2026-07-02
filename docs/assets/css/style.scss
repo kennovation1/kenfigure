@@ -56,6 +56,11 @@ section {
   margin-bottom: 0;
 }
 
+.security-badge {
+  display: block;
+  margin-bottom: 1.5em;
+}
+
 @media print, screen and (max-width: 720px) {
   .site-footer__nav li {
     display: block;

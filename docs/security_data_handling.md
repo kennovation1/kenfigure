@@ -60,6 +60,17 @@ Kenfigure Tool™ (Import) generates a Benchling Configuration Migration file. Y
 
 Configuration copies held by the Service are transient. When a subscription ends, account access is closed and configuration data is removed. Limited account records may be retained as needed for legal and financial purposes, as described in the [Privacy Policy](privacy_policy.html).
 
+## Independent security rating
+
+Kenfigure's public-facing domains are continuously rated by [SecurityScorecard](https://securityscorecard.com), an independent, outside-in security ratings service.
+
+<iframe class="security-badge" src="https://scores.securityscorecard.io/security-rating/badge/kenfigure.com"
+  width="256"
+  height="100"
+  frameBorder="0"
+>
+</iframe>
+
 ## Questions
 
 Security and data-handling questions: [security@go2.software](mailto:security@go2.software).
