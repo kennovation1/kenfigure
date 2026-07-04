@@ -13,15 +13,6 @@ Kenfigure helps Benchling administrators bring their configuration under control
 
 _New to Kenfigure Pro? [Read the product overview](kenfigure_pro.html) to see what's included and who it's for._
 
-<style>
-.pricing-order-btn {
-  display: inline-block; margin: 1rem 0;
-  padding: 0.75rem 2rem; background: #27ae60; color: #fff;
-  border-radius: 4px; font-size: 1rem; font-weight: bold; text-decoration: none;
-}
-.pricing-order-btn:hover { background: #219a52; color: #fff; }
-</style>
-
 <a href="{{ site.data.urls.auth_base_url[jekyll.environment] }}/order" class="pricing-order-btn">Order Kenfigure Pro →</a>
 
 ---
@@ -119,15 +110,6 @@ See the **[FAQ](faq.html)** for answers on licensing, coverage, security, and mo
 Choose your tier and term and complete the **[order form]({{ site.data.urls.auth_base_url[jekyll.environment] }}/order)**. We provision your company and primary user(s) once your order is placed — you don't have to wait for payment to clear to get started.
 
 For **Enterprise** or **Validated Cloud**, [request a quote]({{ site.data.urls.auth_base_url[jekyll.environment] }}/order) for a tailored price.
-
-<style>
-.pricing-order-btn {
-  display: inline-block; margin: 1rem 0;
-  padding: 0.75rem 2rem; background: #27ae60; color: #fff;
-  border-radius: 4px; font-size: 1rem; font-weight: bold; text-decoration: none;
-}
-.pricing-order-btn:hover { background: #219a52; color: #fff; }
-</style>
 
 <a href="{{ site.data.urls.auth_base_url[jekyll.environment] }}/order" class="pricing-order-btn">Order Kenfigure Pro →</a>
 

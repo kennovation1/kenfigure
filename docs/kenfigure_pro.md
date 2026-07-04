@@ -9,15 +9,6 @@ layout: default
 
 _Kenfigure is a product of Go2 Software LLC · Last updated: June 2026_
 
-<style>
-.kf-cta-btn {
-  display: inline-block; margin: 1rem 0;
-  padding: 0.75rem 2rem; background: #27ae60; color: #fff;
-  border-radius: 4px; font-size: 1rem; font-weight: bold; text-decoration: none;
-}
-.kf-cta-btn:hover { background: #219a52; color: #fff; }
-</style>
-
 The configuration-management discipline software teams apply to code — now for your Benchling platform.
 
 <a href="pricing.html" class="kf-cta-btn">See pricing →</a>  &nbsp; [Read the FAQ](faq.html)
