@@ -11,6 +11,10 @@ defaults:
       path: ''
     values:
       layout: default
+  - scope:
+      path: 'index.md'
+    values:
+      toc: true
 
 company:
   name: Go2 Software LLC

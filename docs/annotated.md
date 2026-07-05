@@ -1,3 +1,9 @@
+---
+title: Kenfigure Schema Documentation
+layout: default
+toc: true
+---
+
 [Kenfigure home](https://kenfigure.com)
 
 # Kenfigure Schema Documentation

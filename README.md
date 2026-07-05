@@ -2,7 +2,7 @@
 ![License: ODC-BY 1.0](https://img.shields.io/badge/License-ODC--BY%201.0-blue)
 ![Version](https://img.shields.io/badge/version-v1.7.0-orange)
 
-# Overview
+## Overview
 *Kenfigure*: a YAML spec to define Benchling configurations
 
 This approach provides a structured, accurate, reproducible, reviewable, and maintainable definition
@@ -50,7 +50,7 @@ Entity_schemas:
 
 See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annotated example.
 
-# Documentation and essential references
+## Documentation and essential references
 - [Kenfigure documentation](./annotated.md) - Primary documentation in the form of annotated examples.
 - [Complete schema reference](./reference.md) - Comprehensive but dense; the annotated docs are more approachable.
 - [Schema design style guide](./schema_design_style_guide.md) - Opinionated style guidance for Benchling schema design.
@@ -61,9 +61,9 @@ See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annot
 - [Kenfigure on GitHub](https://github.com/kennovation1/kenfigure) - Open-source schema repository, issues, and contributions.
 - [Kenfigure Pro™](kenfigure_pro.html) - The commercial tool suite built on this standard (Kenfigure Tool Import, Kenfigure Diagram).
 
-# Benefits
+## Benefits
 
-## What the open standard gives you
+### What the open standard gives you
 
 Here are the benefits of documenting your Benchling configuration as *Kenfigure* YAML files in Git.
 These require only the open standard — no commercial tooling:
@@ -90,7 +90,7 @@ These require only the open standard — no commercial tooling:
 - YAML folder-tree grouping allows hierarchical organization of schemas in a directory structure
 - Track feature flag settings as YAML — diff tenants or versions far more easily than comparing Benchling's xlsx export files
 
-## What Kenfigure Pro adds
+### What Kenfigure Pro adds
 
 [**Kenfigure Pro™**](kenfigure_pro.html) (Kenfigure Tool™ and Kenfigure Diagram™)
 builds on the open standard to close the loop from source of truth back to Benchling:
@@ -109,21 +109,21 @@ builds on the open standard to close the loop from source of truth back to Bench
 
 → [Learn more about Kenfigure Pro™](kenfigure_pro.html)
 
-# Mindset
+## Mindset
 - Generally the key names in the specification match or closely match the terminology Benchling uses in the UI.
 - Optional key may be omitted and defaults will be used. My personal style is to normally include all keys, even if optional.
   The only exception is that if a field is not required, I omit the "Required" key.
 
-# Limitations
+## Limitations
 - Does not yet handle Benchling Workflows, In Vivo, Lab Automation/Connect, Insights, Bioprocess
 
-# Schema
+## Schema
 - [Kenfigure JSON schema](./jsonschemas/latest/kenfigure.schema.json)
 - Flattened version that doesn't use $refs: [Kenfigure JSON schema flat](./jsonschemas/latest/kenfigure.schema_flat.json)
 - I haven't decided if I need to bother producing flat versions. Please let me know if you can't use the
   normal version with $refs and need a flat version for some reason (and what that reason is).
 
-# JSON schema technical notes
+## JSON schema technical notes
 - The JSON schemas files are in the `jsonschemas` directory.
 - The top level file is `kenfigure.schema.json` and this uses `$ref` to 
   interpolate sub-schemas. This is done only for one-level for items in `properties`.
@@ -134,7 +134,7 @@ builds on the open standard to close the loop from source of truth back to Bench
   is for use with IDEs and sharing more generally so that there will be no
   reference resolution hurdles. This allows us to keep the source files separate for manageability.
 
-## VS Code and Cursor specific notes
+### VS Code and Cursor specific notes
 - For VSCode or Cursor, install the YAML plugin from Red Hat and add the following in
   `.vscode/settings.json` to associate the schema file with YAML files in the listed locations.
 ```json
@@ -156,21 +156,21 @@ builds on the open standard to close the loop from source of truth back to Bench
     completion (based on the JSON schema) instead of the AI completion.
   - The AI can be helpful for creating appropriate tooltips or at least giving you a good start.
 
-### Cursor rules
+#### Cursor rules
 See [.cursor/rules/kenfigure.mdc](https://github.com/kennovation1/kenfigure/blob/78dedd79021cc64673d4e9525a5dd2268bd015ce/.cursor/rules/kenfigure.mdc)
 in the [GitHub repo](https://github.com/kennovation1/kenfigure) for a Cursor rules file that that works well.
 Getting these rules optimized is an ongoing process, so check back for updates.
 Of course contributions are welcome too!
 
-### GitHub Copilot AGENT.md rules
+#### GitHub Copilot AGENT.md rules
 I have not yet testing using AGENT.md files, but I suspect you could readily adapt the above Cursor rules file.
 
-## Other IDEs
+### Other IDEs
 If you use a different IDE, please create a pull request so we can document any applicable notes.
 
 Here's some doc for how to configure [PyCharm for YAML editing with a custom schema](https://www.jetbrains.com/help/pycharm/yaml.html#json_schema).
 
-# License
+## License
 
 **Kenfigure™** is provided under the [Open Data Commons Attribution License (ODC-BY 1.0)](https://opendatacommons.org/licenses/by/1-0/).
 
