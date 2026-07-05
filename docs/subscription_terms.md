@@ -1,6 +1,7 @@
 ---
 title: Kenfigure Pro™ Subscription Terms
 layout: default
+toc: true
 ---
 
 [Kenfigure home](https://kenfigure.com)
