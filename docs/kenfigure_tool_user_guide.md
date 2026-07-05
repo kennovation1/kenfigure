@@ -1,3 +1,8 @@
+---
+title: Kenfigure Tool User Guide
+layout: default
+---
+
 [Kenfigure home](https://kenfigure.com)
 
 # Kenfigure Tool User Guide
@@ -81,9 +86,9 @@ However, a few specific features pull live data from your Benchling tenant and n
 
 The app is now installed and ready to use!
 
-![Screenshot: App home page after installation is completed](images/installed_default_entitlements.png)
+![Screenshot: App home page after installation is completed](images/full_screen.png)
 
-The **Export to git** button will be disabled until you configure a git repository (see [Configuration](#configuration)).
+The git-related buttons will be disabled until you configure a git repository (see [Configuration](#configuration)).
 
 Contact [info@go2.sofware](mailto:info@go2.software) to upgrade to activate the **Import** buttons.
 
@@ -508,20 +513,6 @@ If the error isn't clear, send the log to [info@go2.software](mailto:info@go2.so
 **Email:** [info@go2.software](mailto:info@go2.software)
 
 **Documentation and updates:** [kenfigure.com](https://kenfigure.com)
-
----
-
-## Disclaimers
-
-**No warranties:** Kenfigure Tool is provided "as is" without warranties of any kind, express or implied. Use of this tool is at your own risk.
-
-**No guarantees:** While we work hard to ensure accurate conversions, we do not guarantee that exported or imported files will be error-free, complete, or suitable for your specific use case. Always review converted configurations before applying them to a production environment.
-
-**Service availability:** We reserve the right to modify, suspend, or discontinue access to Kenfigure Tool at any time, for any reason, with or without notice. This includes the ability to change access for individual users or all users at our discretion.
-
-**Limitation of liability:** The developers and providers of this tool are not liable for any damages, losses, or issues arising from its use, including but not limited to data loss or incorrect configurations.
-
-**User responsibility:** Users are responsible for validating exported and imported configurations and for ensuring compliance with their organization's policies and procedures.
 
 ---
 
