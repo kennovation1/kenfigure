@@ -19,7 +19,7 @@
     {% include head-custom.html %}
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper{% if page.toc %} wrapper--with-toc{% endif %}">
 
       <section>
         <div id="title">
@@ -28,7 +28,16 @@
           <hr>
         </div>
 
+        {% if page.toc %}
+        <div class="page-with-toc">
+          {% include toc.html html=content %}
+          <div class="page-toc-content">
+            {{ content }}
+          </div>
+        </div>
+        {% else %}
         {{ content }}
+        {% endif %}
 
         {% include site-footer.html %}
       </section>

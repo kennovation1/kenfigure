@@ -1,6 +1,7 @@
 ---
 title: Kenfigure Tool User Guide
 layout: default
+toc: true
 ---
 
 [Kenfigure home](https://kenfigure.com)
