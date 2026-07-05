@@ -50,7 +50,7 @@ _Everything in the free **Kenfigure Tool (Export)** tier, plus:_
 
 - **Kenfigure Tool (Import)** — push configuration changes back to Benchling directly from your Kenfigure YAML. Because every change originates from a versioned, reviewed, and approved source of truth, there is no manual clicking through the Benchling UI — imports are accurate, auditable, and far faster than equivalent manual work.
 - **Kenfigure Diagram** — an interactive entity-relationship diagram of your Benchling configuration, with schema-lint visualization, search and navigation, and the Prompt Builder for creating SQL queries and AI starting points from selected schema elements.
-- **Git integration** — Building on the free tier's export-to-git capability, Pro adds git as a source: Kenfigure Tool (Import) pulls configuration YAML directly from a repository branch, and Kenfigure Diagram reads and writes to your repository — saving layouts, sub-layouts, and schema-lint suppressions to a branch of your choice.
+- **Git integration** — Building on the free tier's export-to-Git capability, Pro adds Git as a source: Kenfigure Tool (Import) pulls configuration YAML directly from a repository branch, and Kenfigure Diagram reads and writes to your repository — saving layouts, sub-layouts, and schema-lint suppressions to a branch of your choice.
 
 ---
 

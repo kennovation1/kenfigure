@@ -7,7 +7,7 @@ This page describes the **Kenfigure Pro™** features available for Kenfigure To
 If you arrived here from a disabled button or link in the Kenfigure Tool canvas, you're in the right place.
 
 Kenfigure Tool provides the ability to export your Benchling configuration into Kenfigure
-format either as a .zip file or directly to your git repository — free for all users.
+format either as a .zip file or directly to your Git repository — free for all users.
 
 Importing back to Benchling and the use of Kenfigure Diagram are part of
 **[Kenfigure Pro™](kenfigure_pro.html)**.
@@ -41,9 +41,9 @@ accuracy (and consistency among tenants).
 
 **What it does:** A companion web application that renders your Kenfigure configuration as an interactive, explorable schema diagram. Visualize entity relationships, filter by schema type, add annotations, and share a live view with your team. Every export you run through Kenfigure Tool automatically updates the diagram.
 
-You can also configure Kenfigure Diagram to directly read from your git repository
+You can also configure Kenfigure Diagram to directly read from your Git repository
 (multiple branches are supported) so you have a live view of the current state of your
-git Kenfigure specification.
+Git Kenfigure specification.
 
 **Why you'd want it:** Schema documentation that stays current without manual maintenance. Useful for onboarding, impact analysis, compliance reviews, and cross-team communication.
 
