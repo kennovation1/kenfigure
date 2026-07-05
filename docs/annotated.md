@@ -468,7 +468,7 @@ Plate_schemas:
 
 ## Feature Flags
 The initial version of the feature flags file is typically created using a custom tool
-(e.g., Kenfigure Tool). Once initialized, it may then be maintained in git or periodically
+(e.g., Kenfigure Tool). Once initialized, it may then be maintained in Git or periodically
 updated via a fresh export. The export includes all attributes including `Description`.
 
 File: feature_flags.yaml

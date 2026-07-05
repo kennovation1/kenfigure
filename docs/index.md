@@ -8,7 +8,7 @@
 This approach provides a structured, accurate, reproducible, reviewable, and maintainable definition
 of your Benchling tenant configurations.
 
-Because it is a structured human *and* machine readable format, it works exceptionally well with git
+Because it is a structured human *and* machine readable format, it works exceptionally well with Git
 and can therefore form the foundation of a top-notch change management process.
 
 *Kenfigure* is highly useful as a standalone documentation and source-of-truth tool — valuable on
@@ -65,7 +65,7 @@ See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annot
 
 ## What the open standard gives you
 
-Here are the benefits of documenting your Benchling configuration as *Kenfigure* YAML files in git.
+Here are the benefits of documenting your Benchling configuration as *Kenfigure* YAML files in Git.
 These require only the open standard — no commercial tooling:
 
 - Comments, notes, and annotations on schemas and schema fields

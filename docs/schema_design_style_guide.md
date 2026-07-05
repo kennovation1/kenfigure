@@ -105,7 +105,7 @@ Here we include Kenfigure-specific nuances in addition to style guidance.
 
 ## SQL files
 - Each block's SQL should live in a separate `.sql` file in the dashboard's directory (not inlined in the YAML even that that is supported).
-  This makes SQL easier to edit in an IDE, diff in git, and hand to an AI coding assistant.
+  This makes SQL easier to edit in an IDE, diff in Git, and hand to an AI coding assistant.
 - The `.sql` file name should be derived from the block name with non-word characters replaced by underscores (e.g., block "Entity Count by Project" → `Entity_Count_by_Project.sql`)
 - The YAML `SQL` key for each block should hold the `.sql` filename as a relative reference (e.g., `SQL: Entity_Count_by_Project.sql`)
 - SQL style is outside the scope of this guide; adopt a consistent style within your team

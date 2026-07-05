@@ -5,7 +5,7 @@
 # and in any code that reads/writes these files. The JSON Schema also provides context-sensitive
 # help and completion in the editor (I use VS Code).
 #
-# The value of this is amplified tremedously when managed in a version control system (git)
+# The value of this is amplified tremedously when managed in a version control system (Git)
 # since that provides a clear way to see changes, provides a history of changes, and has the
 # ability to branch and merge (including approvals if desired).
 #

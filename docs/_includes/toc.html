@@ -1,0 +1,26 @@
+{% comment %}
+  Pure-Liquid, plugin-free table of contents (GitHub Pages runs a restricted
+  plugin whitelist, so this avoids needing one). Scans the page's rendered
+  HTML for H2/H3 headings and reuses the ids kramdown already auto-generates
+  for anchor links elsewhere on the site.
+
+  Usage: {% include toc.html html=content %}
+{% endcomment %}
+{% assign toc_nodes = include.html | split: '<h' %}
+<nav class="page-toc" aria-label="Table of contents">
+  <p class="page-toc__title">On this page</p>
+  <ul>
+    {% for node in toc_nodes %}
+      {% assign toc_level = node | slice: 0, 1 %}
+      {% if toc_level == '2' or toc_level == '3' %}
+        {% assign toc_head = node | split: '</h' | first %}
+        {% if toc_head contains 'id="' %}
+          {% assign toc_open = toc_head | split: '>' | first %}
+          {% assign toc_id = toc_open | split: 'id="' | last | split: '"' | first %}
+          {% assign toc_title = toc_head | split: '>' | last | strip %}
+          <li class="page-toc__item page-toc__item--h{{ toc_level }}"><a href="#{{ toc_id }}">{{ toc_title }}</a></li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>

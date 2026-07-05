@@ -1,6 +1,7 @@
 ---
 title: Kenfigure Security & Data Handling Overview
 layout: default
+toc: true
 ---
 
 [Kenfigure home](https://kenfigure.com)

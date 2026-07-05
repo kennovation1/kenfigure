@@ -84,3 +84,77 @@ section {
     margin: 0;
   }
 }
+
+// Opt-in left-nav table of contents (set `toc: true` in a page's front
+// matter). Pure CSS + the Liquid-only _includes/toc.html — no plugin or JS.
+.wrapper--with-toc {
+  max-width: 960px;
+}
+
+.wrapper--with-toc section {
+  max-width: none;
+}
+
+.page-with-toc {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.page-toc-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.page-toc {
+  flex: 0 0 200px;
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  font-size: 13px;
+}
+
+.page-toc__title {
+  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #777;
+}
+
+.page-toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-toc li {
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.page-toc__item--h3 {
+  padding-left: 14px;
+  font-size: 12px;
+}
+
+@media print, screen and (max-width: 860px) {
+  .wrapper--with-toc,
+  .wrapper--with-toc section {
+    max-width: 650px;
+  }
+
+  .page-with-toc {
+    display: block;
+  }
+
+  .page-toc {
+    position: static;
+    max-height: none;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #434343;
+  }
+}
