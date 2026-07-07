@@ -7,6 +7,7 @@ accelerators/**/*.dat
 .cursor/mcp.json
 tmp/**
 .venv
+.venv.nosync/
 
 # Jekyll local preview (docs/)
 docs/vendor/
