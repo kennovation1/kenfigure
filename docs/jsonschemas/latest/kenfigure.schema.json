@@ -22,6 +22,14 @@
       "description": "Dropdowns and their values",
       "$ref": "https://kenfigure.com/jsonschemas/latest/dropdowns.schema.json"
     },
+    "Unit_dictionary": {
+      "description": "Benchling unit types and the units that belong to them",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/unit_dictionary.schema.json"
+    },
+    "Conversion_hints": {
+      "description": "Global parameters that adapt import/export to variations in the Benchling .dat format",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/conversion_hints.schema.json"
+    },
     "Entity_schemas": {
       "description": "Entity schemas",
       "$ref": "https://kenfigure.com/jsonschemas/latest/entity_schemas.schema.json"

@@ -281,6 +281,10 @@
                 }
               ]
             },
+            "Unit": {
+              "description": "Name of a unit (from Unit_dictionary) assigned to this field. Only valid if Type is Decimal or Integer.",
+              "type": "string"
+            },
             "Computed": {
               "description": "Describes the computed field. Only present for computed fields.",
               "type": "object",

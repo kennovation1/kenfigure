@@ -160,6 +160,59 @@ Dropdowns:
     # and since it is tenant-specific.
 ```
 
+## Unit dictionary
+Benchling unit types (e.g., Mass, Volume, Mass concentration) and the units that belong to each
+type (e.g., Mass has kilogram, gram, milligram, ...). Units are almost always populated by
+enabling entries from Benchling's built-in master list rather than hand-authored, so a
+`Unit_dictionary` will typically originate from an export rather than being written from scratch.
+A `Decimal` or `Integer` field assigns a unit by name using the field's `Unit` key (see Entity
+schemas and Result Schemas below).
+
+File: Unit_dictionary.yaml
+
+```yaml
+Unit_dictionary:
+- Unit type: Mass concentration  # Name of the unit type, as shown in the Benchling UI
+  Description: Mass per unit volume  # Used for internal documentation. Optional.
+    # Not available in Benchling, though that might change in the future.
+  Allow as container quantity: false  # Controls if this type is in the dropdown for container
+      # Quantity units.  # false if omitted.
+  Allow as concentration: true  # Controls if this type is in the dropdown for container
+      # Concentration units. false if omitted
+  Formula:  # Defines this unit type as derived from other unit types. Omit for base/simple
+      # unit types (e.g., pH, Percent) that have no formula. Mirrors the Benchling UI, which
+      # allows at most 2 numerators and at most 1 denominator.
+    Numerators: [kilogram]  # Unit name(s) multiplied together in the numerator (max 2)
+    Denominator: liter  # A single unit name dividing the numerator(s). Omit if there is none.
+    # Numerator/Denominator values are the Name (never the Symbol) of a unit defined elsewhere
+    # in this Unit_dictionary, matched case-sensitively. 'kilogram' and 'liter' above are the
+    # (lowercase) Names of the base units that would be defined under separate 'Mass' and
+    # 'Volume' unit type entries elsewhere in the dictionary (not shown in this excerpt).
+    # Base SI-style units tend to use lowercase Names (kilogram, liter, mole, second); compound
+    # units tend to use descriptive Title Case Names (e.g., 'Kilograms per liter' below).
+    # A small number of Benchling built-in unit types raise a term to a power other than 1
+    # (e.g., Volume = decimeter^3). This is not expected to be hand-authored:
+    #   Numerators:
+    #     - {Unit: decimeter, Power: 3}  # Power defaults to 1 and is normally omitted
+  Units:  # Units belonging to this unit type. Exactly one must be the base unit.
+  - Name: Kilograms per liter
+    Symbol: kg/L  # Symbol as displayed in Benchling
+    Conversion factor: Base unit  # Exactly one unit per unit type is the literal string
+      # 'Base unit'; all others give a decimal conversion factor (as a string) relative to it.
+  - Name: Grams per liter
+    Symbol: g/L
+    Conversion factor: '0.001'
+  - Name: Micrograms per milliliter
+    Symbol: ug/mL
+    Conversion factor: '0.000001'
+    Aliases: ['μg/mL']  # Optional alternate symbols/spellings (e.g., unicode variants)
+- Unit type: pH  # A simple unit type has no Formula
+  Units:
+  - Name: pH units
+    Symbol: pH
+    Conversion factor: Base unit
+```
+
 ## Entity schemas
 The following assumes that you've read the above sections so that common topics are not
 repeated below. The `Diagram` and `API ID` keys are valid here but are not shown for clarity.
@@ -205,6 +258,8 @@ Entity_schemas:
     Required: true  # Default is false, true if the field is required. Yes or No are equally valid
       # but you should select one style and stick to it.
     Type: Decimal  # See below for more type options.
+    Unit: Grams per mole  # Optional. Only valid if Type is Decimal or Integer. Names a unit
+      # from Unit_dictionary (see Unit dictionary section above).
   - Name: Notes
     Description: A freeform notes field
     System name: notes
@@ -613,4 +668,21 @@ Metadata:
   Created: '2025-05-09T13:50:59+00:00'  # The datetime when the model was first created
   Modified: '2025-05-09T13:50:59+00:00'  # The datetime when the model was last modified
   Schema version: 0.1.0  # The Kenfigure schema version
+```
+
+## Conversion hints
+`Conversion_hints` is a global parameters object, similar in spirit to `Metadata`, that lets
+Kenfigure Tool adapt its import/export behavior to variations in the underlying Benchling `.dat`
+format without requiring changes to the Kenfigure schema itself. It is optional; tools apply
+sensible defaults when a hint is absent. Its first use is recording which JSON key a given
+Benchling tenant/version uses for a unit type's formula (see Unit dictionary above) — Benchling has
+been observed to use both `formula` and `original_formula` for the same concept across
+tenants/versions. Future `.dat`-format conditionals are expected to be added here rather than as
+new top-level Kenfigure sections.
+
+```yaml
+Conversion_hints:
+  # Recorded on export, consumed on import, so the Unit dictionary's Formula round-trips using
+  # the same key the source tenant/version expects.
+  Unit type formula key: original_formula  # 'formula' or 'original_formula'
 ```

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kenfigure.com/jsonschemas/latest/conversion_hints.schema.json",
+  "title": "Conversion hints",
+  "description": "Global parameters that adapt Kenfigure Tool import/export behavior to variations in the Benchling .dat format, keeping the Kenfigure schema itself independent of those variations. Optional; tools should apply sensible defaults when a hint is absent.",
+  "type": "object",
+  "properties": {
+    "Unit type formula key": {
+      "description": "Key used in the Benchling dataclasses_by_type.json UnitType object to hold the named-unit formula. Benchling has used 'formula' and 'original_formula' across different tenants/versions. Recorded on export and applied on import so the Unit dictionary's Formula round-trips using the same key the source tenant expects.",
+      "type": "string",
+      "enum": ["formula", "original_formula"]
+    }
+  }
+}

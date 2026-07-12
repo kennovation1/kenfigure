@@ -125,6 +125,10 @@
                 }
               ]
             },
+            "Unit": {
+              "description": "Name of a unit (from Unit_dictionary) assigned to this field. Only valid if Type is Decimal or Integer.",
+              "type": "string"
+            },
             "Snapshot": {
               "description": "Describes the snapshot computation if this is a snapshot computed field.",
               "type": "object",

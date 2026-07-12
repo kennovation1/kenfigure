@@ -1,0 +1,52 @@
+# Unit dictionary example YAML — finalized shape for Kenfigure v1.8.0.
+#
+# This supersedes the original first-draft sketch. Design notes from that draft, resolved:
+#   - Keys use the standard Kenfigure convention: spaced Title-case (e.g. "Unit type", not
+#     "Unit_type"; "Conversion factor", not "Conversion_factor").
+#   - Formula terms are UNIT NAMES (e.g. cells, liter), not dimensional terms (Cells, Length) —
+#     confirmed against real Benchling exports (numab, Resolution). The original draft's confusion
+#     over "Numerator 1: Cells / Denominator: Length" was because Benchling's dimensional-terms
+#     view (AMOUNT, LENGTH, ...) and its named-unit formula view are two different internal
+#     representations of the same unit type; Kenfigure only models the named-unit view, which
+#     matches what the Benchling UI's formula editor actually shows.
+#   - The Benchling UI allows at most 2 numerators and at most 1 denominator, so "Numerators" is a
+#     list (max 2) and "Denominator" is a scalar (not a list).
+#   - "Conversion factor: Base unit" is the sentinel for the unit type's base unit (a numeric value
+#     of 1 is not reliable — multiple units can share conversion_factor 1 without being the base).
+#   - Units are almost always populated by enabling entries from Benchling's built-in master list,
+#     so a Unit_dictionary will typically originate from an export rather than being hand-authored.
+#
+# See docs/annotated.md (## Unit dictionary) for the full narrated reference, and
+# jsonschemas/unit_dictionary.schema.json for the JSON schema.
+Unit_dictionary:
+  - Unit type: Amount of substance
+    Description: A unit of measurement for the amount of substance  # Kenfigure-only. Optional.
+    Allow as container quantity: true
+    Allow as concentration: false
+    # No Formula: Amount of substance is a base/simple unit type (not derived from others).
+    Units:
+      - Description: Mole is the SI unit of amount of substance  # Kenfigure-only. Optional.
+        Name: mole
+        Symbol: mol
+        Conversion factor: Base unit  # Each unit type must have exactly one base unit
+      - Description: A millionth of a mole
+        Name: micromole
+        Symbol: umol
+        Conversion factor: '0.000001'  # A decimal expressed as a string when not "Base unit"
+  - Unit type: Cell concentration
+    Description: Cells per unit volume
+    Allow as container quantity: false
+    Allow as concentration: true
+    Formula:
+      Numerators: [cells]     # Unit name(s) multiplied together in the numerator (max 2)
+      Denominator: liter      # A single unit name dividing the numerator(s)
+      # Renders in Benchling as: cells / liter
+    Units:
+      - Description: Cells per liter
+        Name: cells/L
+        Symbol: cells/L
+        Conversion factor: Base unit
+      - Description: Cells per milliliter
+        Name: cells/mL
+        Symbol: cells/mL
+        Conversion factor: '0.001'

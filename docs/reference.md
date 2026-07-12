@@ -48,6 +48,39 @@
     - <a id="properties/Dropdowns/items/properties/Options"></a>**`Options`** *(array)*: Dropdown values list (may be empty). Length must be at least 0. Items must be unique.
       - <a id="properties/Dropdowns/items/properties/Options/items"></a>**Items** *(string)*
     - <a id="properties/Dropdowns/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the entity created during an export operation. This is ignored for import operations.
+- <a id="properties/Unit_dictionary"></a>**`Unit_dictionary`** *(array)*: Benchling unit types and the units that belong to them. Length must be at least 0. Items must be unique.
+  - <a id="properties/Unit_dictionary/items"></a>**Items** *(object)*: A dimensional unit type (e.g., Mass, Volume, Mass concentration) and its units.
+    - <a id="properties/Unit_dictionary/items/properties/Unit%20type"></a>**`Unit type`** *(string, required)*: Unit type name (e.g., Mass, Volume, Mass concentration).
+    - <a id="properties/Unit_dictionary/items/properties/Description"></a>**`Description`** *(string)*: Documentation description for the unit type (not saved to Benchling).
+    - <a id="properties/Unit_dictionary/items/properties/Allow%20as%20container%20quantity"></a>**`Allow as container quantity`** *(boolean)*: Controls whether this unit type appears in the dropdown of selectable units for a Container schema's built-in Quantity field. Optional. Defaults to false if omitted.
+    - <a id="properties/Unit_dictionary/items/properties/Allow%20as%20concentration"></a>**`Allow as concentration`** *(boolean)*: Controls whether this unit type appears in the dropdown of selectable units for a Container schema's built-in Concentration field. Optional. Defaults to false if omitted.
+    - <a id="properties/Unit_dictionary/items/properties/Formula"></a>**`Formula`** *(object)*: Defines this unit type as derived from other unit types (e.g., Mass concentration = Mass / Volume). Omit for base/simple unit types (e.g., pH, Percent) that have no formula. Mirrors the Benchling UI, which allows at most 2 numerators and at most 1 denominator. Numerator/Denominator terms reference the Name (not the Symbol) of a unit defined elsewhere in this Unit_dictionary; matching is case-sensitive.
+      - <a id="properties/Unit_dictionary/items/properties/Formula/properties/Numerators"></a>**`Numerators`** *(array)*: Up to 2 unit names (from any unit type's dictionary) multiplied together in the numerator. Length must be between 1 and 2 (inclusive).
+        - <a id="properties/Unit_dictionary/items/properties/Formula/properties/Numerators/items"></a>**Items**: A unit Name (not Symbol), optionally raised to an integer power (Power defaults to 1 and is normally omitted). A Power other than 1 only occurs on a small number of Benchling built-in unit types (e.g., Volume = decimeter^3) and is not expected to be hand-authored.
+          - **Any of**
+            - <a id="properties/Unit_dictionary/items/properties/Formula/properties/Numerators/items/anyOf/0"></a>*string*
+            - <a id="properties/Unit_dictionary/items/properties/Formula/properties/Numerators/items/anyOf/1"></a>*object*
+              - <a id="properties/Unit_dictionary/items/properties/Formula/properties/Numerators/items/anyOf/1/properties/Unit"></a>**`Unit`** *(string, required)*
+              - <a id="properties/Unit_dictionary/items/properties/Formula/properties/Numerators/items/anyOf/1/properties/Power"></a>**`Power`** *(integer)*
+      - <a id="properties/Unit_dictionary/items/properties/Formula/properties/Denominator"></a>**`Denominator`**: A single unit Name (not Symbol) dividing the numerator(s), optionally raised to an integer power (Power defaults to 1 and is normally omitted). Omit if there is no denominator.
+        - **Any of**
+          - <a id="properties/Unit_dictionary/items/properties/Formula/properties/Denominator/anyOf/0"></a>*string*
+          - <a id="properties/Unit_dictionary/items/properties/Formula/properties/Denominator/anyOf/1"></a>*object*
+            - <a id="properties/Unit_dictionary/items/properties/Formula/properties/Denominator/anyOf/1/properties/Unit"></a>**`Unit`** *(string, required)*
+            - <a id="properties/Unit_dictionary/items/properties/Formula/properties/Denominator/anyOf/1/properties/Power"></a>**`Power`** *(integer)*
+    - <a id="properties/Unit_dictionary/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the unit type created during an export operation. This is ignored for import operations.
+    - <a id="properties/Unit_dictionary/items/properties/Units"></a>**`Units`** *(array, required)*: Units belonging to this unit type. Exactly one must be the base unit (Conversion factor: Base unit). Length must be at least 1. Items must be unique.
+      - <a id="properties/Unit_dictionary/items/properties/Units/items"></a>**Items** *(object)*: A single unit belonging to the enclosing unit type.
+        - <a id="properties/Unit_dictionary/items/properties/Units/items/properties/Name"></a>**`Name`** *(string, required)*: Unit name.
+        - <a id="properties/Unit_dictionary/items/properties/Units/items/properties/Description"></a>**`Description`** *(string)*: Documentation description for the unit (not saved to Benchling).
+        - <a id="properties/Unit_dictionary/items/properties/Units/items/properties/Symbol"></a>**`Symbol`** *(string)*: Unit symbol as displayed in Benchling (e.g., mg, mL).
+        - <a id="properties/Unit_dictionary/items/properties/Units/items/properties/Conversion%20factor"></a>**`Conversion factor`** *(string, required)*: Multiplicative factor to convert a value in this unit to the unit type's base unit. Exactly one unit per unit type must be the literal string 'Base unit'; all others are a decimal number expressed as a string.
+        - <a id="properties/Unit_dictionary/items/properties/Units/items/properties/Aliases"></a>**`Aliases`** *(array)*: Alternate symbols/spellings for the unit (e.g., unicode variants like µg). Length must be at least 0. Items must be unique.
+          - <a id="properties/Unit_dictionary/items/properties/Units/items/properties/Aliases/items"></a>**Items** *(string)*
+        - <a id="properties/Unit_dictionary/items/properties/Units/items/properties/SI%20name"></a>**`SI name`** *(string)*: SI base unit name (e.g., METER, SECOND), if applicable. Rare.
+        - <a id="properties/Unit_dictionary/items/properties/Units/items/properties/API%20ID"></a>**`API ID`** *(string)*: API ID for the unit created during an export operation. This is ignored for import operations.
+- <a id="properties/Conversion_hints"></a>**`Conversion_hints`** *(object)*: Global parameters that adapt Kenfigure Tool import/export behavior to variations in the Benchling .dat format, keeping the Kenfigure schema itself independent of those variations. Optional; tools should apply sensible defaults when a hint is absent.
+  - <a id="properties/Conversion_hints/properties/Unit%20type%20formula%20key"></a>**`Unit type formula key`** *(string)*: Key used in the Benchling dataclasses_by_type.json UnitType object to hold the named-unit formula. Benchling has used 'formula' and 'original_formula' across different tenants/versions. Recorded on export and applied on import so the Unit dictionary's Formula round-trips using the same key the source tenant expects. Must be one of: "formula" or "original_formula".
 - <a id="properties/Entity_schemas"></a>**`Entity_schemas`** *(array)*: Entity schemas (e.g., Custom Entity, DNA Sequence, etc.). Length must be at least 0. Items must be unique.
   - <a id="properties/Entity_schemas/items"></a>**Items** *(object)*: Complete description of the entity schema. Some attributes only apply to certain schema types.
     - <a id="properties/Entity_schemas/items/properties/Name"></a>**`Name`** *(string, required)*: Entity schema name.
@@ -96,6 +129,7 @@
           - **Any of**
             - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: "Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", or "Any inventory".
             - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
+        - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Unit"></a>**`Unit`** *(string)*: Name of a unit (from Unit_dictionary) assigned to this field. Only valid if Type is Decimal or Integer.
         - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Computed"></a>**`Computed`** *(object)*: Describes the computed field. Only present for computed fields.
           - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Computed/properties/Formula"></a>**`Formula`** *(string, required)*: Name of formula using native Benchling tokens for now.
             - **Any of**
@@ -337,6 +371,7 @@
           - **Any of**
             - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: "Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", or "Any inventory".
             - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
+        - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Unit"></a>**`Unit`** *(string)*: Name of a unit (from Unit_dictionary) assigned to this field. Only valid if Type is Decimal or Integer.
         - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Snapshot"></a>**`Snapshot`** *(object)*: Describes the snapshot computation if this is a snapshot computed field.
           - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Snapshot/properties/Formula"></a>**`Formula`**: Name of formula using native Benchling tokens for now. TODO-For now, leave the items for arguments unspecified until this matures more. Add filters and other features.
             - **Any of**
