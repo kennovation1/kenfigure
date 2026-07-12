@@ -366,6 +366,26 @@
             "description": "API ID for the unit type created during an export operation. This is ignored for import operations.",
             "type": "string"
           },
+          "Dimensional terms (do not hand-edit)": {
+            "description": "Opaque, Benchling-internal dimensional signature for this unit type (e.g., MASS^1, LENGTH^-3). This is not shown anywhere in the Benchling UI, is not reliably derivable from Formula (Benchling's own data is not always internally consistent here), and has no meaningful hand-authored value. Populated verbatim by export tooling; carried through unmodified on import. Omit for hand-authored unit types (import will proceed without it).",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "Dimension",
+                "Exponent"
+              ],
+              "properties": {
+                "Dimension": {
+                  "description": "Benchling's dimension token (e.g., MASS, LENGTH, TIME, AMOUNT), verbatim from the export.",
+                  "type": "string"
+                },
+                "Exponent": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
           "Units": {
             "description": "Units belonging to this unit type. Exactly one must be the base unit (Conversion factor: Base unit).",
             "type": "array",
