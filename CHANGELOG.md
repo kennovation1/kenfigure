@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.9.0] - 2026-07-12
+
+- Add `Dimensional terms (do not hand-edit)` to Unit dictionary unit type entries: an opaque,
+  Benchling-internal dimensional signature (e.g., `MASS^1, LENGTH^-3`) that is not shown in the
+  Benchling UI and is not reliably derivable from `Formula`. Populated verbatim by export tooling
+  and carried through unmodified on import; omitted entirely for hand-authored unit types.
+
 ## [1.8.0] - 2026-07-11
 
 - Add support for a Unit dictionary (Benchling unit types and their units), and a `Unit` field key

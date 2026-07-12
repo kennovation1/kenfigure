@@ -194,6 +194,15 @@ Unit_dictionary:
     # (e.g., Volume = decimeter^3). This is not expected to be hand-authored:
     #   Numerators:
     #     - {Unit: decimeter, Power: 3}  # Power defaults to 1 and is normally omitted
+  Dimensional terms (do not hand-edit):  # Opaque, Benchling-internal dimensional signature
+      # (e.g., MASS^1, LENGTH^-3). This is never shown in the Benchling UI and is not reliably
+      # derivable from Formula — Benchling's own data is not always internally consistent here.
+      # Populated verbatim by export tooling; carried through unmodified on import. Omit this
+      # key entirely for a hand-authored unit type (import proceeds without it).
+  - Dimension: MASS
+    Exponent: 1
+  - Dimension: LENGTH
+    Exponent: -3
   Units:  # Units belonging to this unit type. Exactly one must be the base unit.
   - Name: Kilograms per liter
     Symbol: kg/L  # Symbol as displayed in Benchling
