@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.8.0] - 2026-07-11
+
+- Add support for a Unit dictionary (Benchling unit types and their units), and a `Unit` field key
+  on Entity schema and Result schema Decimal/Integer fields to assign a unit from the dictionary.
+- Add `Conversion_hints`, a global parameters object that adapts Kenfigure Tool import/export
+  behavior to variations in the Benchling `.dat` format without requiring Kenfigure schema changes.
+  Its first use records which JSON key a tenant/version uses for a unit type's formula
+  (`formula` vs `original_formula`).
+
 ## [1.7.0] - 2026-06-13
 
 - Add support for Benchling Connect: Instrument Gateways, Connection Schemas, and Connections.
