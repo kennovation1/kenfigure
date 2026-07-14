@@ -636,7 +636,7 @@
             "$comment": "TODO: Need to define this better. How handle pre-defiend values like separator, lot, etc."
           },
           "Container name template": {
-            "description": "Template for naming containers created for entities of this schema. Optional; omit when the entity has no container naming template.",
+            "description": "Template for naming containers created for entities of this schema (Benchling containerNameTemplate). Optional; omit when the entity has no container naming template.",
             "type": "array",
             "minItems": 0,
             "uniqueItems": false,

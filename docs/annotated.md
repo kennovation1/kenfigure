@@ -235,7 +235,6 @@ Entity_schemas:
   Entity type: Molecule  # The same entity types as seen in the Benchling UI
   Prefix: LIP  # Same as Benchling UI
   System name: lipid  # Formerly known as "Warehouse name". Must confirm to PostgreSQL naming standards.
-  Containable type: None  # None or Entity as in UI
   Naming options:  # At least one list item must be specified. The options may be provided as short
     # symbol name (e.g., NEW_IDS, DELETE_NAMES, etc.) or the fully spelled out definitions as shown
     # in the Benchling UI. See full list below.
@@ -249,6 +248,9 @@ Entity_schemas:
     # - Canonical SMILES
     # - Amino acids (exact match)
     # - Amino acids (ignore case)
+  Containable type: None  # None or Entity as in UI
+  Container name template: []  # Omit or use empty list of Containable type is None.
+    # Optional if Containable type is Entity. Details are shown below.
   RegID display: false  # The sames as the UI checkbox: Use Registry ID as display label
   RegID chips: false  # The sames as the UI checkbox: Include Registry ID in chips 
   Access type: Registry-based  # One of Registry-based or Project-based
@@ -320,6 +322,47 @@ The available special `Type` values are:
   - Creation year
   - Creation date
   - Project
+
+### Container name template
+Optional template for naming **containers** created for entities of this schema.
+Omit the key, or use `[]`, when the schema has no container
+name template. Structure mirrors `Name template`: an ordered list of parts with `Type` and,
+when needed, `Definition`.
+
+```yaml
+Container name template:
+- Type: Text
+  Definition: ZXLOT            # Literal prefix text
+- Type: Separator
+  Definition: "@"              # Quote special characters
+- Type: Contained entity name  # Built-in field. No Definition key is used.
+- Type: Field                  # Value of a field on this entity schema
+  Definition: Cycle            # Field display name (not system name)
+```
+
+The available `Type` values are:
+- Types that require a `Definition` field:
+  - Text — literal string
+  - Separator — literal separator string
+  - Field — display name of a field on the current entity schema
+- Types that do not require a `Definition` field:
+  - Contained entity name
+  - Sample lot number
+  - Registry ID number
+  - Registry ID number (base 26)
+  - Barcode
+  - Barcode number
+  - Concentration value
+  - Concentration units
+  - Fill date
+  - Fill year
+  - Parent storable barcode
+  - Parent storable name
+  - Position
+  - Project
+  - Quantity value
+  - Quantity units
+  - Restriction status
 
 ### Entity schema fields
 Above shows some simple example fields. Here we shows the full specification for an

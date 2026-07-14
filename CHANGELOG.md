@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.10.0] - 2026-07-14
+
+- Add optional `Container name template` on Entity schemas: ordered parts for Benchling
+  container naming (`containerNameTemplate`). Part `Type` enum covers Text, Separator, Field,
+  Contained entity name, Sample lot number, Registry ID number, Registry ID number (base 26),
+  Barcode, Barcode number, Concentration value/units, Fill date/year, Parent storable
+  barcode/name, Position, Project, Quantity value/units, and Restriction status. `Definition`
+  holds literal text (Text/Separator) or a field display name (Field).
+
 ## [1.9.0] - 2026-07-12
 
 - Add `Dimensional terms (do not hand-edit)` to Unit dictionary unit type entries: an opaque,

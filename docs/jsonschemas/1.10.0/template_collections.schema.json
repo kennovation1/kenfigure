@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://kenfigure.com/jsonschemas/latest/template_collections.schema.json",
+  "title": "Template collections",
+  "description": "Template collections.",
+  "type": "array",
+  "minItems": 0,
+  "uniqueItems": false,
+  "comment": "For some reason, Benchling allows duplicate template collections, so uniqueItems is false.",
+  "items": {
+    "title": "Template collection definition",
+    "description": "Complete description of the template collection.",
+    "required": ["Name"],
+    "type": "object",
+    "properties": {
+      "Name": {
+        "description": "Template collection name.",
+        "type": "string",
+        "pattern": "^\\S.*\\S$|^\\S$"
+      },
+      "Description": {
+        "description": "Description of the template collection.",
+        "type": "string"
+      },
+      "Owner": {
+        "description": "Owner (an organization) of the template collection.",
+        "type": "string"
+      },
+      "Notify": {
+        "description": "Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as configuration access rights.",
+        "type": "string"
+      }
+    }
+  }
+}

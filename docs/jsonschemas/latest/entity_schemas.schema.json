@@ -149,6 +149,50 @@
         },
         "$comment": "TODO: Need to define this better. How handle pre-defiend values like separator, lot, etc."
       },
+      "Container name template": {
+        "description": "Template for naming containers created for entities of this schema. Optional; omit when the entity has no container naming template.",
+        "type": "array",
+        "minItems": 0,
+        "uniqueItems": false,
+        "items": {
+          "title": "Container name template components",
+          "description": "Ordered parts of a container name template. Text and Separator require Definition (literal string). Field requires Definition (entity field display name). All other Types omit Definition.",
+          "type": "object",
+          "required": ["Type"],
+          "properties": {
+            "Type": {
+              "description": "The type of container name component.",
+              "type": "string",
+              "enum": [
+                "Text",
+                "Separator",
+                "Field",
+                "Contained entity name",
+                "Sample lot number",
+                "Registry ID number",
+                "Registry ID number (base 26)",
+                "Barcode",
+                "Barcode number",
+                "Concentration value",
+                "Concentration units",
+                "Fill date",
+                "Fill year",
+                "Parent storable barcode",
+                "Parent storable name",
+                "Position",
+                "Project",
+                "Quantity value",
+                "Quantity units",
+                "Restriction status"
+              ]
+            },
+            "Definition": {
+              "description": "Literal text for Text/Separator, or the entity field display name for Field. Omitted for all other Types.",
+              "type": "string"
+            }
+          }
+        }
+      },
       "Constraint": {
         "description": "List of fields to define constraint. Maybe empty. May contain special built-in field descriptions.",
         "type": "array",
