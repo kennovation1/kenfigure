@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.11.0] - 2026-07-15
+
+- Rename entity/fieldset field type `ft_translation_link` to first-class **`Translation`**
+  (biointelligent translation link). With existing **`Part`** and **`Transcription`**, all three
+  Benchling biointelligent link Types now use Kenfigure names. `Definition` must name a concrete
+  entity schema (no generics): Part → same-modality DNA/RNA Sequence; Translation → AA Sequence;
+  Transcription → RNA Sequence (DNA Sequence parents only).
+
 ## [1.10.0] - 2026-07-14
 
 - Add optional `Container name template` on Entity schemas: ordered parts for Benchling

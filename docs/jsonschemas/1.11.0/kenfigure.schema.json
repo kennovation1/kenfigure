@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kenfigure.com/jsonschemas/latest/kenfigure.schema.json",
+  "title": "Kenfigure Schema",
+  "description": "Kenfigure™: a YAML spec to define Benchling configurations.",
+  "$comment": "© 2026 Go2 Software LLC. Licensed under ODC-BY 1.0 (https://opendatacommons.org/licenses/by/). 'Kenfigure' and 'Kenfiguration' are trademarks of Go2 Software LLC.",
+  "type": "object",
+  "properties": {
+    "Metadata": {
+      "description": "Metadata that describes the model instance",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/metadata.schema.json"
+    },
+    "Diagram": {
+      "description": "Persistence of diagram properties",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/fulldiagram.schema.json"
+    },
+    "Dashboards": {
+      "description": "Benchling Insights Dashboards and their SQL blocks",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/dashboards.schema.json"
+    },
+    "Dropdowns": {
+      "description": "Dropdowns and their values",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/dropdowns.schema.json"
+    },
+    "Unit_dictionary": {
+      "description": "Benchling unit types and the units that belong to them",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/unit_dictionary.schema.json"
+    },
+    "Conversion_hints": {
+      "description": "Global parameters that adapt import/export to variations in the Benchling .dat format",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/conversion_hints.schema.json"
+    },
+    "Entity_schemas": {
+      "description": "Entity schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/entity_schemas.schema.json"
+    },
+    "Fieldset_schemas": {
+      "description": "Fieldset schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/fieldset_schemas.schema.json"
+    },
+    "Study_schemas": {
+      "description": "Study schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/study_schemas.schema.json"
+    },
+    "Container_schemas": {
+      "description": "Container schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/container_schemas.schema.json"
+    },
+    "Box_schemas": {
+      "description": "Box schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/box_schemas.schema.json"
+    },
+    "Plate_schemas": {
+      "description": "Plate schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/plate_schemas.schema.json"
+    },
+    "Location_schemas": {
+      "description": "Location schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/location_schemas.schema.json"
+    },
+    "Result_schemas": {
+      "description": "Result schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/result_schemas.schema.json"
+    },
+    "Run_schemas": {
+      "description": "Run schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/run_schemas.schema.json"
+    },
+    "Feature_flags": {
+      "description": "Feature flags",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/feature_flags.schema.json"
+    },
+    "Template_collections": {
+      "description": "Template collections",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/template_collections.schema.json"
+    },
+    "Templates": {
+      "description": "Templates",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/templates.schema.json"
+    },
+    "Sub_templates": {
+      "description": "Sub templates",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/sub_templates.schema.json"
+    },
+    "Instrument_gateways": {
+      "description": "Benchling Connect instrument gateways (S3 Cloud or Local Windows)",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/instrument_gateways.schema.json"
+    },
+    "Connection_schemas": {
+      "description": "Benchling Connect connection schemas defining integration adapters and their configurable fields",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/connection_schemas.schema.json"
+    },
+    "Connections": {
+      "description": "Benchling Connect connections binding instruments to gateways and connection schemas",
+      "$ref": "https://kenfigure.com/jsonschemas/latest/connections.schema.json"
+    }
+  }
+}

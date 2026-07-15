@@ -171,14 +171,14 @@
                 "Entity",
                 "Part",
                 "Inventory",
-                "ft_translation_link",
+                "Translation",
                 "ft_assay_result_link",
                 "ft_assay_run_link",
                 "ft_assay_request_link"
               ]
             },
             "Definition": {
-              "description": "Name of target object if Type is a one of the link types or Dropdown.",
+              "description": "Name of target object if Type is one of the link types or Dropdown.",
               "anyOf": [
                 {
                   "type": "string",
