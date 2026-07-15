@@ -400,8 +400,8 @@ Fieldset_schemas:
 - Name: Test Substance  # Name of the fieldset
   Description: A generic fieldset that in intended to be applied batch entities
     that might be used as test samples.
-  Entity type: None  # "None" or one of the following entity schema types: Custom Entity,
-    # DNA Sequence, DNA Oligo, RNA Oligo, RNA Sequence, AA Sequence, Molecule, Mixture
+  Entity type: None  # "None" or one of: Custom Entity, Entry, DNA Sequence, DNA Oligo,
+    # RNA Oligo, RNA Sequence, AA Sequence, Molecule, Mixture
   System name: test_substance
   Prefix: TS
   Constraint: []

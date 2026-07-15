@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.12.0] - 2026-07-15
+
+- Add **Entry** to fieldset `Entity type` enum.
+
 ## [1.11.0] - 2026-07-15
 
 - Rename entity/fieldset field type `ft_translation_link` to first-class **`Translation`**

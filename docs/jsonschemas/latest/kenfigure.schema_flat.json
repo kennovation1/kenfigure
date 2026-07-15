@@ -981,6 +981,7 @@
             "enum": [
               "None",
               "Custom Entity",
+              "Entry",
               "DNA Sequence",
               "DNA Oligo",
               "RNA Oligo",

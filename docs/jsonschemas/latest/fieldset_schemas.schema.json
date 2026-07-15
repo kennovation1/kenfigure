@@ -33,7 +33,7 @@
       "Entity type": {
         "description": "Must match one of the Benchling-defined types. May be 'None' to enable attaching to any type of entity schema.",
         "type": "string",
-        "enum": ["None", "Custom Entity", "DNA Sequence", "DNA Oligo", "RNA Oligo", "RNA Sequence", "AA Sequence", "Molecule", "Mixture"]
+        "enum": ["None", "Custom Entity", "Entry", "DNA Sequence", "DNA Oligo", "RNA Oligo", "RNA Sequence", "AA Sequence", "Molecule", "Mixture"]
       },
       "Category": {
         "description": "If true (default), this fieldset will appear as a navigation category for end users, and an option for field definitions.",
