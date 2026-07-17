@@ -78,6 +78,28 @@ section {
   color: #fff;
 }
 
+// Bookmarklet install buttons (cm_update_all_bookmarklet.html) — meant to be
+// dragged to the bookmarks bar, not clicked.
+.kf-bm-btn {
+  cursor: grab;
+}
+
+.kf-cta-btn--outline {
+  background: transparent;
+  border: 1px solid #27ae60;
+  color: #27ae60;
+}
+
+.kf-cta-btn--outline:hover {
+  background: rgba(39, 174, 96, 0.15);
+  color: #27ae60;
+}
+
+.kf-bm-blurb {
+  margin: 0.35rem 0 1.25rem;
+  color: #999;
+}
+
 @media print, screen and (max-width: 720px) {
   .site-footer__nav li {
     display: block;

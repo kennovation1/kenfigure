@@ -420,6 +420,13 @@ Once you have a `.dat` file from either option above:
 2. Click **Import** and upload your `.dat` file
 3. Follow the Configuration Migration prompts to complete the import into your tenant
 
+> **First import of an exported configuration?** Benchling will default every
+> object to **Create** instead of **Update**. Rather than fixing hundreds of
+> rows by hand, use the
+> [bulk "Update" selection tool](cm_bulk_update.html) — a one-click bookmarklet
+> that selects **Update &lt;same-named object&gt;** for every
+> row. This is only needed once; later imports default to Update automatically.
+
 ### Status messages and timing
 
 Each section — Export and Import — has its own status area below the buttons.
