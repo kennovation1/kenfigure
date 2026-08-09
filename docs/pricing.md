@@ -10,7 +10,7 @@ toc: true
 
 _Kenfigure is a product of Go2 Software LLC · Last updated: June 2026_
 
-Kenfigure helps Benchling administrators bring their configuration under control — export it to a versionable source of truth, make reviewed changes safely, and understand complex deployments through interactive diagrams. The free **Kenfigure Tool™ (Export)** is available to everyone. **Kenfigure Pro™** adds **Kenfigure Tool (Import)** and **Kenfigure Diagram™** on an annual subscription.
+Kenfigure helps Benchling administrators bring their configuration under control — export it to a versionable source of truth, make reviewed changes safely, and understand complex deployments through interactive diagrams. The free **Kenfigure Tool™ (Export)** is available to everyone. **Kenfigure Pro™** adds **Kenfigure Tool (Import)**, the **Dropdown Tool**, and **Kenfigure Diagram™** on an annual subscription.
 
 _New to Kenfigure Pro? [Read the product overview](kenfigure_pro.html) to see what's included and who it's for._
 
@@ -50,6 +50,7 @@ Prices are per company, billed annually.
 _Everything in the free **Kenfigure Tool (Export)** tier, plus:_
 
 - **Kenfigure Tool (Import)** — push configuration changes back to Benchling directly from your Kenfigure YAML. Because every change originates from a versioned, reviewed, and approved source of truth, there is no manual clicking through the Benchling UI — imports are accurate, auditable, and far faster than equivalent manual work.
+- **[Dropdown Tool](dropdown_tool.html)** — let scientists request new dropdown options from inside their Notebook entry. Each request is style-checked automatically, routed for as much approval as that particular dropdown warrants, then applied to Benchling and committed to Git. Removes the most frequent interruption Benchling admins face without loosening control of your controlled vocabularies.
 - **Kenfigure Diagram** — an interactive entity-relationship diagram of your Benchling configuration, with schema-lint visualization, search and navigation, and the Prompt Builder for creating SQL queries and AI starting points from selected schema elements.
 - **Git integration** — Building on the free tier's export-to-Git capability, Pro adds Git as a source: Kenfigure Tool (Import) pulls configuration YAML directly from a repository branch, and Kenfigure Diagram reads and writes to your repository — saving layouts, sub-layouts, and schema-lint suppressions to a branch of your choice.
 

@@ -42,11 +42,16 @@ If you choose to use your own Git repository as a configuration source, you crea
 
 ## Use of AI
 
-An optional grouping feature uses Amazon Bedrock to cluster schema elements for diagram layout (currently using Anthropic models). Amazon Bedrock does not use this data to train models and does not retain it.
+Two optional features use Amazon Bedrock (currently using Anthropic models), which runs within Kenfigure's own AWS environment:
+
+- **Diagram grouping.** Schema element names are clustered to produce a diagram layout.
+- **Dropdown option curation.** Where the Dropdown Tool is enabled, a requested dropdown option, the target dropdown's name, its existing option list, and its configured style guidance are sent so that a canonical form for the requested option can be proposed. The Dropdown Tool's deterministic style checks run independently of this, so the feature continues to function if Bedrock is unavailable.
+
+Both features send Benchling configuration only — not scientific, research, clinical, or patient data. Amazon Bedrock does not use this data to train models and does not retain it.
 
 ## Subprocessors
 
-- **Amazon Web Services** (hosting, including Amazon Bedrock for the AI grouping feature)
+- **Amazon Web Services** (hosting, including Amazon Bedrock for the AI grouping and dropdown option curation features)
 - **Paddle** (Paddle.com Market Ltd. — payment processing and billing; Merchant of Record / seller of record)
 - **Fastmail Pty Ltd** (go2.software transactional and order-processing email)
 - **Forward Email LLC** (kenfigure.com account and password-reset emails)

@@ -11,7 +11,7 @@ Top-level Kenfigure object types from the [Kenfigure JSON schema](https://kenfig
 
 | Object type | Export | Import | Diagram | Notes |
 |-------------|--------|--------|---------|-------|
-| Dropdowns | ✓ | ✓ | ✓ | |
+| Dropdowns | ✓ | ✓ | ✓ | Individual option additions can also be requested and governed with the [Dropdown Tool](dropdown_tool.html) |
 | Entity schemas | ✓ | ✓ | ✓ | |
 | Fieldset schemas | ✓ | ✓ | ✓ | |
 | Result schemas | ✓ | ✓ | ✓ | |
@@ -50,6 +50,12 @@ Top-level Kenfigure object types from the [Kenfigure JSON schema](https://kenfig
 **Pass-through elements.** Some data elements within supported object types (e.g., computed/snapshot schema fields and input/output file transformations in Run schemas) are mapped 1:1 from Benchling without Kenfigure JSON schema validation. These elements can be round-tripped (exported and re-imported) but cannot be created from scratch via import — they must originate from an existing Benchling configuration. They are not intended for manual editing.
 
 **Deprecated features.** Deprecated Benchling object types (e.g., legacy Batch schemas) are not supported. Export and import will not function if your configuration has dependencies on deprecated features.
+
+**Dropdown Tool.** The matrix above covers whole-configuration export, import, and diagram. The
+[Dropdown Tool](dropdown_tool.html) is a separate Kenfigure Pro capability that operates on a
+single object type — Dropdowns — one requested option at a time, applying changes through the
+Benchling API rather than Configuration Migration. It adds options to existing dropdowns; it
+does not create, rename, or archive dropdowns themselves.
 
 **Unlisted object types.** Object types not listed above are not supported in the Kenfigure JSON schema. If an object type you need is missing, please [contact us](mailto:info@go2.software)!
 

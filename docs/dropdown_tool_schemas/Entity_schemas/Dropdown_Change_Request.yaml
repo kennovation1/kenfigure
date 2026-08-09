@@ -1,0 +1,49 @@
+Entity_schemas:
+- Name: Dropdown Change Request
+  Description: Represents a request to change one or more options in a dropdown. This is used by
+    the Kenfigure Dropdown tool to track the lifecycle of a request.
+    This entity schema must exist for the tool to function. The tool will
+    lookup the name automatically and allows prefixes (e.g., '[Ops]').
+    However, if you change the name beyond just the prefix, you must
+    configure the name in Kenfigure Tool's "Advanced Settings".
+  Entity type: Custom Entity
+  Prefix: DDREQ
+  System name: dropdown_change_request
+  Containable type: None
+  Naming options:
+  - DELETE_NAMES
+  Name template: []
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Fields:
+  - Name: Dropdown
+    System name: dropdown
+    Tool tip: The dropdown that you want to add options to
+    Type: Entity
+    Definition: Dropdown Change Policy
+  - Name: Requested Options
+    System name: requested_options
+    Tool tip: The options that you want to add to the dropdown. Separate with commas or new lines.
+    Type: Text
+  - Name: Request Notes
+    System name: request_notes
+    Tool tip: Any additional notes about the request. This can be helpful to reviewers
+      or be used as additional documentation for the record.
+    Type: Text
+  - Name: Implemented Options
+    System name: implemented_options
+    Tool tip: The options that were actually added to the dropdown. This is automatically populated
+      when the request is approved and implemented.
+    Type: Text
+  - Name: Status
+    System name: status
+    Tool tip: The current status of the request. This is automatically updated as the request is processed.
+    Type: Dropdown
+    Definition: Dropdown Update Statuses
+  - Name: Status Details
+    System name: status_details
+    Tool tip: Any additional details about the status of the request. This can be helpful to reviewers
+      or be used as additional documentation for the record.
+    Type: Long text

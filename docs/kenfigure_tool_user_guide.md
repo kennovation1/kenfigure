@@ -22,6 +22,8 @@ Kenfigure format is a human-readable text representation of your Benchling schem
 
 Every export you run also feeds [Kenfigure Diagram](#kenfigure-diagram), a companion product that renders your configuration as an interactive schema diagram.
 
+Kenfigure Tool also provides a second, separate canvas — the [Dropdown Tool](#dropdown-tool) — for requesting and governing individual dropdown option additions. It is documented on its own page; this guide covers the conversion canvas.
+
 ---
 
 ## Access and Permissions
@@ -460,6 +462,18 @@ The log messages in an expanded session are ordered with the most recent at the 
 
 ---
 
+## Dropdown Tool
+
+Kenfigure Tool includes a second canvas, **Request a new dropdown option**, which is a different workflow from the export/import conversion covered above: instead of moving whole configurations, it handles the single most common day-to-day change request — adding one option to one dropdown.
+
+A scientist inserts that canvas into a Notebook entry (**Insert** > **Canvas** > **Request a new dropdown option**), picks a dropdown, and types the option they need. The request is checked automatically against the [dropdown style guide](schema_design_style_guide.html#dropdown-options) and against per-dropdown conventions you configure, routed for approval according to a policy you define for that dropdown, and — once approved — applied to Benchling and committed to your Git repository using the same Git settings described above.
+
+Setup is a one-time admin task: create two custom entity schemas and two dropdowns (ready-to-import definitions are provided), then add one policy entity per dropdown you want to govern.
+
+The Dropdown Tool is part of **[Kenfigure Pro™](kenfigure_pro.html)**. Full documentation, including setup and the Advanced Settings reference, is on the **[Dropdown Tool page](dropdown_tool.html)**.
+
+---
+
 ## Kenfigure Diagram
 
 Every export you run through Kenfigure Tool also makes your configuration immediately available in Kenfigure Diagram.
@@ -478,6 +492,7 @@ See the [Kenfigure Pro page](kenfigure_pro.html) to learn more, or contact [info
 | Export to Git             | Free for all users |
 | Import from File          | Kenfigure Pro™ — see [Kenfigure Pro](kenfigure_pro.html) |
 | Import from Git           | Kenfigure Pro™ — see [Kenfigure Pro](kenfigure_pro.html) |
+| Dropdown Tool             | Kenfigure Pro™ — see [Dropdown Tool](dropdown_tool.html) |
 | Kenfigure Diagram         | Kenfigure Pro™ — see [Kenfigure Pro](kenfigure_pro.html) |
 
 When a Kenfigure Pro feature is not licensed for your tenant, the relevant button in the canvas is disabled and shows a link to the [feature enablement page](feature_enablement.html). There is no error message — the canvas simply presents the features that are available.

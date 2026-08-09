@@ -1,0 +1,65 @@
+Entity_schemas:
+- Name: Dropdown Change Policy
+  Description: Defines the change policy for a dropdown. This is used by
+    the Kenfigure Dropdown tool to determine how to handle dropdown change requests.
+    A dropdown must have a change policy to be eligible for change requests and to
+    appear in the menu of dropdowns users can request changes to.
+    This entity schema must exist for the tool to function. The tool will
+    lookup the name automatically and allows prefixes (e.g., '[Ops]').
+    However, if you change the name beyond just the prefix, you must
+    configure the name in Kenfigure Tool's "Advanced Settings".
+  Entity type: Custom Entity
+  Prefix: DDPOL
+  System name: dropdown_change_policy
+  Containable type: None
+  Naming options:
+  - REPLACE_NAMES_FROM_PARTS
+  Name template:
+  - Type: Text
+    Definition: DD-POLICY-
+  - Type: Field
+    Definition: Dropdown Name
+  RegID chips: false
+  RegID display: false
+  Access type: Registry-based
+  Icon: basic_folder_item
+  Constraint:
+  - Dropdown Name
+  Fields:
+  - Name: Dropdown Name
+    Tool tip: The name of the dropdown that this change policy applies to
+    System name: dropdown_name
+    Required: true
+    Type: Text
+  - Name: Style Guidance
+    Tool tip: This helps to define the style of the dropdown. This input is useful to human
+      and AI reviewers. This can be used to define a vocabulary or ontology source or other
+      conventions that will help keep the options consistent.
+    System name: style_guidance
+    Type: Text
+  - Name: Alphabetize
+    Tool tip: Whether to alphabetize the options in the dropdown
+    System name: alphabetize
+    Required: true
+    Type: Boolean
+  - Name: Approval Type
+    Tool tip: The degree of approval required for the request to be approved and implemented.
+    System name: approval_type
+    Required: true
+    Type: Dropdown
+    Definition: Dropdown Approval Types
+  - Name: Community Approvers
+    Tool tip: The community approvers for the request. This is a comma-separated list of email addresses
+      of possible approvers. This only applies if the approval type is Community or Community+Admin.
+    System name: community_approvers
+    Type: Text
+  - Name: Min Approvers
+    Tool tip: The minimum number of community approvers required for the request to be approved.
+      This only applies if the approval type is Community or Community+Admin.
+    System name: min_approvers
+    Type: Integer
+  - Name: Watchers
+    Tool tip: The watchers for the request. This is a comma-separated list of email addresses
+      of possible watchers. This is useful to notify when the request is created, updated, or approved.
+    System name: watchers
+    Type: Text

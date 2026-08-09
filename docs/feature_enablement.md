@@ -9,7 +9,7 @@ If you arrived here from a disabled button or link in the Kenfigure Tool canvas,
 Kenfigure Tool provides the ability to export your Benchling configuration into Kenfigure
 format either as a .zip file or directly to your Git repository — free for all users.
 
-Importing back to Benchling and the use of Kenfigure Diagram are part of
+Importing back to Benchling, the Dropdown Tool, and the use of Kenfigure Diagram are part of
 **[Kenfigure Pro™](kenfigure_pro.html)**.
 Please ask your Benchling administrator to contact us about subscribing to Kenfigure Pro.
 
@@ -34,6 +34,31 @@ to your Benchling tenant saving hundreds or thousands of clicks and ensuring com
 accuracy (and consistency among tenants).
 
 **What it includes:** Both *Import from File* and *Import from Git*
+
+---
+
+### Dropdown Tool
+
+**What it does:** Lets scientists request new dropdown options from inside a Notebook entry.
+Each request is checked against the dropdown style guide and the per-dropdown conventions you
+configure, routed for as much approval as that dropdown warrants, and — once approved — applied
+to the dropdown and committed to your Git repository.
+
+**Why you'd want it:** Adding a dropdown option is the single most frequent request Benchling
+admins field, and usually an urgent one because a scientist is blocked until it's done. This
+removes the interruption without giving up control of your controlled vocabularies: every
+change is curated, governed by a policy you set per dropdown, and recorded as a searchable
+registry entity. Your administrators are notified of every outcome on every governed dropdown,
+including the auto-approved ones.
+
+**What's included:**
+- The *Request a new dropdown option* canvas for scientists
+- Per-dropdown change policies (auto-approve, community approval, or community plus admin)
+- Automated style checking, including AI-assisted canonicalization
+- Email approval links — approvers need no Kenfigure account
+- Automatic Git commit of approved changes, using your configured write strategy
+
+See the **[Dropdown Tool documentation](dropdown_tool.html)** for setup and full details.
 
 ---
 
@@ -66,14 +91,10 @@ Email [info@go2.software](mailto:info@go2.software) to subscribe to Kenfigure Pr
 ## Frequently Asked Questions
 
 **Are these features available for Validated Cloud tenants?**
-Yes with some minor exceptions. Most features work on both standard and Validated Cloud Benchling tenants. The Benchling AI chat interface required Benchling's "delegated authorization" feature with is not yet available on Val Cloud tenants.
-When it is, this feature will be available on Val Cloud.
-As an alternative, you can use the "Export for AI" feature to have
-the equivalent functionality directly in the Benchling AI interface.
+Yes with some minor exceptions. Most features work on both standard and Validated Cloud Benchling tenants. The Benchling AI chat interface required Benchling's "delegated authorization" feature with is not yet available on Val Cloud tenants. When it is, this feature will be available on Val Cloud.  As an alternative, you can use the "Export for AI" feature to have the equivalent functionality directly in the Benchling AI interface.
 
 **Can I enable features for only some users in my tenant?**
-Yes, fine-grained control is available at the user level and is established during
-provisioning of new users. Permissions can be added or removed at any time by contact us.
+Yes, fine-grained control is available at the user level and is established during provisioning of new users. Permissions can be added or removed at any time by contact us.
 
 **What happens if I try to use a feature that hasn't been enabled?**
 The relevant button will be disabled in the canvas with a link to this page. No error will be shown to Benchling users — the canvas simply presents the features that are available for your tenant.

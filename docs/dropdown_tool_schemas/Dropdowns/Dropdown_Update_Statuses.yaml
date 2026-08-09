@@ -1,0 +1,13 @@
+Dropdowns:
+- Name: Dropdown Update Statuses
+  Description: Update statuses for the Kenfigure Dropdown tool dropdown change requests.
+    This dropdown must exist for the tool to function. The tool will
+    lookup the name automatically and allows prefixes (e.g., '[Ops]').
+    However, if you change the name beyond just the prefix, you must
+    configure the name in Kenfigure Tool's "Advanced Settings".
+  Alphabetize: false
+  Options:
+  - Pending
+  - Approved
+  - Rejected
+  - Implemented

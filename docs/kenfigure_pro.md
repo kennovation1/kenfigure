@@ -38,7 +38,7 @@ Start free. Keep what you build. Your YAML files live in your own Git repo, in a
 
 ## Kenfigure Pro closes the loop
 
-**Kenfigure Pro™** is an annual subscription that adds **Kenfigure Tool™ (Import)** and **Kenfigure Diagram™** — the tools that turn a versioned YAML source of truth into a full configuration-management workflow.
+**Kenfigure Pro™** is an annual subscription that adds **Kenfigure Tool™ (Import)**, the **Dropdown Tool**, and **Kenfigure Diagram™** — the tools that turn a versioned YAML source of truth into a full configuration-management workflow.
 
 One per-company subscription covers all of your Benchling environments (Dev, Test, Prod, and any Sandbox or Preview tenants). No developer or DevOps engineer required: Kenfigure Pro runs as a Benchling Canvas app and a hosted web application — a Benchling administrator can run the full workflow.
 
@@ -49,6 +49,18 @@ Push reviewed, versioned configuration changes back to Benchling without manual 
 Instead of translating your YAML back into hundreds of UI clicks — error-prone, time-consuming, and impossible to review before it happens — Kenfigure Tool (Import) generates a Benchling Configuration Migration file from your YAML source of truth and applies it to your tenant. Every import originates from a branch that has been reviewed and approved. Imports are accurate, complete, and fully auditable.
 
 Both **Import from File** (upload a `.zip` of your Kenfigure directory) and **Import from Git** (pull directly from a configured repository branch) are included.
+
+### Dropdown Tool
+
+Let scientists request dropdown options — without letting your controlled vocabularies drift.
+
+Adding an option to a dropdown is a change only an administrator can make, which makes it the most frequent request Benchling admins receive and one of the most disruptive: a scientist is typically blocked from recording data until it is done. Handled ad hoc, it is a steady stream of interruptions; handled hastily, it is how a curated vocabulary accumulates "Mouse" next to "Mus musculus".
+
+The Dropdown Tool moves the request to where the science happens. A scientist asks for the option from inside their Notebook entry. The request is checked automatically against the [dropdown style guide](schema_design_style_guide.html#dropdown-options) and against the conventions you have defined for that specific dropdown — duplicates and near-duplicates are caught, non-canonical forms are corrected, and the scientist confirms anything that changed.
+
+Governance is set per dropdown, so control matches risk. A Vendors list can auto-approve curated additions; a Programs list can require named approvers; a high-impact list can require an administrator as well. Approvers decide from a link in an email — no new account, no new tool. Approved options are applied to Benchling and committed to your Git repository, and your administrators are notified of every outcome on every governed dropdown, including the auto-approved ones. Every request is a registered entity you can search and audit.
+
+→ [Dropdown Tool documentation](dropdown_tool.html)
 
 ### Kenfigure Diagram™
 

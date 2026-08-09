@@ -88,6 +88,22 @@ Kenfigure Diagram is a web-based interactive entity-relationship diagram of your
 
 The free **Kenfigure Tool (Export)** can already write exports directly to your Git repository. **Kenfigure Pro** extends this in both directions: **Kenfigure Tool (Import)** reads configuration YAML from a Git branch as the source for an import, and **Kenfigure Diagram** reads from and writes to your repository — persisting layouts, sub-layouts, and schema-lint suppressions to a branch of your choice. Git becomes the connective tissue across the entire workflow. When writing back to Git you can configure a direct commit to the branch head or an automatic pull request for review. Git usage is optional, but highly recommended.
 
+**What is the Dropdown Tool?**
+
+Adding an option to a dropdown requires an administrator, which makes it the most frequent request Benchling admins receive — and usually an urgent one, since the requesting scientist is blocked until it's done. The Dropdown Tool lets scientists request options from inside their Notebook entry. Each request is checked automatically against the [dropdown style guide](schema_design_style_guide.html#dropdown-options) and the conventions you set for that specific dropdown, routed for approval according to a policy you define per dropdown, then applied to Benchling and committed to your Git repository. See the [Dropdown Tool documentation](dropdown_tool.html).
+
+**Does the Dropdown Tool mean anyone can change our controlled vocabularies?**
+
+No. You decide which dropdowns participate at all — a dropdown with no change policy does not appear to scientists and cannot be requested against. For each dropdown you do enable, you choose whether additions are auto-approved, require named community approvers, or require an administrator as well. Your administrators receive an outcome notification for every change to every governed dropdown, including auto-approved ones, so they can review or reverse anything they disagree with. The tool only ever *adds* options to dropdowns you have opted in; it never renames, reorders, or removes existing options.
+
+**Does the Dropdown Tool clean up our existing dropdowns?**
+
+No. It curates new incoming requests against a dropdown's current option list. It does not edit or archive options already registered (including existing typos), does not detect duplicate whole dropdowns, and does not reconcile the same term spelled differently across different dropdowns. Those are existing-data cleanup problems — [Kenfigure Diagram](kenfigure_pro.html) with schema lint is a better starting point for them.
+
+**What happens if a dropdown request is rejected?**
+
+The request is closed and the requestor is emailed with the reviewer's guidance to discuss the change and submit a revised request. Reviewers cannot edit a request in place: if the right answer is a different option than the one asked for, they reject with a suggestion and the requestor resubmits. Administrators can always edit a dropdown directly in Benchling.
+
 **What is "schema lint"?**
 
 Schema lint is a set of heuristic rules that flag risky anti-patterns in your Benchling configuration. These rules are based on years of Go2 Software's experience developing highly effective data models in Benchling. During export and import operations a log file of schema lint warnings is produced. Additionally, **Kenfigure Diagram** provides easy visualization of schema issues using a squiggle underline — like a spell checker — to show which schemas or fields have warnings. An interactive panel lets you sort, filter, and selectively suppress warnings that are acceptable in your context.
@@ -99,6 +115,10 @@ Schema lint is a set of heuristic rules that flag risky anti-patterns in your Be
 **Does Kenfigure Pro access our scientific, research, clinical, or patient data?**
 
 No. Kenfigure Pro operates exclusively on Benchling configuration schema — the structure of your deployment. It does not access, store, or process your scientific, research, experimental, sample, clinical, or patient data. See our [Security & Data Handling Overview](security_data_handling.html).
+
+**Does Kenfigure Pro use AI, and what is sent to it?**
+
+Two optional features use Amazon Bedrock, which runs inside our AWS environment. Kenfigure Diagram's grouping feature sends schema element names to suggest a diagram layout. The Dropdown Tool sends the option text a scientist typed, the target dropdown's name and its current option list, and that dropdown's style guidance, in order to propose a canonical form — all of which is configuration, not scientific data. Bedrock does not use this content to train models, and the Dropdown Tool's deterministic style checks run regardless, so a request is never blocked by AI being unavailable. See our [Privacy Policy](privacy_policy.html) and [Security & Data Handling Overview](security_data_handling.html).
 
 **How is our data secured?**
 

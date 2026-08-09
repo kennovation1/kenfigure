@@ -20,6 +20,7 @@ This policy explains how Go2 Software LLC ("Go2," "we") handles personal informa
 - **Contact and account information** you provide: name, business email, company, role, and Benchling tenant identifiers.
 - **Free-tier email:** when you use the free Export tool, we receive the email address associated with your use of it.
 - **Configuration data** you export, import, or diagram. This is configuration schema (the structure of a Benchling deployment), not scientific, research, clinical, or patient data.
+- **Dropdown Tool participants:** where you enable the Dropdown Tool, we process the business email addresses you configure as approvers, watchers, and administrators, together with the Benchling user identity of the person making each request, in order to route approvals and send the resulting notifications.
 - **Usage and log data:** standard technical information such as access times, IP address, and basic diagnostics.
 - **Website cookies:** essential cookies for the site to function; any non-essential cookies are used only with your consent.
 
@@ -33,7 +34,12 @@ We share personal information only with service providers who help us run the Se
 
 ## 5. Use of AI
 
-An optional feature uses Amazon Bedrock to help lay out diagrams. Amazon Bedrock does not use this data to train models and does not retain it.
+Certain optional features use Amazon Bedrock, which runs within our own AWS environment:
+
+- **Diagram layout.** Schema element names are sent to help lay out and group diagrams.
+- **Dropdown option curation.** Where the Dropdown Tool is enabled, the option text a user requests, the target dropdown's name, its existing options, and its configured style guidance are sent in order to propose a canonical form for the requested option.
+
+In both cases the content sent is Benchling configuration, not scientific, research, clinical, or patient data. Amazon Bedrock does not use this data to train models and does not retain it.
 
 An optional feature provides an interface into Benchling's AI chat capabilities.
 

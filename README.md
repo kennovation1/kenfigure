@@ -15,8 +15,8 @@ and can therefore form the foundation of a top-notch change management process.
 its own, independent of any additional tooling. Go2 Software also builds
 [**Kenfigure Pro™**](kenfigure_pro.html) on the standard: a commercial
 suite (Kenfigure Tool™ and Kenfigure Diagram™) for programmatic configuration export and import,
-schema quality checking, and interactive ER diagrams. The spec is openly published and independently
-useful whether or not you use those tools.
+schema quality checking, governed dropdown changes, and interactive ER diagrams. The spec is openly
+published and independently useful whether or not you use those tools.
 
 Here's a very stripped down example:
 ```yaml
@@ -57,9 +57,11 @@ See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annot
   A companion to Kenfigure but independent of the specification.
   Kenfigure Tool Schema Lint uses the style guide as a source for quality rules.
 - [Kenfigure Tool User Guide](./kenfigure_tool_user_guide.md) - Guide for the Benchling Canvas app (Export/Import, Git integration).
+- [Dropdown Tool](./dropdown_tool.md) - Let scientists request new dropdown options from a Notebook entry, style-checked
+  and governed by a policy you set per dropdown. Part of Kenfigure Pro.
 - [Kenfigure JSON schema](./jsonschemas/latest/kenfigure.schema_flat.json) - The full (flattened) JSON schema for Kenfigure.
 - [Kenfigure on GitHub](https://github.com/kennovation1/kenfigure) - Open-source schema repository, issues, and contributions.
-- [Kenfigure Pro™](kenfigure_pro.html) - The commercial tool suite built on this standard (Kenfigure Tool Import, Kenfigure Diagram).
+- [Kenfigure Pro™](kenfigure_pro.html) - The commercial tool suite built on this standard (Kenfigure Tool Import, Dropdown Tool, Kenfigure Diagram).
 
 ## Benefits
 
@@ -97,6 +99,10 @@ builds on the open standard to close the loop from source of truth back to Bench
 
 - **Faster, accurate configuration import** — push changes back to Benchling directly from YAML; no manual UI clicking
 - **Configuration rollback** — roll back to any previously versioned state and import it
+- **Governed dropdown requests** — the Dropdown Tool lets scientists request new dropdown options from inside a Notebook
+  entry; each request is style-checked, routed for as much approval as that dropdown warrants, then applied to Benchling
+  and committed to Git
+  - No more interrupting an admin to add one option, and no more vocabularies drifting one hasty addition at a time
 - **Interactive ER diagrams** — Kenfigure Diagram renders your schema as an explorable, searchable entity-relationship diagram
   - Diagram layout hints in the YAML drive automatic grouping
 - **Schema lint with visual indicators** — Kenfigure Tool Schema Lint flags anti-patterns and style issues; Kenfigure Diagram surfaces them inline with suppression tracking
