@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.13.0] - 2026-08-9
+
+- Relax the regex on schema, dropdown, tempplate, etc. so that only a word character is required.
+  Previously leading/trailing non-word characters (e.g., whitespace) were not allowed.
+  Even though this is terrible practice, Benchling allows it, so we must too so that exports work.
+  Kenfigure Tool programmatically disallows leading/trailing whitespace on import.
+- Add `recipe` and `mortar-pestle` schema icons
+
 ## [1.12.0] - 2026-07-15
 
 - Add **Entry** to fieldset `Entity type` enum.
