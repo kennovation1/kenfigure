@@ -59,7 +59,7 @@ history is searchable and auditable in Benchling itself.
 
 ## Governance that matches the risk
 
-Not every dropdown needs the same level of control. A Vendors list change often and carries
+Not every dropdown needs the same level of control. A Vendors list changes often and carries
 little risk. A Programs list changes rarely and matters a great deal. A Yes/No list should
 probably never change at all.
 
