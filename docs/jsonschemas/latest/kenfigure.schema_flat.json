@@ -529,6 +529,7 @@
               "linear",
               "material",
               "mixture",
+              "mortar-pestle",
               "mouse",
               "oligo",
               "oligo-v2",
@@ -537,6 +538,7 @@
               "plate",
               "primer_pair",
               "protein",
+              "recipe",
               "rna_sequence",
               "sample-slide",
               "sequence",
@@ -2641,6 +2643,7 @@
       "items": {
         "title": "Template collection definition",
         "description": "Complete description of the template collection.",
+        "comment": "Name only requires at least one non-whitespace character: Benchling permits leading and trailing whitespace in collection names, and an export must reproduce them exactly to match on re-import.",
         "required": [
           "Name"
         ],
@@ -2649,7 +2652,7 @@
           "Name": {
             "description": "Template collection name.",
             "type": "string",
-            "pattern": "^\\S.*\\S$|^\\S$"
+            "pattern": "\\S"
           },
           "Description": {
             "description": "Description of the template collection.",
@@ -2678,7 +2681,7 @@
       "items": {
         "title": "Entry template definition",
         "description": "Description of an entry template.",
-        "comment": "Does not support template content or default schema values yet.",
+        "comment": "Does not support template content or default schema values yet. Name/Collection/Schema only require at least one non-whitespace character: Benchling permits leading and trailing whitespace in these names, and an export must reproduce them exactly to match on re-import.",
         "required": [
           "Name",
           "Collection"
@@ -2688,7 +2691,7 @@
           "Name": {
             "description": "Template name.",
             "type": "string",
-            "pattern": "^\\S.*\\S$|^\\S$"
+            "pattern": "\\S"
           },
           "Description": {
             "description": "Description of the template.",
@@ -2697,12 +2700,12 @@
           "Collection": {
             "description": "Name of the template collection that the template belongs to.",
             "type": "string",
-            "pattern": "^\\S.*\\S$|^\\S$"
+            "pattern": "\\S"
           },
           "Schema": {
             "description": "Name of the entry schema attached to the template.",
             "type": "string",
-            "pattern": "^\\S.*\\S$|^\\S$"
+            "pattern": "\\S"
           },
           "Fill-in only": {
             "description": "If true, entries created from this template will be locked. Users can only fill in tables, text boxes, checkboxes, and files. If false (or omitted), entries created from this template can be modified by end users.",
@@ -2727,7 +2730,7 @@
       "items": {
         "title": "Sub-template definition",
         "description": "Description of a sub-template.",
-        "comment": "Does not support sub-template content.",
+        "comment": "Does not support sub-template content. Name/Collection only require at least one non-whitespace character: Benchling permits leading and trailing whitespace in these names, and an export must reproduce them exactly to match on re-import.",
         "required": [
           "Name",
           "Collection"
@@ -2737,7 +2740,7 @@
           "Name": {
             "description": "Sub-template name.",
             "type": "string",
-            "pattern": "^\\S.*\\S$|^\\S$"
+            "pattern": "\\S"
           },
           "Description": {
             "description": "Description of the sub-template.",
@@ -2746,7 +2749,7 @@
           "Collection": {
             "description": "Name of the template collection that the sub-template belongs to.",
             "type": "string",
-            "pattern": "^\\S.*\\S$|^\\S$"
+            "pattern": "\\S"
           },
           "Notify": {
             "description": "Causes the supplied message to be printed to the output during an import operation. Use this to tell the user to take some manual action such as configuration access rights.",

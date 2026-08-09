@@ -10,13 +10,14 @@
   "items": {
     "title": "Template collection definition",
     "description": "Complete description of the template collection.",
+    "comment": "Name only requires at least one non-whitespace character: Benchling permits leading and trailing whitespace in collection names, and an export must reproduce them exactly to match on re-import.",
     "required": ["Name"],
     "type": "object",
     "properties": {
       "Name": {
         "description": "Template collection name.",
         "type": "string",
-        "pattern": "^\\S.*\\S$|^\\S$"
+        "pattern": "\\S"
       },
       "Description": {
         "description": "Description of the template collection.",
