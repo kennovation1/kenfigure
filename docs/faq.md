@@ -118,7 +118,7 @@ No. Kenfigure Pro operates exclusively on Benchling configuration schema — the
 
 **Does Kenfigure Pro use AI, and what is sent to it?**
 
-Two optional features use Amazon Bedrock, which runs inside our AWS environment. Kenfigure Diagram's grouping feature sends schema element names to suggest a diagram layout. The Dropdown Tool sends the option text a scientist typed, the target dropdown's name and its current option list, and that dropdown's style guidance, in order to propose a canonical form — all of which is configuration, not scientific data. Bedrock does not use this content to train models, and the Dropdown Tool's deterministic style checks run regardless, so a request is never blocked by AI being unavailable. See our [Privacy Policy](privacy_policy.html) and [Security & Data Handling Overview](security_data_handling.html).
+Two optional features use Amazon Bedrock, which runs inside our AWS environment. Kenfigure Diagram's grouping feature sends schema element names to suggest a diagram layout. The Dropdown Tool sends the option text a scientist typed, the target dropdown's name and its current option list, and that dropdown's style guidance, in order to propose a canonical form — all of which is configuration, not scientific data. Bedrock does not use this content to train models. See our [Privacy Policy](privacy_policy.html) and [Security & Data Handling Overview](security_data_handling.html).
 
 **How is our data secured?**
 

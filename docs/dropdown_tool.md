@@ -321,10 +321,9 @@ the general guidance.
 
 Two passes run over every request. Deterministic checks — whitespace, duplicates, non-ASCII
 characters, embedded commas, dropdown size — always run. An AI-assisted pass then proposes
-canonical forms and catches semantic duplicates the deterministic pass cannot see. **The AI
-pass is best-effort and never blocks a request**: if it is unavailable, the deterministic plan
-proceeds unchanged. See our [Security & Data Handling
-Overview](security_data_handling.html) for how request text is processed.
+canonical forms and catches semantic duplicates the deterministic pass cannot see. See our
+[Security & Data Handling Overview](security_data_handling.html) for how request text is
+processed.
 
 Nothing is applied on the strength of the automated check alone — whenever it proposes a change
 to what you typed, you see the before and after and decide whether to accept it.
