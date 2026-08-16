@@ -94,11 +94,12 @@
                 "Inventory",
                 "JSON",
                 "Boolean",
-                "Run"
+                "Run",
+                "Result"
               ]
             },
             "Definition": {
-              "description": "Name of target object if Type is a link type (Entity, Inventory, Run) or Dropdown.",
+              "description": "Name of target object if Type is a link type (Entity, Inventory, Run, Result) or Dropdown. For Result, use the target Result schema name, or 'Any result' for an unrestricted link.",
               "anyOf": [
                 {
                   "type": "string",
@@ -109,7 +110,8 @@
                     "DNA Sequence",
                     "Molecule",
                     "Mixture",
-                    "Any inventory"
+                    "Any inventory",
+                    "Any result"
                   ]
                 },
                 {

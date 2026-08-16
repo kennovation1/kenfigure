@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.14.0] - 2026-08-16
+
+- Add support for `Result` schema field types on Result and Run schema fields.
+  This means that the Definition of a field can be "Any result" or a reference to
+  a named result schema.
+  
 ## [1.13.0] - 2026-08-9
 
 - Relax the regex on schema, dropdown, tempplate, etc. so that only a word character is required.

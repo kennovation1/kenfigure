@@ -99,14 +99,14 @@
                 "Inventory",
                 "JSON",
                 "Boolean",
-                "ft_assay_result_link",
+                "Result",
                 "ft_assay_request_link",
                 "Batch",
                 "Run"
               ]
             },
             "Definition": {
-              "description": "Name of target object if Type is a one of the link types or Dropdown. May optionally point to a dropdown if type is Integer or Decimal.",
+              "description": "Name of target object if Type is a one of the link types or Dropdown. May optionally point to a dropdown if type is Integer or Decimal. For Result, use the target Result schema name, or 'Any result' for an unrestricted link.",
               "anyOf": [
                 {
                   "type": "string",
@@ -117,7 +117,8 @@
                     "DNA Sequence",
                     "Molecule",
                     "Mixture",
-                    "Any inventory"
+                    "Any inventory",
+                    "Any result"
                   ]
                 },
                 {
