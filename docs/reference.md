@@ -97,6 +97,7 @@
     - <a id="properties/Entity_schemas/items/properties/Prefix"></a>**`Prefix`** *(string, required)*: The registry ID prefix. Must match pattern: `^[a-zA-Z0-9_.-]*[a-zA-Z_.-]?$` ([Test](https://regexr.com/?expression=%5E%5Ba-zA-Z0-9_.-%5D%2A%5Ba-zA-Z_.-%5D%3F%24)).
     - <a id="properties/Entity_schemas/items/properties/RegID%20display"></a>**`RegID display`** *(boolean)*: Use Registry ID as display label when true.
     - <a id="properties/Entity_schemas/items/properties/RegID%20chips"></a>**`RegID chips`** *(boolean)*: Include Registry ID in chips when true.
+    - <a id="properties/Entity_schemas/items/properties/RegID%20random%20%28deprecated%29"></a>**`RegID random (deprecated)`** *(boolean)*: Generate random Registry IDs. This is a deprecated capability and should only be used for schemas that already have this set.
     - <a id="properties/Entity_schemas/items/properties/Show%20bases"></a>**`Show bases`** *(boolean)*: Show bases in expanded view.
     - <a id="properties/Entity_schemas/items/properties/Containable%20type"></a>**`Containable type`** *(string, required)*: Entity can be transferred into containers when set to 'Entity'. Must be one of: "None" or "Entity".
     - <a id="properties/Entity_schemas/items/properties/Naming%20options"></a>**`Naming options`** *(array, required)*: Available registration naming options. Length must be at least 1. Items must be unique.
@@ -138,6 +139,17 @@
             - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: "Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", or "Any inventory".
             - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
         - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Unit"></a>**`Unit`** *(string)*: Name of a unit (from Unit_dictionary) assigned to this field. Only valid if Type is Decimal or Integer.
+        - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Display%20precision"></a>**`Display precision`** *(integer)*: Number of decimal places to display. Only valid if Type is Decimal. Minimum: `0`. Maximum: `15`.
+        - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Validation"></a>**`Validation`** *(object)*: Data submitted to this field must follow these rules.
+          - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Validation/properties/Min%20value"></a>**`Min value`** *(number)*: Value must be greater than or equal. Only valid if Type is Integer or Decimal.
+          - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Validation/properties/Max%20value"></a>**`Max value`** *(number)*: Value must be less than or equal. Only valid if Type is Integer or Decimal.
+          - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Validation/properties/Cannot%20equal"></a>**`Cannot equal`**: Data matching this value will be rejected. Only valid if Type is Integer, Decimal, Text, or Long text.
+            - **Any of**
+              - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Validation/properties/Cannot%20equal/anyOf/0"></a>*number*
+              - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Validation/properties/Cannot%20equal/anyOf/1"></a>*string*
+          - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Validation/properties/Contains"></a>**`Contains`** *(string)*: Data must contain this substring. Only valid if Type is Text or Long text.
+          - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Validation/properties/Does%20not%20contain"></a>**`Does not contain`** *(string)*: Data must not contain this substring. Only valid if Type is Text or Long text.
+          - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Validation/properties/Must%20equal"></a>**`Must equal`** *(boolean)*: Value must equal this boolean (True or False). Only valid if Type is Boolean.
         - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Computed"></a>**`Computed`** *(object)*: Describes the computed field. Only present for computed fields.
           - <a id="properties/Entity_schemas/items/properties/Fields/items/properties/Computed/properties/Formula"></a>**`Formula`** *(string, required)*: Name of formula using native Benchling tokens for now.
             - **Any of**
@@ -380,6 +392,10 @@
             - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Definition/anyOf/0"></a>*string*: Must be one of: "Any Entity", "Custom Entity", "AA Sequence", "DNA Sequence", "Molecule", "Mixture", "Any inventory", or "Any result".
             - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Definition/anyOf/1"></a>*string*
         - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Unit"></a>**`Unit`** *(string)*: Name of a unit (from Unit_dictionary) assigned to this field. Only valid if Type is Decimal or Integer.
+        - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Display%20precision"></a>**`Display precision`** *(integer)*: Number of decimal places to display. Only valid if Type is Decimal. Minimum: `0`. Maximum: `15`.
+        - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Validation"></a>**`Validation`** *(object)*: Data submitted to this field must follow these rules.
+          - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Validation/properties/Min%20value"></a>**`Min value`** *(number)*: Value must be greater than or equal. Only valid if Type is Integer or Decimal.
+          - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Validation/properties/Max%20value"></a>**`Max value`** *(number)*: Value must be less than or equal. Only valid if Type is Integer or Decimal.
         - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Snapshot"></a>**`Snapshot`** *(object)*: Describes the snapshot computation if this is a snapshot computed field.
           - <a id="properties/Result_schemas/items/properties/Fields/items/properties/Snapshot/properties/Formula"></a>**`Formula`**: Name of formula using native Benchling tokens for now. TODO-For now, leave the items for arguments unspecified until this matures more. Add filters and other features.
             - **Any of**

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.15.0] - 2026-08-17
+
+- Add `Validation` object for entity schema fields to support basic validation of field values (e.g., min, max, equal, not equal, contains, do not contain).
+- Add `Validation` object for result schema fields to support min and max numeric values.
+- Add `Display precision` for decimal fields on entity or result schemas
+- Add `RegID random (deprecated)` to entity schemas. This maps to the UI schema setting:
+      "Generate random Registry IDs (deprecated)". This is a deprecated capability and should only be used for schemas that already have this set.
+
 ## [1.14.0] - 2026-08-16
 
 - Add support for `Result` schema field types on Result and Run schema fields.

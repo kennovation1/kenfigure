@@ -130,6 +130,26 @@
               "description": "Name of a unit (from Unit_dictionary) assigned to this field. Only valid if Type is Decimal or Integer.",
               "type": "string"
             },
+            "Display precision": {
+              "description": "Number of decimal places to display. Only valid if Type is Decimal.",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 15
+            },
+            "Validation": {
+              "description": "Data submitted to this field must follow these rules.",
+              "type": "object",
+              "properties": {
+                "Min value": {
+                  "description": "Value must be greater than or equal. Only valid if Type is Integer or Decimal.",
+                  "type": "number"
+                },
+                "Max value": {
+                  "description": "Value must be less than or equal. Only valid if Type is Integer or Decimal.",
+                  "type": "number"
+                }
+              }
+            },
             "Snapshot": {
               "description": "Describes the snapshot computation if this is a snapshot computed field.",
               "type": "object",

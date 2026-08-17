@@ -366,7 +366,8 @@ The available `Type` values are:
 
 ### Entity schema fields
 Above shows some simple example fields. Here we shows the full specification for an
-entity schema field.
+entity schema field (some keys shown would not normally coexist, but are shown here
+to describe the schema).
 ```yaml
 Name: Lipid  # Field display name
 Description: Parent concept for this lot
@@ -382,12 +383,21 @@ Definition: Lipid  # Name of a Benchling object applicable to the Type. Omit if 
 Required: true  # or false
 Multi-select: true  # or false
 Parent-link: true  # or false
+Display precision: 2  # Optional. Only valid if Type is Decimal. Number of decimal places to display (0-15).
 Computed:  # This section is only partially documented and defined in the Kenfigure schema.
   # This is still converging and can be quite complicated. The current recommendation is to
   # not worry too much about the formality of computed fields and just document your understanding
   # of how the field is computed. The Kenfigure Tool does have a defined format, but it varies
   # quite a bit depending on the formula.
   Formula: molecule_molecular_weight
+  ...
+Validation:
+  Min value: 0      # Value must be greater than or equal. Integer or Decimal only.
+  Max value: 200    # Value must be less than or equal. Integer or Decimal only.
+  Cannot equal: 100   # Data matching this value is rejected. Integer, Decimal, Text, or Long text.
+  Contains: include_substring       # Data must contain this substring. Text or Long text only.
+  Does not contain: exclude_substring # Data must not contain this substring. Text or Long text only.
+  Must equal: true  # Value must equal this boolean. Boolean only.
 ```
 
 ## Fieldset Schemas
@@ -451,6 +461,12 @@ Result_schemas:
       # The valid types for result fields are
       # Date, Datetime, Decimal, Integer, Long text, Dropdown, Text, Attachment,
       # Entry, Entity, Category, Part, Inventory, JSON, Boolean, Result, Run
+    Display precision: 1  # Optional. Only valid if Type is Decimal. Number of decimal places to display (0-15).
+    Validation:  # Optional. Only supports Integer or Decimal fields.
+      # Only Min value and Max value are supported for result schema fields.
+      # One or both of Min value and Max value may be provided.
+      Min value: 0  # Value must be greater than or equal to
+      Max value: 100  # Value must less than or equal to
 ```
 
 ## Run Schemas

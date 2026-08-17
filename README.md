@@ -1,6 +1,6 @@
 # Kenfigure™
 ![License: ODC-BY 1.0](https://img.shields.io/badge/License-ODC--BY%201.0-blue)
-![Version](https://img.shields.io/badge/version-v1.14.0-orange)
+![Version](https://img.shields.io/badge/version-v1.15.0-orange)
 
 ## Overview
 *Kenfigure*: a YAML spec to define Benchling configurations

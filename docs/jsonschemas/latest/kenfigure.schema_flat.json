@@ -563,6 +563,10 @@
             "description": "Include Registry ID in chips when true.",
             "type": "boolean"
           },
+          "RegID random (deprecated)": {
+            "description": "Generate random Registry IDs. This is a deprecated capability and should only be used for schemas that already have this set.",
+            "type": "boolean"
+          },
           "Show bases": {
             "description": "Show bases in expanded view.",
             "type": "boolean"
@@ -844,6 +848,49 @@
                 "Unit": {
                   "description": "Name of a unit (from Unit_dictionary) assigned to this field. Only valid if Type is Decimal or Integer.",
                   "type": "string"
+                },
+                "Display precision": {
+                  "description": "Number of decimal places to display. Only valid if Type is Decimal.",
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 15
+                },
+                "Validation": {
+                  "description": "Data submitted to this field must follow these rules.",
+                  "type": "object",
+                  "properties": {
+                    "Min value": {
+                      "description": "Value must be greater than or equal. Only valid if Type is Integer or Decimal.",
+                      "type": "number"
+                    },
+                    "Max value": {
+                      "description": "Value must be less than or equal. Only valid if Type is Integer or Decimal.",
+                      "type": "number"
+                    },
+                    "Cannot equal": {
+                      "description": "Data matching this value will be rejected. Only valid if Type is Integer, Decimal, Text, or Long text.",
+                      "anyOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "Contains": {
+                      "description": "Data must contain this substring. Only valid if Type is Text or Long text.",
+                      "type": "string"
+                    },
+                    "Does not contain": {
+                      "description": "Data must not contain this substring. Only valid if Type is Text or Long text.",
+                      "type": "string"
+                    },
+                    "Must equal": {
+                      "description": "Value must equal this boolean (True or False). Only valid if Type is Boolean.",
+                      "type": "boolean"
+                    }
+                  }
                 },
                 "Computed": {
                   "description": "Describes the computed field. Only present for computed fields.",
@@ -2360,6 +2407,26 @@
                 "Unit": {
                   "description": "Name of a unit (from Unit_dictionary) assigned to this field. Only valid if Type is Decimal or Integer.",
                   "type": "string"
+                },
+                "Display precision": {
+                  "description": "Number of decimal places to display. Only valid if Type is Decimal.",
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 15
+                },
+                "Validation": {
+                  "description": "Data submitted to this field must follow these rules.",
+                  "type": "object",
+                  "properties": {
+                    "Min value": {
+                      "description": "Value must be greater than or equal. Only valid if Type is Integer or Decimal.",
+                      "type": "number"
+                    },
+                    "Max value": {
+                      "description": "Value must be less than or equal. Only valid if Type is Integer or Decimal.",
+                      "type": "number"
+                    }
+                  }
                 },
                 "Snapshot": {
                   "description": "Describes the snapshot computation if this is a snapshot computed field.",
