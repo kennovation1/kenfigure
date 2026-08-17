@@ -24,6 +24,23 @@ live links from inside customers' Benchling tenants.
 
 **Confidentiality:** Never commit internal content here — (e.g., uncleared legal text). When unsure, check with `kenfigure-business`.
 
+## Writing CHANGELOG.md and docs/annotated.md
+
+Both are written for **end users** of the Kenfigure spec (schema authors, Benchling admins) —
+not for contributors to this repo or to any specific implementation.
+
+- Describe the functional/schema change itself (what's new, what it means for a Kenfiguration
+  author), not the internal implementation that produced it. No transformer internals, no
+  Benchling wire-format/Avro details, no code file references.
+- Don't usually name **kenfigure-tool** (or any other specific implementation). Kenfigure is a
+  generic spec — other tools can implement it — so entries should read as spec changes, not as
+  "kenfigure-tool now supports X." (Rare exception: `docs/annotated.md` may reference Kenfigure
+  Tool by name when documenting tooling-specific behavior it exposes, e.g. `Notify`.)
+- `CHANGELOG.md` entries: 1-3 concise bullets per version, plain functional language, matching
+  the existing entries' style (e.g. `## [1.10.0]`, `## [1.8.0]`). One older entry is
+  AI-generated and more verbose/technical than this style, and hasn't been cleaned up — known
+  debt, not a model to copy.
+
 ## Footer sync rule
 
 `docs/_includes/site-footer.html` is the canonical site footer. When you edit it here, also update the matching copy in `kenfigure-business/docs/_includes/site-footer.html` (used for local draft preview) and the static copy in `kenfigure-auth/frontend/order.html`.
