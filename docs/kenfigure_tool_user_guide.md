@@ -428,6 +428,11 @@ Once you have a `.dat` file from either option above:
 > [bulk "Update" selection tool](cm_bulk_update.html) — a one-click bookmarklet
 > that selects **Update &lt;same-named object&gt;** for every
 > row. This is only needed once; later imports default to Update automatically.
+>
+> **Before you click Continue**, the [Plan Review tool](plan_review.html) —
+> another one-click bookmarklet — filters the plan down to the changes that
+> actually matter, so real differences aren't buried in identifier-change
+> noise.
 
 ### Status messages and timing
 

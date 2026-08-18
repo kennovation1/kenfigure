@@ -16,7 +16,7 @@
  * copy-pasted plan text file, but reads the live "All Changes" panel directly, so
  * there's no copy-paste step.
  *
- * Usage (full instructions: docs/cm-bulk-update.md):
+ * Usage (full instructions: docs/plan-review.md):
  *   1. In the import wizard ("new migration experience"), upload your .dat file
  *      and continue to the Validate plan page, then open the SCHEMAS tab. Make
  *      sure "All Changes" is visible (the default) — collapsed sections are

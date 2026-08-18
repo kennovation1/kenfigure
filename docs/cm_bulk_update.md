@@ -73,6 +73,16 @@ It walks the same rows and shows exactly which menu entry would be chosen for
 each one — in the status box and the browser console — without changing
 anything. A dry-run pass first is a good habit on a large import.
 
+## Next: review the plan for material changes
+
+Once every row shows Update instead of Create, the plan is still typically
+dominated by expected round-trip noise (identifier changes, position
+shifts, and the like) — real differences worth catching before you click
+**Continue** can be easy to miss in a plan with thousands of lines. The
+[Plan Review tool](plan_review.html) is the natural next step on the same
+page: it filters the plan down to the changes that actually matter, and
+highlights them in place.
+
 ## Troubleshooting
 
 - **"No Create dropdowns found"** — you're not on the Validate plan page, you're on a
