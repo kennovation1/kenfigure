@@ -1,9 +1,8 @@
 ---
-
-## title: Kenfigure Dropdown Tool
-
+title: Kenfigure Dropdown Tool
 layout: default
 toc: true
+---
 
 [Kenfigure home](https://kenfigure.com)
 
