@@ -1,0 +1,215 @@
+# Agent instructions
+
+Instructions for AI coding agents working in this repository. This is a starter file from the
+Kenfigure project - adapt it. Anything below that does not match how you work is meant to be
+changed, not followed.
+
+## What this repo is
+
+Benchling platform configuration authored in [Kenfigure](https://kenfigure.com) format: YAML files
+that describe entity schemas, dropdowns, result schemas, run schemas, fieldsets, templates, and
+related objects, converted to and from Benchling configuration migration archives by Kenfigure Tool.
+
+The work here is data modeling, not application code. A change to a field name in this repo becomes
+a column name in your warehouse and a label in front of a scientist at a bench.
+
+## Environment profile
+
+If a value below is still a placeholder, work it out from the repo, confirm it with the user, and
+write the answer into this file. Do not re-derive it every session.
+
+| Setting | Value |
+|---|---|
+| Organization | `<ORG>` |
+| Tenant (Prod) | `<https://yourtenant.benchling.com>` |
+| Tenant (Test) | `<https://yourtenant-test.benchling.com>` |
+| Tenant (Dev) | `<https://yourtenant-dev.benchling.com>` |
+| Tenant type | `<validated cloud / non-validated cloud>` |
+| Authoring directory | `<e.g. kenfigure/ or kenfigure/preview/>` - the only hand-edited tree |
+| Other environment directories | `<if any>` - read-only snapshots, never a source of truth |
+| Field display name case | `<sentence / title - see below>` |
+| Directory layout | `<object type only / object type then domain - see step 4>` |
+| Terminology to match | `<house terms the model already uses, e.g. "Lot" not "Batch">` |
+
+**Detecting field name case:** sample field display names across several existing schemas, ignoring
+single-word names and proper nouns, which are identical in both. `Lipid batch` is sentence case,
+`Lipid Batch` is title case. If the model is mixed, report the split and ask which way to settle it
+rather than picking.
+
+## Authoritative sources - load before authoring
+
+Kenfigure's schema and style guide both change. Do not assert either from memory. Before reading or
+writing Kenfigure YAML in a session, load:
+
+- **JSON Schema**, what is legal:
+  https://kenfigure.com/jsonschemas/latest/kenfigure.schema_flat.json
+- **Style guide**, what is good: https://kenfigure.com/schema_design_style_guide.html
+
+If a key is not in the JSON Schema, it does not exist - do not invent one that looks plausible. If a
+naming question is not covered by the style guide, say so rather than filling the gap silently.
+
+Two parts of the format are deliberately only half-schematized, and there "do not invent" applies
+differently. A field's `Computed` or `Snapshot` block, and any object carrying `Passthrough: true`
+(run schema input and output file configurations), preserve Benchling's own structure verbatim; it
+is round-tripped faithfully but not validated, and it varies with the formula. Inside those blocks,
+do not reverse-engineer a formal structure - record your understanding of how the field is computed
+and leave what is already there untouched. Everywhere else the schema is the boundary.
+
+Benchling product behavior is documented at https://docs.benchling.com/ and
+https://help.benchling.com/hc/en-us. It changes without announcement, so flag uncertainty about what
+Benchling does rather than asserting it.
+
+## Style guide vs. the existing model
+
+The style guide is the default. The existing model overrides it in two specific ways and no others.
+
+**Model-wide conventions, for new work as well as old.** Where the model has already settled a
+convention that runs across every object - field display name case, house terminology,
+abbreviations, ID prefix style - match it, even where the style guide would have chosen differently.
+A model half in sentence case and half in title case is worse than one consistently in the case you
+would not have picked. Record the settled choice in the environment profile above.
+
+**Existing objects, which are not renamed retroactively.** A field that already breaks a style rule
+stays as it is unless the user decides otherwise. Renaming it breaks live SQL, dashboards, and
+integrations, and that cost usually outweighs the benefit.
+
+Everything else follows the style guide, and **new work follows it even where the neighboring fields
+or schemas do not.** A new percentage field gets a `_pct` system name whether or not the three
+beside it do. The same goes for units carried into system names, characters Benchling silently drops
+when auto-generating them (`/`, `^`, `%`, `+`, non-ASCII), ASCII-only display names, and tool tips.
+These are not house taste: they are the difference between a name that reads correctly and one that
+does not. `Diameter (μm)` auto-generates as `diameter_m`, which reads as meters. Write it as
+`Diameter (um)` with the system name `diameter_um`.
+
+Where an existing name is not merely unstylish but states something wrong, flag it along with what a
+rename would cost, and let the user decide. Do not quietly fix it, and do not copy the error forward
+into the new field beside it.
+
+## Building a model
+
+This applies to a new model and to an extension of an existing one.
+
+**1. Understand the process before modeling it.** Ask what is physically made, consumed, and
+measured; what gets registered versus what is only a result; where the process branches or loops;
+what has to be queryable afterwards. Do not start from a field list handed over by a scientist -
+that is usually a spreadsheet header row, and modeling it directly bakes one experiment's layout
+into the platform.
+
+**2. Survey before adding.** Read the existing tree first. Reuse beats near-duplication: an existing
+dropdown, entity schema, or fieldset that almost fits is nearly always better than a second one that
+fits exactly. Two dropdowns that mean the same thing are a permanent tax on every query and
+dashboard built on them.
+
+**3. Propose the design before writing YAML.** For anything beyond a couple of fields, present the
+model first - an ERD, or a table of schemas and fields - and get agreement on entities and
+relationships before generating files. Twenty YAML files are hard to review; one diagram is not.
+
+Draw the ERD in Mermaid or in plain ASCII. ASCII reads anywhere, including a terminal, a commit
+message, and a chat window, and is often clearer for a handful of schemas; Mermaid is better for a
+large model but only renders in an IDE or a viewer that supports it, and it fails awkwardly when it
+fails. Ask which is wanted the first time, then stay consistent. Either way use display names, and
+show a field's `Definition` value in preference to its raw `Type` where it has one.
+
+**4. Write the files.** One object per file, named for the object with spaces replaced by
+underscores and a `.yaml` extension ("Lipid Nanoparticle" -> `Lipid_Nanoparticle.yaml`). Indent YAML
+two spaces. Use underscores rather than spaces in directory names, and follow the grouping already
+in use.
+
+Directory layout is an organization-wide choice; record it in the environment profile above and do
+not change it unilaterally.
+
+- **By object type only** - `Entity_schemas/`, `Dropdowns/`, `Result_schemas/`, `Fieldsets/`,
+  `Run_schemas/`, `Study_schemas/`, `Task_schemas/`. This is what Kenfigure Tool (Export) produces,
+  so a refresh export lands on top of the existing tree and the diff shows only real changes.
+- **By object type, then domain** - `Entity_schemas/In_Vivo/`, `Dropdowns/Process_Development/`.
+  Easier to navigate on a large model, but an export will not reproduce it, so every refresh has to
+  be re-filed by hand or the tree diverges from what the tenant exports.
+
+Do not introduce domain subdirectories into a type-only tree without asking. The navigation gain is
+small and the refresh cost is permanent.
+
+Tool tips and descriptions do different jobs. Write both.
+
+- **`Tool tip` is user-facing and costs nothing.** It appears only on hover, so there is no clutter
+  argument against having one everywhere - write one for every field. It should say what to enter
+  and what the value means at the bench: the unit convention, what counts as included, which of two
+  similar fields to use.
+- **`Description` is for whoever maintains the model, and for AI reading it.** Anything documenting
+  the model rather than guiding data entry goes here: why the field exists, what it is derived from,
+  what depends on it. Give schemas a `Description` as well as fields. For snapshot and computed
+  (lookup) fields, name the hop - a field hoisting `Study Arm(s)` from `Batch` is described as
+  `Batch -> Study Arm(s)`.
+
+**5. Validate and lint before handing anything back.** Every file must conform to the Kenfigure JSON
+Schema. Check that yourself against the loaded schema and fix every violation - this does not depend
+on any tooling being installed.
+
+Style linting depends on what is available here:
+
+- **If the repo contains a `schema_lint.yaml`, read it.** It is recorded lint output: one entry per
+  notice, carrying `rule_id`, the object and component it applies to, a message, and a `suppress`
+  flag. A suppressed notice has already been reviewed and accepted - do not re-raise it. Lint
+  results are produced by Kenfigure Tool (Export) and shown inline by Kenfigure Diagram; if a
+  `kenfigure_tool lint` CLI is installed, it produces the same thing.
+- **If none of that is available, check by hand** against the style guide and the schema. The rules
+  worth checking are name length and uniqueness within an object type, leading or trailing
+  whitespace, repeated whitespace or underscores or dashes, commas in names (they break CSV
+  round-trips, and matter most in dropdown options), dropdown size, a `%` in a display name without
+  a `_pct` system name, ID prefixes ending in a digit or in a character confusable with one (`O`,
+  `l`, `I`), entity schemas with no naming option or too many, and the same display or system name
+  used across two different schema types.
+
+Triage findings against how mature the tenant is: on a young, lightly integrated model, fix them now
+while it is cheap; on an established one, a rename can break live SQL, dashboards, and integrations,
+so report the finding with its cost and let the user decide. Never silently rename an existing field
+to satisfy a lint rule.
+
+**6. Check what references an object before changing it.** The files here are a connected set: a
+dropdown is named by fields in other schemas, a parent link names an entity schema, a computed field
+names a hop through one. Before renaming or archiving anything, search the tree for both its display
+name and its system name and list everything that has to change with it. Renaming a dropdown and
+leaving the fields that reference it is a broken configuration, not a partial one.
+
+**7. Treat some edits as high risk.** Computed fields cannot be edited in place - changing one means
+renaming and archiving the old field and adding a unique `Version` tag so a new field is created.
+Passthrough objects are unvalidated, as above. Confirm before touching either, and never bundle one
+into a larger change.
+
+**8. Deployment is the user's call.** Do not build a `.dat`, import, or apply configuration to a
+tenant unless asked to.
+
+## Warehouse queries
+
+Checking the live data before changing the model that holds it is usually worth the detour: how many
+rows actually populate a field, what a text field really contains, whether a dropdown option has
+ever been used.
+
+If `get_tables` and `run_query` MCP tools are available, use them.
+
+- Always use the `$raw` tables. Never query a table without the `$raw` suffix.
+- Always filter `archived$` = false.
+- Always filter `is_registered` = true for entity schema tables.
+- If the user types `SQL:` followed by one or more lines, run that text with `run_query`.
+
+Before proposing that a field be removed, retyped, or made required, check whether it is populated
+and what it contains. Required cannot be added to a result table field after data exists, and there
+is no migration path from one field to another.
+
+If no warehouse access is configured and a question genuinely needs live data, say so rather than
+proceeding on assumption, and suggest setting one up: a Benchling MCP server, or direct PostgreSQL
+access to the Benchling warehouse. Suggest it once, when a real question needs it - not as
+boilerplate.
+
+## Working style
+
+You are working with the person accountable for this Benchling configuration, who knows the platform
+well. Skip the explanation of what a result schema is and get to the judgment. Findings should be
+actionable or left out. Prefer a checklist to prose. Flag uncertainty about Benchling behavior
+rather than guessing at it.
+
+## Resources
+
+- Kenfigure standard and docs: https://kenfigure.com
+- Kenfigure Tool user guide: https://kenfigure.com/kenfigure_tool_user_guide.html
+- Benchling developer docs: https://docs.benchling.com/
+- Benchling help center: https://help.benchling.com/hc/en-us

@@ -162,14 +162,29 @@ builds on the open standard to close the loop from source of truth back to Bench
     completion (based on the JSON schema) instead of the AI completion.
   - The AI can be helpful for creating appropriate tooltips or at least giving you a good start.
 
-#### Cursor rules
-See [.cursor/rules/kenfigure.mdc](https://github.com/kennovation1/kenfigure/blob/78dedd79021cc64673d4e9525a5dd2268bd015ce/.cursor/rules/kenfigure.mdc)
-in the [GitHub repo](https://github.com/kennovation1/kenfigure) for a Cursor rules file that that works well.
-Getting these rules optimized is an ongoing process, so check back for updates.
-Of course contributions are welcome too!
+### Agent and AI assistant rules
 
-#### GitHub Copilot AGENT.md rules
-I have not yet testing using AGENT.md files, but I suspect you could readily adapt the above Cursor rules file.
+The [agent_rules/](https://github.com/kennovation1/kenfigure/tree/main/agent_rules) directory holds a
+starter instruction file for AI coding agents working in a Kenfigure configuration repository. It tells the
+agent to load the JSON schema and the [schema design style guide](./schema_design_style_guide.md) before
+authoring rather than working from memory, and covers file and directory layout, the `Tool tip` versus
+`Description` split, validating and linting, checking what references an object before renaming it, and
+querying the warehouse to see real data before changing the model that holds it.
+
+It comes in three formats with identical content. Copy whichever your tool reads into **your** configuration
+repository - not into a clone of this repo, which holds the standard rather than a configuration.
+
+| File | Tool | Copy to |
+|---|---|---|
+| `agent_rules/kenfigure.mdc` | Cursor | `.cursor/rules/kenfigure.mdc` |
+| `agent_rules/CLAUDE.md` | Claude Code | repository root, as `CLAUDE.md` |
+| `agent_rules/AGENTS.md` | GitHub Copilot, Codex, and other tools that read `AGENTS.md` | repository root, as `AGENTS.md` |
+
+Then fill in the environment profile table at the top, or leave the placeholders and let the agent work them
+out from the repo and confirm them with you on first use.
+
+These rules are a starting point, not a specification - adapt them to how your team works. Getting them
+optimized is an ongoing process, so check back for updates. Contributions are very welcome.
 
 ### Other IDEs
 If you use a different IDE, please create a pull request so we can document any applicable notes.
