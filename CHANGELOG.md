@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.16.0] - 2026-08-30
+
+- Add `solution` to the entity schema `Icon` enum.
+
 ## [1.15.0] - 2026-08-17
 
 - Add `Validation` object for entity schema fields to support basic validation of field values (e.g., min, max, equal, not equal, contains, do not contain).
