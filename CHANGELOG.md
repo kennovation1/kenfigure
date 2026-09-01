@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.17.0] - 2026-09-01
+
+- Add `Validation rules` array to entity schemas for Benchling's formula-based advanced
+  validation rules. Each rule has a `Name`, optional `Description`, a `Rule definition`
+  formula that must evaluate to TRUE or FALSE, and an `Error message` (max 250 characters)
+  shown when the rule is FALSE. Unlike a field's `Validation` object, a rule may reference
+  multiple fields and traverse linked objects.
+
 ## [1.16.0] - 2026-08-30
 
 - Add `solution` to the entity schema `Icon` enum.

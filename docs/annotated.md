@@ -400,6 +400,36 @@ Validation:
   Must equal: true  # Value must equal this boolean. Boolean only.
 ```
 
+### Entity schema validation rules
+`Validation rules` is an optional schema-level list of Benchling's **advanced validation
+rules** — formula-based conditions checked at registration. It is separate from a field's
+`Validation` object: a field's `Validation` covers simple single-field checks, while a
+`Validation rules` entry can reference several fields and follow links to other entities.
+
+Each rule mirrors the fields of Benchling's "Create rule" dialog:
+
+```yaml
+Validation rules:  # Optional. Entity schemas only.
+- Name: pH in range                 # Required. Shown in the schema's Validation rules list.
+  Description: pH must be within the safe handling range  # Optional. Saved to Benchling.
+  Rule definition: AND(this.fields.ph > 6, this.fields.ph < 9)  # Required.
+    # A formula that evaluates to TRUE or FALSE. If FALSE, the Error message is shown.
+    # Field references use system names, and may traverse links, e.g.
+    #   this.fields.freezer.fields.set_temp
+  Error message: pH must be between 6 and 9  # Required. Max 250 characters.
+- Name: Ultra-frozen samples need a cold freezer
+  Rule definition: >-
+    IF(this.fields.freeze_type = "ultra frozen",
+       this.fields.freezer.fields.set_temp < -80,
+       this.fields.freezer.fields.set_temp < -10)
+  Error message: Ultra-frozen samples must be stored below -80C
+```
+
+The formula grammar (operators, functions such as `AND`/`OR`/`IF`/`ISPRESENT`/`HASSCHEMA`,
+`@api_id` object references, list functions) is documented by Benchling in
+[Validation rules syntax](https://help.benchling.com/hc/en-us/articles/47935854263181-Validation-rules-syntax).
+Kenfigure does not parse or validate the formula — use Benchling's "Check syntax" button.
+
 ## Fieldset Schemas
 Setting some attributes versus leaving them unspecified alters the behavior in significant ways.
 See Benchling documentation for now to configure fieldsets.

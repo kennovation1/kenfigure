@@ -459,6 +459,39 @@
           }
         }
       },
+      "Validation rules": {
+        "description": "Schema-level advanced validation rules (Benchling's formula-based 'Validation rules' tab). Each rule is a formula that must evaluate to TRUE or FALSE; when FALSE, the Error message is shown to the user. Distinct from a field's 'Validation' object, which covers simple single-field checks - advanced rules may reference multiple fields and traverse linked objects.",
+        "type": "array",
+        "minItems": 0,
+        "uniqueItems": true,
+        "items": {
+          "title": "Advanced validation rule",
+          "description": "One advanced validation rule. Mirrors the fields of the Benchling 'Create rule' dialog.",
+          "type": "object",
+          "required": ["Name", "Rule definition", "Error message"],
+          "properties": {
+            "Name": {
+              "description": "Rule name. Shown in the schema's Validation rules list.",
+              "type": "string"
+            },
+            "Description": {
+              "description": "Optional human-readable explanation of the rule's intent. Saved to Benchling.",
+              "type": "string"
+            },
+            "Rule definition": {
+              "description": "Formula that evaluates to TRUE or FALSE. If FALSE, the Error message is shown. Field references use system names (e.g. this.fields.ph, this.fields.freezer.fields.set_temp). Syntax: https://help.benchling.com/hc/en-us/articles/47935854263181-Validation-rules-syntax",
+              "type": "string",
+              "minLength": 1
+            },
+            "Error message": {
+              "description": "Message shown to the user when the rule evaluates to FALSE. Limited to 250 characters.",
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 250
+            }
+          }
+        }
+      },
       "API ID": {
         "description": "API ID for the entity schema created during an export operation. This is ignored for import operations.",
         "type": "string"
