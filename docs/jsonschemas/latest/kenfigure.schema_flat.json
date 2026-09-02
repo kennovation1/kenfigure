@@ -1016,6 +1016,18 @@
                   "type": "string",
                   "minLength": 1,
                   "maxLength": 250
+                },
+                "Passthrough": {
+                  "description": "Round-trip marker. Set by an export of a tenant that already has this rule; means 'condition' below carries the compiled form and should be replayed verbatim on import. A rule authored by hand (no 'condition') omits this - on first import the tooling asks the user to create the rule in the Benchling schema editor, after which a re-export fills in 'condition'. To change a passthrough rule, delete 'Passthrough', 'evaluatorVersion', and 'condition' so it is re-created from the formula.",
+                  "type": "boolean"
+                },
+                "evaluatorVersion": {
+                  "description": "Benchling rule evaluator version captured on export (e.g. 'v1'). Round-trip data; not authored by hand.",
+                  "type": "string"
+                },
+                "condition": {
+                  "description": "The rule's compiled Benchling condition tree, captured on export with environment-specific IDs removed. Opaque round-trip data replayed on import; not authored or edited by hand. Present only alongside 'Passthrough'.",
+                  "type": "object"
                 }
               }
             }

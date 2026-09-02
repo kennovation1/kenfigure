@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.18.0] - 2026-09-01
+
+- Add optional `Passthrough`, `evaluatorVersion`, and `condition` keys to entity-schema
+  `Validation rules` entries. An export of a tenant that already has a rule now also records
+  its compiled form so the rule round-trips on a later import. A rule written by hand omits
+  these keys; on first import the tooling asks you to create it in the Benchling schema editor,
+  then a re-export fills them in. To change a passthrough rule, delete these three keys so it
+  is re-created from the formula.
+
 ## [1.17.0] - 2026-09-01
 
 - Add `Validation rules` array to entity schemas for Benchling's formula-based advanced

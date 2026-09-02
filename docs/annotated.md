@@ -430,6 +430,37 @@ The formula grammar (operators, functions such as `AND`/`OR`/`IF`/`ISPRESENT`/`H
 [Validation rules syntax](https://help.benchling.com/hc/en-us/articles/47935854263181-Validation-rules-syntax).
 Kenfigure does not parse or validate the formula — use Benchling's "Check syntax" button.
 
+#### Round-tripping and the `Passthrough` keys
+
+(This sub-section is related to Kenfigure Tool features and thus is not purely tool agnostic
+like most of the rest of the standard.)
+
+Benchling stores each rule as a compiled expression, and only the compiled form can be
+imported — a bare formula string cannot. So an **export** of a tenant that already has a rule
+adds three more keys, which you do not write or edit by hand:
+
+```yaml
+- Name: pH in range
+  Description: pH must be within the safe handling range
+  Rule definition: AND(this.fields.ph > 6, this.fields.ph < 9)
+  Error message: pH must be between 6 and 9
+  Passthrough: true       # this rule carries its compiled form and is replayed as-is on import
+  evaluatorVersion: v1
+  condition:              # opaque compiled tree, environment-specific IDs removed
+    function: { ... }
+```
+
+A rule you **author by hand** has only the first four keys. On the first import the tooling
+cannot create it (the compiled form does not exist yet); instead it prints a `Notify` message
+asking you to add the rule in the Benchling schema editor's Validation tab. After you do that,
+**export the schema again** — the export fills in `Passthrough` / `evaluatorVersion` /
+`condition`, and from then on every import re-creates the rule automatically.
+
+To **change** a passthrough rule, delete its `Passthrough`, `evaluatorVersion`, and `condition`
+keys (and edit `Rule definition`); it then goes back through the author-once flow. Editing only
+`Rule definition` while those keys remain has no effect — the stored `condition` is what gets
+imported.
+
 ## Fieldset Schemas
 Setting some attributes versus leaving them unspecified alters the behavior in significant ways.
 See Benchling documentation for now to configure fieldsets.
