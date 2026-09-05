@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.19.0] - 2026-09-05
+
+- Add optional `Visibility` and `Editability` string keys to `Feature_flags` entries.
+
 ## [1.18.0] - 2026-09-01
 
 - Add optional `Passthrough`, `evaluatorVersion`, and `condition` keys to entity-schema

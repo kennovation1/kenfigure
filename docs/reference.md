@@ -451,6 +451,8 @@
       - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Current"></a>**`Current`** *(string or boolean, required)*
       - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Default"></a>**`Default`** *(string or boolean, required)*
       - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Description"></a>**`Description`** *(string or boolean, required)*
+      - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Visibility"></a>**`Visibility`** *(string)*: Optional. Who can see this feature flag in Benchling (e.g. CUSTOMER, INTERNAL_ADMIN). Informational; recorded by an export, not something you set.
+      - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Editability"></a>**`Editability`** *(string)*: Optional. Who can change this feature flag's value (e.g. INTERNAL_ADMIN, INTERNAL_ADMIN_WITH_APPROVAL). Informational; recorded by an export, not something you set.
       - <a id="properties/Feature_flags/additionalProperties/additionalProperties/properties/Planned"></a>**`Planned`** *(string or boolean)*
 - <a id="properties/Template_collections"></a>**`Template_collections`** *(array)*: Template collections. Length must be at least 0.
   - <a id="properties/Template_collections/items"></a>**Items** *(object)*: Complete description of the template collection.

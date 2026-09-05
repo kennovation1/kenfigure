@@ -676,6 +676,8 @@ Feature_flags:  # Top-level key for Feature Flags object
     MOLBIO_ALIGNMENT_TRIM_STRINGENCY:  # A different feature flag in the current category
       Current: '0.05'  # Numeric values are treated as strings
       Default: '0.05'
+      Visibility: CUSTOMER  # Optional: who can see this flag
+      Editability: INTERNAL_ADMIN_WITH_APPROVAL  # Optional: who can change it
       Description: This value dictates the strategy for trimming a DNA alignment with
         trace data. The ends of each read are trimmed to exclude bases where the probability
         of an incorrect base call rises above the configured value. (renamed from
