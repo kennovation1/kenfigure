@@ -25,7 +25,7 @@ Entity_schemas:
     Definition: Dropdown Change Policy
   - Name: Requested Options
     System name: requested_options
-    Tool tip: The options that you want to add to the dropdown. Separate with commas or new lines.
+    Tool tip: The options that were requested to be added to the dropdown (separated by pipe '|').
     Type: Text
   - Name: Request Notes
     System name: request_notes
