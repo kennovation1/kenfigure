@@ -400,6 +400,27 @@ Validation:
   Must equal: true  # Value must equal this boolean. Boolean only.
 ```
 
+#### Computed fields that read through a fieldset link
+
+When a `Computed` field's `Path` step follows a link to a **fieldset** (a Category link), the
+link can point at any schema that implements that fieldset. If the field you want is defined on
+one of those implementing schemas rather than on the fieldset itself, name that schema with
+`Schema` on the path step:
+
+```yaml
+Computed:
+  Formula: set_union_file_link
+  Path:
+  - Type: Field
+    Definition: Bioreactor Batch      # A Category link to the "Upstream PD Material" fieldset
+    Schema: PDVU Bioreactor Culture   # Read the next step / Property from this implementing schema
+  Property:
+    Type: Field
+    Definition: Virus Seed Stock      # Defined on PDVU Bioreactor Culture, not on the fieldset
+```
+
+Omit `Schema` when the field is defined on the fieldset itself, which is the common case.
+
 ### Entity schema validation rules
 `Validation rules` is an optional schema-level list of Benchling's **advanced validation
 rules** — formula-based conditions checked at registration. It is separate from a field's

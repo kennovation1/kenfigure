@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kenfigure.com/jsonschemas/latest/connections.schema.json",
+  "title": "Connections",
+  "description": "Benchling Connect connections binding instruments to gateways and connection schemas.",
+  "type": "array",
+  "minItems": 0,
+  "uniqueItems": true,
+  "items": {
+    "title": "Connection definition",
+    "description": "Configuration aspect of a Benchling Connect connection. A connection binds a specific instrument to a gateway and connection schema. The data/run aspects of connections are not modeled here.",
+    "required": ["Name", "Benchling gateway", "Benchling location", "Instrument type"],
+    "type": "object",
+    "properties": {
+      "Name": {
+        "description": "Connection name, typically the instrument name or model.",
+        "type": "string"
+      },
+      "Benchling gateway": {
+        "description": "Name of the instrument gateway through which this instrument's files are transferred.",
+        "type": "string"
+      },
+      "Benchling location": {
+        "description": "Benchling folder where instrument files will be stored and accessed.",
+        "type": "string"
+      },
+      "Instrument type": {
+        "description": "Name of the connection schema that defines how this instrument's files are parsed. Available instrument types are determined by the type of gateway selected.",
+        "type": "string"
+      },
+      "Default timezone": {
+        "description": "Timezone added to timestamps in instrument files that do not already include one. Use 'UTC' or an IANA region/zone string such as 'US/Eastern' or 'Europe/London'.",
+        "type": "string"
+      },
+      "File extensions": {
+        "description": "List of file extensions to monitor, without a leading dot. Example values: csv, txt, pdf.",
+        "type": "array",
+        "minItems": 0,
+        "items": {
+          "type": "string"
+        }
+      },
+      "Output directory": {
+        "description": "Path to a local directory to monitor and retrieve files coming into Benchling, e.g. 'C:\\path\\to\\directory'.",
+        "type": "string"
+      },
+      "Input directory": {
+        "description": "Path to a local directory to send files from Benchling, e.g. 'C:\\path\\to\\input\\directory'.",
+        "type": "string"
+      },
+      "Diagram": {
+        "description": "Properties solely used for diagram rendering.",
+        "$ref": "https://kenfigure.com/jsonschemas/latest/diagram.schema.json"
+      },
+      "API ID": {
+        "description": "API ID for the connection created during an export operation. This is ignored for import operations.",
+        "type": "string"
+      }
+    }
+  }
+}

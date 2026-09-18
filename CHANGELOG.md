@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.20.0] - 2026-09-18
+
+- Add an optional `Schema` key to entity-schema `Computed` → `Path` steps. When a path step
+  follows a link to a fieldset (Category) that several schemas implement, `Schema` names the
+  implementing schema that the next step — or `Property` — should be read from. It is required
+  when that field is defined on one implementing schema rather than on the fieldset itself;
+  without it the field cannot be resolved. Benchling stores the same information as a typecast
+  on its computed-field path.
+
 ## [1.19.0] - 2026-09-05
 
 - Add optional `Visibility` and `Editability` string keys to `Feature_flags` entries.

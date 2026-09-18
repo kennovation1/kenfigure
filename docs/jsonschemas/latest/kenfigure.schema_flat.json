@@ -953,6 +953,10 @@
                           "Definition": {
                             "description": "Name for the given type. Usually a field name.",
                             "type": "string"
+                          },
+                          "Schema": {
+                            "description": "Optional. Name of the schema to read the next path step or the Property from, when this step's link points at a fieldset (Category) that several schemas implement. Required when the field named by the next step or by Property is defined on one implementing schema rather than on the fieldset itself.",
+                            "type": "string"
                           }
                         }
                       }
