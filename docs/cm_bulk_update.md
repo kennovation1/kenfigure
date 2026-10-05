@@ -55,6 +55,21 @@ Check that list before continuing. A new object is correctly left as Create. A
 renamed object is not: choose its **Update &lt;old name&gt;** entry by hand, or
 the import creates a duplicate instead of renaming the original.
 
+### Renames
+
+A Kenfigure round trip gives every object a new internal identifier, so Benchling
+can only match by name. Anything renamed since the target tenant was last synced
+therefore looks new, and the import fails at **Validate plan**:
+
+- **A renamed schema** is listed under *Left as Create*. Left that way it
+  fails with *Prefix "..." already in use*. Choose **Update &lt;old name&gt;**
+  for that row.
+- **A renamed field** (new display name, same system name) fails with *Another
+  field of this schema has the same warehouse column name*. Expand the schema's
+  row in the plan to list its fields, then switch the renamed field from
+  **Create** to **Update**, selecting the field under its old name. This tool
+  does not process field rows.
+
 Repeat steps 2–3 for each tab (Tenant Settings, Schemas, Templates, Workflows)
 that has rows you want to update, then review and continue the wizard as usual.
 Tenant Settings should not need attention since Benchling defaults to Update
