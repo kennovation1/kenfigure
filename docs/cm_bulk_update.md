@@ -44,11 +44,16 @@ default to Update automatically.
    bookmarks bar.)
 
 The tool walks every dropdown currently showing **Create**, opens it, and
-clicks the **Update &lt;row name&gt;** entry (falling back to the first
-"Update ..." entry — which Benchling sorts to be the name match — if the row's
-name can't be read exactly). Progress appears in a status box in the corner of
-the page — with a Stop button, a final summary, and a list of any rows that
-need manual attention — and is also logged per row in the console.
+clicks the **Update &lt;row name&gt;** entry. Matching is by exact name only. A
+row with no same-named entry — a genuinely new object, or one that was renamed —
+is **left as Create** and listed for you to review; the tool never picks a
+different "Update ..." entry on your behalf. Progress appears in a status box in
+the corner of the page — with a Stop button, a final summary, and the list of
+rows left as Create — and is also logged per row in the console.
+
+Check that list before continuing. A new object is correctly left as Create. A
+renamed object is not: choose its **Update &lt;old name&gt;** entry by hand, or
+the import creates a duplicate instead of renaming the original.
 
 Repeat steps 2–3 for each tab (Tenant Settings, Schemas, Templates, Workflows)
 that has rows you want to update, then review and continue the wizard as usual.

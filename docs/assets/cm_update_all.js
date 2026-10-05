@@ -15,6 +15,13 @@
  * match again and Benchling selects "Update" on its own — this tool is only
  * needed for the first round trip.
  *
+ * Matching is by exact name only. A row with no same-named "Update <name>"
+ * entry — a genuinely new object, or one that was renamed — is left as
+ * "Create" and listed for review. The tool never guesses: picking any other
+ * "Update ..." entry would silently overwrite the wrong object, and because
+ * Benchling removes a claimed object from the other rows' menus, one wrong
+ * pick leaves that object's own row unmatched too.
+ *
  * Usage (full instructions: docs/cm-bulk-update.md):
  *   1. In the import wizard ("new migration experience"), upload your .dat
  *      file and continue to the Validate plan page, then open the SCHEMAS tab.
@@ -30,16 +37,13 @@
  * Options: set window.KenfigureCMConfig BEFORE pasting, e.g.
  *   window.KenfigureCMConfig = { dryRun: true };
  *     dryRun           — log what would be selected; change nothing (default false)
- *     requireNameMatch — only accept an exact "Update <row name>" entry; if the
- *                        name can't be matched, skip the row instead of falling
- *                        back to the first "Update ..." option (default false)
  *     stepDelayMs      — pause between rows, ms (default 150)
  *     menuTimeoutMs    — max wait for a menu to open/close, ms (default 5000)
  *
  * This script runs entirely in your browser tab. It makes no network requests
  * and reads no credentials; it only simulates the clicks you would make.
  *
- * Bookmarklet distribution: `make bookmarklet` (which runs
+ * Bookmarklet distribution: `make bookmarklet-cm-update-all` (which runs
  * scripts/build_bookmarklet.mjs) packages this file into
  * dist/cm-update-all-bookmarklet.html — a page with drag-to-install
  * bookmarklet buttons (normal and dry-run variants).
@@ -51,7 +55,7 @@
 
   // Bump on every behavior change; shown in the status box, the console, and
   // on the bookmarklet install page so stale copies are identifiable.
-  const CM_VERSION = 1;
+  const CM_VERSION = 2;
 
   if (window.KenfigureCM?.running) {
     console.warn('KenfigureCM: already running. Call KenfigureCM.stop() and wait before restarting.');
@@ -61,7 +65,6 @@
   const config = Object.assign(
     {
       dryRun: false,
-      requireNameMatch: false,
       stepDelayMs: 150,
       menuTimeoutMs: 5000,
       maxAttemptsPerRow: 2,
@@ -141,7 +144,7 @@
     const failWrap = document.createElement('div');
     failWrap.style.cssText = 'display:none;padding:0 12px 10px;overflow-y:auto;';
     const failTitle = document.createElement('div');
-    failTitle.textContent = 'Needs manual attention:';
+    failTitle.textContent = 'Left as Create — review these:';
     failTitle.style.fontWeight = '600';
     const failList = document.createElement('ul');
     failList.style.cssText = 'margin:4px 0 0;padding-left:18px;';
@@ -267,30 +270,26 @@
       /^update\b/i.test(normalize(o.textContent)),
     );
 
-    let how = 'name match';
-    let target = label
+    // Exact name match only — never fall back to another "Update ..." entry.
+    const target = label
       ? updates.find(
           (o) => normalize(o.textContent).toLowerCase() === `update ${label}`.toLowerCase(),
         )
       : null;
-    if (!target && !config.requireNameMatch) {
-      // Benchling puts the matching object first among the Update entries.
-      target = updates[0];
-      how = 'first Update option';
-    }
     if (!target) {
       await closeMenu(btn, menu);
       return {
         ok: false,
+        noMatch: true,
         name,
-        reason: updates.length ? 'no exact "Update <name>" entry' : 'no Update entries in menu',
+        reason: label ? 'no existing object with this name' : 'could not read the row name',
       };
     }
 
     const choice = normalize(target.textContent);
     if (config.dryRun) {
       await closeMenu(btn, menu);
-      return { ok: true, name, choice, how, dryRun: true };
+      return { ok: true, name, choice, dryRun: true };
     }
 
     target.click();
@@ -300,13 +299,14 @@
     if (document.contains(btn) && triggerValue(btn) === 'Create') {
       return { ok: false, name, reason: `clicked "${choice}" but row still shows Create` };
     }
-    return { ok: true, name, choice, how };
+    return { ok: true, name, choice };
   }
 
   async function main() {
     const ui = createOverlay();
     const attempts = new Map();
     const failures = [];
+    const unmatched = [];
     let done = 0;
     const verb = config.dryRun ? 'would update' : 'updated';
 
@@ -339,10 +339,16 @@
         done++;
         if (result.dryRun) attempts.set(row.key, config.maxAttemptsPerRow);
         console.log(
-          `[${done}/${total}] ${result.dryRun ? 'would select' : '✓'} "${result.name}" → "${result.choice}" (${result.how})`,
+          `[${done}/${total}] ${result.dryRun ? 'would select' : '✓'} "${result.name}" → "${result.choice}"`,
         );
         ui.setStatus(`${done} / ${total} ${verb}`);
         ui.setDetail(`✓ "${result.name}" → "${result.choice}"`);
+      } else if (result.noMatch) {
+        // Nothing to retry: the menu opened and has no same-named entry.
+        attempts.set(row.key, config.maxAttemptsPerRow);
+        unmatched.push(result);
+        console.warn(`– "${result.name}" — ${result.reason} (left as Create)`);
+        ui.addFailure(`${result.name}: ${result.reason}`);
       } else {
         attempts.set(row.key, (attempts.get(row.key) ?? 0) + 1);
         if ((attempts.get(row.key) ?? 0) >= config.maxAttemptsPerRow) {
@@ -356,17 +362,25 @@
       await sleep(config.stepDelayMs);
     }
 
-    console.log(`\nKenfigureCM done: ${verb} ${done}, failed ${failures.length}.`);
+    console.log(
+      `\nKenfigureCM done: ${verb} ${done}, left as Create ${unmatched.length}, failed ${failures.length}.`,
+    );
+    if (unmatched.length) {
+      console.log('Left as Create (new or renamed objects — confirm each is intended):');
+      for (const u of unmatched) console.log(`  - ${u.name}: ${u.reason}`);
+    }
     if (failures.length) {
       console.log('Fix these rows manually:');
       for (const f of failures) console.log(`  - ${f.name}: ${f.reason}`);
     }
     const stopped = state.stopRequested ? ' (stopped early)' : '';
-    ui.finish(`Done${stopped}: ${verb} ${done} of ${total}, failed ${failures.length}`);
+    ui.finish(
+      `Done${stopped}: ${verb} ${done} of ${total}, left as Create ${unmatched.length}, failed ${failures.length}`,
+    );
     ui.setDetail('');
 
     const left = remainingCreateCount();
-    if (!config.dryRun && !state.stopRequested && left > failures.length) {
+    if (!config.dryRun && !state.stopRequested && left > failures.length + unmatched.length) {
       const note = `${left} "Create" row(s) remain — some sections may have been collapsed. Expand them and rerun; already-updated rows are untouched.`;
       console.log(note);
       ui.setDetail(note);

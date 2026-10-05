@@ -55,7 +55,7 @@
 
   // Bump on every behavior change; shown in the panel, the console, and on the
   // bookmarklet install page so stale copies are identifiable.
-  const PLAN_REVIEW_VERSION = 1;
+  const PLAN_REVIEW_VERSION = 2;
 
   const config = Object.assign(
     { maxPositionShift: Infinity },
@@ -371,7 +371,21 @@
       'position:fixed;right:16px;bottom:16px;z-index:2147483647;width:320px;padding:12px 14px;' +
       'background:#fff;color:#b00020;border:1px solid #c7c7d1;border-radius:8px;' +
       'box-shadow:0 4px 24px rgba(0,0,0,.25);font:13px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;';
-    box.textContent = message;
+    // Dismissible: the box sits over the wizard's Continue button.
+    box.style.display = 'flex';
+    box.style.gap = '8px';
+    box.style.alignItems = 'flex-start';
+    const text = document.createElement('span');
+    text.textContent = message;
+    text.style.flex = '1';
+    const closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.textContent = '×';
+    closeBtn.title = 'Close';
+    closeBtn.style.cssText =
+      'border:none;background:none;font-size:16px;cursor:pointer;line-height:1;padding:0 2px;color:inherit;';
+    closeBtn.onclick = () => box.remove();
+    box.append(text, closeBtn);
     document.body.appendChild(box);
   }
 
@@ -379,8 +393,9 @@
     const sections = extractPlan(config.maxPositionShift);
     if (!sections) {
       const msg =
-        '"All Changes" panel not found. Make sure you are on the Validate plan ' +
-        'page, on the SCHEMAS tab.';
+        '"All Changes" panel not found. Run this after the plan has been validated, ' +
+        'on the Validate plan page, SCHEMAS tab. A plan with nothing to report on ' +
+        'that tab has no panel to review.';
       console.log(`KenfigurePlanReview: ${msg}`);
       showError(msg);
       return;
