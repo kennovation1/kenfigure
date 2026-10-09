@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 544" role="img" aria-labelledby="t d">
+  <title id="t">Build loop</title>
+  <desc id="d">Engineer plus Claude, in VS Code. Claude drafted the model as Kenfigure YAML. Kenfigure Tool deployed it to the Benchling sandbox for each iteration. Claude wrote the skills. Test runs in Benchling sent transcripts back to Claude, which fixed the model and skills. Everything lives in Git, the one source of truth, and is deployed to Benchling.</desc>
+  <defs>
+    <style>
+      text { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; text-anchor: middle; }
+      .h { font-size: 20px; font-weight: bold; fill: #000651; text-anchor: start; }
+      .sub { font-size: 12px; fill: #222222; text-anchor: start; }
+      .t { font-size: 13px; font-weight: bold; fill: #000651; }
+      .s { font-size: 11px; font-style: italic; fill: #222222; }
+      .git { font-size: 20px; font-weight: bold; fill: #000651; }
+      .bl { font-size: 16px; font-weight: bold; fill: #000651; }
+      .b { font-size: 12px; font-weight: bold; fill: #000651; }
+      .lbl { font-size: 11px; font-style: italic; fill: #222222; text-anchor: start; }
+      .blue { fill: #C9DEFC; stroke: #5B6B8C; stroke-width: 1.2; }
+      .gold { fill: #F3DDAF; stroke: #C99A3A; stroke-width: 1.2; }
+      .white { fill: #FFFFFF; stroke: #000651; stroke-width: 1.2; }
+      .arrow { stroke: #000651; stroke-width: 2; fill: none; }
+    </style>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 z" fill="#000651"/>
+    </marker>
+  </defs>
+
+  <rect width="360" height="544" rx="10" fill="#FFFFFF"/>
+
+  <rect class="white" x="8" y="8" width="344" height="312" rx="10"/>
+  <text class="h" x="20" y="36">Build</text>
+  <text class="sub" x="20" y="53">engineer + Claude, in VS Code</text>
+
+  <rect class="blue" x="20" y="62" width="150" height="100" rx="8"/>
+  <text class="t" x="95" y="82">Claude drafted</text>
+  <text class="t" x="95" y="97">the model</text>
+  <text class="s" x="95" y="114">as Kenfigure YAML,</text>
+  <text class="s" x="95" y="127">with descriptions,</text>
+  <text class="s" x="95" y="140">tooltips, validation</text>
+  <text class="s" x="95" y="153">rules…</text>
+
+  <rect class="blue" x="190" y="62" width="150" height="100" rx="8"/>
+  <text class="t" x="265" y="82">Kenfigure Tool</text>
+  <text class="t" x="265" y="97">deployed it</text>
+  <text class="s" x="265" y="114">to the Benchling</text>
+  <text class="s" x="265" y="127">sandbox, for each</text>
+  <text class="s" x="265" y="140">iteration</text>
+
+  <rect class="blue" x="190" y="206" width="150" height="100" rx="8"/>
+  <text class="t" x="265" y="226">Claude wrote</text>
+  <text class="t" x="265" y="241">the skills</text>
+  <text class="s" x="265" y="258">protocol intake,</text>
+  <text class="s" x="265" y="271">study build, daily</text>
+  <text class="s" x="265" y="284">session sheet</text>
+
+  <rect class="blue" x="20" y="206" width="150" height="100" rx="8"/>
+  <text class="t" x="95" y="226">Test runs in</text>
+  <text class="t" x="95" y="241">Benchling</text>
+  <text class="s" x="95" y="258">the transcripts went</text>
+  <text class="s" x="95" y="271">back to Claude</text>
+
+  <line class="arrow" x1="171" y1="112" x2="189" y2="112" marker-end="url(#a)"/>
+  <line class="arrow" x1="265" y1="163" x2="265" y2="205" marker-end="url(#a)"/>
+  <line class="arrow" x1="189" y1="256" x2="171" y2="256" marker-end="url(#a)"/>
+  <line class="arrow" x1="95" y1="205" x2="95" y2="163" marker-end="url(#a)"/>
+  <text class="lbl" x="103" y="188">fixed model + skills</text>
+
+  <line class="arrow" x1="180" y1="322" x2="180" y2="352" marker-start="url(#a)" marker-end="url(#a)"/>
+
+  <rect class="gold" x="70" y="354" width="220" height="88" rx="10"/>
+  <text class="git" x="180" y="380">Git</text>
+  <text class="s" x="180" y="396">one source of truth</text>
+  <text class="b" x="180" y="415">Model · Skills · Documentation</text>
+  <text class="b" x="180" y="431">Decisions · Test data</text>
+
+  <line class="arrow" x1="180" y1="444" x2="180" y2="478" marker-end="url(#a)"/>
+  <text class="lbl" x="188" y="465">deploy</text>
+
+  <rect class="white" x="90" y="480" width="180" height="52" rx="10"/>
+  <text class="bl" x="180" y="502">Benchling</text>
+  <text class="s" x="180" y="520">deployed model + skills</text>
+</svg>

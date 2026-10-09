@@ -100,6 +100,61 @@ section {
   color: #999;
 }
 
+// Benchtalk 2026 poster page (benchtalk2026.md).
+// Midnight's 12px body text is too small to read on a phone in a hall.
+.bt26 {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.bt26-byline {
+  font-weight: bold;
+}
+
+// Figures are light-background SVGs drawn at phone width; cap them so they
+// don't balloon on desktop.
+
+.bt26-fig {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  margin: 1.5em auto;
+}
+
+.bt26-caption {
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.bt26-builtfor {
+  max-width: 460px;
+  margin: 2em auto;
+  padding: 16px 20px;
+  background: #fff;
+  border-radius: 10px;
+  color: #222;
+}
+
+.bt26-builtfor p {
+  margin: 0;
+  color: #222;
+}
+
+.bt26-builtfor .bt26-builtfor__label {
+  font-weight: bold;
+  color: #000651;
+}
+
+.bt26-builtfor__logo {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 10px 0 12px;
+}
+
 @media print, screen and (max-width: 720px) {
   .site-footer__nav li {
     display: block;
