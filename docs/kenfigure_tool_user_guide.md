@@ -155,15 +155,16 @@ The configuration uses the following fields inside a `git` block:
 | `repo_url`       | Yes      | —             | The HTTPS URL of your Git repository. SSH URLs are not supported.                                                                                                                                   |
 | `path`           | No       | *(repo root)* | A subfolder within the repository where your Kenfigure files live.                                                                                                                                  |
 | `branch`         | No       | `main`        | The branch to read from and write to.                                                                                                                                                               |
-| `write_strategy` | No       | `direct`      | How exports are written back to the repo: `direct` commits to the branch immediately; `branch_pr` creates a new branch and opens a pull request for review. GitHub and GitLab only for `branch_pr`. |
+| `write_strategy` | Yes      | —             | How exports are written back to the repo: `direct` commits to the branch immediately; `branch_pr` creates a new branch and opens a pull request for review. GitHub and GitLab only for `branch_pr`. |
 
 
-**Minimal example** — uses the root of the repository, default branch:
+**Minimal example** — uses the root of the repository, default branch, direct commits:
 
 ```json
 {
   "git": {
-    "repo_url": "https://github.com/yourorg/yourrepo.git"
+    "repo_url": "https://github.com/yourorg/yourrepo.git",
+    "write_strategy": "direct"
   }
 }
 ```
@@ -175,7 +176,8 @@ The configuration uses the following fields inside a `git` block:
   "git": {
     "repo_url": "https://github.com/yourorg/yourrepo.git",
     "path": "kenfigure",
-    "branch": "main"
+    "branch": "main",
+    "write_strategy": "direct"
   }
 }
 ```
@@ -192,6 +194,8 @@ The configuration uses the following fields inside a `git` block:
   }
 }
 ```
+
+`write_strategy` has no default: it must be set, and must be exactly `direct` or `branch_pr`. If it is missing or misspelled, the canvas reports an error and nothing is read or written, so an omission or a typo can never turn a pull request into a direct commit.
 
 With `branch_pr`, each export creates a new branch and opens a pull request targeting your configured branch. This lets someone review the changes before merging. If nothing changed since the last export, the app detects this and skips creating a branch or pull request. Reviewing a pull request is an excellent way to review changes to the Benchling environment since the last export
 or to verify that nothing has changed.
@@ -346,7 +350,7 @@ The `.zip` contains your Kenfigure files organized by schema type. It also inclu
 
 Click **Export to Git**. This button converts the uploaded file to Kenfigure format and sends the resulting files directly to your configured Git repository.
 
-- With the **direct** write strategy (default), changes are committed directly to your configured branch. A link to the repository appears in the status area when it's done.
+- With the **direct** write strategy, changes are committed directly to your configured branch. A link to the repository appears in the status area when it's done.
 - With the **branch_pr** (branch and pull request) strategy, a new branch is created and a pull request is opened targeting your configured branch.
   A link to the pull request appears in the status area.
 
@@ -471,7 +475,7 @@ The log messages in an expanded session are ordered with the most recent at the 
 
 Kenfigure Tool includes a second canvas, **Request a new dropdown option**, which is a different workflow from the export/import conversion covered above: instead of moving whole configurations, it handles the single most common day-to-day change request — adding one option to one dropdown.
 
-A scientist inserts that canvas into a Notebook entry (**Insert** > **Canvas** > **Request a new dropdown option**), picks a dropdown, and types the option they need. The request is checked automatically against the [dropdown style guide](schema_design_style_guide.html#dropdown-options) and against per-dropdown conventions you configure, routed for approval according to a policy you define for that dropdown, and — once approved — applied to Benchling and committed to your Git repository using the same Git settings described above.
+A scientist inserts that canvas into a Notebook entry (**Insert** > **Canvas** > **Request a new dropdown option**), picks a dropdown, and types the option they need. The request is checked automatically against the [dropdown style guide](schema_design_style_guide.html#dropdown-options) and against per-dropdown conventions you configure, routed for approval according to a policy you define for that dropdown, and — once approved — applied to Benchling and committed to your Git repository — using the Git settings described above, or a [separate location](dropdown_tool.html#committing-to-a-different-location) you choose for dropdown changes.
 
 Setup is a one-time admin task: create two custom entity schemas and two dropdowns (ready-to-import definitions are provided), then add one policy entity per dropdown you want to govern.
 

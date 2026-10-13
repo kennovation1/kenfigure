@@ -259,6 +259,7 @@ All Dropdown Tool settings live under a `dropdown` block in Advanced Settings, a
 | `dropdown.policy_schema_name`   | No                                                 | Set only if you renamed the Dropdown Change Policy schema beyond adding a prefix.                                                                          |
 | `dropdown.request_schema_name`  | No                                                 | Set only if you renamed the Dropdown Change Request schema beyond adding a prefix.                                                                         |
 | `dropdown.status_dropdown_name` | No                                                 | Set only if you renamed the Dropdown Update Statuses dropdown.                                                                                             |
+| `dropdown.git`                  | No                                                 | Where approved changes are committed, if not the location in your `git` block. See [Committing to a different location](#committing-to-a-different-location).|
 
 
 A **prefix on the schema name works with no configuration at all** — `[Ops] Dropdown Change Policy` is found automatically, because the tool matches on the end of the name. You only need
@@ -279,6 +280,68 @@ A complete example combining Git and Dropdown Tool settings:
   }
 }
 ```
+
+### Committing to a different location
+
+By default the Dropdown Tool commits approved options to the location in your `git` block — the
+same place Export to Git writes. That is often not where you want them.
+
+In the workflow we recommend, configuration moves in one direction: from Git into your test
+tenant, then on to production. The folder your production tenant exports to is a record of what
+production looks like, not the place changes start. Scientists request dropdown options in
+production, so without further setup those commits end up in the production folder, and the next
+promotion from test overwrites them. Instead you usually want Dropdown Tool actions in production
+to commit to your source of truth (e.g., test).
+
+To do this, add a `git` block inside `dropdown` to send the Dropdown Tool's commits to the folder (or branch)
+your configuration is promoted *from*:
+
+```json
+{
+  "git": {
+    "repo_url": "https://github.com/yourorg/yourrepo.git",
+    "path": "prod",
+    "branch": "main",
+    "write_strategy": "direct"
+  },
+  "dropdown": {
+    "admin_approvers": ["admin@yourcompany.com"],
+    "git": {
+      "path": "test",
+      "write_strategy": "branch_pr"
+    }
+  }
+}
+```
+
+With these settings on the production tenant, Export to Git still commits to `prod/`, and each
+approved dropdown option opens a pull request against `test/`. From there it reaches production
+again through your normal promotion, already matching what the tool applied.
+
+`dropdown.git` takes the same four fields as `git` (`repo_url`, `path`, `branch`,
+`write_strategy`). You only need to list the ones that differ: anything you leave out is taken
+from your `git` block. Typical setups:
+
+| Tenant     | `git.path` | `dropdown.git.path` |
+| ---------- | ---------- | ------------------- |
+| Production | `prod`     | `test`              |
+| Test       | `test`     | `dev`               |
+
+Your folder names, branches, and number of tenants may differ; the rule is to point
+`dropdown.git` at wherever that tenant's configuration comes from.
+
+Things to know:
+
+- `dropdown.git` affects only the Dropdown Tool. Import from Git and Export to Git always use
+  the `git` block.
+- There is one Git Access Token. It needs write access to the repository and branch the Dropdown
+  Tool commits to, and permission to open pull requests if you use `branch_pr`.
+- `write_strategy` has no default. It must be set in `dropdown.git` or in your `git` block. If
+  it is missing or misspelled, the canvas shows a configuration problem instead of the request
+  form and asks the scientist to contact an administrator. Nothing is committed until the
+  setting is corrected.
+- A request that is already awaiting approval keeps the location that was configured when it was
+  submitted. A change to these settings applies to requests submitted afterward.
 
 ---
 
@@ -392,7 +455,8 @@ The Dropdown Tool is part of **[Kenfigure Pro™](kenfigure_pro.html)** and is e
 for Kenfigure Pro subscribers. When it is not licensed for a tenant, the canvas shows a link to
 [Feature enablement](feature_enablement.html) rather than the request form.
 
-Git commits of approved changes use your existing Kenfigure Tool Git configuration and require
+Git commits of approved changes use your existing Kenfigure Tool Git configuration unless you
+[point the Dropdown Tool somewhere else](#committing-to-a-different-location), and require
 the same write permissions as Export to Git — see the [Kenfigure Tool User
 Guide](kenfigure_tool_user_guide.html#git-access-token). Git is optional; without it, approved
 options are applied to Benchling only.
