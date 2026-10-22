@@ -307,16 +307,15 @@
             "type": "boolean"
           },
           "Formula": {
-            "description": "Defines this unit type as derived from other unit types (e.g., Mass concentration = Mass / Volume). Omit for base/simple unit types (e.g., pH, Percent) that have no formula. Mirrors the Benchling UI, which allows at most 2 numerators and at most 1 denominator. Numerator/Denominator terms reference the Name (not the Symbol) of a unit defined elsewhere in this Unit_dictionary; matching is case-sensitive.",
+            "description": "Defines this unit type as derived from other unit types (e.g., Mass concentration = Mass / Volume, Pressure = kilogram / (second^2 \u00b7 meter)). Omit for base/simple unit types (e.g., pH, Percent) that have no formula. The Benchling UI limits how many numerator and denominator terms a unit type can have, but the limit varies by unit type (in one tenant, Pressure allowed 2 numerators and 4 denominators while Mass concentration allowed 2 denominators) and is not recorded in exported data, so this schema does not enforce a limit. Numerators/Denominators terms reference the Name (not the Symbol) of a unit defined elsewhere in this Unit_dictionary; matching is case-sensitive.",
             "type": "object",
             "properties": {
               "Numerators": {
-                "description": "Up to 2 unit names (from any unit type's dictionary) multiplied together in the numerator.",
+                "description": "Unit names (from any unit type's dictionary) multiplied together in the numerator.",
                 "type": "array",
                 "minItems": 1,
-                "maxItems": 2,
                 "items": {
-                  "description": "A unit Name (not Symbol), optionally raised to an integer power (Power defaults to 1 and is normally omitted). A Power other than 1 only occurs on a small number of Benchling built-in unit types (e.g., Volume = decimeter^3) and is not expected to be hand-authored.",
+                  "description": "A unit Name (not Symbol), optionally raised to a positive integer power (Power defaults to 1 and is normally omitted). A Power other than 1 occurs on some Benchling built-in unit types (e.g., Volume = decimeter^3, Pressure = kilogram / (second^2 \u00b7 meter)).",
                   "anyOf": [
                     {
                       "type": "string"
@@ -331,7 +330,38 @@
                           "type": "string"
                         },
                         "Power": {
-                          "type": "integer"
+                          "description": "Positive integer power (defaults to 1). Whether the term multiplies or divides comes from the list it is in, not from a sign.",
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "Denominators": {
+                "description": "Unit names (from any unit type's dictionary) multiplied together in the denominator, dividing the numerator(s). Omit if there is no denominator.",
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "description": "A unit Name (not Symbol), optionally raised to a positive integer power (Power defaults to 1 and is normally omitted). A Power other than 1 occurs on some Benchling built-in unit types (e.g., Volume = decimeter^3, Pressure = kilogram / (second^2 \u00b7 meter)).",
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "Unit"
+                      ],
+                      "properties": {
+                        "Unit": {
+                          "type": "string"
+                        },
+                        "Power": {
+                          "description": "Positive integer power (defaults to 1). Whether the term multiplies or divides comes from the list it is in, not from a sign.",
+                          "type": "integer",
+                          "minimum": 1
                         }
                       }
                     }
@@ -339,7 +369,7 @@
                 }
               },
               "Denominator": {
-                "description": "A single unit Name (not Symbol) dividing the numerator(s), optionally raised to an integer power (Power defaults to 1 and is normally omitted). Omit if there is no denominator.",
+                "description": "Deprecated: use Denominators. A single denominator term, read as a one-item Denominators list. Cannot be combined with Denominators.",
                 "anyOf": [
                   {
                     "type": "string"
@@ -354,12 +384,20 @@
                         "type": "string"
                       },
                       "Power": {
-                        "type": "integer"
+                        "description": "Positive integer power (defaults to 1). Whether the term multiplies or divides comes from the list it is in, not from a sign.",
+                        "type": "integer",
+                        "minimum": 1
                       }
                     }
                   }
                 ]
               }
+            },
+            "not": {
+              "required": [
+                "Denominator",
+                "Denominators"
+              ]
             }
           },
           "API ID": {

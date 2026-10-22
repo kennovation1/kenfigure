@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.21.0] - 2026-10-22
+
+- Add a `Denominators` list to Unit dictionary `Formula`, so a unit type can be divided by
+  more than one unit (e.g., Pressure = kilogram / (second^2 · meter)). The single
+  `Denominator` key is deprecated but still accepted; a Formula may not use both.
+- Remove the 2-term limit on `Numerators`. The Benchling UI's limit varies by unit type, so
+  no limit is enforced. `Power` must now be a positive integer.
+
 ## [1.20.0] - 2026-09-18
 
 - Add an optional `Schema` key to entity-schema `Computed` → `Path` steps. When a path step

@@ -180,20 +180,25 @@ Unit_dictionary:
   Allow as concentration: true  # Controls if this type is in the dropdown for container
       # Concentration units. false if omitted
   Formula:  # Defines this unit type as derived from other unit types. Omit for base/simple
-      # unit types (e.g., pH, Percent) that have no formula. Mirrors the Benchling UI, which
-      # allows at most 2 numerators and at most 1 denominator.
-    Numerators: [kilogram]  # Unit name(s) multiplied together in the numerator (max 2)
-    Denominator: liter  # A single unit name dividing the numerator(s). Omit if there is none.
-    # Numerator/Denominator values are the Name (never the Symbol) of a unit defined elsewhere
+      # unit types (e.g., pH, Percent) that have no formula. The Benchling UI limits the number
+      # of terms on each side, but the limit varies by unit type, so none is enforced here.
+    Numerators: [kilogram]  # Unit name(s) multiplied together in the numerator
+    Denominators: [liter]  # Unit name(s) multiplied together in the denominator. Omit if none.
+    # The older single 'Denominator: liter' form is still accepted but deprecated; a Formula
+    # may not use both 'Denominator' and 'Denominators'.
+    # Numerators/Denominators values are the Name (never the Symbol) of a unit defined elsewhere
     # in this Unit_dictionary, matched case-sensitively. 'kilogram' and 'liter' above are the
     # (lowercase) Names of the base units that would be defined under separate 'Mass' and
     # 'Volume' unit type entries elsewhere in the dictionary (not shown in this excerpt).
     # Base SI-style units tend to use lowercase Names (kilogram, liter, mole, second); compound
     # units tend to use descriptive Title Case Names (e.g., 'Kilograms per liter' below).
-    # A small number of Benchling built-in unit types raise a term to a power other than 1
-    # (e.g., Volume = decimeter^3). This is not expected to be hand-authored:
-    #   Numerators:
-    #     - {Unit: decimeter, Power: 3}  # Power defaults to 1 and is normally omitted
+    # Some unit types raise a term to a positive power other than 1 (e.g., Volume =
+    # decimeter^3, or Pressure = kilogram / (second^2 · meter)). Power defaults to 1 and is
+    # normally omitted; which side a term is on comes from its list, never from a sign:
+    #   Numerators: [kilogram]
+    #   Denominators:
+    #     - {Unit: second, Power: 2}
+    #     - meter
   Dimensional terms (do not hand-edit):  # Opaque, Benchling-internal dimensional signature
       # (e.g., MASS^1, LENGTH^-3). This is never shown in the Benchling UI and is not reliably
       # derivable from Formula — Benchling's own data is not always internally consistent here.
