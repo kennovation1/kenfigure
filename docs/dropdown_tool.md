@@ -258,12 +258,13 @@ All Dropdown Tool settings live under a `dropdown` block in Advanced Settings, a
 | `dropdown.admin_approvers`      | For `Community+Admin` policies; recommended always | Email addresses of your registry administrators. They approve `Community+Admin` requests and are notified of every outcome on every governed dropdown. |
 | `dropdown.policy_schema_name`   | No                                                 | Set only if you renamed the Dropdown Change Policy schema beyond adding a prefix.                                                                          |
 | `dropdown.request_schema_name`  | No                                                 | Set only if you renamed the Dropdown Change Request schema beyond adding a prefix.                                                                         |
-| `dropdown.status_dropdown_name` | No                                                 | Set only if you renamed the Dropdown Update Statuses dropdown.                                                                                             |
+| `dropdown.status_dropdown_name` | No                                                 | Set only if you renamed the Dropdown Update Statuses dropdown beyond adding a prefix.                                                                      |
 | `dropdown.git`                  | No                                                 | Where approved changes are committed, if not the location in your `git` block. See [Committing to a different location](#committing-to-a-different-location).|
 
 
-A **prefix on the schema name works with no configuration at all** — `[Ops] Dropdown Change Policy` is found automatically, because the tool matches on the end of the name. You only need
-the override settings if you changed the name itself.
+A **prefix on a schema name or the status dropdown name works with no configuration at all** — `[Ops] Dropdown Change Policy` is found automatically, because the tool matches on the end of the name. You only need
+the override settings if you changed the name itself. The **Dropdown Approval Types** dropdown is
+never looked up by name, so you can call it anything.
 
 A complete example combining Git and Dropdown Tool settings:
 

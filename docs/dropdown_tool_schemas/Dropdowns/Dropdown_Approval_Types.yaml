@@ -1,10 +1,9 @@
 Dropdowns:
 - Name: Dropdown Approval Types
   Description: Approval types for the Kenfigure Dropdown tool dropdown change requests.
-    This dropdown must exist for the tool to function. The tool will
-    lookup the name automatically and allows prefixes (e.g., '[Ops]').
-    However, if you change the name beyond just the prefix, you must
-    configure the name in Kenfigure Tool's "Advanced Settings".
+    This dropdown must exist for the tool to function. The tool never
+    looks it up by name; it is referenced only by the Approval Type field
+    of the Dropdown Change Policy schema, so any name works.
   Alphabetize: false
   Options:
   - Auto-approve     # Request are automatically approved and implemented if they pass validation
