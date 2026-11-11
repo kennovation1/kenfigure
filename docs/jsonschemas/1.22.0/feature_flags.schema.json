@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kenfigure.com/jsonschemas/latest/feature_flags.schema.json",
+  "title": "Feature flags",
+  "description": "Feature flags. Back-end settings that must be fetched and changed by Benchling.",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": {
+      "type": "object",
+      "required": ["Current", "Default", "Description"],
+      "properties": {
+        "Current": {
+          "type": ["string", "boolean"]
+        },
+        "Default": {
+          "type": ["string", "boolean"]
+        },
+        "Description": {
+          "type": ["string", "boolean"]
+        },
+        "Visibility": {
+          "description": "Optional. Who can see this feature flag in Benchling (e.g. CUSTOMER, INTERNAL_ADMIN). Informational; recorded by an export, not something you set.",
+          "type": "string"
+        },
+        "Editability": {
+          "description": "Optional. Who can change this feature flag's value (e.g. INTERNAL_ADMIN, INTERNAL_ADMIN_WITH_APPROVAL). Informational; recorded by an export, not something you set.",
+          "type": "string"
+        },
+        "Planned": {
+          "type": ["string", "boolean"],
+          "nullable": true
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

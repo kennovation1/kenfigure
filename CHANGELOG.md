@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.22.0] - 2026-11-10
+
+- Support Benchling's Bioprocess module: add `Process Development` as a study schema
+  `Study type`, and add `Recipe run name template` for naming the recipe runs of those studies.
+- Study type values now match the Benchling UI's title case: `Custom` replaces `CUSTOM`, which is
+  deprecated but still accepted.
+- Add `Equipment` as an entity schema `Entity type`.
+
 ## [1.21.0] - 2026-10-22
 
 - Add a `Denominators` list to Unit dictionary `Formula`, so a unit type can be divided by

@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kenfigure.com/jsonschemas/latest/unit_dictionary.schema.json",
+  "title": "Unit dictionary",
+  "description": "Benchling unit types and the units that belong to them.",
+  "type": "array",
+  "minItems": 0,
+  "uniqueItems": true,
+  "items": {
+    "title": "Unit type and its units",
+    "description": "A dimensional unit type (e.g., Mass, Volume, Mass concentration) and its units.",
+    "required": ["Unit type", "Units"],
+    "type": "object",
+    "properties": {
+      "Unit type": {
+        "description": "Unit type name (e.g., Mass, Volume, Mass concentration).",
+        "type": "string"
+      },
+      "Description": {
+        "description": "Documentation description for the unit type (not saved to Benchling).",
+        "type": "string"
+      },
+      "Allow as container quantity": {
+        "description": "Controls whether this unit type appears in the dropdown of selectable units for a Container schema's built-in Quantity field. Optional. Defaults to false if omitted.",
+        "type": "boolean"
+      },
+      "Allow as concentration": {
+        "description": "Controls whether this unit type appears in the dropdown of selectable units for a Container schema's built-in Concentration field. Optional. Defaults to false if omitted.",
+        "type": "boolean"
+      },
+      "Formula": {
+        "description": "Defines this unit type as derived from other unit types (e.g., Mass concentration = Mass / Volume, Pressure = kilogram / (second^2 · meter)). Omit for base/simple unit types (e.g., pH, Percent) that have no formula. The Benchling UI limits how many numerator and denominator terms a unit type can have, but the limit varies by unit type (in one tenant, Pressure allowed 2 numerators and 4 denominators while Mass concentration allowed 2 denominators) and is not recorded in exported data, so this schema does not enforce a limit. Numerators/Denominators terms reference the Name (not the Symbol) of a unit defined elsewhere in this Unit_dictionary; matching is case-sensitive.",
+        "type": "object",
+        "properties": {
+          "Numerators": {
+            "description": "Unit names (from any unit type's dictionary) multiplied together in the numerator.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "description": "A unit Name (not Symbol), optionally raised to a positive integer power (Power defaults to 1 and is normally omitted). A Power other than 1 occurs on some Benchling built-in unit types (e.g., Volume = decimeter^3, Pressure = kilogram / (second^2 · meter)).",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object",
+                  "required": ["Unit"],
+                  "properties": {
+                    "Unit": {
+                      "type": "string"
+                    },
+                    "Power": {
+                      "description": "Positive integer power (defaults to 1). Whether the term multiplies or divides comes from the list it is in, not from a sign.",
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "Denominators": {
+            "description": "Unit names (from any unit type's dictionary) multiplied together in the denominator, dividing the numerator(s). Omit if there is no denominator.",
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "description": "A unit Name (not Symbol), optionally raised to a positive integer power (Power defaults to 1 and is normally omitted). A Power other than 1 occurs on some Benchling built-in unit types (e.g., Volume = decimeter^3, Pressure = kilogram / (second^2 · meter)).",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object",
+                  "required": ["Unit"],
+                  "properties": {
+                    "Unit": {
+                      "type": "string"
+                    },
+                    "Power": {
+                      "description": "Positive integer power (defaults to 1). Whether the term multiplies or divides comes from the list it is in, not from a sign.",
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "Denominator": {
+            "description": "Deprecated: use Denominators. A single denominator term, read as a one-item Denominators list. Cannot be combined with Denominators.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object",
+                "required": ["Unit"],
+                "properties": {
+                  "Unit": {
+                    "type": "string"
+                  },
+                  "Power": {
+                    "description": "Positive integer power (defaults to 1). Whether the term multiplies or divides comes from the list it is in, not from a sign.",
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "not": {
+          "required": ["Denominator", "Denominators"]
+        }
+      },
+      "API ID": {
+        "description": "API ID for the unit type created during an export operation. This is ignored for import operations.",
+        "type": "string"
+      },
+      "Dimensional terms (do not hand-edit)": {
+        "description": "Opaque, Benchling-internal dimensional signature for this unit type (e.g., MASS^1, LENGTH^-3). This is not shown anywhere in the Benchling UI, is not reliably derivable from Formula (Benchling's own data is not always internally consistent here), and has no meaningful hand-authored value. Populated verbatim by export tooling; carried through unmodified on import. Omit for hand-authored unit types (import will proceed without it).",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["Dimension", "Exponent"],
+          "properties": {
+            "Dimension": {
+              "description": "Benchling's dimension token (e.g., MASS, LENGTH, TIME, AMOUNT), verbatim from the export.",
+              "type": "string"
+            },
+            "Exponent": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "Units": {
+        "description": "Units belonging to this unit type. Exactly one must be the base unit (Conversion factor: Base unit).",
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": {
+          "title": "Unit",
+          "description": "A single unit belonging to the enclosing unit type.",
+          "required": ["Name", "Conversion factor"],
+          "type": "object",
+          "properties": {
+            "Name": {
+              "description": "Unit name.",
+              "type": "string"
+            },
+            "Description": {
+              "description": "Documentation description for the unit (not saved to Benchling).",
+              "type": "string"
+            },
+            "Symbol": {
+              "description": "Unit symbol as displayed in Benchling (e.g., mg, mL).",
+              "type": "string"
+            },
+            "Conversion factor": {
+              "description": "Multiplicative factor to convert a value in this unit to the unit type's base unit. Exactly one unit per unit type must be the literal string 'Base unit'; all others are a decimal number expressed as a string.",
+              "type": "string"
+            },
+            "Aliases": {
+              "description": "Alternate symbols/spellings for the unit (e.g., unicode variants like µg).",
+              "type": "array",
+              "minItems": 0,
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            },
+            "SI name": {
+              "description": "SI base unit name (e.g., METER, SECOND), if applicable. Rare.",
+              "type": "string"
+            },
+            "API ID": {
+              "description": "API ID for the unit created during an export operation. This is ignored for import operations.",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

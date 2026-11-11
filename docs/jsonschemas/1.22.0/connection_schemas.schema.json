@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kenfigure.com/jsonschemas/latest/connection_schemas.schema.json",
+  "title": "Connection schemas",
+  "description": "Benchling Connect connection schemas defining integration adapters and their configurable fields.",
+  "type": "array",
+  "minItems": 0,
+  "uniqueItems": true,
+  "items": {
+    "title": "Connection schema definition",
+    "description": "Complete description of a Benchling Connect connection schema. A connection schema defines how an integration adapter parses instrument files and what configurable fields are available on connections that use it.",
+    "required": ["Name", "System name", "Prefix", "Integration adapter"],
+    "type": "object",
+    "properties": {
+      "Name": {
+        "description": "Connection schema name.",
+        "type": "string"
+      },
+      "Description": {
+        "description": "Documentation for the connection schema. Not saved to Benchling.",
+        "type": "string"
+      },
+      "System name": {
+        "description": "Internal system name for the connection schema. Must conform to PostgreSQL naming standards.",
+        "type": "string",
+        "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+      },
+      "Prefix": {
+        "description": "Short prefix to generate connection identifiers.",
+        "type": "string"
+      },
+      "Integration adapter": {
+        "description": "The Benchling Connect integration adapter that parses files for this connection schema. For example: 'Benchling FileWatcher'.",
+        "type": "string"
+      },
+      "Fields": {
+        "description": "Configurable fields that appear on connections using this schema.",
+        "type": "array",
+        "minItems": 0,
+        "uniqueItems": true,
+        "items": {
+          "title": "Connection schema field",
+          "description": "A configurable field on the connection schema.",
+          "required": ["Name", "Type"],
+          "type": "object",
+          "properties": {
+            "Name": {
+              "description": "Field display name.",
+              "type": "string"
+            },
+            "Description": {
+              "description": "Documentation for the field. Not saved to Benchling.",
+              "type": "string"
+            },
+            "System name": {
+              "description": "Internal system name for the field. Must conform to PostgreSQL naming standards.",
+              "type": "string",
+              "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+            },
+            "Required": {
+              "description": "Field is required when true.",
+              "type": "boolean"
+            },
+            "Multi-select": {
+              "description": "Field allows multiple selections when true.",
+              "type": "boolean"
+            },
+            "Type": {
+              "description": "Data type for the field.",
+              "type": "string",
+              "enum": [
+                "Text",
+                "Long text",
+                "Integer",
+                "Decimal",
+                "Date",
+                "Datetime",
+                "Dropdown",
+                "Boolean",
+                "Attachment",
+                "Entry",
+                "Entity",
+                "Inventory",
+                "JSON",
+                "Run"
+              ]
+            },
+            "Definition": {
+              "description": "Name of the target object when Type is a link type (Entity, Inventory, Run) or Dropdown.",
+              "anyOf": [
+                {
+                  "type": "string",
+                  "enum": [
+                    "Any Entity",
+                    "Custom Entity",
+                    "AA Sequence",
+                    "DNA Sequence",
+                    "Molecule",
+                    "Mixture",
+                    "Any inventory"
+                  ]
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "Diagram": {
+        "description": "Properties solely used for diagram rendering.",
+        "$ref": "https://kenfigure.com/jsonschemas/latest/diagram.schema.json"
+      },
+      "API ID": {
+        "description": "API ID for the connection schema created during an export operation. This is ignored for import operations.",
+        "type": "string"
+      }
+    }
+  }
+}

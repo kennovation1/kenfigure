@@ -237,7 +237,11 @@ File: Lipid.yaml
 Entity_schemas:
 - Name: Lipid  # Schema name
   Description: A lipid concept entity used in formulating LNPs
-  Entity type: Molecule  # The same entity types as seen in the Benchling UI
+  Entity type: Molecule  # The same entity types as seen in the Benchling UI: Custom Entity,
+    # DNA Sequence, DNA Oligo, RNA Oligo, RNA Sequence, AA Sequence, Molecule, Entry, Mixture,
+    # Equipment. Equipment is available only on tenants with the Bioprocess module; Benchling
+    # requires it to have the fields "Serial number" (Text, required), "Model" (Entity,
+    # required), and "Calibration due date" (Datetime).
   Prefix: LIP  # Same as Benchling UI
   System name: lipid  # Formerly known as "Warehouse name". Must confirm to PostgreSQL naming standards.
   Naming options:  # At least one list item must be specified. The options may be provided as short
@@ -610,9 +614,23 @@ Study_schemas:
   Description: Any sort of in vivo scientific activity
   Prefix: VIVO
   System name: in_vivo_study
+  Study type: Custom  # Custom or Process Development. Process Development is available only
+    # on tenants with the Bioprocess module. The older CUSTOM is deprecated but still accepted.
   Name template: []
-  Entry templates: []
-  Approval required: True  # Require approval of study design before proceeding to execution
+  Entry templates: []  # Applies only to Custom. The UI hides this for Process Development.
+  Approval required: True  # Require approval of study design before proceeding to execution.
+    # Applies only to Custom. The UI hides this for Process Development.
+  # Recipe run name template applies only to Process Development; omit it for Custom. It names
+  # the recipe runs created under the study. Changing it does not rename existing recipe runs.
+  # Separator requires a Definition (the separator text); the other types take none.
+  # Recipe run name template:
+  # - Type: Creation date  # One of: Creation date, Separator, Recipe name, Recipe run ID
+  # - Type: Separator
+  #   Definition: '-'
+  # - Type: Recipe name
+  # - Type: Separator
+  #   Definition: '-'
+  # - Type: Recipe run ID
   Fields:
   - Name: Program
     Tool tip: Program study is associated with

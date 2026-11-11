@@ -538,7 +538,7 @@
             "type": "string"
           },
           "Entity type": {
-            "description": "Must match one of the Benchling-defined types.",
+            "description": "Must match one of the Benchling-defined types. Equipment is available only on tenants with the Bioprocess module.",
             "type": "string",
             "enum": [
               "Custom Entity",
@@ -549,7 +549,8 @@
               "AA Sequence",
               "Molecule",
               "Entry",
-              "Mixture"
+              "Mixture",
+              "Equipment"
             ]
           },
           "Icon": {
@@ -1494,6 +1495,36 @@
             },
             "$comment": "TODO: Need to define this better. How handle pre-defiend values like separator, lot, etc."
           },
+          "Recipe run name template": {
+            "description": "Naming template for recipe runs. Applies only when Study type is Process Development. Changing it does not rename existing recipe runs.",
+            "type": "array",
+            "minItems": 0,
+            "uniqueItems": false,
+            "items": {
+              "title": "Recipe run name template components",
+              "description": "Recipe run name template components",
+              "type": "object",
+              "required": [
+                "Type"
+              ],
+              "properties": {
+                "Type": {
+                  "description": "The type of name component.",
+                  "type": "string",
+                  "enum": [
+                    "Creation date",
+                    "Separator",
+                    "Recipe name",
+                    "Recipe run ID"
+                  ]
+                },
+                "Definition": {
+                  "description": "The separator text. Required for Separator; omitted for other types.",
+                  "type": "string"
+                }
+              }
+            }
+          },
           "Entry templates": {
             "description": "List entry templates that are applicable to the study schema. Maybe empty.",
             "type": "array",
@@ -1508,9 +1539,11 @@
             "type": "boolean"
           },
           "Study type": {
-            "description": "Must match one of the Benchling-defined types.",
+            "description": "Must match one of the Benchling-defined types, as titled in the Benchling UI. Process Development is available only on tenants with the Bioprocess module. CUSTOM is deprecated; use Custom.",
             "type": "string",
             "enum": [
+              "Custom",
+              "Process Development",
               "CUSTOM"
             ]
           },

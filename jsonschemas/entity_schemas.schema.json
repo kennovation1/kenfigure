@@ -36,9 +36,9 @@
         "type": "string"
       },
       "Entity type": {
-        "description": "Must match one of the Benchling-defined types.",
+        "description": "Must match one of the Benchling-defined types. Equipment is available only on tenants with the Bioprocess module.",
         "type": "string",
-        "enum": ["Custom Entity", "DNA Sequence", "DNA Oligo", "RNA Oligo", "RNA Sequence", "AA Sequence", "Molecule", "Entry", "Mixture"]
+        "enum": ["Custom Entity", "DNA Sequence", "DNA Oligo", "RNA Oligo", "RNA Sequence", "AA Sequence", "Molecule", "Entry", "Mixture", "Equipment"]
       },
       "Icon": {
         "description": "Icon for the schema. Matches benchling names without any translation.",
