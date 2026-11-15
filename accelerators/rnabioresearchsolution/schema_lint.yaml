@@ -1,0 +1,234 @@
+notices:
+- suppress: false
+  object_type: dropdown
+  object_name: Modification
+  component_name: 5′-vinylphosphonate (5′-VP)
+  rule_id: SL006
+  message: Name contains non-ASCII characters; name='5′-vinylphosphonate (5′-VP)'
+- suppress: true
+  object_type: schema
+  object_name: Oligo Lot
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Lipid Mixture Recipe
+  component_name: Ionizable Lipid Mol %
+  rule_id: SL201
+  message: Display name contains '%' but system name does not end with '_pct'; display_name='Ionizable
+    Lipid Mol %', system_name='ionizable_lipid_mol'
+- suppress: true
+  object_type: schema
+  object_name: Lipid Mixture Recipe
+  component_name: Helper Lipid Mol %
+  rule_id: SL201
+  message: Display name contains '%' but system name does not end with '_pct'; display_name='Helper
+    Lipid Mol %', system_name='helper_lipid_mol'
+- suppress: true
+  object_type: schema
+  object_name: Lipid Mixture Recipe
+  component_name: Stability Lipid Mol%
+  rule_id: SL201
+  message: Display name contains '%' but system name does not end with '_pct'; display_name='Stability
+    Lipid Mol%', system_name='stability_lipid_mol'
+- suppress: true
+  object_type: schema
+  object_name: Lipid Mixture Recipe
+  component_name: PEG Lipid Mol%
+  rule_id: SL201
+  message: Display name contains '%' but system name does not end with '_pct'; display_name='PEG
+    Lipid Mol%', system_name='peg_mol'
+- suppress: true
+  object_type: schema
+  object_name: Oligo Duplex Lot
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Cell Lot
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Oligo Conjugate Lot
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Protein or Antibody
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (3); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Lipid Lot
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: In Vivo Study
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: 3' UTR
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (3); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Origin of Replication
+  component_name: prefix
+  rule_id: SL301
+  message: Prefix ends with 'I', confusable with a digit; prefix='ORI'
+- suppress: true
+  object_type: schema
+  object_name: Oligo Duplex (Complex Polymer)
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (3); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: gRNA
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (3); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Reagent Lot
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Reagent
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (3); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Oligo Duplex
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (3); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Oligo Conjugate
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (3); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Oligo
+  component_name: GC %
+  rule_id: SL201
+  message: Display name contains '%' but system name does not end with '_pct'; display_name='GC
+    %', system_name='gc'
+- suppress: true
+  object_type: schema
+  object_name: Oligo
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Plasmid Prep
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Small Molecule
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Small Molecule Lot
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: In Vivo Study Group
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Entry Classification
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (3); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Protein / Antigen AA
+  component_name: prefix
+  rule_id: SL301
+  message: Prefix ends with 'O', confusable with a digit; prefix='PRO'
+- suppress: true
+  object_type: schema
+  object_name: gRNA Lot
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: Protein or Antibody Lot
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (2); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: mRNA 5' UTR
+  component_name: naming_options
+  rule_id: SL402
+  message: Too many naming options (3); maximum is 1
+- suppress: true
+  object_type: schema
+  object_name: In Vitro Toxicity Results
+  component_name: Cell Viability (%)
+  rule_id: SL201
+  message: Display name contains '%' but system name does not end with '_pct'; display_name='Cell
+    Viability (%)', system_name='cell_viability'
+- suppress: true
+  object_type: schema
+  object_name: LNP Characterization
+  component_name: EE (%)
+  rule_id: SL201
+  message: Display name contains '%' but system name does not end with '_pct'; display_name='EE
+    (%)', system_name='ee'
+- suppress: true
+  object_type: schema
+  object_name: Ribogreen
+  component_name: EE (%)
+  rule_id: SL201
+  message: Display name contains '%' but system name does not end with '_pct'; display_name='EE
+    (%)', system_name='ee'
+- suppress: true
+  object_type: schema
+  object_name: DNA Characterization
+  component_name: '% Supercoiled'
+  rule_id: SL201
+  message: Display name contains '%' but system name does not end with '_pct'; display_name='%
+    Supercoiled', system_name='supercoiled'
+- suppress: true
+  object_type: schema
+  object_name: DNA Characterization
+  component_name: '% Linear'
+  rule_id: SL201
+  message: Display name contains '%' but system name does not end with '_pct'; display_name='%
+    Linear', system_name='linear'
+- suppress: true
+  object_type: schema
+  object_name: qPCR
+  component_name: '% mRNA Expression'
+  rule_id: SL201
+  message: Display name contains '%' but system name does not end with '_pct'; display_name='%
+    mRNA Expression', system_name='mrna_expression'

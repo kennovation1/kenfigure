@@ -343,7 +343,7 @@ Click the link to download the `.zip` file.
 
 ![Screenshot: Export section showing the download link after a successful Export to File](images/export_zip.png)
 
-The `.zip` contains your Kenfigure files organized by schema type. It also includes a file called `schema_lint_errors.log`, which contains style suggestions based on Kenfigure's schema design guidelines. These are optional recommendations — review them at your discretion and act on whatever makes sense for your team.
+The `.zip` contains your Kenfigure files organized by schema type. It also includes a log file ending in `_messages.log`, which contains schema lint findings: style suggestions based on Kenfigure's schema design guidelines. Each finding starts with a rule ID (for example `SL001` for a name that is too long), so you can group similar findings and decide on them together. These are optional recommendations — review them at your discretion and act on whatever makes sense for your team.
 (Kenfigure Diagram allows you to view your schema lint warnings interactively and in context and provides a means to suppress individual warnings.)
 
 #### Step 3b — Export to Git
