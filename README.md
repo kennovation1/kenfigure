@@ -59,6 +59,8 @@ See [examples/Chemical.yaml](./examples/Chemical.yaml) for a more complete annot
 - [Kenfigure Tool User Guide](./kenfigure_tool_user_guide.md) - Guide for the Benchling Canvas app (Export/Import, Git integration).
 - [Dropdown Tool](./dropdown_tool.md) - Let scientists request new dropdown options from a Notebook entry, style-checked
   and governed by a policy you set per dropdown. Part of Kenfigure Pro.
+- [Schema lint from your AI coding assistant](./mcp_lint.md) - Lint the Kenfigure YAML you're editing from
+  Claude Code or another MCP-capable assistant. Part of Kenfigure Pro.
 - [Kenfigure JSON schema](./jsonschemas/latest/kenfigure.schema_flat.json) - The full (flattened) JSON schema for Kenfigure.
 - [Kenfigure on GitHub](https://github.com/kennovation1/kenfigure) - Open-source schema repository, issues, and contributions.
 - [Kenfigure Pro™](kenfigure_pro.html) - The commercial tool suite built on this standard (Kenfigure Tool Import, Dropdown Tool, Kenfigure Diagram).

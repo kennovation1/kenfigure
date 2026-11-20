@@ -33,7 +33,8 @@ source code/configuration. You can then directly import the state of your files
 to your Benchling tenant saving hundreds or thousands of clicks and ensuring complete
 accuracy (and consistency among tenants).
 
-**What it includes:** Both *Import from File* and *Import from Git*
+**What it includes:** Both *Import from File* and *Import from Git*, plus
+[schema lint from your AI coding assistant](mcp_lint.html).
 
 ---
 

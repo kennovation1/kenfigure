@@ -50,6 +50,10 @@ Instead of translating your YAML back into hundreds of UI clicks — error-prone
 
 Both **Import from File** (upload a `.zip` of your Kenfigure directory) and **Import from Git** (pull directly from a configured repository branch) are included.
 
+Import also includes **schema lint from your AI coding assistant**. Claude Code and other MCP-capable assistants can check the Kenfigure YAML you're editing against the same lint rules, before you commit it.
+
+→ [Schema lint from your AI coding assistant](mcp_lint.html)
+
 ### Dropdown Tool
 
 Let scientists request dropdown options — without letting your controlled vocabularies drift.
